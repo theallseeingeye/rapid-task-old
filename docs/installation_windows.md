@@ -46,7 +46,7 @@ You will need to have your system setup with Python.
 1. Now install the requirements into the virtual environment:
     1. Open Terminal
     1. Make sure you are in your environment (ex. (rapidtaskenv) c:/directory/path/of/project)
-    1. type: *pip install -r requirements/local.txt*
+    1. type: (In project root) *pip install -r requirements/local.txt*
     1. This will install the files required onto the virtual environment for your project.
 1. Create a secret key file  
     1. Under root of project, create "secrets.json"  

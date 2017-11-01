@@ -25,7 +25,7 @@ For Windows:
 
 #### Yay! Python is installed!
 
-###Setting up the Virtual Environment
+### Setting up the Virtual Environment
 
 You will need to install and be running on virtualenv. 
 

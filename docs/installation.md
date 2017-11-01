@@ -21,6 +21,10 @@ Installation Steps
 **If using Pycharm:** 
 1. Open Pycharm.
 1. Setup your github on Pycharm
+    1. File>Settings>Version Control>GitHub
+    1. Enter the following:
+        1. Host: github.com
+        1. 
 1. Then in the menus- open *VCS/Check out From Version Control/GitHub*  
     * Git Repository URL: git@github.com:rapidtask/website.git 
     * Parent Directory: *Choose a path to store the files*

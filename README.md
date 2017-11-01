@@ -22,7 +22,7 @@ Table of Contents
 ## Installation 
 
 
-Please follow the installation documentation: [Link](/docs/installation.md)
+Please follow the installation documentation: [Windows Installation](/docs/installation_windows.md)
 
 
 ## Development Mode

@@ -1,6 +1,7 @@
+![Rapid Task Logo](/docs/images/logo.png)
+
 Welcome to Rapid Task's Manual
 ==============================
-![Rapid Task Logo](/docs/images/logo.png)
 
 ---
 ### Important Notes Before Starting...

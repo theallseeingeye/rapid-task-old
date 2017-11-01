@@ -38,8 +38,8 @@ Installation Steps
     * Directory Name: website    
     ***Review the github_tutorial doc as needed**  
 1. Create a secret key file
-    Under root of project, create "secrets.json"
-        * Enter the following in the secrets.json:  
+    Under root of project, create "secrets.json"  
+        * Enter the following in the secrets.json:    
         ```
         {   
         "FILENAME": "secrets.json",    

@@ -1,20 +1,16 @@
-HOW TO INSTALL RAPID TASK
-=========================
+HOW TO INSTALL RAPID TASK FOR WINDOWS
+=====================================
 
 Welcome to the installation manual to have Rapid Task up and running! 
 
-Setup for Installation
-----------------------
-You will need to have your system setup with Python and virtualenv installed.  
+Setup for Pycharm
+-----------------
+You will need to have your system setup with Python.  
     Instructions are [here](/docs/python_installation.md) for these following steps:
 1. Have Python 3.6.3 installed. 
 [Download Link](https://www.python.org/ftp/python/3.6.3/python-3.6.3.exe). 
-1. Have virtualenv 15.1.0 installed. See ["Setting up the Virtual Environment"](/docs/python_installation.md) in
-    python_installation.md
-
-Also install these:
-1. Have git installed on to your computer if you don't have it already. [Git Home Page](https://git-scm.com/)
-1. (Optional) Have Pycharm installed. [Pycharm Home Link](https://www.jetbrains.com/pycharm/)
+1. Have Git installed on to your computer if you don't have it already. [Git Home Page](https://git-scm.com/)
+1. Have Pycharm installed. [Pycharm Home Link](https://www.jetbrains.com/pycharm/)
     
 Installation Steps
 ------------------
@@ -68,7 +64,21 @@ Installation Steps
     **NOTE: DO NOT ADD secrets.json TO VERSION CONTROL**
 
 
-**If not using pycharm:**
+Setup For NON-Pycharm
+---------------------
+
+You will need to have your system setup with Python and a working virtual environment.  
+    Instructions are [here](/docs/python_installation.md) for these following steps:
+1. Have Python 3.6.3 installed. 
+[Download Link](https://www.python.org/ftp/python/3.6.3/python-3.6.3.exe). 
+1. Have virtualenv 15.1.0 installed. See ["Setting up the Virtual Environment"](/docs/python_installation.md) in
+    python_installation.md
+
+Also install these:
+1. Have git installed on to your computer if you don't have it already. [Git Home Page](https://git-scm.com/)
+1. (Optional) Have Pycharm installed. [Pycharm Home Link](https://www.jetbrains.com/pycharm/)
+    
+
 3) Download the Rapid Task github repository from......
 
 

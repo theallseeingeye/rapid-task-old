@@ -12,7 +12,7 @@ You will need to have your system setup with Python.
 1. Have Git installed on to your computer if you don't have it already. [Git Home Page](https://git-scm.com/)
 1. Have Pycharm installed. [Pycharm Home Link](https://www.jetbrains.com/pycharm/)
     
-## Installation Steps
+### Installation Steps
 
 1. Open Pycharm.
 1. If it opens an existing project: *File>Close Project* OR *File>New Project*

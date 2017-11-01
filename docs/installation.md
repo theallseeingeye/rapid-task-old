@@ -40,14 +40,14 @@ Installation Steps
 1. Create a secret key file
     Under root of project, create "secrets.json"  
         * Enter the following in the secrets.json:    
-        ```
-        {   
-        "FILENAME": "secrets.json",    
-        "SECRET_KEY": "*Your secret key must be placed here!*",  
-        "DATABASES_HOST": "127.0.0.1",  
-        "PORT": "5432"  
-        }
-        ```
+    ```
+    {   
+    "FILENAME": "secrets.json",    
+    "SECRET_KEY": "*Your secret key must be placed here!*",  
+    "DATABASES_HOST": "127.0.0.1",  
+    "PORT": "5432"  
+    }
+    ```
         
 
 **If not using pycharm:**

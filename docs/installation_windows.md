@@ -15,7 +15,7 @@ You will need to have your system setup with Python.
 ### Installation Steps
 
 1. Open Pycharm.
-1. If it opens an existing project: *File>Close Project* OR *File>New Project*
+1. If it opens an existing project: *File>Close Project*
 1. You should be on the main opening screen. 
 1. Setup Git on Pycharm
     1. *Configure>Settings>Version Control>Git*

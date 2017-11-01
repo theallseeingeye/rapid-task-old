@@ -24,7 +24,13 @@ Installation Steps
     1. File>Settings>Version Control>GitHub
     1. Enter the following:
         1. Host: github.com
-        1. 
+        1. Auth Type: Token
+        1. Click Create API Token
+        1. Enter your credentials
+        1. Click test to ensure it worked
+1. Setup Git on Pycharm
+    1. File>Settings>Version Control>Git
+    1. Select: Path to Git Executable and point it to your location of git.exe installed. (Default: *c:/Program Files/Git       /cmd/git.exe*) 
 1. Then in the menus- open *VCS/Check out From Version Control/GitHub*  
     * Git Repository URL: git@github.com:rapidtask/website.git 
     * Parent Directory: *Choose a path to store the files*

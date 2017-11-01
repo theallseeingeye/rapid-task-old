@@ -12,17 +12,20 @@ You will need to have your system setup with Python and virtualenv installed.
 1. Have virtualenv 15.1.0 installed. See ["Setting up the Virtual Environment"](/docs/python_installation.md) in
     python_installation.md
 
+Also install these:
+1. Have git installed on to your computer if you don't have it already. [Git Home Page](https://git-scm.com/)
+1. (Optional) Have Pycharm installed. [Pycharm Home Link](https://www.jetbrains.com/pycharm/)
     
 Installation Steps
 ------------------
 **If using Pycharm:** 
 1. Open Pycharm.
+1. Setup your github on Pycharm
 1. Then in the menus- open *VCS/Check out From Version Control/GitHub*  
-    * Host:   
-    *   
-    *  
-    *    
-**Review the github_tutorial doc as needed**
+    * Git Repository URL: git@github.com:rapidtask/website.git 
+    * Parent Directory: *Choose a path to store the files*
+    * Directory Name: website    
+    ***Review the github_tutorial doc as needed**
 
 **If not using pycharm:**
 3) Download the Rapid Task github repository from......

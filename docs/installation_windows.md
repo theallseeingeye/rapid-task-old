@@ -72,10 +72,8 @@ You will need to have your system setup with Python and a working virtual enviro
 [Download Link](https://www.python.org/ftp/python/3.6.3/python-3.6.3.exe). 
 1. Have virtualenv 15.1.0 installed. See ["Setting up the Virtual Environment"](/docs/python_installation.md) in
     python_installation.md
-
-Also install these:
 1. Have git installed on to your computer if you don't have it already. [Git Home Page](https://git-scm.com/)
-1. (Optional) Have Pycharm installed. [Pycharm Home Link](https://www.jetbrains.com/pycharm/)
+1. Install GitHub Desktop Client for easy version control handling [GitHub Desktop Link](https://desktop.github.com/), or can use bash console from Git directly. 
     
 
 3) Download the Rapid Task github repository from......

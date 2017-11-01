@@ -22,7 +22,7 @@ Table of Contents
 ## Installation 
 
 
-Please follow the installation documentation: [Windows Installation](/docs/installation_windows.md)
+Please follow the installation documentation: [Windows Installation](/docs/installation_windows.md) or [OS X Installation](/docs/installation_OSX.md)
 
 
 ## Development Mode

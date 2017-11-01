@@ -20,26 +20,28 @@ Installation Steps
 ------------------
 **If using Pycharm:** 
 1. Open Pycharm.
+1. If it opens an existing project: *File>Close Project* OR *File>Create New Project*
+1. You should be on the main opening screen.
 1. Setup Git on Pycharm
-    1. File>Settings>Version Control>Git
-    1. Select: Path to Git Executable and point it to your location of git.exe installed. (Default: *c:/Program Files/Git/cmd/git.exe*) 
+    1. *File>Settings>Version Control>Git*
+    1. Select: Path to Git Executable and point it to your location of *git.exe* installed. (Default: *c:/Program Files/Git/cmd/git.exe*) 
     1. Click test to see if it works
 1. Setup your GitHub on Pycharm
-    1. File>Settings>Version Control>GitHub
+    1. *File>Settings>Version Control>GitHub*
     1. Enter the following:
         1. Host: github.com
         1. Auth Type: Token
         1. Click Create API Token
         1. Enter your credentials
         1. Click test to ensure it worked
-1. Then in the menus- open *VCS/Check out From Version Control/GitHub*  
+1. Then in the menus- open *VCS>Check out From Version Control>GitHub*  
     * Git Repository URL: git@github.com:rapidtask/website.git 
     * Parent Directory: *Choose a path to store the files*
     * Directory Name: website    
     ***Review the github_tutorial doc as needed**  
 1. Create a secret key file  
-    Under root of project, create "secrets.json"  
-        * Enter the following in the secrets.json:    
+    1. Under root of project, create "secrets.json"  
+    1. Enter the following in the *secrets.json*:    
     ```
     {   
     "FILENAME": "secrets.json",    
@@ -48,7 +50,8 @@ Installation Steps
     "PORT": "5432"  
     }
     ```
-        
+    1. Save the file
+
 
 **If not using pycharm:**
 3) Download the Rapid Task github repository from......

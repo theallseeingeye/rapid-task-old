@@ -38,16 +38,16 @@ Installation Steps
     * Directory Name: website    
     ***Review the github_tutorial doc as needed**  
 1. Create a secret key file
-    1. under root of project, create "secrets.json"
-    * Enter the following in the secrets.json:  
-    ```
-    {   
-    "FILENAME": "secrets.json",    
-    "SECRET_KEY": "*Your secret key must be placed here!*",  
-    "DATABASES_HOST": "127.0.0.1",  
-    "PORT": "5432"  
-    }
-    ```
+    Under root of project, create "secrets.json"
+        * Enter the following in the secrets.json:  
+        ```
+        {   
+        "FILENAME": "secrets.json",    
+        "SECRET_KEY": "*Your secret key must be placed here!*",  
+        "DATABASES_HOST": "127.0.0.1",  
+        "PORT": "5432"  
+        }
+        ```
         
 
 **If not using pycharm:**

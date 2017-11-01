@@ -37,7 +37,7 @@ Installation Steps
     * Parent Directory: *Choose a path to store the files*
     * Directory Name: website    
     ***Review the github_tutorial doc as needed**  
-1. Create a secret key file
+1. Create a secret key file  
     Under root of project, create "secrets.json"  
         * Enter the following in the secrets.json:    
     ```

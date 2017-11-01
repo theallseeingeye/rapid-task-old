@@ -37,14 +37,17 @@ when you are running server:
 * Production: ```python manage.py runserver --settings=config.settings.production```  
     *Note: Look at the notes after you run server to ensure you are using the right settings path.*   
      
-Updating requirements files:
+Downloading requirements files:
 * When you modify or adjust dependencies for the project, we use the following **command lines**:  
   * Local: ```pip install -r requirements/local.txt```
   * Test: ```pip install -r requirements/test.txt```
   * Staging: ```pip install -r requirements/staging.txt```
   * Production: ```pip install -r requirements/production.txt```
 
-
+Updating to the requirement files:
+* Ensure they are requirements that are used- not cluttered with junk
+   * In command line in your virtual environment: pip freeze > requirements/local.txt
+      * Can replace local.txt with other versions such as test, staging and production.
 ## Running Tests
 
 If you haven't yet installed coverage.py: pip install coverage

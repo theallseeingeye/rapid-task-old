@@ -59,6 +59,9 @@ You will need to have your system setup with Python.
     "PORT": "5432"  
     }
     ```
+    * Make sure this file is in .gitignore - `````/secrets.json````` (VERY IMPORTANT)
+    * Do not misplace your secret key. If you suspect or accidentally shown the secret key publicly
+        PLEASE ALERT US! This is a SEVERE security risk and will need to create a new secret key.
     1. Save the file
     **NOTE: DO NOT ADD secrets.json TO VERSION CONTROL**
 
@@ -76,7 +79,7 @@ You will need to have your system setup with Python and a working virtual enviro
 1. Install GitHub Desktop Client for easy version control handling [GitHub Desktop Link](https://desktop.github.com/), or can use bash console from Git directly. 
     
 
-3) Download the Rapid Task github repository from......
+3) Download the Rapid Task github repository from www.github.com/rapidtask/website
 
 
 
@@ -87,25 +90,3 @@ You will need to have your system setup with Python and a working virtual enviro
     pip install -r /website/requirements/local.txt
 
 
-
-**Important first time setup!**
-
-Your secret_key is not setup. You will need to set it up following these instructions below.
-
-Set up your secret_key to keep it hidden. You do not want to share your secret_key given to you by django.
-
-* create a file named "secrets.json" under the root folder of the project (location important so it can be located)
-* Enter the following in the secrets.json:  
-    ```
-    {   
-    "FILENAME": "secrets.json",    
-    "SECRET_KEY": "*Your secret key must be placed here!*",  
-    "DATABASES_HOST": "127.0.0.1",  
-    "PORT": "5432"  
-    }
-    ```
-* Replace the secret_key field with your given secret key.  
-* Make sure this file is in .gitignore - `````/secrets.json````` (VERY IMPORTANT)  
-* The base.py settings has a look up to find this file.  
-* Do not misplace your secret key. If you suspect or accidentally shown the secret key publicly
-  PLEASE ALERT US! This is a SEVERE security risk and will need to create a new secret key.

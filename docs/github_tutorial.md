@@ -31,3 +31,9 @@ GitHub Tutorial: https://guides.github.com/activities/hello-world/
 
 GitHub Lingo
 ------------
+
+Master- A branch that can be deployed at anytime. Never make commits to this branch with out the proper steps of approval.  
+
+GitHub Workflow
+---------------
+This is a good illustration of our workflow and the proper procedure of branching off and commiting. We use GitFlow: http://datasift.github.io/gitflow/IntroducingGitFlow.html and http://nvie.com/posts/a-successful-git-branching-model/

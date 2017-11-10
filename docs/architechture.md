@@ -43,6 +43,7 @@ that they can accommodate these in the future.
 Installed Packages Explanation
 ------------------------------
 The installed packages must be written here with explanation for it's use. You must state the license use.
+        * *Before adding any packages, they must have a license and is approved*
 
 * Django REST Framework 3.7.1   
     This framework sets up the Django project nicely for building web APIs. Required for React.js and third parties.

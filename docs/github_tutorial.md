@@ -31,3 +31,7 @@ GitHub Tutorial: https://guides.github.com/activities/hello-world/
 
 GitHub Lingo
 ------------
+
+GitHub Workflow
+---------------
+This is a good illustration of our workflow and the proper procedure of branching off and commiting. We use GitFlow: http://datasift.github.io/gitflow/IntroducingGitFlow.html

@@ -38,6 +38,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # Third Party Apps
+    # 'admin_honeypot'
+    'rest_framework',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -45,9 +49,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # Third Party Apps
-    # 'admin_honeypot'
-    'rest_framework',
+    # Local Apps
+    'rapid_task.polls.apps.PollsConfig',
+    # 'rapid_task.users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [

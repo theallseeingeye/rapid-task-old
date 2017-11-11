@@ -48,7 +48,12 @@ The installed packages must be written here with explanation for it's use. You m
 * Django REST Framework 3.7.1   
     This framework sets up the Django project nicely for building web APIs. Required for React.js and third parties.
     Documentation: http://www.django-rest-framework.org/
-    * License: BSD 2 or "Simplified BSD License" 
-    
+    * License: BSD 2 or "Simplified BSD License"   
+* markdown-2.6.9  
+    Markdown support for the browsable REST API.  
+    * License: BSD 
+* django-filter-1.1.0  
+    Filtering support for REST API. Allows users to declaratively add dynamic QuerySet Filtering from URL patterns.  
+    * License: BSD
     
     

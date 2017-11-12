@@ -26,5 +26,6 @@ urlpatterns = [
     # url(r'^secret/', include(admin.site.urls)),
     url(r'^admin/', admin.site.urls),
 
-    #REST
+    # REST
+    url(r'^', include('rapid_task.polls.api.urls')),
 ]

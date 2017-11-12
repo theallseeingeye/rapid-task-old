@@ -142,3 +142,6 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAdminUser'
     ]
 }
+
+# This prevents access to the stored data from JavaScript
+SESSION_COOKIE_HTTPONLY = True

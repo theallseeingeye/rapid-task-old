@@ -1,20 +1,11 @@
-'''
-This is how we can select a certain fields that we wish to alter:
-class PollsSerializer(serializers.Serializer):
-    question = serializers.PrimaryKeyRelatedField(read_only=True)
-    choice_text = serializers.CharField(max_length=200)
-    votes = serializers.IntegerField(default=0)
-    ip_user = serializers.CharField(max_length=50)
-    vote_date = serializers.DateTimeField('vote date')
-'''
 
 from rest_framework import serializers
 from rapid_task.polls.models import Poll, Question, Feedback
 
-'''
+"""
 The following code handles the serialization of foreign-key relationships by using the REST framework 
 "Nested relationships"
-'''
+"""
 
 
 class PollSerializer(serializers.ModelSerializer):
@@ -24,10 +15,9 @@ class PollSerializer(serializers.ModelSerializer):
             'question',
             'choice_text',
             'votes',
-            'ip_user',
+            'non_user_id',
             'vote_date',
         )
-    # Do not need to have a .save() or create as it is handled in QuestionSerializer
 
 
 class QuestionSerializer(serializers.ModelSerializer):
@@ -53,9 +43,9 @@ class QuestionSerializer(serializers.ModelSerializer):
         return question
 
 
-'''
+"""
 Regular models
-'''
+"""
 
 
 class FeedbackSerializer(serializers.ModelSerializer):

@@ -1,14 +1,13 @@
-# from django.contrib.auth.models import User, Group
-# from rest_framework import serializers
+from rest_framework import serializers
+from rapid_task.users.models import AnonymousUser
 
 
-# class UserSerializer(serializers.HyperlinkedModelSerializer):
-#     class Meta:
-#         model = User
-#         fields = ('url', 'username', 'email', 'groups')
-
-
-# class GroupSerializer(serializers.HyperlinkedModelSerializer):
-#     class Meta:
-#         model = Group
-#         fields = ('url', 'name')
+class AnonymousUserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = AnonymousUser
+        fields = (
+            'user_session_id',
+            'site_visit',
+            'first_visit_date',
+            'recent_visit_date',
+        )

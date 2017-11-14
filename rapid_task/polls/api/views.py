@@ -12,34 +12,36 @@ class FeedbackList(generics.ListCreateAPIView):
     serializer_class = FeedbackSerializer
 
 
-# class PollDetail(APIView):
-#     """
-#     To create, update and save the poll details
-#     """
-#     def get_object(self, pk):
-#         try:
-#             return Question.objects.get(pk=pk)
-#         except Question.DoesNotExist:
-#             raise Http404
-#
-#     def get(self, request, pk, format=None):
-#         question = self.get_object(pk)
-#         serializer = QuestionSerializer(question)
-#         return Response(serializer.data)
+class QuestionList(generics.ListCreateAPIView):
+    queryset = Question.objects.all()
+    serializer_class = QuestionSerializer
 
-#     def put(self, request, pk, format=None):
-#         question = self.get_object(pk)
-#         serializer = QuestionSerializer(question, data=request.data)
-#         if serializer.is_valid():
-#             serializer.save()
-#             return Response(serializer.data)
-#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-#
-#     def delete(self, request, pk, format=None):
-#         question = self.get_object(pk)
-#         question.delete()
-#         return Response(status=status.HTTP_204_NO_CONTENT)
+
+class PollList(generics.ListCreateAPIView):
+    queryset = Poll.objects.all()
+    serializer_class = PollSerializer
+
 
 class PollDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Poll.objects.all()
     serializer_class = PollSerializer
+
+
+
+
+    # This create query supports write-options to a relational nested serializer field.
+    # validated_data is data that has correctly changed from json to python native datatypes.
+    # def create(self, validated_data):
+    #     # .pop() is a python method of list objects. This removes the 'poll' data from list and returns it.
+    #     polls_data = validated_data.pop('poll')
+    #     # Now saving the question to the database.
+    #     # .objects.create is the same as .save() query
+    #     question = Question.objects.create(**validated_data)
+    #     for poll_data in polls_data:
+    #         # This pairs the saved question to the many poll_data inputs
+    #         Poll.objects.create(question=question, **poll_data)
+    #     return question
+
+# class PollDetail(generics.RetrieveUpdateDestroyAPIView):
+#     queryset = Question.objects.all()
+#     serializer_class = QuestionSerializer

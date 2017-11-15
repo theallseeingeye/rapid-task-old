@@ -7,7 +7,7 @@ class FeedbackAdmin(admin.ModelAdmin):
 
 
 class PollAdmin(admin.ModelAdmin):
-    list_display = ('get_question', 'choice_text', 'votes', 'user_session_id', 'vote_date')
+    list_display = ('get_question', 'choice_text', 'votes', 'vote_date')
 
     # Helps pull the data through the foreign key
     def get_question(self, obj):

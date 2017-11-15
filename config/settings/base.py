@@ -145,4 +145,3 @@ REST_FRAMEWORK = {
 
 # This prevents access to the stored data from JavaScript
 SESSION_COOKIE_HTTPONLY = True
-SESSION_SAVE_EVERY_REQUEST = True

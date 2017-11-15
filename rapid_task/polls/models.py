@@ -1,17 +1,13 @@
 """
 The serializers.py depends on these models. Be sure to reflect the same changes on serializers.py
 """
-
+import uuid
 from django.db import models
-from rapid_task.users.models import AnonymousUser
-
-# Create your models here.
-
-# class VisitingUser(models.Model):
-    # Record all the session activities of a user.
+from django.contrib.sessions.models import Session
 
 
 class Question(models.Model):
+    uuid = models.UUIDField(db_index=True, default=uuid.uuid4, editable=False)
     question_text = models.CharField(max_length=200)
     pub_date = models.DateTimeField('date published', auto_now=True)
 
@@ -21,15 +17,16 @@ class Question(models.Model):
 
 
 class Poll(models.Model):
-    question = models.ForeignKey(Question, on_delete=models.CASCADE, blank=True)
+    question = models.ForeignKey(Question, related_name='polls', on_delete=models.CASCADE)
     choice_text = models.CharField(max_length=200)
     votes = models.BooleanField(default=0)
-    user_session_id = models.ForeignKey(AnonymousUser, on_delete=models.CASCADE)
+    # I need to set the session uuid to the anonymous user session and record it.
+    user_session_id = models.ForeignKey(Session, on_delete=models.CASCADE, blank=True)
     vote_date = models.DateTimeField('vote date', auto_now_add=True)
 
 
 class Feedback(models.Model):
     email = models.EmailField(max_length=200)
     name = models.CharField(max_length=100)
-    content = models.CharField(max_length=1000)
-    create_date = models.DateTimeField(auto_now_add=True)
+    content = models.TextField(max_length=1000)
+    create_date = models.DateTimeField(auto_now_add=True, editable=False)

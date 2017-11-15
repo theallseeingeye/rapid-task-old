@@ -6,7 +6,6 @@ urlpatterns = [
     url(r'^feedback/create/$', views.FeedbackCreate.as_view()),
     url(r'^feedback/list/$', views.FeedbackList.as_view()),
     url(r'^poll/create/$', views.PollCreate.as_view()),
-    # url(r'^poll/results/$', views.PollList.as_view()),
     url(r'^question/results/$', views.QuestionList.as_view()),
 ]
 

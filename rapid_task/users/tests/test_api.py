@@ -1,44 +1,104 @@
-# flavors/tests/test_api.py
-# import json
-# from django.test import TestCase
-# from django.urls import reverse
-# from flavors.models import Flavor
-#
-# class DjangoRestFrameworkTests(TestCase):
-#
-#     def setUp(self):
-#         Flavor.objects.get_or_create(title='title1', slug='slug1')
-#         Flavor.objects.get_or_create(title='title2', slug='slug2')
-#
-#         self.create_read_url = reverse('flavor_rest_api')
-#         self.read_update_delete_url = \
-#             reverse('flavor_rest_api', kwargs={'slug': 'slug1'})
-#
-# def test_list(self):
-#     response = self.client.get(self.create_read_url)
-#
-#     # Are both titles in the content?
-#     self.assertContains(response, 'title1')
-#     self.assertContains(response, 'title2')pip
-#
-# def test_detail(self):
-#     response = self.client.get(self.read_update_delete_url)
-#     data = json.loads(response.content)
-#     content = {'id': 1, 'title': 'title1', 'slug': 'slug1',
-#                 'scoops_remaining': 0}
-#     self.assertEquals(data, content)
-#
-# def test_create(self):
-#     post = {'title': 'title3', 'slug': 'slug3'}
-#     response = self.client.post(self.create_read_url, post)
-#     data = json.loads(response.content)
-#     self.assertEquals(response.status_code, 201)
-#     content = {'id': 3, 'title': 'title3', 'slug': 'slug3',
-#                'scoops_remaining': 0}
-#     self.assertEquals(data, content)
-#     self.assertEquals(Flavor.objects.count(), 3)
-#
-# def test_delete(self):
-#     response = self.client.delete(self.read_update_delete_url)
-#     self.assertEquals(response.status_code, 204)
-#     self.assertEquals(Flavor.objects.count(), 1)
+import json
+
+from django.contrib.auth.models import User
+from django.core.urlresolvers import reverse
+
+from rest_framework.authtoken.models import Token
+from rest_framework.test import APITestCase
+
+
+class UserRegistrationAPIViewTestCase(APITestCase):
+    # These go off the namedspaces in the urls.
+    url = reverse("users:list")
+
+    def test_invalid_password(self):
+        """
+        Test to verify that a post call with invalid passwords
+        """
+        user_data = {
+            "username": "testuser",
+            "email": "test@testuser.com",
+            "password": "password",
+            "confirm_password": "INVALID_PASSWORD"
+        }
+        response = self.client.post(self.url, user_data)
+        self.assertEqual(400, response.status_code)
+
+    def test_user_registration(self):
+        """
+        Test to verify that a post call with user valid data
+        """
+        user_data = {
+            "username": "testuser",
+            "email": "test@testuser.com",
+            "password": "123123",
+            "confirm_password": "123123"
+        }
+        response = self.client.post(self.url, user_data)
+        self.assertEqual(201, response.status_code)
+        self.assertTrue("token" in json.loads(response.content))
+
+    def test_unique_username_validation(self):
+        """
+        Test to verify that a post call with already exists username
+        """
+        user_data_1 = {
+            "username": "testuser",
+            "email": "test@testuser.com",
+            "password": "123123",
+            "confirm_password": "123123"
+        }
+        response = self.client.post(self.url, user_data_1)
+        self.assertEqual(201, response.status_code)
+
+        user_data_2 = {
+            "username": "testuser",
+            "email": "test2@testuser.com",
+            "password": "123123",
+            "confirm_password": "123123"
+        }
+        response = self.client.post(self.url, user_data_2)
+        self.assertEqual(400, response.status_code)
+
+
+class UserLoginAPIViewTestCase(APITestCase):
+    url = reverse("users:login")
+
+    def setUp(self):
+        self.username = "john"
+        self.email = "john@snow.com"
+        self.password = "you_know_nothing"
+        self.user = User.objects.create_user(self.username, self.email, self.password)
+
+    def test_authentication_without_password(self):
+        response = self.client.post(self.url, {"username": "snowman"})
+        self.assertEqual(400, response.status_code)
+
+    def test_authentication_with_wrong_password(self):
+        response = self.client.post(self.url, {"username": self.username, "password": "I_know"})
+        self.assertEqual(400, response.status_code)
+
+    def test_authentication_with_valid_data(self):
+        response = self.client.post(self.url, {"username": self.username, "password": self.password})
+        self.assertEqual(200, response.status_code)
+        self.assertTrue("auth_token" in json.loads(response.content))
+
+
+class UserLogoutAPIViewTestCase(APITestCase):
+    url = reverse("users:logout")
+
+    def setUp(self):
+        self.username = "john"
+        self.email = "john@snow.com"
+        self.password = "you_know_nothing"
+        self.user = User.objects.create_user(self.username, self.email, self.password)
+        self.token = Token.objects.create(user=self.user)
+        self.api_authentication()
+
+    def api_authentication(self):
+        self.client.credentials(HTTP_AUTHORIZATION='Token ' + self.token.key)
+
+    def test_logout(self):
+        response = self.client.post(self.url)
+        self.assertEqual(200, response.status_code)
+        self.assertFalse(Token.objects.filter(key=self.token).exists())

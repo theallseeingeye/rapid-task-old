@@ -352,3 +352,6 @@ pip-selfcheck.json
 
 #Secret keys
 /secrets.json
+
+#Test coverage results
+/htmlcov/

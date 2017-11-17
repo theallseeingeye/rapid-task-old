@@ -1,44 +1,104 @@
-# flavors/tests/test_api.py
-# import json
-# from django.test import TestCase
-# from django.urls import reverse
-# from flavors.models import Flavor
+import json
+from django.contrib.auth.models import User
+from django.core.urlresolvers import reverse
+
+from rest_framework.authtoken.models import Token
+from rest_framework.test import APITestCase
+from rapid_task.polls.models import Question, Choice, Poll, Feedback
+from rapid_task.polls.api import serializers
+
 #
-# class DjangoRestFrameworkTests(TestCase):
+# class TodoListCreateAPIViewTestCase(APITestCase):
+#     url = reverse("todos:list")
 #
 #     def setUp(self):
-#         Flavor.objects.get_or_create(title='title1', slug='slug1')
-#         Flavor.objects.get_or_create(title='title2', slug='slug2')
+#         self.username = "john"
+#         self.email = "john@snow.com"
+#         self.password = "you_know_nothing"
+#         self.user = User.objects.create_user(self.username, self.email, self.password)
+#         self.token = Token.objects.create(user=self.user)
+#         self.api_authentication()
 #
-#         self.create_read_url = reverse('flavor_rest_api')
-#         self.read_update_delete_url = \
-#             reverse('flavor_rest_api', kwargs={'slug': 'slug1'})
+#     def api_authentication(self):
+#         self.client.credentials(HTTP_AUTHORIZATION='Token ' + self.token.key)
 #
-# def test_list(self):
-#     response = self.client.get(self.create_read_url)
+#     def test_create_todo(self):
+#         response = self.client.post(self.url, {"name": "Clean the room!"})
+#         self.assertEqual(201, response.status_code)
 #
-#     # Are both titles in the content?
-#     self.assertContains(response, 'title1')
-#     self.assertContains(response, 'title2')pip
+#     def test_user_todos(self):
+#         """
+#         Test to verify user todos list
+#         """
+#         Todo.objects.create(user=self.user, name="Clean the car!")
+#         response = self.client.get(self.url)
+#         self.assertTrue(len(json.loads(response.content)) == Todo.objects.count())
 #
-# def test_detail(self):
-#     response = self.client.get(self.read_update_delete_url)
-#     data = json.loads(response.content)
-#     content = {'id': 1, 'title': 'title1', 'slug': 'slug1',
-#                 'scoops_remaining': 0}
-#     self.assertEquals(data, content)
 #
-# def test_create(self):
-#     post = {'title': 'title3', 'slug': 'slug3'}
-#     response = self.client.post(self.create_read_url, post)
-#     data = json.loads(response.content)
-#     self.assertEquals(response.status_code, 201)
-#     content = {'id': 3, 'title': 'title3', 'slug': 'slug3',
-#                'scoops_remaining': 0}
-#     self.assertEquals(data, content)
-#     self.assertEquals(Flavor.objects.count(), 3)
+# class TodoDetailAPIViewTestCase(APITestCase):
 #
-# def test_delete(self):
-#     response = self.client.delete(self.read_update_delete_url)
-#     self.assertEquals(response.status_code, 204)
-#     self.assertEquals(Flavor.objects.count(), 1)
+#     def setUp(self):
+#         self.username = "john"
+#         self.email = "john@snow.com"
+#         self.password = "you_know_nothing"
+#         self.user = User.objects.create_user(self.username, self.email, self.password)
+#         self.todo = Todo.objects.create(user=self.user, name="Call Mom!")
+#         self.url = reverse("todos:detail", kwargs={"pk": self.todo.pk})
+#         self.token = Token.objects.create(user=self.user)
+#         self.api_authentication()
+#
+#     def api_authentication(self):
+#         self.client.credentials(HTTP_AUTHORIZATION='Token ' + self.token.key)
+#
+#     def test_todo_object_bundle(self):
+#         """
+#         Test to verify todo object bundle
+#         """
+#         response = self.client.get(self.url)
+#         self.assertEqual(200, response.status_code)
+#
+#         todo_serializer_data = TodoSerializer(instance=self.todo).data
+#         response_data = json.loads(response.content)
+#         self.assertEqual(todo_serializer_data, response_data)
+#
+#     def test_todo_object_update_authorization(self):
+#         """
+#             Test to verify that put call with different user token
+#         """
+#         new_user = User.objects.create_user("newuser", "new@user.com", "newpass")
+#         new_token = Token.objects.create(user=new_user)
+#         self.client.credentials(HTTP_AUTHORIZATION='Token ' + new_token.key)
+#
+#         # HTTP PUT
+#         response = self.client.put(self.url, {"name", "Hacked by new user"})
+#         self.assertEqual(403, response.status_code)
+#
+#         # HTTP PATCH
+#         response = self.client.patch(self.url, {"name", "Hacked by new user"})
+#         self.assertEqual(403, response.status_code)
+#
+#     def test_todo_object_update(self):
+#         response = self.client.put(self.url, {"name": "Call Dad!"})
+#         response_data = json.loads(response.content)
+#         todo = Todo.objects.get(id=self.todo.id)
+#         self.assertEqual(response_data.get("name"), todo.name)
+#
+#     def test_todo_object_partial_update(self):
+#         response = self.client.patch(self.url, {"done": True})
+#         response_data = json.loads(response.content)
+#         todo = Todo.objects.get(id=self.todo.id)
+#         self.assertEqual(response_data.get("done"), todo.done)
+#
+#     def test_todo_object_delete_authorization(self):
+#         """
+#             Test to verify that put call with different user token
+#         """
+#         new_user = User.objects.create_user("newuser", "new@user.com", "newpass")
+#         new_token = Token.objects.create(user=new_user)
+#         self.client.credentials(HTTP_AUTHORIZATION='Token ' + new_token.key)
+#         response = self.client.delete(self.url)
+#         self.assertEqual(403, response.status_code)
+#
+#     def test_todo_object_delete(self):
+#         response = self.client.delete(self.url)
+#         self.assertEqual(204, response.status_code)

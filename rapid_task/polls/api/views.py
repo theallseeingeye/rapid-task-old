@@ -1,6 +1,7 @@
-from rapid_task.polls.models import Question, Poll, Feedback
+from rapid_task.polls.models import Question, Poll, Feedback, Choice
 from rapid_task.polls.api.serializers import PollSerializer, QuestionSerializer, FeedbackSerializer
-from rest_framework.permissions import AllowAny
+from rest_framework.permissions import AllowAny, IsAdminUser
+from rest_framework.authentication import SessionAuthentication
 from rest_framework import generics
 
 
@@ -10,8 +11,8 @@ class FeedbackList(generics.ListCreateAPIView):
     """
     queryset = Feedback.objects.all()
     serializer_class = FeedbackSerializer
-
-
+    permission_classes = (IsAdminUser, )
+    authentication_classes = (SessionAuthentication, )
 
 class FeedbackCreate(generics.CreateAPIView):
     """
@@ -35,16 +36,19 @@ class QuestionList(generics.ListCreateAPIView):
     queryset = Question.objects.all()
     serializer_class = QuestionSerializer
     lookup_field = 'uuid'
+    authentication_classes = (SessionAuthentication,)
 
-    def create(self, validated_data):
-        # Pulls the "polls" data from the fields and deletes from the list- Then validates the data
-        polls_data = validated_data.pop('polls')
-        # Pulls and validates the data and creates it
-        questions = Question.objects.create(**validated_data)
-        # Saves the Question before saving the poll data to the question
-        for poll_data in polls_data:
-            Poll.objects.create(questions=questions, **poll_data)
-        return questions
+    # def create(self, validated_data):
+    #     # Pulls the "choice" data from the fields and deletes from the list- Then validates the data
+    #     polls_data = validated_data.pop('polls')
+    #     choices_data = validated_data.pop('choice')
+    #     # Pulls and validates the data and creates it
+    #     questions = Question.objects.create(**validated_data)
+    #     # Saves the Question before saving the poll data to the question
+    #     for choice_data in choices_data:
+    #         Choice.objects.create(questions=questions, **choice_data)
+    #     #return questions
+    #     return questions
 
 
 class PollCreate(generics.CreateAPIView):

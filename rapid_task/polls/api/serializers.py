@@ -1,6 +1,5 @@
 from rest_framework import serializers
-from rapid_task.polls.models import Poll, Question, Feedback
-from rapid_task.users.models import AnonymousUser
+from rapid_task.polls.models import Poll, Question, Feedback, Choice
 from django.conf import settings
 
 
@@ -11,20 +10,26 @@ class PollSerializer(serializers.ModelSerializer):
     class Meta:
         model = Poll
         fields = (
-            'question',
-            'choice_text',
+            'choice',
             'votes',
             'vote_date',
-            'user_session_id',
         )
 
 
-class QuestionSerializer(serializers.ModelSerializer):
+class ChoiceSerializer(serializers.ModelSerializer):
     polls = PollSerializer(many=True)
+    class Meta:
+        model = Choice
+        fields = ('choice_text', 'polls')
+
+
+class QuestionSerializer(serializers.ModelSerializer):
+    # polls = PollSerializer(many=True)
+    choice = ChoiceSerializer(many=True)
     # The Meta is a shortcut to help list the models and it's fields
     class Meta:
         model = Question
-        fields = ('question_text', 'pub_date','uuid', 'polls')
+        fields = ('question_text', 'pub_date', 'uuid', 'choice')
 
 
 """

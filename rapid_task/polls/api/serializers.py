@@ -1,11 +1,12 @@
 from rest_framework import serializers
 from rapid_task.polls.models import Poll, Question, Feedback, Choice
-from django.conf import settings
 
 
 """
 These are nested relationships. Able to create editable foreign keys and present them.
 """
+
+
 class PollSerializer(serializers.ModelSerializer):
     class Meta:
         model = Poll
@@ -18,6 +19,7 @@ class PollSerializer(serializers.ModelSerializer):
 
 class ChoiceSerializer(serializers.ModelSerializer):
     polls = PollSerializer(many=True)
+
     class Meta:
         model = Choice
         fields = ('choice_text', 'polls')
@@ -26,6 +28,7 @@ class ChoiceSerializer(serializers.ModelSerializer):
 class QuestionSerializer(serializers.ModelSerializer):
     # polls = PollSerializer(many=True)
     choice = ChoiceSerializer(many=True)
+
     # The Meta is a shortcut to help list the models and it's fields
     class Meta:
         model = Question
@@ -35,6 +38,8 @@ class QuestionSerializer(serializers.ModelSerializer):
 """
 These are regular simple serializers with no relationships
 """
+
+
 class FeedbackSerializer(serializers.ModelSerializer):
     class Meta:
         model = Feedback

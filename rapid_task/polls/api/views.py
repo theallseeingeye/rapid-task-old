@@ -1,4 +1,4 @@
-from rapid_task.polls.models import Question, Poll, Feedback, Choice
+from ..models import Question, Poll, Feedback
 from rapid_task.polls.api.serializers import PollSerializer, QuestionSerializer, FeedbackSerializer
 from rest_framework.permissions import AllowAny, IsAdminUser
 from rest_framework.authentication import SessionAuthentication
@@ -14,6 +14,7 @@ class FeedbackList(generics.ListCreateAPIView):
     permission_classes = (IsAdminUser, )
     authentication_classes = (SessionAuthentication, )
 
+
 class FeedbackCreate(generics.CreateAPIView):
     """
     Post:
@@ -21,7 +22,7 @@ class FeedbackCreate(generics.CreateAPIView):
     """
     queryset = Feedback.objects.all()
     serializer_class = FeedbackSerializer
-    permission_classes = (AllowAny,)
+    permission_classes = (AllowAny, )
 
 
 class QuestionList(generics.ListCreateAPIView):
@@ -36,7 +37,7 @@ class QuestionList(generics.ListCreateAPIView):
     queryset = Question.objects.all()
     serializer_class = QuestionSerializer
     lookup_field = 'uuid'
-    authentication_classes = (SessionAuthentication,)
+    authentication_classes = (SessionAuthentication, )
 
     # def create(self, validated_data):
     #     # Pulls the "choice" data from the fields and deletes from the list- Then validates the data
@@ -50,6 +51,11 @@ class QuestionList(generics.ListCreateAPIView):
     #     #return questions
     #     return questions
 
+    # def create(self, validated_data):
+    #     # polls_data = PollSerializer.objects.create(**validated_data)
+    #     # choices_data = validated_data.pop('choice')
+    #     questions = Question.objects.create(**validated_data)
+
 
 class PollCreate(generics.CreateAPIView):
     """
@@ -58,7 +64,7 @@ class PollCreate(generics.CreateAPIView):
     """
     queryset = Poll.objects.all()
     serializer_class = PollSerializer
-    permission_classes = (AllowAny,)
+    permission_classes = (AllowAny, )
 
     # # Session id tracking and vote status
     # def post_vote(request, vote):

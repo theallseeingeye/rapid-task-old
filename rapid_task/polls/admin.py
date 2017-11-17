@@ -25,6 +25,7 @@ class ChoiceAdmin(admin.ModelAdmin):
 class QuestionAdmin(admin.ModelAdmin):
     list_display = ('question_text', 'pub_date')
 
+
 # Register your models here.
 admin.site.register(Choice, ChoiceAdmin)
 admin.site.register(Question, QuestionAdmin)

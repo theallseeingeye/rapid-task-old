@@ -1,6 +1,6 @@
 from django.test import TestCase
 from ..models import Feedback
-from django.utils import timezone
+
 
 class FeedbackModelTest(TestCase):
     def setUp(self):

@@ -48,6 +48,11 @@ INSTALLED_APPS = [
     # Third Party Apps
     # 'admin_honeypot'
     'rest_framework',
+    'rest_framework.authtoken',
+
+    # Local Apps
+    'rapid_task.polls.apps.PollsConfig',
+    'rapid_task.users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [
@@ -132,9 +137,14 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 REST_FRAMEWORK = {
-    # Use Django's standard `django.contrib.auth` permissions,
-    # or allow read-only access for unauthenticated users.
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAdminUser'
-    ]
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAdminUser',
+    ),
+
 }
+
+# This prevents access to the stored data from JavaScript
+SESSION_COOKIE_HTTPONLY = True

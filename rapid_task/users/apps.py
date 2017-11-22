@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class RapidTaskConfig(AppConfig):
-    name = 'rapid_task'
+class UsersConfig(AppConfig):
+    name = 'rapid_task.users'

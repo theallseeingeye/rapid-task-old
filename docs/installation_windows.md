@@ -64,8 +64,15 @@ You will need to have your system setup with Python.
         PLEASE ALERT US! This is a SEVERE security risk and will need to create a new secret key.
     1. Save the file
     **NOTE: DO NOT ADD secrets.json TO VERSION CONTROL**
-
-
+1. (OPTIONAL) Setting up the Python Console
+    *Open the python console (not the one in terminal)
+    *Type the following into the python console:  
+    ````
+    import django
+    import os
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings.local")
+    django.setup()
+    
 Setup For NON-Pycharm
 ---------------------
 

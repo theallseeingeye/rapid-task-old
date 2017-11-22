@@ -19,7 +19,8 @@ Database
 * No Ephemeral data. This means any data that needs constant rewrites, which is not ideal for relational databases.
     Move the data to applications such as memcached or redis.
 * Every incoming data must be validated!
-
+* Any external/public sharing of data must be identified with an UUID. Hide the primary keys. Important for scalability of the database. Keep the original 
+    sequential primary keys that the database creates then add a new table with UUID's.
 
 Security
 --------
@@ -32,6 +33,10 @@ Security
 * Complex passwords does not equate to better security. Length vs complexity: https://xkcd.com/936/
 * Never display database sequential primary keys. It informs rivals or hackers of our volume. Use models.UUIDField for
     public lookups.
+* Never publicly display the database id's. This can lead to information leak of our company growth.
+    We want to add UUID's to our databases and only use those when the data is shared
+    publicly. 
+    https://blog.lightrail.com/prevent-business-intelligence-leaks-by-using-uuids-instead-of-database-ids-on-urls-and-in-apis-17f15669fd2e
 
 Features to Consider for the Future
 -----------------------------------
@@ -48,7 +53,12 @@ The installed packages must be written here with explanation for it's use. You m
 * Django REST Framework 3.7.1   
     This framework sets up the Django project nicely for building web APIs. Required for React.js and third parties.
     Documentation: http://www.django-rest-framework.org/
-    * License: BSD 2 or "Simplified BSD License" 
-    
+    * License: BSD 2 or "Simplified BSD License"   
+* markdown-2.6.9  
+    Markdown support for the browsable REST API.  
+    * License: BSD 
+* django-filter-1.1.0  
+    Filtering support for REST API. Allows users to declaratively add dynamic QuerySet Filtering from URL patterns.  
+    * License: BSD
     
     

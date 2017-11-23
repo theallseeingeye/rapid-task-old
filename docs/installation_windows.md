@@ -100,4 +100,6 @@ Setup for Front-end
 You will need to have node.js installed. You need [version 8](https://nodejs.org/dist/v8.9.1/node-v8.9.1-x64.msi) from
 https://nodejs.org/en/
 
+In Pycharm: under plugins, install nodejs by Jetbrains
+
 

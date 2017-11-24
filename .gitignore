@@ -374,6 +374,12 @@ pip-selfcheck.json
 .env.test.local
 .env.production.local
 
+
+### Addons
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+0001_initial.py
+/htmlcov
+.coverage
+/backend/.idea/

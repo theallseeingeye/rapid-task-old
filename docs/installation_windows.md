@@ -3,8 +3,8 @@ HOW TO INSTALL RAPID TASK FOR WINDOWS
 
 Welcome to the installation manual to have Rapid Task up and running! 
 
-Setup for Pycharm
------------------
+Setup for Pycharm Backend
+-------------------------
 You will need to have your system setup with Python.  
     Instructions are [here](/docs/python_installation.md) for these following steps:
 1. Have Python 3.6.3 installed. 
@@ -73,8 +73,8 @@ You will need to have your system setup with Python.
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings.local")
     django.setup()
     
-Setup For NON-Pycharm
----------------------
+Setup For NON-Pycharm Backend
+-----------------------------
 
 You will need to have your system setup with Python and a working virtual environment.  
     Instructions are [here](/docs/python_installation.md) for these following steps:
@@ -88,12 +88,18 @@ You will need to have your system setup with Python and a working virtual enviro
 
 3) Download the Rapid Task github repository from www.github.com/rapidtask/website
 
-
-
-
 **NEXT STEPS**
 1) Activate your virtualenv
 2) In the directory you wish to install, using command-line:
     pip install -r /website/requirements/local.txt
+
+
+Setup for Front-end
+-------------------
+
+You will need to have node.js installed. You need [version 8](https://nodejs.org/dist/v8.9.1/node-v8.9.1-x64.msi) from
+https://nodejs.org/en/
+
+In Pycharm: under plugins, install nodejs by Jetbrains
 
 

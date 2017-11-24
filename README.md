@@ -1,4 +1,4 @@
-![Rapid Task Logo](/docs/images/logo.png)
+![Rapid Task Logo](backend/docs/images/logo.png)
 
 Welcome to Rapid Task's Manual
 ==============================
@@ -43,11 +43,23 @@ Downloading requirements files:
   * Test: ```pip install -r requirements/test.txt```
   * Staging: ```pip install -r requirements/staging.txt```
   * Production: ```pip install -r requirements/production.txt```
-
+  
 Updating to the requirement files:
 * Ensure they are requirements that are used- not cluttered with junk
    * In command line in your virtual environment: pip freeze > requirements/local.txt
       * Can replace local.txt with other versions such as test, staging and production.
+
+## Running Servers Locally
+
+Type all of these in the terminal:
+
+### Backend Server
+* Make sure you are in the backend project folder- ```python manage.py runserver```  
+
+### Frontend Server
+* Make sure you are in the frontend project folder- ```npm run start```
+
+
 ## Running Tests
 
 If you haven't yet installed coverage.py: pip install coverage

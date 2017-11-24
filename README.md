@@ -1,4 +1,4 @@
-![Rapid Task Logo](backend/docs/images/logo.png)
+![Rapid Task Logo](/docs/images/logo.png)
 
 Welcome to Rapid Task's Manual
 ==============================

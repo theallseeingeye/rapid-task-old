@@ -37,11 +37,12 @@ Security
     We want to add UUID's to our databases and only use those when the data is shared
     publicly. 
     https://blog.lightrail.com/prevent-business-intelligence-leaks-by-using-uuids-instead-of-database-ids-on-urls-and-in-apis-17f15669fd2e
+* JSON JWT Tokens will be used for both server and client side servers.  
 
 Features to Consider for the Future
 -----------------------------------
 We want to keep this project scalable. Keep these features in mind as we add sections/modules to the project and ensure
-that they can accommodate these in the future.
+that they can accommodate these in the future.  
     * We may want to consider implementing two-factor authentication option for users who wants more security.
 
 
@@ -60,5 +61,16 @@ The installed packages must be written here with explanation for it's use. You m
 * django-filter-1.1.0  
     Filtering support for REST API. Allows users to declaratively add dynamic QuerySet Filtering from URL patterns.  
     * License: BSD
-    
-    
+* psycopg2 2.7.3.2
+    This is a PostgreSQL adapter for the python. Connects the database, postgres.
+    * License: GPL
+* django-rest-framework-jwt 1.11.0   
+    This attaches the JWT tokens throught the REST Framework. This includes the pyJWT. http://getblimp.github.io/django-rest-framework-jwt/
+    * License: MIT
+* djoser  
+    This is a package that handles the basic registration and user authentication info.
+    https://github.com/sunscrapers/djoser  
+    * License: MIT
+* django-admin-honeypot  
+    This is to hide the default admin link for the django. This will log anyone who tries to access  /admin/ site  
+    * License: MIT

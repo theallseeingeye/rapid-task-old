@@ -1,5 +1,9 @@
+.Center {
+  text-align: center;
+  color: #881116;
+  font-size: 1.3em; }
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-}
+  font-family: sans-serif; }

@@ -34,10 +34,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
-
 INSTALLED_APPS = [
+    # Django Defaults
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -45,16 +44,18 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # Local Apps
+    'rapid_task.polls.apps.PollsConfig',
+    'rapid_task.profiles.apps.ProfilesConfig',
+    'rapid_task.authentication.apps.AuthenticationConfig',
+    'rapid_task.core.apps.CoreConfig',
+
     # Third Party Apps
     'admin_honeypot',
     'rest_framework',
     'rest_framework.authtoken',
     'djoser',
 
-    # Local Apps
-    'rapid_task.polls.apps.PollsConfig',
-    'rapid_task.users.apps.UsersConfig',
-    'rapid_task.authentication.apps.AuthenticationConfig',
 ]
 
 MIDDLEWARE = [

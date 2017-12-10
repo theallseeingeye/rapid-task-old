@@ -9,9 +9,10 @@ RULES
 
 Styling
 -------
-*This project must adhere and follow the **PEP 8** style guide.
+* This project must adhere and follow the **PEP 8** style guide.
         For more info see http://legacy.python.org/dev/peps/pep-0008/  
-*Every time we add code, we must make sure our test coverage is improving, not decreasing.
+* Every time we add code, we must make sure our test coverage is improving, not decreasing.  
+* Use Google's Styling guide: https://google.github.io/styleguide/htmlcssguide.html
 
 Database
 --------
@@ -49,7 +50,9 @@ that they can accommodate these in the future.
 Installed Packages Explanation
 ------------------------------
 The installed packages must be written here with explanation for it's use. You must state the license use.
-        *Before adding any packages, they must have a license and is approved by our Management*
+        *Before adding any packages, they must have a license and is approved by our Management*  
+        
+**BACKEND**
 
 * Django REST Framework 3.7.1   
     This framework sets up the Django project nicely for building web APIs. Required for React.js and third parties.
@@ -68,9 +71,26 @@ The installed packages must be written here with explanation for it's use. You m
     This attaches the JWT tokens throught the REST Framework. This includes the pyJWT. http://getblimp.github.io/django-rest-framework-jwt/
     * License: MIT
 * djoser  
-    This is a package that handles the basic registration and user authentication info.
+    This is a package that handles the basic registration and user authentication info in REST format.
     https://github.com/sunscrapers/djoser  
     * License: MIT
 * django-admin-honeypot  
     This is to hide the default admin link for the django. This will log anyone who tries to access  /admin/ site  
     * License: MIT
+    
+**FRONTEND**  
+
+* create-react-app  
+    This is a package that is already put together to speed up the production and no building is required.  
+    It is managed by Facebook.
+    * License: MIT  
+* node-sass-chokidar  
+    A SASS add on for the css handling. The original install of node-sass has performance issues with the virtual
+    environment. The chokidar forked version fixes the issues with node-sass.  
+    * License: MIT
+* npm-run-all  
+    The official npm run-script command cannot run multiple scripts. We want to run the sass preprocessor watch
+    while developing, so this allows us to run both scripts at the same time with && in the scripts.
+    https://www.npmjs.com/package/npm-run-all  
+    * License: MIT
+    

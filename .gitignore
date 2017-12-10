@@ -374,6 +374,10 @@ pip-selfcheck.json
 .env.test.local
 .env.production.local
 
+# To hide the pre-processed SCSS to CSS files. This is not needed for our source code
+src/**/*.css
+
+
 
 ### Addons
 npm-debug.log*

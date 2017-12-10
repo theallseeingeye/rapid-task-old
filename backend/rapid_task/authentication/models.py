@@ -8,6 +8,7 @@ from django.contrib.auth.models import (
     AbstractBaseUser, BaseUserManager, PermissionsMixin
 )
 from django.db import models
+from ..core.models import TimeStampedModel
 
 
 class AccountManager(BaseUserManager):
@@ -23,10 +24,10 @@ class AccountManager(BaseUserManager):
     def create_user(self, username, email, password=None):
         """Create and return a `User` with an email, username and password."""
         if username is None:
-            raise TypeError('Users must have a username.')
+            raise ValueError('Users must have a username.')
 
         if email is None:
-            raise TypeError('Users must have an email address.')
+            raise ValueError('Users must have an email address.')
 
         user = self.model(
             username=username,
@@ -52,11 +53,11 @@ class AccountManager(BaseUserManager):
         return user
 
 
-class Account(AbstractBaseUser, PermissionsMixin):
+class Account(AbstractBaseUser, TimeStampedModel, PermissionsMixin):
     # Each `User` needs a human-readable unique identifier that we can use to
     # represent the `User` in the UI. We want to index this column in the
     # database to improve lookup performance.
-    username = models.CharField(db_index=True, max_length=255, unique=True)
+    username = models.CharField(db_index=True, max_length=60, unique=True)
 
     # To hide the database id numbers
     uuid = models.UUIDField(db_index=True, default=uuid.uuid4, editable=False)
@@ -65,7 +66,7 @@ class Account(AbstractBaseUser, PermissionsMixin):
     # themselves when logging in. Since we need an email address for contacting
     # the user anyways, we will also use the email for logging in because it is
     # the most common form of login credential at the time of writing.
-    email = models.EmailField(db_index=True, unique=True)
+    email = models.EmailField(db_index=True, max_length=100, unique=True)
 
     # When a user no longer wishes to use our platform, they may try to delete
     # their account. That's a problem for us because the data we collect is
@@ -83,20 +84,14 @@ class Account(AbstractBaseUser, PermissionsMixin):
     # Allows the user to have admin rights to the Django admin site. Defaults to false
     # is_admin = models.BooleanField(default=False)
 
-    # A timestamp representing when this object was created.
-    date_created = models.DateTimeField(auto_now_add=True)
-
-    # A timestamp reprensenting when this object was last updated.
-    date_modified = models.DateTimeField(auto_now=True)
-
-    # More fields required by Django when specifying a custom user model.
-
     # The `USERNAME_FIELD` property tells us which field we will use to log in.
     # In this case we want it to be the email field.
     USERNAME_FIELD = 'email'
 
-    # Contains all the fields that are required. Password is already included.
+    # Contains all the fields that are required. Do NOT include password and USERNAME_FIELD.
     REQUIRED_FIELDS = ['username']
+
+    EMAIL_FIELD = 'email'
 
     # Tells Django that the UserManager class defined above should manage
     # objects of this type.

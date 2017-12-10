@@ -20,7 +20,7 @@ from django.conf.urls import url, include
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 api_urls = [
-    url(r'^', include('rapid_task.polls.api.urls')),
+    # url(r'^', include('rapid_task.polls.api.urls')),
     url(r'^auth/', include('djoser.urls')),
     url(r'^auth/', include('djoser.urls.jwt'))
 ]

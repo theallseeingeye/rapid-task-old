@@ -1,43 +1,43 @@
-from ..models import Question, Poll, Feedback
-from rapid_task.polls.api.serializers import PollSerializer, QuestionSerializer, FeedbackSerializer
-from rest_framework.permissions import AllowAny, IsAdminUser
-from rest_framework.authentication import SessionAuthentication
-from rest_framework import generics
+# from ..models import Question, Feedback
+# from ..api.serializers import FeedbackSerializer
+# from rest_framework.permissions import AllowAny, IsAdminUser
+# from rest_framework.authentication import SessionAuthentication
+# from rest_framework import generics
+#
+#
+# class FeedbackList(generics.ListCreateAPIView):
+#     """
+#     Shows the list of all the feedbacks that were received
+#     """
+#     queryset = Feedback.objects.all()
+#     serializer_class = FeedbackSerializer
+#     permission_classes = (IsAdminUser, )
+#     authentication_classes = (SessionAuthentication, )
+#
+#
+# class FeedbackCreate(generics.CreateAPIView):
+#     """
+#     Post:
+#     Creates a new entry of feedback
+#     """
+#     queryset = Feedback.objects.all()
+#     serializer_class = FeedbackSerializer
+#     permission_classes = (AllowAny, )
 
 
-class FeedbackList(generics.ListCreateAPIView):
-    """
-    Shows the list of all the feedbacks that were received
-    """
-    queryset = Feedback.objects.all()
-    serializer_class = FeedbackSerializer
-    permission_classes = (IsAdminUser, )
-    authentication_classes = (SessionAuthentication, )
-
-
-class FeedbackCreate(generics.CreateAPIView):
-    """
-    Post:
-    Creates a new entry of feedback
-    """
-    queryset = Feedback.objects.all()
-    serializer_class = FeedbackSerializer
-    permission_classes = (AllowAny, )
-
-
-class QuestionList(generics.ListCreateAPIView):
-    """
-    Get:
-    Returns a list of all the poll answers to each question
-
-    Post:
-    Create a new question
-    *Nested relationship created* Create a new poll result
-    """
-    queryset = Question.objects.all()
-    serializer_class = QuestionSerializer
-    lookup_field = 'uuid'
-    authentication_classes = (SessionAuthentication, )
+# class QuestionList(generics.ListCreateAPIView):
+#     """
+#     Get:
+#     Returns a list of all the poll answers to each question
+#
+#     Post:
+#     Create a new question
+#     *Nested relationship created* Create a new poll result
+#     """
+#     queryset = Question.objects.all()
+#     serializer_class = QuestionSerializer
+#     lookup_field = 'uuid'
+#     authentication_classes = (SessionAuthentication, )
 
     # def create(self, validated_data):
     #     # Pulls the "choice" data from the fields and deletes from the list- Then validates the data
@@ -57,14 +57,14 @@ class QuestionList(generics.ListCreateAPIView):
     #     questions = Question.objects.create(**validated_data)
 
 
-class PollCreate(generics.CreateAPIView):
-    """
-    Post:
-    Creates the new poll result
-    """
-    queryset = Poll.objects.all()
-    serializer_class = PollSerializer
-    permission_classes = (AllowAny, )
+# class PollCreate(generics.CreateAPIView):
+#     """
+#     Post:
+#     Creates the new poll result
+#     """
+#     queryset = Poll.objects.all()
+#     serializer_class = PollSerializer
+#     permission_classes = (AllowAny, )
 
     # # Session id tracking and vote status
     # def post_vote(request, vote):

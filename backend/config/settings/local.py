@@ -17,7 +17,6 @@ ALLOWED_HOSTS = []
 
 # Adding the '+' in front allows additional fields to the list
 INSTALLED_APPS += [
-
     # This auto imports all the installed apps into the environment- python manage.py shell_plus
     'django_extensions',
 ]

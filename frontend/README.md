@@ -478,11 +478,11 @@ This project setup uses [Webpack](https://webpack.js.org/) for handling all asse
 
 ```js
 import React, { Component } from 'react';
-import './Button.css'; // Tell Webpack that Button.js uses these styles
+import './Button.css'; sass
 
 class Button extends Component {
   render() {
-    // You can use them as regular CSS styles
+    sass
     return <div className="Button" />;
   }
 }
@@ -572,7 +572,7 @@ To enable importing files without using relative paths, you can add the  `--incl
 This will allow you to do imports like
 
 ```scss
-@import 'styles/_colors.scss'; // assuming a styles directory under src/
+@import 'styles/_colors.scss'; sass
 @import 'nprogress/nprogress'; // importing a css file from the nprogress node module
 ```
 

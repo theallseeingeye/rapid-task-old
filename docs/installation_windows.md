@@ -127,7 +127,9 @@ You may need to change some settings in the editor to help make your work flow e
 ```File/Settings/Editor/Codestyles```  
     * Under CSS, SCSS and JS: Change all the tabs, spaces and continuation indent to two spaces.  
 * The npm start uses a watcher and the IntelliJ has a setting that breaks it. We need to turn it off.  
-    * Go to: ```File/Settings/Appearance & Behavior/System Settings``` and uncheck the box for: ```use "safe write"```. 
+    * Go to: ```File/Settings/Appearance & Behavior/System Settings``` and *uncheck* the box for: ```use "safe write"```.  
+* Install the styled-components plugin so the syntax readers can assist.  
+    * Go to: ```File/Settings/Plugins``` and search "styled-components" by webstorm and install. 
 
         
 ###Installation Steps
@@ -141,5 +143,5 @@ https://nodejs.org/en/
 1. Install dependencies.   
     * I think they will be already included in the packages as they were already installed. If not. Talk to Jay and we
     will write up a way to have all the requirements installed.
-
+    - added styled-components.
 

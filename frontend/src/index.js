@@ -1,11 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// This imports the main complied css sass preprocessed from SCSS.
 import './index.css';
-import FrontPage from './containers/frontpage/frontpage.js';
+import App from './App';
+import registerServiceWorker from './registerServiceWorker';
 
-
-import registerServiceWorker from './utils/registerServiceWorker';
-
-ReactDOM.render(<FrontPage />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();

@@ -1,6 +1,6 @@
 {
-  "short_name": "Rapid Task",
-  "name": "Rapid Task Application",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
     {
       "src": "favicon.ico",

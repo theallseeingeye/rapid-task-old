@@ -9,10 +9,17 @@ RULES
 
 Styling
 -------
+
+####Backend Styling
 * This project must adhere and follow the **PEP 8** style guide.
         For more info see http://legacy.python.org/dev/peps/pep-0008/  
 * Every time we add code, we must make sure our test coverage is improving, not decreasing.  
+
+####Frontend Styling
+* Follow the BEM Methodology. This is a standardized guide to keep our code organized, clean and dry. 
+    https://en.bem.info/methodology/
 * Use Google's Styling guide: https://google.github.io/styleguide/htmlcssguide.html
+
 
 Database
 --------

@@ -5,10 +5,10 @@ class App extends Component {
     return (
       <div>
         <header>
-          <h1>Welcome to React</h1>
+          <h1>Welcome to Rapid Task</h1>
         </header>
         <p>
-          To get started, edit <code>src/App.js</code> and save to reload.
+          This will be the future of RAPID TASK!
         </p>
       </div>
     );

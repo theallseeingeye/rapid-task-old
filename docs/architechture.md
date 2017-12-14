@@ -87,17 +87,40 @@ The installed packages must be written here with explanation for it's use. You m
     
 **FRONTEND**  
 
-* create-react-app  
-    This is a package that is already put together to speed up the production and no building is required.  
-    It is managed by Facebook.
-    * License: MIT  
-* node-sass-chokidar  
-    A SASS add on for the css handling. The original install of node-sass has performance issues with the virtual
-    environment. The chokidar forked version fixes the issues with node-sass.  
-    * License: MIT
-* npm-run-all  
-    The official npm run-script command cannot run multiple scripts. We want to run the sass preprocessor watch
-    while developing, so this allows us to run both scripts at the same time with && in the scripts.
-    https://www.npmjs.com/package/npm-run-all  
-    * License: MIT
+* webpack  
+    To compile javascipt into one bundle.js  
+   * List of plug-ins:  
+        * clean-webpack-plugin
+            * to clean out the dist folder before every build
+        * css-loader
+            * Helps with @import and url()
+        * file-loader
+            * Tells webpack to produce the file and return public URL
+        * html-webpack-plugin
+            * Helps create the HTML files and templates one
+        * style-loader
+            * Adds CSS to the dom with < Style > tag
+        * uglifyjs-webpack-plugin
+            * Parse and compresses the JS
+        * webpack-dev-server
+            * A small server that provides live loading- Development only
+        * webpack-merge
+            * Merges configuration objects 
+             
+   License: MIT
+       
+* babel  
+    All required for React:
+    * babel-core
+    * babel-preset-env
+    * babel-preset-react
     
+    License: MIT  
+    
+* react  
+    The JavaScript library   
+    License: MIT
+    
+* styled-components  
+    New way of styling css-in-JS  
+    License: MIT    

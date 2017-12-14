@@ -8,6 +8,7 @@ module.exports = merge(common, {
   // Leave as '' for max speed. See for more details/options: https://webpack.js.org/configuration/devtool/
   //devtool: 'source-map',
   plugins: [
+    // Shrinks down the spaces and file size
     new UglifyJSPlugin({
       sourceMap: true
     }),

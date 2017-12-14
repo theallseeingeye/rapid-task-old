@@ -81,8 +81,6 @@ To look at the generated html report (after using html) go to website/htmlcov/in
 
 Frontend
 --------
-The front end is built on Facebook's create-react-app build. The user guide will help direct you to do proper testing.
-[create-react-app manual](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#advanced-configuration)
 
 The tests and coverage uses Jest: https://facebook.github.io/jest/   
 For tests, type in the terminal: ```npm test```   

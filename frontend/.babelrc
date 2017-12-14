@@ -1,5 +1,10 @@
 {
+  "plugins": [
+    "babel-plugin-styled-components"
+  ],
   "presets": [
-    "env", "react"
+    "env",
+    "react",
+    "es2015"
   ]
 }

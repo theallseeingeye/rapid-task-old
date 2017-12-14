@@ -87,7 +87,7 @@ The installed packages must be written here with explanation for it's use. You m
     
 **FRONTEND**  
 
-* webpack  
+* Webpack  
     To compile javascipt into one bundle.js  
    * List of plug-ins:  
         * clean-webpack-plugin
@@ -109,18 +109,26 @@ The installed packages must be written here with explanation for it's use. You m
              
    License: MIT
        
-* babel  
+* Babel  
     All required for React:
     * babel-core
     * babel-preset-env
     * babel-preset-react
-    
-    License: MIT  
-    
-* react  
-    The JavaScript library   
-    License: MIT
-    
-* styled-components  
-    New way of styling css-in-JS  
+    * babel-jest
     License: MIT    
+* React  
+    The JavaScript library   
+    License: MIT 
+* Styled-Components  
+    New way of styling css-in-JS  
+    License: MIT
+    * babel-plugin-styled-components
+        * For improvements Server Side Rendering and Minification.
+    * jest-styled-components
+        * allows testing of styling  
+* Jest  
+   Testing/coverage JavaScript Testing  
+   * react-test-renderer  
+        * Takes a snapshot of the DOM tree rendered by React DOM    
+        
+   License: MIT - Facebook      

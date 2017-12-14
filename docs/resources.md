@@ -6,7 +6,7 @@ This is where we place resourceful links that can be referenced for future use.
 Table of Contents
 -----------------
 [CSS/SASS/SCSS](#CSS/SASS/SCSS)
-
+[Compatibility Check](#Compatibility-Check)
 
 
 
@@ -43,3 +43,6 @@ Table of Contents
 [BEM](https://en.bem.info/methodology/)
 * Official BEM methodology documentation
    
+### Compatibility Check
+[Javascript Compatibility Check](https://caniuse.com/#home)
+* Checks compatibility across browsers, with ages of versions.

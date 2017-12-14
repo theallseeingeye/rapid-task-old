@@ -13,7 +13,6 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
 from django.contrib import admin
 from django.conf.urls import url, include
 
@@ -21,17 +20,21 @@ from django.conf.urls import url, include
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 api_urls = [
-    url(r'^', include('rapid_task.polls.api.urls')),
-    url(r'^users/', include('rapid_task.users.api.urls', namespace='users')),
+    # url(r'^', include('rapid_task.polls.api.urls')),
+    url(r'^auth/', include('djoser.urls')),
+    url(r'^auth/', include('djoser.urls.jwt'))
 ]
 
 
 urlpatterns = [
     # url patterns with honey-pot admin page
-    # url(r'^admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
-    # url(r'^secret/', include(admin.site.urls)),
-    url(r'^admin/', admin.site.urls),
+    url(r'^admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
+    # This is the new URL for the admin
+    url(r'^rapidtaskadmin/', include(admin.site.urls)),
+
+    # Original admin url for django
+    # url(r'^admin/', admin.site.urls),
+
     # REST
     url(r'^', include(api_urls)),
 ]
-

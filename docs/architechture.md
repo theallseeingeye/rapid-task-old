@@ -9,9 +9,17 @@ RULES
 
 Styling
 -------
-*This project must adhere and follow the **PEP 8** style guide.
+
+####Backend Styling
+* This project must adhere and follow the **PEP 8** style guide.
         For more info see http://legacy.python.org/dev/peps/pep-0008/  
-*Every time we add code, we must make sure our test coverage is improving, not decreasing.
+* Every time we add code, we must make sure our test coverage is improving, not decreasing.  
+
+####Frontend Styling
+* Follow the BEM Methodology. This is a standardized guide to keep our code organized, clean and dry. 
+    https://en.bem.info/methodology/
+* Use Google's Styling guide: https://google.github.io/styleguide/htmlcssguide.html
+
 
 Database
 --------
@@ -37,18 +45,21 @@ Security
     We want to add UUID's to our databases and only use those when the data is shared
     publicly. 
     https://blog.lightrail.com/prevent-business-intelligence-leaks-by-using-uuids-instead-of-database-ids-on-urls-and-in-apis-17f15669fd2e
+* JSON JWT Tokens will be used for both server and client side servers.  
 
 Features to Consider for the Future
 -----------------------------------
 We want to keep this project scalable. Keep these features in mind as we add sections/modules to the project and ensure
-that they can accommodate these in the future.
+that they can accommodate these in the future.  
     * We may want to consider implementing two-factor authentication option for users who wants more security.
 
 
 Installed Packages Explanation
 ------------------------------
 The installed packages must be written here with explanation for it's use. You must state the license use.
-        *Before adding any packages, they must have a license and is approved by our Management*
+        *Before adding any packages, they must have a license and is approved by our Management*  
+        
+**BACKEND**
 
 * Django REST Framework 3.7.1   
     This framework sets up the Django project nicely for building web APIs. Required for React.js and third parties.
@@ -60,5 +71,64 @@ The installed packages must be written here with explanation for it's use. You m
 * django-filter-1.1.0  
     Filtering support for REST API. Allows users to declaratively add dynamic QuerySet Filtering from URL patterns.  
     * License: BSD
+* psycopg2 2.7.3.2
+    This is a PostgreSQL adapter for the python. Connects the database, postgres.
+    * License: GPL
+* django-rest-framework-jwt 1.11.0   
+    This attaches the JWT tokens throught the REST Framework. This includes the pyJWT. http://getblimp.github.io/django-rest-framework-jwt/
+    * License: MIT
+* djoser  
+    This is a package that handles the basic registration and user authentication info in REST format.
+    https://github.com/sunscrapers/djoser  
+    * License: MIT
+* django-admin-honeypot  
+    This is to hide the default admin link for the django. This will log anyone who tries to access  /admin/ site  
+    * License: MIT
     
-    
+**FRONTEND**  
+
+* Webpack  
+    To compile javascipt into one bundle.js  
+   * List of plug-ins:  
+        * clean-webpack-plugin
+            * to clean out the dist folder before every build
+        * css-loader
+            * Helps with @import and url()
+        * file-loader
+            * Tells webpack to produce the file and return public URL
+        * html-webpack-plugin
+            * Helps create the HTML files and templates one
+        * style-loader
+            * Adds CSS to the dom with < Style > tag
+        * uglifyjs-webpack-plugin
+            * Parse and compresses the JS
+        * webpack-dev-server
+            * A small server that provides live loading- Development only
+        * webpack-merge
+            * Merges configuration objects 
+             
+   License: MIT
+       
+* Babel  
+    All required for React:
+    * babel-core
+    * babel-preset-env
+    * babel-preset-react
+    * babel-jest
+    License: MIT    
+* React  
+    The JavaScript library   
+    License: MIT 
+* Styled-Components  
+    New way of styling css-in-JS  
+    License: MIT
+    * babel-plugin-styled-components
+        * For improvements Server Side Rendering and Minification.
+    * jest-styled-components
+        * allows testing of styling  
+* Jest  
+   Testing/coverage JavaScript Testing  
+   * react-test-renderer  
+        * Takes a snapshot of the DOM tree rendered by React DOM    
+        
+   License: MIT - Facebook      

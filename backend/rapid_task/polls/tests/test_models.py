@@ -9,6 +9,7 @@ class FeedbackModelTest(TestCase):
         Feedback.objects.create(email='jack@gmail.com', name='jack', content='Lots of content here')
 
     def test_feedback_data_save(self):
+        pass
         """
         Test to see if the data saves properly to the Feedback Model
         """

@@ -1,4 +1,4 @@
-![Rapid Task Logo](backend/docs/images/logo.png)
+![Rapid Task Logo](/docs/images/logo.png)
 
 Welcome to Rapid Task's Manual
 ==============================
@@ -19,14 +19,15 @@ Table of Contents
 
 
 
-## Installation 
+# Installation 
+First time setup will need to follow the installation documentation:
+[Windows Installation](/docs/installation_windows.md) or [OS X Installation](/docs/installation_osx.md)
 
 
-Please follow the installation documentation: [Windows Installation](/docs/installation_windows.md) or [OS X Installation](/docs/installation_osx.md)
+# Development Mode <a id="developmentmode"></a>
 
-
-## Development Mode
-
+Backend
+-------
 During development the local, testing, staging and production settings will be different. This is due ease of developing
 on localhosts and requires different setup from production servers. You will need to make sure you are working in the
 right settings at the appropriate stage of the development. Here are the **command lines** to set the right settings 
@@ -49,28 +50,46 @@ Updating to the requirement files:
    * In command line in your virtual environment: pip freeze > requirements/local.txt
       * Can replace local.txt with other versions such as test, staging and production.
 
-## Running Servers Locally
+#### Running Backend Server
+* Make sure you are in the backend project folder. The root is /backend.
+    * Terminal command: ```python manage.py runserver```  
 
-Type all of these in the terminal:
+Frontend 
+--------
 
-### Backend Server
-* Make sure you are in the backend project folder- ```python manage.py runserver```  
-
-### Frontend Server
-* Make sure you are in the frontend project folder- ```npm run start```
+#### Running Frontend Server
+* Make sure you are in the frontend project folder directory. The root is /frontend.
+    * Terminal command: ```npm run start```
 
 
-## Running Tests
+# Running Tests <a id="running-tests"></a>
 
-If you haven't yet installed coverage.py: pip install coverage
-    * For a list of commands type in the command-line:
-        coverage help
-Start and run a test at the command-line in the project root directory:
-    coverage run manage.py test --settings=config.settings.test
-For test results without admin:
-    coverage html --omit="admin.py"
+Backend
+-------
+If you haven't yet installed coverage.py: ```pip install coverage```  
+
+For a list of commands:  ```coverage help```  
+        
+Start and run a test at the command-line in the project root directory:   
+   * ```coverage run manage.py test --settings=config.settings.test``` 
+     
+For test results without admin:  
+   * ```coverage html --omit="admin.py"```  
+        * Then this will create a directory with html that has the coverage report.
+   
 To look at the generated html report (after using html) go to website/htmlcov/index.html. it shows the coverage report.
 
+Frontend
+--------
+
+The tests and coverage uses Jest: https://facebook.github.io/jest/   
+For tests, type in the terminal: ```npm test```   
+For coverage, type in the terminal: ```npm test -- --coverage```  
+
+Snapshots will take a copy of a js styling. When you run the test again it will look at the taken snap shot and compare
+to the one just run. You can verify if it was intentional or not. If wanting a change: jest -u to overwrite the existing
+snapshot.
+      
 
 ## Deployment <a id="deployment"></a>
 
@@ -79,7 +98,7 @@ long it will take. Backup the data before doing any kind of migrations.
 
 ---
 
-## Appendix
+# Appendix
 
 #### Editing these documents?
 

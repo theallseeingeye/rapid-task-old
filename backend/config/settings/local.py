@@ -2,6 +2,7 @@
 These settings are for local development production
 """
 
+# Extending from the base settings
 from .base import *
 
 # Quick-start development settings - unsuitable for production
@@ -12,9 +13,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
+# Adding the '+' in front allows additional fields to the list
+INSTALLED_APPS += [
+    # This auto imports all the installed apps into the environment- python manage.py shell_plus
+    'django_extensions',
+]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -52,16 +57,16 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'intagliodb',
-#         'USER': 'postgres',
-#         'PASSWORD': LOCAL_DB_PASSWORD,
-#         'HOST': 'localhost',
-#         'PORT': '5432',
-#     },
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'rapidtaskdb',
+        'USER': 'postgres',
+        'PASSWORD': get_secret('DATABASE_PASSWORD'),
+        'HOST': 'localhost',
+        'PORT': '5432',
+    },
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -101,12 +106,3 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.TokenAuthentication',
-    ),
-    'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAdminUser',
-    ),
-    'TEST_REQUEST_DEFAULT_FORMAT': 'json',
-}

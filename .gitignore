@@ -11,7 +11,7 @@ __pycache__/
 .Python
 build/
 develop-eggs/
-dist/
+frontend/dist/
 downloads/
 eggs/
 .eggs/
@@ -373,6 +373,10 @@ pip-selfcheck.json
 .env.development.local
 .env.test.local
 .env.production.local
+
+# To hide the pre-processed SCSS to CSS files. This is not needed for our source code
+src/**/*.css
+
 
 
 ### Addons

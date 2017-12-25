@@ -58,8 +58,10 @@ Frontend
 --------
 
 #### Running Frontend Server
-* Make sure you are in the frontend project folder directory. The root is /frontend.
-    * Terminal command: ```npm run start```
+* Make sure you are not in an virtual environment. If you are, type ```deactivate``` in the terminal.
+* Check that you are in the frontend project folder directory. The root is /frontend.
+* Then use this command to start the server:
+    * Terminal command: ```npm run start``` or ```yarn start```
 
 
 # Running Tests <a id="running-tests"></a>

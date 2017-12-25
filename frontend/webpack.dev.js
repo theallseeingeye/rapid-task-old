@@ -7,10 +7,19 @@ module.exports = merge(common, {
   devServer: {
     contentBase: './dist',
     port: 3000,
-    hot: true
+    hot: true,
+    host: '192.168.0.12',
   },
   plugins: [
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
   ],
+  module: {
+    loaders: [
+      {exclude: ['node_modules'], loader: 'babel', test: /\.jsx?$/},
+      {loader: 'style-loader!css-loader', test: /\.css$/},
+      {loader: 'url-loader', test: /\.gif$/},
+      {loader: 'file-loader', test: /\.(ttf|eot|svg)$/},
+    ],
+  },
 });

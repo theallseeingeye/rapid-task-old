@@ -5,8 +5,9 @@ This is where we place resourceful links that can be referenced for future use.
 
 Table of Contents
 -----------------
-[CSS/SASS/SCSS](#CSS/SASS/SCSS)
-[Compatibility Check](#Compatibility-Check)
+[CSS/SASS/SCSS](#CSS/SASS/SCSS)  
+[Compatibility Check](#Compatibility-Check)  
+[Other Web Tools](#Other-Web-Tools)  
 
 
 
@@ -46,3 +47,9 @@ Table of Contents
 ### Compatibility Check
 [Javascript Compatibility Check](https://caniuse.com/#home)
 * Checks compatibility across browsers, with ages of versions.
+
+
+### Other Web Tools
+
+[Favicon Creator](https://realfavicongenerator.net/)
+* Automatically scales, sizes and creates versions for different sites.

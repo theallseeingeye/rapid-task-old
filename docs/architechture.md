@@ -16,8 +16,18 @@ Styling
 * Every time we add code, we must make sure our test coverage is improving, not decreasing.  
 
 ####Frontend Styling
-* Follow the BEM Methodology. This is a standardized guide to keep our code organized, clean and dry. 
-    https://en.bem.info/methodology/
+* We will be using Styled-Components with react to implement css in the JavaScript. This decision will help keep the 
+data contained by each React Components. The css names will have unique id's, which avoids naming conflicts. The Theme
+Provider is implemented for global styles. Injected a normalized css
+styling to the whole app. Three levels of styling: ```Injected Global > global-styles/DefaultTheme.js > local component
+styling```. The Styled-Components can become powerful by using JavaScript functions with css.  
+    * Only main concerns were for potential bugs and performance. Have found that we can fall back to regular style sheets
+     if we are stuck with certain css implementation. When we do, we will have to watch our css names as it gets 
+     compiled to one style sheet by webpack causing css name conflicts. It is hard to find benchmark results for the first paint
+     performance of Styled-Components. With some on the web were able to set-up their own benchmark test and found 
+     marginal ms differences comparing vanilla css and styled-components. If all fails, it won't be
+     difficult to fall back to css style sheets, as most of it is already written in css and can copy/paste with small
+     edits.
 * Use Google's Styling guide: https://google.github.io/styleguide/htmlcssguide.html
 
 

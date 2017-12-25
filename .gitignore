@@ -359,10 +359,10 @@ pip-selfcheck.json
 
 ### REACT/FRONTEND
 # dependencies
-/node_modules
+/frontend/node_modules
 
 # testing
-/coverage
+/frontend/coverage
 
 # production
 /build
@@ -387,3 +387,4 @@ yarn-error.log*
 /htmlcov
 .coverage
 /backend/.idea/
+!/frontend/src/App.js

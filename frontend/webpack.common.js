@@ -6,15 +6,14 @@ const HtmlWebpackPlugin = require ('html-webpack-plugin');
 const paths = {
   PUBLIC: path.resolve(__dirname, 'public'),
   DIST: path.resolve(__dirname, 'dist'),
-  JS: path.resolve(__dirname, 'src'),
+  SRC: path.resolve(__dirname, 'src'),
 };
 
 module.exports = {
-  entry: path.join(paths.JS, 'index.js'),
+  entry: path.join(paths.SRC, 'dom-loader.js'),
   output: {
     filename: 'app.bundle.js',
     path: paths.DIST,
-    publicPath: '',
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
@@ -31,7 +30,7 @@ module.exports = {
         test: /\.css$/,
         use: [
           'style-loader',
-          'css-loader'
+          'css-loader',
         ]
       },
       {
@@ -46,5 +45,5 @@ module.exports = {
         loader: "babel-loader",
       }
     ]
-  }
+  },
 };

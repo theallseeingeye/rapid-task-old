@@ -4,6 +4,7 @@ const theme = {
 
   // Fonts
   mainfont: 'Roboto, sans-serif',
+  logoblue: 'rgba(63,169,245,0.8)',
 
   // Colors
   mainbackground: 'white',

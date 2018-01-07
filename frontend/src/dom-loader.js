@@ -32,6 +32,9 @@ injectGlobal`
     height: 100%;
     background: ${theme.mainbackground};
   }
+  div {
+  height: 100%;
+  }
   article,
   aside,
   footer,

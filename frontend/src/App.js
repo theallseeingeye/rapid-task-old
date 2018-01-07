@@ -6,9 +6,7 @@ import styled from 'styled-components';
 class App extends Component {
   render() {
     return (
-      <div>
-        <FrontPage/>
-      </div>
+      <FrontPage/>
     );
   }
 }

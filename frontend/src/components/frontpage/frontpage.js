@@ -1,112 +1,112 @@
 import React, { Component } from 'react';
 import NavBar from "./nav/navbar";
-import logo from "./../../../images/RapidTaskLogo.svg"
-import styled, { keyframes } from 'styled-components';
-import backgroundimg from "./../../../images/stock-photo-a-smiling-carpenter-with-his-staff-in-the-background-340579349.jpg"
+import Logo from "./images/logo"
+import styled from 'styled-components';
+import Guru from './images/guru-man';
+import backgroundmain from '../../../images/AdobeStock_129000753_Preview.jpg'
 
-const ImageSize = {
-  maxwidth: 1279,
-  maxheight: 994,
-};
-
-const Wrapper = styled.div`
-`;
-
-const BackgroundImage = styled.div`
-  background-image: url(${backgroundimg});
+const Background = styled.div`
+  //margin: auto;
+  background-image: url(${backgroundmain});
+  opacity: 0.5;
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: top center;
-
-  display: block;
-  position: relative;
-  border: 2px solid green;
 `;
 
-const LightSpeed = keyframes`
-  from {
-    transform: translate3d(100%, 0, 0) skewX(-30deg);
-    opacity: 0;
-  }
-
-  60% {
-    transform: skewX(20deg);
-    opacity: 1;
-  }
-
-  80% {
-    transform: skewX(-5deg);
-    opacity: 1;
-  }
-
-  to {
-    transform: none;
-    opacity: 1;
-  }
+const TopDiv = styled.div`
+  height: 70vh;
 `;
 
-const LightSpeedIn = styled.div`
-  position: relative;
-  animation: ${LightSpeed} 0.4s;
-  animation-timing-function: ease-out;
-  top: 3em;
-`;
-
-const Logo = styled.img`
-  width: 80%;
-  padding: 2em 2em 0 0.5em;
-  // To keep the logo relative to the screen sizes.
-  @media (min-width: ${props => props.theme.giantscreen}) {
-    max-width: calc((${props => props.theme.desktopscreen}) + 200px);
-  };
-`;
-
-const Slogan = styled.p`
-
+const GridBackground = styled.div`
+  //align-self: flex-start;
+  height: 70vh;
+  width: 100%;
   position: absolute;
-  top: 7em;
+  z-index: -1;
+`;
 
-  margin-left: 1em;
+const LogoContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  height: 70vh;
+  width: 100%;
+`;
+
+const LogoBox = styled.div`
+  z-index: 1;
+  align-self: flex-start;
+  width: 100%;
+  margin-top: 0.5em;
+  margin-left: 0.1em;
+  margin-right: 0.1em;
+  
+  @media (min-width: ${props => props.theme.tabletscreen}) {
+    margin-top: 4em;
+    max-width: 800px;
+`;
+
+const GuruContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  height: 70vh;
+  width: 100%;
+`;
+
+const GuruBox = styled.div`
+  height: 80%;
+  align-self: flex-end;
+  z-index: 2;
+`;
+
+const SloganContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  height: 70vh;
+  width: 100%;
+`;
+
+const SloganBox = styled.p`
+  width: 100%;
+  z-index: 3;
+  align-self: flex-end;
+  
   font-family: ${props => props.theme.mainfont};
   font-weight: bold;
   color: white;
-  font-size: 1em;
-  //max-width: 60%;
-  //max-height: 60%;
-  
-  // Background
-  border-radius: 25px;
+  font-size: 1.2em;
   background-color: ${props => props.theme.logoblue};
   text-align: center;
-  
-  display: block;
-  //position: absolute;
-  //
-  @media (min-width: ${props => props.theme.desktopscreen}) {
-    font-size: 2em;
-    
-  }
 `;
 
 class FrontPage extends Component {
   render() {
     return (
-      <div>
-        <Wrapper>
-          <BackgroundImage>
-            <NavBar/>
-            <LightSpeedIn>
-              <Logo src={logo} alt="Rapid Task Logo" />
-            </LightSpeedIn>
-            <Slogan>
-              Streamlining your business process so you can focus on what's important.
-              <br />
-              <br />
-              Rapid Task will speed up your business process from start to end.
-            </Slogan>
-          </BackgroundImage>
-        </Wrapper>
-      </div>
+      <TopDiv>
+        <NavBar/>
+        <LogoContainer>
+          <LogoBox>
+            <Logo/>
+          </LogoBox>
+        </LogoContainer>
+        <GridBackground>
+          <Background/>
+        </GridBackground>
+        <GuruContainer>
+          <GuruBox>
+            <Guru/>
+          </GuruBox>
+        </GuruContainer>
+        <SloganContainer>
+         <SloganBox>
+            Streamlining your business process
+            <br/>
+            so you can focus on what's important.
+          </SloganBox>
+        </SloganContainer>
+      </TopDiv>
     );
   }
 }

@@ -6,6 +6,7 @@ const Nav = styled.nav`
   bottom: 0;
   position: fixed;
   width: 100%;
+  z-index: 1;
   
   // To set bounds of placing nav-bar on top.
   @media (min-width: ${props => props.theme.tabletscreen}) {

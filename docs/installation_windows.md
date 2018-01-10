@@ -130,7 +130,8 @@ You may need to change some settings in the editor to help make your work flow e
     * Go to: ```File/Settings/Appearance & Behavior/System Settings``` and *uncheck* the box for: ```use "safe write"```.  
 * Install the styled-components plugin so the syntax readers can assist.  
     * Go to: ```File/Settings/Plugins``` and search "styled-components" by webstorm and install. 
-
+* Since we are using Node.js, Pycharm has a plugin that helps handle it: ```File/Settings/Editor/Plugins``` and 
+    install ```nodejs``` by Jetbrains.
         
 ###Installation Steps
   
@@ -138,10 +139,14 @@ You may need to change some settings in the editor to help make your work flow e
     * You need the latest [version 8](https://nodejs.org/dist/v8.9.1/node-v8.9.1-x64.msi) from
 https://nodejs.org/en/
 
-1. (Pycharm only) Go to: ```File/Settings/Editor/Plugins``` and install ```nodejs``` by Jetbrains.
+1. We will need a package manager. Can use either NPM or Yarn. This project is currently setup with Yarn. You can
+    install Yarn globally on your machine: [Yarn Page](https://yarnpkg.com/en/)
+    
+1. Install dependencies. Use the package manager by typing ```yarn install``` or if using npm ```npm install```.
 
-1. Install dependencies.   
-    * I think they will be already included in the packages as they were already installed. If not. Talk to Jay and we
-    will write up a way to have all the requirements installed.
-    - added styled-components.
+1. (Optional) If you would like to preview the development server on a different device over the local network, you
+    must change the ip settings in the webpack. First we need to find your local network ip. On windows, open the cmd
+    and use the command ```ipconfig```. Locate and copy the IPv4 address and replace the existing ```host:``` in the
+    webpack.dev.js file. Now you can open on your phone as that ip address following the port (:3000).
+   
 

@@ -3,26 +3,30 @@ import NavBar from "./nav/navbar";
 import Logo from "./images/logo"
 import styled from 'styled-components';
 import Guru from './images/guru-man';
-import backgroundmain from '../../../images/AdobeStock_129000753_Preview.jpg'
-
-const Background = styled.div`
-  //margin: auto;
-  background-image: url(${backgroundmain});
-  opacity: 0.5;
-  background-size: contain;
-  background-repeat: no-repeat;
-`;
+import OfficeBackground from './images/office-background'
 
 const TopDiv = styled.div`
   height: 70vh;
 `;
 
-const GridBackground = styled.div`
-  //align-self: flex-start;
+const BackgroundContainer = styled.div`
   height: 70vh;
   width: 100%;
   position: absolute;
+  display: flex;
+  justify-content: center;
+  // To fade the background
+  opacity: 0.4;
+
+  // To place behind all divs
   z-index: -1;
+  // To hid the sides that are stretching beyond the div
+  overflow: hidden;
+`;
+
+const BackgroundBox = styled.div`
+  align-self: flex-start;
+  margin: auto;
 `;
 
 const LogoContainer = styled.div`
@@ -72,6 +76,7 @@ const SloganBox = styled.p`
   width: 100%;
   z-index: 3;
   align-self: flex-end;
+  margin-bottom: 2em;
   
   font-family: ${props => props.theme.mainfont};
   font-weight: bold;
@@ -91,9 +96,11 @@ class FrontPage extends Component {
             <Logo/>
           </LogoBox>
         </LogoContainer>
-        <GridBackground>
-          <Background/>
-        </GridBackground>
+        <BackgroundContainer>
+          <BackgroundBox>
+            <OfficeBackground/>
+          </BackgroundBox>
+        </BackgroundContainer>
         <GuruContainer>
           <GuruBox>
             <Guru/>

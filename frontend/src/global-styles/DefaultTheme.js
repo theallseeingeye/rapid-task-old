@@ -3,7 +3,8 @@
 const theme = {
 
   // Fonts
-  mainfont: 'Roboto, sans-serif',
+  Robotofont: 'Roboto, sans-serif',
+  RobotoCondensedfont: 'Roboto Condensed, sans-serif',
   logoblue: 'rgba(63,169,245,0.8)',
 
   // Colors

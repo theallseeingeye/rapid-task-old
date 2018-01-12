@@ -41,7 +41,7 @@ const FlexItem = styled.button`
   color: white;
   margin: auto; 
   font-size: 1.2em;
-
+  font-family: ${props => props.theme.Robotofont};
   font-weight: bold;
   padding: 10px 5px;
   display: inline-block;

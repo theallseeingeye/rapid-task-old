@@ -3,7 +3,8 @@ import NavBar from "./nav/navbar";
 import Logo from "./images/logo"
 import styled from 'styled-components';
 import Guru from './images/guru-man';
-import OfficeBackground from './images/office-background'
+import OfficeBackground from './images/office-background';
+import Introduction from "./introduction/introduction";
 
 const TopDiv = styled.div`
   height: 70vh;
@@ -17,7 +18,6 @@ const BackgroundContainer = styled.div`
   justify-content: center;
   // To fade the background
   opacity: 0.4;
-
   // To place behind all divs
   z-index: -1;
   // To hid the sides that are stretching beyond the div
@@ -72,48 +72,127 @@ const SloganContainer = styled.div`
   width: 100%;
 `;
 
-const SloganBox = styled.p`
+const SloganBox = styled.div`
   width: 100%;
   z-index: 3;
   align-self: flex-end;
   margin-bottom: 2em;
-  
-  font-family: ${props => props.theme.mainfont};
-  font-weight: bold;
-  color: white;
-  font-size: 1.2em;
   background-color: ${props => props.theme.logoblue};
   text-align: center;
+  height: 3.3em;
+`;
+
+const TextStyle1 = styled.p`
+  font-family: ${props => props.theme.RobotoCondensedfont};
+  font-weight: 900;
+  margin: auto;
+  font-size: 1.1em;
+  color: white;
+`;
+
+const TextStyle2 = styled.p`
+  font-family: ${props => props.theme.RobotoCondensedfont};
+  color: white;
+  font-size: 0.8em;
+  margin: auto;
+`;
+
+const TextStyle3 = styled.p`
+  font-family: ${props => props.theme.RobotoCondensedfont};
+  color: white;
+  font-size: 0.7em;
+  margin: auto;
+`;
+
+const SecondDiv = styled.div`
+  height: 50vh;
+  border: solid orangered;
+`;
+
+const FeaturesContainer = styled.div`
+  height: 80vh;
+  border: 6px dotted purple;
+  background-color: deeppink;
+`;
+
+const QuotesContainer = styled.div`
+  height: 100vh;
+  border: 20px groove blue;
+`;
+
+const JobCostsContainer = styled.div`
+  height: 80vh;
+  background-color: greenyellow;
+`;
+
+const MapsContainer = styled.div`
+  height: 90vh;
+  border: 40px double aqua;
+`;
+
+const EmployeeContainer = styled.div`
+  height: 90vh;
+  background-color: darkorange;
+`;
+
+const ClientContainer = styled.div`
+  height: 30vh;
+  border: 8px solid gold;
 `;
 
 class FrontPage extends Component {
   render() {
     return (
-      <TopDiv>
-        <NavBar/>
-        <LogoContainer>
-          <LogoBox>
-            <Logo/>
-          </LogoBox>
-        </LogoContainer>
-        <BackgroundContainer>
-          <BackgroundBox>
-            <OfficeBackground/>
-          </BackgroundBox>
-        </BackgroundContainer>
-        <GuruContainer>
-          <GuruBox>
-            <Guru/>
-          </GuruBox>
-        </GuruContainer>
-        <SloganContainer>
-         <SloganBox>
-            Streamlining your business process
-            <br/>
-            so you can focus on what's important.
-          </SloganBox>
-        </SloganContainer>
-      </TopDiv>
+      <div>
+        <TopDiv>
+          <NavBar/>
+          <LogoContainer>
+            <LogoBox>
+              <Logo/>
+            </LogoBox>
+          </LogoContainer>
+          <BackgroundContainer>
+            <BackgroundBox>
+              <OfficeBackground/>
+            </BackgroundBox>
+          </BackgroundContainer>
+          <GuruContainer>
+            <GuruBox>
+              <Guru/>
+            </GuruBox>
+          </GuruContainer>
+          <SloganContainer>
+            <SloganBox>
+              <TextStyle1>
+                STREAMLINING
+              </TextStyle1>
+              <TextStyle2>
+              YOUR BUSINESS PROCESS
+              </TextStyle2>
+              <TextStyle3>
+              SO YOU CAN FOCUS ON WHAT'S IMPORTANT
+              </TextStyle3>
+            </SloganBox>
+          </SloganContainer>
+        </TopDiv>
+        <SecondDiv>
+          <Introduction/>
+        </SecondDiv>
+        <FeaturesContainer>
+          Cool! Now this section will explain the product features!
+          -List of features and linked buttons that directs to below. Basically make this a directory.
+        </FeaturesContainer>
+        <QuotesContainer>
+        </QuotesContainer>
+        <JobCostsContainer>
+        </JobCostsContainer>
+        <MapsContainer>
+        </MapsContainer>
+        <EmployeeContainer>
+        </EmployeeContainer>
+        <ClientContainer>
+        </ClientContainer>
+      </div>
     );
   }
 }

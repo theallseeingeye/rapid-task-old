@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
+
+const IntroductionDiv = styled.div`
+  //width: 100%;
+`;
 
 const Text = styled.p`
   font-family: ${props => props.theme.Robotofont};
@@ -8,34 +12,43 @@ const Text = styled.p`
   margin: auto;
 `;
 
-const Text2 = styled.p`
-  font-size: 1em;
+const Arrow = styled.svg`
+  height: 10vh;
+  margin: auto;
+  display: block;
+`;
+
+const ArrowBounce = keyframes`
+  from {
+    transform: translate(0px, 0px);
+  }
+  50% { 
+    transform: translate(0px, 10px);
+  }
+  to {
+    transform: translate(0px, 0px);
+  }
+`;
+
+const ArrowAnimation = styled.g`
+  animation: ${ArrowBounce} 1s infinite;
+  animation-timing-function: ease-in-out;
 `;
 
 class Introduction extends Component {
   render() {
     return (
-      <div>
+      <IntroductionDiv>
         <Text>
           Let us show you how you can perfect your business!
         </Text>
-        <Text2>
-          Yay! Second section that directs people to the next section!
-          -Brief description of what Rapid Task is and technologies it works on.
-        </Text2>
-        <br/>
-        Two characters holding an iphone and tablet waving- The screens have arrows.
-        <br/>
-        <Text>
-          Control Your Business at Your Finger Tips
-        </Text>
-        <Text2>
-          With Rapid Task you can automate you daily business processes by: <br/>
-          Automating Invoicing <br/>
-          Streamline Your Schedule
-
-        </Text2>
-      </div>
+        <Arrow xmlns="http://www.w3.org/2000/svg" viewBox="0 0 473.03 300">
+          <title>Rapid Task Arrow</title>
+          <ArrowAnimation>
+            <path d="M307.25,799l-201-201a10.27,10.27,0,0,0-14.52,0l-18,18a10.27,10.27,0,0,0,0,14.52L307.25,864,540.76,630.51a10.27,10.27,0,0,0,0-14.52l-18-18a10.27,10.27,0,0,0-14.52,0Z" transform="translate(-70.73 -595)" fill="#3fa9f5"/>
+          </ArrowAnimation>
+        </Arrow>
+      </IntroductionDiv>
     );
   }
 }

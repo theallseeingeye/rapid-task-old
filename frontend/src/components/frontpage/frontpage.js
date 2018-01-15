@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
+
 import NavBar from "./nav/navbar";
 import Logo from "./images/logo"
-import styled from 'styled-components';
 import Guru from './images/guru-man';
 import OfficeBackground from './images/office-background';
 import Introduction from "./introduction/introduction";
 import Features from "./features/features";
 import Quotes from "./quotes/quotes";
+
+import ParticleEffect from "./../../../experiments/css-effects/ParticleEffect"
 
 const TopDiv = styled.div`
   height: 70vh;

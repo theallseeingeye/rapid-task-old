@@ -1,5 +1,64 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
+
+
+const BounceInDown = keyframes`
+  from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(0, 25px, 0);
+  }
+
+  75% {
+    transform: translate3d(0, -10px, 0);
+  }
+
+  90% {
+    transform: translate3d(0, 5px, 0);
+  }
+
+  to {
+    transform: none;
+  }
+`;
+
+const BottomLayerAnimate = styled.g`
+  animation: ${BounceInDown} 1.2s;
+  animation-timing-function: ease-in-out;
+`;
+
+const GravelLayerAnimate = styled.g`
+  animation: ${BounceInDown} 1.2s;
+  animation-timing-function: ease-in-out;
+`;
+
+const AsphaltLayerAnimate = styled.g`
+  animation: ${BounceInDown} 1.2s;
+  animation-timing-function: ease-in-out;
+`;
+
+const ParkingLinesAnimate = styled.g`
+  animation: ${BounceInDown} 1.2s;
+  animation-timing-function: ease-in-out;
+`;
+
+const GrassLayerAnimate = styled.g`
+  animation: ${BounceInDown} 1.2s;
+  animation-timing-function: ease-in-out;
+`;
+
+const CurbsLayerAnimate = styled.g`
+  animation: ${BounceInDown} 1.2s;
+  animation-timing-function: ease-in-out;
+`;
 
 const Svg = styled.svg`
   height: 100%;
@@ -11,12 +70,12 @@ class ParkingLotLayers extends Component {
       <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 587.98 594.21">
         <title>Rapid Task Layered Lot</title>
           <g id="Parking_Lot_Layers">
-            <g id="Bottom_Layer">
+            <BottomLayerAnimate>
               <polygon points="587.98 403.99 587.98 424.18 295.21 594.21 295.21 574.04 587.98 403.99" fill="#563f2c"/>
               <polygon points="0.68 404 0.68 424.18 295.21 594.21 295.21 574.04 0.68 404" fill="#6d533a"/>
               <polygon points="293.33 233.96 587.98 403.99 295.21 574.04 0.72 404 293.33 233.96" fill="#7f6245"/>
-            </g>
-            <g id="Gravel_Base">
+            </BottomLayerAnimate>
+            <GravelLayerAnimate>
               <g id="Middle_Layer_Shadow" opacity="0.29">
                 <polygon points="295.21 525.74 546.24 379.9 293.33 233.96 42.4 379.78 295.21 525.74" fill="#563f2c"/>
               </g>
@@ -1558,15 +1617,15 @@ class ParkingLotLayers extends Component {
                   <path d="M579.71,418.5s0-1.61,2.18-.7c1.69.7,3.32,2.36,2.46,3.62C583.28,422.95,578.86,421.21,579.71,418.5Z" transform="translate(-24.25 -141.52)" fill="#7f5c36"/>
                 </g>
               </g>
-            </g>
-            <g id="Asphalt">
+            </GravelLayerAnimate>
+            <AsphaltLayerAnimate>
               <polygon id="Top_Layer_Shadow" points="295.21 401.32 546.24 255.48 293.33 109.54 42.4 255.36 295.21 401.32" fill="#563f2c"/>
               <polygon points="587.57 200.8 587.57 208.54 294.75 378.58 294.85 370.88 587.57 200.8" fill="#a89c60"/>
               <polygon points="0.32 200.84 0.21 208.54 294.75 378.58 294.85 370.88 0.32 200.84" fill="#f0dab9"/>
               <polygon points="292.92 30.8 587.57 200.8 294.85 370.88 0.31 200.83 292.92 30.8" fill="#495359"/>
               <polygon points="331.88 53.28 39.09 223.43 149.02 286.2 450.23 121.74 331.88 53.28" fill="#495359"/>
-            </g>
-            <g id="Parking_Lines">
+            </AsphaltLayerAnimate>
+            <ParkingLinesAnimate>
               <polygon points="438.55 287.83 393.92 261.52 396.81 259.76 441.45 286.07 438.55 287.83" fill="#ffd664"/>
               <polygon points="476.94 264.93 432.3 238.62 435.19 236.86 479.83 263.17 476.94 264.93" fill="#ffd664"/>
               <polygon points="402.34 308.71 357.71 282.4 360.6 280.64 405.24 306.95 402.34 308.71" fill="#ffd664"/>
@@ -1586,12 +1645,12 @@ class ParkingLotLayers extends Component {
                 <path d="M270.42,456.34l-1.18-2,13.61-7.94,1.18,2Zm27.22-15.88-1.18-2,13.61-7.94,1.18,2Zm27.22-15.88-1.18-2,13.61-7.94,1.18,2Zm27.22-15.88-1.18-2,13.61-7.94,1.18,2Zm27.22-15.88-1.18-2,11-6.44a25.13,25.13,0,0,0,2.28-1.63l1.46,1.83a26.48,26.48,0,0,1-2.55,1.82Zm19.07-22.24c-.46-3.76-3.55-7.36-9.21-10.71l-.08,0,1.21-2c6.37,3.77,9.84,8,10.39,12.47ZM375.44,352c-4.07-2.32-8.71-4.94-13.73-7.77l1.15-2c5,2.83,9.66,5.46,13.74,7.78ZM348,336.45l-13.76-7.72,1.14-2,13.77,7.72ZM320.42,321l-13.78-7.69,1.14-2L321.56,319Zm-27.56-15.37L279.07,298l1.14-2L294,303.61Z" transform="translate(-24.25 -141.52)" fill="#ffd664"/>
                 <rect x="261.47" y="283.61" width="2.34" height="7.79" transform="translate(-140.49 235.95) rotate(-60.94)" fill="#ffd664"/>
               </g>
-            </g>
-            <g id="Grass">
+            </ParkingLinesAnimate>
+            <GrassLayerAnimate>
               <polygon id="Grass_2" points="230.41 189.14 268.04 211.64 145.23 281 108.34 260.21 230.41 189.14" fill="#76ba4a"/>
               <polygon id="Grass_1" points="292.92 30.8 331.88 53.28 207.56 123.39 170.55 101.87 292.92 30.8" fill="#76ba4a"/>
-            </g>
-            <g id="Curbs">
+            </GrassLayerAnimate>
+            <CurbsLayerAnimate>
               <g>
                 <polygon points="210.17 123.39 210.2 125.64 333.14 53.94 333.11 51.7 210.17 123.39" fill="#bababa"/>
                 <polygon points="208.35 122.32 208.38 124.56 210.2 125.64 210.17 123.39 208.35 122.32" fill="#d1d1d1"/>
@@ -1627,7 +1686,7 @@ class ParkingLotLayers extends Component {
                 <polygon points="147.03 281.09 147 283.33 145.18 284.4 145.21 282.16 147.03 281.09" fill="#bababa"/>
                 <polygon points="104.8 258.59 106.6 257.54 147.04 281.1 145.21 282.16 104.8 258.59" fill="#e2e2e2"/>
               </g>
-            </g>
+            </CurbsLayerAnimate>
             <g id="Lamps">
               <g id="Lamp_1">
                 <path d="M27.54,283.7a1.07,1.07,0,0,1,.46-.9l.61-.36a1.08,1.08,0,0,0-.46.9,2.71,2.71,0,0,0,1.15,2.18l.08,0,.1,0a.6.6,0,0,0,.56,0l-.61.36a.48.48,0,0,1-.22.06h-.17a.93.93,0,0,1-.28-.11l-.08,0A2.71,2.71,0,0,1,27.54,283.7Z" transform="translate(-24.25 -141.52)" fill="#5e737c"/>

@@ -63,42 +63,43 @@ class Features extends Component {
           <Devices/>
         </DeviceContainer>
         <Text>
-        You now can automate every business task at your fingertips
+        You now can automate every business task at your fingertips.
+          ( You can track every business task at your fingertips. )
         </Text>
         <List>
           <ListItem>
             <ListText>
-              Automatic Quote Generator
+              Creates Simple Steps for Producing Faster and More Accurate Quotes
             </ListText>
           </ListItem>
           <li>
             <ListText>
-              Keep Track of Clients
+              Proves Business Organization to Clients
             </ListText>
           </li>
           <li>
             <ListText>
-              Automatically Keep Track of Jobs
+              Knows The Exact Status and Progress of All Your Jobs
             </ListText>
           </li>
           <li>
             <ListText>
-              Automatic Invoicing
+              Automates Paper Work of Invoicing and Billing
             </ListText>
           </li>
           <li>
             <ListText>
-              Employee Scheduling and Tracking
+              Provides Accurate Performance of Employees
             </ListText>
           </li>
           <li>
             <ListText>
-              Expense Tracking
+              Efficient Steps For Updating Inventory and Expenses
             </ListText>
           </li>
           <li>
             <ListText>
-              Equipment Tacking
+              Equipment Tracking For Usage and Maintenance
             </ListText>
           </li>
           <li>
@@ -108,10 +109,13 @@ class Features extends Component {
           </li>
           <li>
             <ListText>
-              Business Analytics
+              Understand Your Business Health With Powerful Analytics
             </ListText>
           </li>
         </List>
+        <Text>
+          Since Rapid Task Focuses On Each Business Task, it is Flexible For All Service Based Businesses
+        </Text>
       </FeatureDiv>
     );
   }

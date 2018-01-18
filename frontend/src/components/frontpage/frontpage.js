@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
+
 import NavBar from "./nav/navbar";
 import Logo from "./images/logo"
-import styled from 'styled-components';
 import Guru from './images/guru-man';
 import OfficeBackground from './images/office-background';
 import Introduction from "./introduction/introduction";
+import Features from "./features/features";
+import Quotes from "./quotes/quotes";
+import AnimationTest from "./animation/animation";
 
 const TopDiv = styled.div`
   height: 70vh;
@@ -104,20 +108,19 @@ const TextStyle3 = styled.p`
   margin: auto;
 `;
 
-const SecondDiv = styled.div`
-  height: 50vh;
-  border: solid orangered;
+const Arrow = styled.div`
+  height: 30vh;
 `;
 
 const FeaturesContainer = styled.div`
-  height: 80vh;
-  border: 6px dotted purple;
-  background-color: deeppink;
+  height: 100vh;
+  background-color: ${props => props.theme.logoblue};
+  clip-path: polygon(0 0, 100% 0, 100% 93%, 0 100%);
 `;
 
 const QuotesContainer = styled.div`
   height: 100vh;
-  border: 20px groove blue;
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%); // Order of polygon- (x,y) (TL, TR, BR, BL) 
 `;
 
 const JobCostsContainer = styled.div`
@@ -136,9 +139,10 @@ const EmployeeContainer = styled.div`
 `;
 
 const ClientContainer = styled.div`
-  height: 30vh;
-  border: 8px solid gold;
+  //height: 200vh;
+  //border: 8px solid gold;
 `;
+
 
 class FrontPage extends Component {
   render() {
@@ -175,14 +179,14 @@ class FrontPage extends Component {
             </SloganBox>
           </SloganContainer>
         </TopDiv>
-        <SecondDiv>
+        <Arrow>
           <Introduction/>
-        </SecondDiv>
+        </Arrow>
         <FeaturesContainer>
-          Cool! Now this section will explain the product features!
-          -List of features and linked buttons that directs to below. Basically make this a directory.
+          <Features/>
         </FeaturesContainer>
         <QuotesContainer>
+          <Quotes/>
         </QuotesContainer>
         <JobCostsContainer>
         </JobCostsContainer>
@@ -191,6 +195,7 @@ class FrontPage extends Component {
         <EmployeeContainer>
         </EmployeeContainer>
         <ClientContainer>
+          <AnimationTest/>
         </ClientContainer>
       </div>
     );

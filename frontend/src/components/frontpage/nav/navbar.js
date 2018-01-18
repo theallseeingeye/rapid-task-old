@@ -17,12 +17,12 @@ const Nav = styled.nav`
 `;
 
 const FlexContainer = styled.div`
-  display: flex;
-  list-style: none;
-  padding: 0;
-  flex-wrap: nowrap;
   align-content: flex-end;
+  display: flex;
+  flex-wrap: nowrap;
+  list-style: none;
   margin: 0;
+  padding: 0;
 
   // Adjusts the size of the nav-bar according to screen sizes.
    @media (min-width: ${props => props.theme.tabletscreen}) {
@@ -38,19 +38,20 @@ const FlexContainer = styled.div`
 const FlexItem = styled.button`
   // Styling
   background: rgba(63, 169, 245, 0.8);
+  border: 1px solid black;
   color: white;
-  margin: auto; 
-  font-size: 1.2em;
-  font-family: ${props => props.theme.Robotofont};
-  font-weight: bold;
-  padding: 10px 5px;
   display: inline-block;
-  width: 100%;
+  font-family: ${props => props.theme.Robotofont};
+  font-size: 1.2em;
+  font-weight: bold;
   height: 100%;
+  margin: auto; 
+  padding: 10px 5px;
+  position: relative;
   text-align: center;
   transition: all 0.5s;
-  border: 1px solid black;
-  position: relative;
+  width: 100%;
+  border-radius: 10px 0px 10px 0px;
   // z-index tells css the position order it has over the objects.
   z-index: 1;
   
@@ -67,6 +68,8 @@ const FlexItem = styled.button`
 
 class NavBar extends Component {
   render() {
+
+
     return (
       <Nav>
         <FlexContainer>

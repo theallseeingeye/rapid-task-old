@@ -8,8 +8,7 @@ import OfficeBackground from './images/office-background';
 import Introduction from "./introduction/introduction";
 import Features from "./features/features";
 import Quotes from "./quotes/quotes";
-
-import ParticleEffect from "./../../../experiments/css-effects/ParticleEffect"
+import AnimationTest from "./animation/animation";
 
 const TopDiv = styled.div`
   height: 70vh;
@@ -140,9 +139,10 @@ const EmployeeContainer = styled.div`
 `;
 
 const ClientContainer = styled.div`
-  height: 30vh;
-  border: 8px solid gold;
+  //height: 200vh;
+  //border: 8px solid gold;
 `;
+
 
 class FrontPage extends Component {
   render() {
@@ -195,6 +195,7 @@ class FrontPage extends Component {
         <EmployeeContainer>
         </EmployeeContainer>
         <ClientContainer>
+          <AnimationTest/>
         </ClientContainer>
       </div>
     );

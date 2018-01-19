@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import ScrollMagic from './../../../utils/scrollmagic/ScrollMagic';
-import IScroll from './../../../utils/iscroll/iscroll-probe';
-
-
 
 const Animate = styled.p`
   border: solid green;

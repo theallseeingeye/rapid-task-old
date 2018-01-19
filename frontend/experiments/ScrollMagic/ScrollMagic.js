@@ -1,13 +1,14 @@
-import ScrollMagic from 'scrollmagic';
-// import {TweenMax as Tween} from './../../../node_modules/gsap';
+import ScrollMagic from 'frontend/experiments/ScrollMagic/ScrollMagic';
 import {TweenMax as Tween,TimelineMax as Timeline} from 'gsap';
-import TweenMax from 'gsap';
-// import * as Tween from 'gsap';
 
 
 /*
 This is a custom wrapper for ScrollMagic. The original ScrollMagic documentation requires of us to install
 the plugins from "plugins/animation.gsap.js". The code is out of date and will not import the factory JS code.
+
+- To make this work with ReactJS- You need to make sure you have both ScrollMagic and GSAP installed.
+- Then import this file: "import ScrollMagic from (this file directory)".
+
  */
 ScrollMagic.Scene.addOption("tweenChanges", // name
   false, // default

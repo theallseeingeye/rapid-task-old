@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import styled, { keyframes } from 'styled-components';
 import CityJpg from './../images/city.jpg';
 
-import ScrollMagic from './../../../utils/scrollmagic/ScrollMagic';
-import {TweenMax} from 'gsap';
-
 const MainDiv = styled.div`
   //border: solid purple;
   height: 80vh;

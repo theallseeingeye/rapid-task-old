@@ -4,11 +4,9 @@
   "description": "Web browser for Rapid Task",
   "main": "webpack.config.js",
   "dependencies": {
-    "gsap": "^1.20.3",
     "jest-cli": "^21.2.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "scrollmagic": "^2.0.5",
     "styled-components": "^2.2.4"
   },
   "devDependencies": {

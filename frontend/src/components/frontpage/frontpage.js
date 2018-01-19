@@ -9,6 +9,8 @@ import Introduction from "./introduction/introduction";
 import Features from "./features/features";
 import Quotes from "./quotes/quotes";
 import AnimationTest from "./animation/animation";
+import CityAnimation from "./city/cityanimation";
+import Arizona from "./animation/arizona";
 
 const TopDiv = styled.div`
   height: 70vh;
@@ -124,13 +126,15 @@ const QuotesContainer = styled.div`
 `;
 
 const JobCostsContainer = styled.div`
-  height: 80vh;
+  //margin: auto;
+  height: 200vh;
   background-color: greenyellow;
+  //position: relative;
 `;
 
 const MapsContainer = styled.div`
   height: 90vh;
-  border: 40px double aqua;
+  //border: 40px double aqua;
 `;
 
 const EmployeeContainer = styled.div`
@@ -189,8 +193,10 @@ class FrontPage extends Component {
           <Quotes/>
         </QuotesContainer>
         <JobCostsContainer>
+          <Arizona/>
         </JobCostsContainer>
         <MapsContainer>
+          <CityAnimation/>
         </MapsContainer>
         <EmployeeContainer>
         </EmployeeContainer>

@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import styled, { keyframes } from 'styled-components';
-import CityJpg from '../frontpage/images/city.jpg';
+import CityJpg from './../images/city.jpg';
+
+import ScrollMagic from './../../../utils/scrollmagic/ScrollMagic';
+import {TweenMax} from 'gsap';
 
 const MainDiv = styled.div`
   //border: solid purple;
@@ -18,388 +21,414 @@ const Svg = styled.svg`
   position: absolute;
   overflow: hidden;
 `;
-
-const Text1Animate = keyframes`
-  from {
-    opacity: 0;
-    transform: translate(10%, 450px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translate(15%, 460px);
-  }
-`;
-
-const Text1 = styled.p`
-  position: absolute;
-  animation: ${Text1Animate} 4s infinite;
-  animation-timing-function: ease-out;
-  border: solid black;
-  margin: auto;
-`;
-
-const Text2Animate = keyframes`
-  from {
-    opacity: 0;
-    transform: translate(110%, 415px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translate(100%, 405px);
-  }
-`;
-
-const Text2 = styled.p`
-  position: absolute;
-  animation: ${Text2Animate} 4s infinite;
-  animation-timing-function: ease-out;
-  border: solid black;
-  margin: auto;
-`;
-
-const Text3Animate = keyframes`
-  from {
-    opacity: 0;
-    transform: translate(100%, 95px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translate(105%, 110px);
-  }
-`;
-
-const Text3 = styled.p`
-  position: absolute;
-  animation: ${Text3Animate} 4s infinite;
-  animation-timing-function: ease-out;
-  border: solid black;
-  margin: auto;
-`;
-
-const SouthEast = keyframes`
-  from {
-    transform: translate(2600px, 1500px);
-    visibility: visible;
-  }
-  
-  33% {
-    transform: translate(3800px, 2200px);
-  }
-  
-  45% {
-    transform: translate(4150px, 2350px) rotateY(180deg);
-  }
-  to {
-    transform: translate(2000px, 3575px) rotateY(180deg);
-  }
-`;
+//
+// const Text1Animate = keyframes`
+//   from {
+//     opacity: 0;
+//     transform: translate(10%, 450px);
+//   }
+//
+//   to {
+//     opacity: 1;
+//     transform: translate(15%, 460px);
+//   }
+// `;
+//
+// const Text1 = styled.p`
+//   position: absolute;
+//   animation: ${Text1Animate} 4s infinite;
+//   animation-timing-function: ease-out;
+//   border: solid black;
+//   margin: auto;
+// `;
+//
+// const Text2Animate = keyframes`
+//   from {
+//     opacity: 0;
+//     transform: translate(110%, 415px);
+//   }
+//
+//   to {
+//     opacity: 1;
+//     transform: translate(100%, 405px);
+//   }
+// `;
+//
+// const Text2 = styled.p`
+//   position: absolute;
+//   animation: ${Text2Animate} 4s infinite;
+//   animation-timing-function: ease-out;
+//   border: solid black;
+//   margin: auto;
+// `;
+//
+// const Text3Animate = keyframes`
+//   from {
+//     opacity: 0;
+//     transform: translate(100%, 95px);
+//   }
+//
+//   to {
+//     opacity: 1;
+//     transform: translate(105%, 110px);
+//   }
+// `;
+//
+// const Text3 = styled.p`
+//   position: absolute;
+//   animation: ${Text3Animate} 4s infinite;
+//   animation-timing-function: ease-out;
+//   border: solid black;
+//   margin: auto;
+// `;
+//
+// const SouthEast = keyframes`
+//   from {
+//     transform: translate(2600px, 1500px);
+//     visibility: visible;
+//   }
+//
+//   33% {
+//     transform: translate(3800px, 2200px);
+//   }
+//
+//   45% {
+//     transform: translate(4150px, 2350px) rotateY(180deg);
+//   }
+//   to {
+//     transform: translate(2000px, 3575px) rotateY(180deg);
+//   }
+// `;
+//
+// const SouthEastGo = styled.g`
+//   position: absolute;
+//   animation: ${SouthEast} 4s infinite;
+//   animation-timing-function: ease-out;
+//   animation-fill-mode: forwards;
+// `;
+//
+// const MapPin = keyframes`
+//
+//   from, 20%, 53%, 80%, to {
+//     animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+//     transform: translate3d(1700px ,3100px,0);
+//   }
+//
+//   40%, 43% {
+//     animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+//     transform: translate3d(1700px, 2950px, 0);
+//   }
+//
+//   70% {
+//     animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+//     transform: translate3d(1700px, 3025px, 0);
+//   }
+//
+//   90% {
+//     transform: translate3d(1700px, 3075px, 0);
+//   }
+// `;
+//
+// const MapPinGo = styled.g`
+//   position: absolute;
+//   animation: ${MapPin} 1.5s infinite;
+//   animation-fill-mode: forwards;
+// `;
+//
+// const PolygonCircleBottomAnimate = keyframes`
+//   from {
+//     transform: scale(7.5) translate(198px, 496px);
+//     opacity: 0;
+//   }
+//   49% {
+//     transform: scale(7.5) translate(198px, 496px);
+//     opacity: 0;
+//   }
+//   50% {
+//     transform: scale(7.5) translate(198px, 496px);
+//     opacity: 1;
+//   }
+//   to {
+//     transform: scale(7.5) translate(198px, 496px);
+//     opacity: 1;
+//   }
+// `;
+//
+// const PolygonCircleBottom = styled.g`
+//   position: absolute;
+//   animation: ${PolygonCircleBottomAnimate} 4s;
+//   animation-fill-mode: forwards;
+// `;
+//
+// const PolygonCircleLeftAnimate = keyframes`
+//   from {
+//     transform: scale(7.5) translate(168px, 478px);
+//     opacity: 0;
+//   }
+//   69% {
+//     transform: scale(7.5) translate(168px, 478px);
+//     opacity: 0;
+//   }
+//   70% {
+//     transform: scale(7.5) translate(168px, 478px);
+//     opacity: 1;
+//   }
+//   to {
+//     transform: scale(7.5) translate(168px, 478px);
+//     opacity: 1;
+//   }
+// `;
+//
+// const PolygonCircleLeft = styled.g`
+//   position: absolute;
+//   animation: ${PolygonCircleLeftAnimate} 4s;
+//   animation-fill-mode: forwards;
+// `;
+//
+// const PolygonCircleRightAnimate = keyframes`
+//   from {
+//     transform: scale(7.5) translate(258px, 461px);
+//     opacity: 0;
+//   }
+//   30% {
+//     transform: scale(7.5) translate(258px, 461px);
+//     opacity: 0;
+//   }
+//   31% {
+//     transform: scale(7.5) translate(258px, 461px);
+//     opacity: 1;
+//   }
+//   to {
+//     transform: scale(7.5) translate(258px, 461px);
+//     opacity: 1;
+//   }
+// `;
+//
+// const PolygonCircleRight = styled.g`
+//   position: absolute;
+//   animation: ${PolygonCircleRightAnimate} 4s;
+//   animation-fill-mode: forwards;
+// `;
+//
+// const PolygonCircleTopAnimate = keyframes`
+//   from {
+//     transform: scale(7.5) translate(226px, 443px);
+//     opacity: 0;
+//   }
+//   89% {
+//     transform: scale(7.5) translate(226px, 443px);
+//     opacity: 0;
+//   }
+//   90% {
+//     transform: scale(7.5) translate(226px, 443px);
+//     opacity: 1;
+//   }
+//   to {
+//     transform: scale(7.5) translate(226px, 443px);
+//     opacity: 1;
+//   }
+// `;
+//
+// const PolygonCircleTop = styled.g`
+//   position: absolute;
+//   animation: ${PolygonCircleTopAnimate} 4s;
+//   animation-fill-mode: forwards;
+// `;
+//
+// const PolygonLongEdge1Animate = keyframes`
+//   from {
+//     transform: scale(5) translate(231px, 607px);
+//     opacity: 0;
+//   }
+//   89% {
+//     transform: scale(5) translate(231px, 607px);
+//     opacity: 0;
+//   }
+//   90% {
+//     transform: scale(5) translate(231px, 607px);
+//     opacity: 1;
+//   }
+//   to {
+//     transform: scale(5) translate(231px, 607px);
+//     opacity: 1;
+//   }
+// `;
+//
+// const PolygonLongEdge1 = styled.g`
+//   position: absolute;
+//   animation: ${PolygonLongEdge1Animate} 4s;
+//   animation-fill-mode: forwards;
+// `;
+//
+// const PolygonLongEdge2Animate = keyframes`
+//   from {
+//     transform: scale(5) translate(278px, 635px);
+//     opacity: 0;
+//   }
+//   50% {
+//     transform: scale(5) translate(278px, 635px);
+//     opacity: 0;
+//   }
+//   51% {
+//     transform: scale(5) translate(278px, 635px);
+//     opacity: 1;
+//   }
+//   to {
+//     transform: scale(5) translate(278px, 635px);
+//     opacity: 1;
+//   }
+// `;
+//
+// const PolygonLongEdge2 = styled.g`
+//   position: absolute;
+//   animation: ${PolygonLongEdge2Animate} 4s;
+//   animation-fill-mode: forwards;
+// `;
+//
+// const PolygonShortEdge1Animate = keyframes`
+//   from {
+//     transform: scale(5) translate(278px, 635px);
+//     opacity: 0;
+//   }
+//   70% {
+//     transform: scale(5) translate(278px, 635px);
+//     opacity: 0;
+//   }
+//   71% {
+//     transform: scale(5) translate(278px, 635px);
+//     opacity: 1;
+//   }
+//   to {
+//     transform: scale(5) translate(278px, 635px);
+//     opacity: 1;
+//   }
+// `;
+//
+// const PolygonShortEdge1 = styled.g`
+//   position: absolute;
+//   animation: ${PolygonShortEdge1Animate} 4s;
+//   animation-fill-mode: forwards;
+// `;
+//
+// const PolygonShortEdge2Animate = keyframes`
+//   from {
+//     transform: scale(5) translate(367px, 582px);
+//     opacity: 0;
+//   }
+//   99% {
+//     transform: scale(5) translate(367px, 582px);
+//     opacity: 0;
+//   }
+//   to {
+//     transform: scale(5) translate(367px, 582px);
+//     opacity: 1;
+//   }
+// `;
+//
+// const PolygonShortEdge2 = styled.g`
+//   position: absolute;
+//   animation: ${PolygonShortEdge2Animate} 4s;
+//   animation-fill-mode: forwards;
+// `;
+//
+// const PolygonFillAnimate = keyframes`
+//   from {
+//     transform: scale(5) translate(297px, 666px);
+//     opacity: 0;
+//   }
+//   80% {
+//     transform: scale(5) translate(297px, 666px);
+//     opacity: 0;
+//   }
+//   to {
+//     transform: scale(5) translate(297px, 666px);
+//     opacity: 1;
+//   }
+// `;
+//
+// const PolygonFill = styled.g`
+//   position: absolute;
+//   animation: ${PolygonFillAnimate} 5s;
+//   animation-fill-mode: forwards;
+// `;
+//
+// const MouseCursorAnimate = keyframes`
+//   from {
+//     transform: scale(10) translate(600px, 150px);
+//   }
+//   10% {
+//     transform: scale(10) translate(400px, 400px);
+//   }
+//   20% {
+//     transform: scale(10) translate(297px, 333px);
+//   }
+//   30% {
+//     transform: scale(10) translate(210px, 341px); //RIGHT POINT
+//   }
+//   40% {
+//     transform: scale(10) translate(205px, 340px);
+//   }
+//   50% {
+//     transform: scale(10) translate(164px, 372px); //BOTTOM POINT
+//   }
+//   60% {
+//     transform: scale(10) translate(157px, 352px);
+//   }
+//   70% {
+//     transform: scale(10) translate(142px, 356px); //LEFT POINT
+//   }
+//   80% {
+//     transform: scale(10) translate(177px, 340px);
+//   }
+//   90% {
+//     transform: scale(10) translate(185px, 328px); //TOP POINT
+//   }
+//   to {
+//     transform: scale(10) translate(210px, 341px); //RIGHT POINT
+//   }
+// `;
+//
+// const MouseCursor = styled.g`
+//   position: absolute;
+//   animation: ${MouseCursorAnimate} 4s;
+//   animation-fill-mode: forwards;
+//   animation-timing-function: ease-in-out;
+//
+// `;
 
 const SouthEastGo = styled.g`
-  position: absolute;
-  animation: ${SouthEast} 4s infinite;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
-`;
-
-const MapPin = keyframes`
-
-  from, 20%, 53%, 80%, to {
-    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-    transform: translate3d(1700px ,3100px,0);
-  }
-
-  40%, 43% {
-    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
-    transform: translate3d(1700px, 2950px, 0);
-  }
-
-  70% {
-    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
-    transform: translate3d(1700px, 3025px, 0);
-  }
-
-  90% {
-    transform: translate3d(1700px, 3075px, 0);
-  }
-`;
-
-const MapPinGo = styled.g`
-  position: absolute;
-  animation: ${MapPin} 1.5s infinite;
-  animation-fill-mode: forwards;
-`;
-
-const PolygonCircleBottomAnimate = keyframes`
-  from {
-    transform: scale(7.5) translate(198px, 496px);
-    opacity: 0;
-  }
-  49% {
-    transform: scale(7.5) translate(198px, 496px);
-    opacity: 0;
-  }
-  50% {
-    transform: scale(7.5) translate(198px, 496px);
-    opacity: 1;
-  }
-  to {
-    transform: scale(7.5) translate(198px, 496px);
-    opacity: 1;
-  }
-`;
-
-const PolygonCircleBottom = styled.g`
-  position: absolute;
-  animation: ${PolygonCircleBottomAnimate} 4s;
-  animation-fill-mode: forwards;
-`;
-
-const PolygonCircleLeftAnimate = keyframes`
-  from {
-    transform: scale(7.5) translate(168px, 478px);
-    opacity: 0;
-  }
-  69% {
-    transform: scale(7.5) translate(168px, 478px);
-    opacity: 0;
-  }
-  70% {
-    transform: scale(7.5) translate(168px, 478px);
-    opacity: 1;
-  }
-  to {
-    transform: scale(7.5) translate(168px, 478px);
-    opacity: 1;
-  }
-`;
-
-const PolygonCircleLeft = styled.g`
-  position: absolute;
-  animation: ${PolygonCircleLeftAnimate} 4s;
-  animation-fill-mode: forwards;
-`;
-
-const PolygonCircleRightAnimate = keyframes`
-  from {
-    transform: scale(7.5) translate(258px, 461px);
-    opacity: 0;
-  }
-  30% {
-    transform: scale(7.5) translate(258px, 461px);
-    opacity: 0;
-  }
-  31% {
-    transform: scale(7.5) translate(258px, 461px);
-    opacity: 1;
-  }
-  to {
-    transform: scale(7.5) translate(258px, 461px);
-    opacity: 1;
-  }
-`;
-
-const PolygonCircleRight = styled.g`
-  position: absolute;
-  animation: ${PolygonCircleRightAnimate} 4s;
-  animation-fill-mode: forwards;
-`;
-
-const PolygonCircleTopAnimate = keyframes`
-  from {
-    transform: scale(7.5) translate(226px, 443px);
-    opacity: 0;
-  }
-  89% {
-    transform: scale(7.5) translate(226px, 443px);
-    opacity: 0;
-  }
-  90% {
-    transform: scale(7.5) translate(226px, 443px);
-    opacity: 1;
-  }
-  to {
-    transform: scale(7.5) translate(226px, 443px);
-    opacity: 1;
-  }
-`;
-
-const PolygonCircleTop = styled.g`
-  position: absolute;
-  animation: ${PolygonCircleTopAnimate} 4s;
-  animation-fill-mode: forwards;
-`;
-
-const PolygonLongEdge1Animate = keyframes`
-  from {
-    transform: scale(5) translate(231px, 607px);
-    opacity: 0;
-  }
-  89% {
-    transform: scale(5) translate(231px, 607px);
-    opacity: 0;
-  }
-  90% {
-    transform: scale(5) translate(231px, 607px);
-    opacity: 1;
-  }
-  to {
-    transform: scale(5) translate(231px, 607px);
-    opacity: 1;
-  }
-`;
-
-const PolygonLongEdge1 = styled.g`
-  position: absolute;
-  animation: ${PolygonLongEdge1Animate} 4s;
-  animation-fill-mode: forwards;
-`;
-
-const PolygonLongEdge2Animate = keyframes`
-  from {
-    transform: scale(5) translate(278px, 635px);
-    opacity: 0;
-  }
-  50% {
-    transform: scale(5) translate(278px, 635px);
-    opacity: 0;
-  }
-  51% {
-    transform: scale(5) translate(278px, 635px);
-    opacity: 1;
-  }
-  to {
-    transform: scale(5) translate(278px, 635px);
-    opacity: 1;
-  }
-`;
-
-const PolygonLongEdge2 = styled.g`
-  position: absolute;
-  animation: ${PolygonLongEdge2Animate} 4s;
-  animation-fill-mode: forwards;
-`;
-
-const PolygonShortEdge1Animate = keyframes`
-  from {
-    transform: scale(5) translate(278px, 635px);
-    opacity: 0;
-  }
-  70% {
-    transform: scale(5) translate(278px, 635px);
-    opacity: 0;
-  }
-  71% {
-    transform: scale(5) translate(278px, 635px);
-    opacity: 1;
-  }
-  to {
-    transform: scale(5) translate(278px, 635px);
-    opacity: 1;
-  }
-`;
-
-const PolygonShortEdge1 = styled.g`
-  position: absolute;
-  animation: ${PolygonShortEdge1Animate} 4s;
-  animation-fill-mode: forwards;
-`;
-
-const PolygonShortEdge2Animate = keyframes`
-  from {
-    transform: scale(5) translate(367px, 582px);
-    opacity: 0;
-  }
-  99% {
-    transform: scale(5) translate(367px, 582px);
-    opacity: 0;
-  }
-  to {
-    transform: scale(5) translate(367px, 582px);
-    opacity: 1;
-  }
-`;
-
-const PolygonShortEdge2 = styled.g`
-  position: absolute;
-  animation: ${PolygonShortEdge2Animate} 4s;
-  animation-fill-mode: forwards;
-`;
-
-const PolygonFillAnimate = keyframes`
-  from {
-    transform: scale(5) translate(297px, 666px);
-    opacity: 0;
-  }
-  80% {
-    transform: scale(5) translate(297px, 666px);
-    opacity: 0;
-  }
-  to {
-    transform: scale(5) translate(297px, 666px);
-    opacity: 1;
-  }
-`;
-
-const PolygonFill = styled.g`
-  position: absolute;
-  animation: ${PolygonFillAnimate} 5s;
-  animation-fill-mode: forwards;
-`;
-
-const MouseCursorAnimate = keyframes`
-  from {
-    transform: scale(10) translate(600px, 150px);
-  }
-  10% {
-    transform: scale(10) translate(400px, 400px);
-  }
-  20% {
-    transform: scale(10) translate(297px, 333px); 
-  }
-  30% {
-    transform: scale(10) translate(210px, 341px); //RIGHT POINT
-  }
-  40% {
-    transform: scale(10) translate(205px, 340px); 
-  }
-  50% {
-    transform: scale(10) translate(164px, 372px); //BOTTOM POINT
-  }
-  60% {
-    transform: scale(10) translate(157px, 352px); 
-  }
-  70% {
-    transform: scale(10) translate(142px, 356px); //LEFT POINT
-  }
-  80% {
-    transform: scale(10) translate(177px, 340px); 
-  }
-  90% {
-    transform: scale(10) translate(185px, 328px); //TOP POINT
-  }
-  to {
-    transform: scale(10) translate(210px, 341px); //RIGHT POINT
-  }
-`;
-
-const MouseCursor = styled.g`
-  position: absolute;
-  animation: ${MouseCursorAnimate} 4s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
-  
+  z-index: 5;
 `;
 
 class CityAnimation extends Component {
+
+  //
+  // componentDidMount() {
+  //   TweenMax.to(this.truck, 1, {rotationX:200})
+  // }
+  //   const controller = new ScrollMagic.Controller();
+  //   const item = this.animate;
+  //
+  //   // const item = document.getElementById(this.poopyass);
+  //   const truck = this.refs.truck;
+  //
+  //   const scene = new ScrollMagic.Scene({
+  //     triggerElement: item,
+  //     duration: 500,
+  //     offset: 75
+  //   })
+  //     scene.setTween(truck, 0.5, {rotationX: 200})
+  //     scene.setPin(truck)
+  //     .addTo(controller);
+  // }
+
+
   render() {
     return (
-      <MainDiv>
+      <MainDiv innerRef={(test) => {this.animate = test;}}>
         <Svg xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/1999/xlink" viewBox="0 0 6000 6000">
           <image xlinkHref={CityJpg} width="100%" height="100%"/>
-          <SouthEastGo>
+          <g ref={g => {this.truck = g; }}>
             <g opacity="0.6">
               <path
                 d="M685.77,304.21c-13.34-8-44.1-4.9-63.5,4.51l-52.59,25.51c-19.41,9.41-24.26,23.54-10.89,31.54l132.85,79.47c13.39,8,39.84,6.81,59.26-2.59l52.61-25.53c19.38-9.41,28.52-25.46,15.13-33.49Z"
@@ -590,56 +619,56 @@ class CityAnimation extends Component {
                 d="M612.43,351.39c3.39-1.23,8.93-.95,13.89-3.68,11.82-39.12-54.44-81.48-58.72-28C570.23,286.8,622.67,313,612.43,351.39Z"
                 transform="translate(-542.27 -225.68)" fill="#2873a7"/>
             </g>
-          </SouthEastGo>
-          <MapPinGo>
-            <path id="svg_2" data-name="svg 2" d="M1488.77,1959.63c-8.25-40.5-22.79-74.2-40.41-105.43-13.06-23.17-28.2-44.55-42.21-67-4.67-7.5-8.71-15.42-13.2-23.2-9-15.57-16.27-33.61-15.81-57,.46-22.87,7.07-41.21,16.61-56.21a110,110,0,0,1,77.22-50.22,116.55,116.55,0,0,1,75,14.21,108.58,108.58,0,0,1,37,35.81c9.62,15,16.25,32.82,16.8,56a103.41,103.41,0,0,1-4.4,32c-2.77,9.24-7.23,17-11.2,25.21-7.75,16.1-17.46,30.85-27.21,45.61C1528,1853.36,1500.71,1898.19,1488.77,1959.63Z" transform="translate(-1370.12 -1592.27)" fill="red" stroke="#000" strokeMiterlimit="10" strokeWidth="14"/>
-            <circle id="svg_4" data-name="svg 4" cx="119.21" cy="107.84" r="39.01" stroke="#000" strokeMiterlimit="10" strokeWidth="14"/>
-          </MapPinGo>
-          <PolygonCircleBottom>
-            <circle cx="32.53" cy="5" r="4" fill="#ff4d4d" stroke="#e00000" strokeMiterlimit="10" strokeWidth="2"/>
-          </PolygonCircleBottom>
-          <PolygonCircleLeft>
-            <circle cx="32.53" cy="5" r="4" fill="#ff4d4d" stroke="#e00000" strokeMiterlimit="10" strokeWidth="2"/>
-          </PolygonCircleLeft>
-          <PolygonCircleRight>
-            <circle cx="32.53" cy="5" r="4" fill="#ff4d4d" stroke="#e00000" strokeMiterlimit="10" strokeWidth="2"/>
-          </PolygonCircleRight>
-          <PolygonCircleTop>
-            <circle cx="32.53" cy="5" r="4" fill="#ff4d4d" stroke="#e00000" strokeMiterlimit="10" strokeWidth="2"/>
-          </PolygonCircleTop>
-          <PolygonLongEdge1>
-            <line x1="158.35" y1="66.27" x2="68.35" y2="118.27" fill="#fff" stroke="#e00000" strokeMiterlimit="10" strokeWidth="2"/>
-          </PolygonLongEdge1>
-          <PolygonLongEdge2>
-            <line x1="158.35" y1="66.27" x2="68.35" y2="118.27" fill="#fff" stroke="#e00000" strokeMiterlimit="10" strokeWidth="2"/>
-          </PolygonLongEdge2>
-          <PolygonShortEdge1>
-            <line x1="22.03" y1="91.5" x2="69.03" y2="118.5" fill="#fff" stroke="#e00000" strokeMiterlimit="10" strokeWidth="2"/>
-          </PolygonShortEdge1>
-          <PolygonShortEdge2>
-            <line x1="22.03" y1="91.5" x2="69.03" y2="118.5" fill="#fff" stroke="#e00000" strokeMiterlimit="10" strokeWidth="2"/>
-          </PolygonShortEdge2>
-          <PolygonFill>
-            <polygon points="139.03 35.5 49.03 87.5 2.04 60.5 94.03 9.5 139.03 35.5" fill="#ff4d4d" stroke="#e00000" strokeMiterlimit="10" strokeWidth="2" opacity="0.6"/>
-          </PolygonFill>
-          <MouseCursor>
-            <polygon fill="#FFFFFF" points="8.2,20.9 8.2,4.9 19.8,16.5 13,16.5 12.6,16.6 "/>
-            <polygon fill="#FFFFFF" points="17.3,21.6 13.7,23.1 9,12 12.7,10.5 "/>
-            <rect x="12.5" y="13.6" transform="matrix(0.9221 -0.3871 0.3871 0.9221 -5.7605 6.5909)" width="2" height="8"/>
-            <polygon points="9.2,7.3 9.2,18.5 12.2,15.6 12.6,15.5 17.4,15.5 "/>
-          </MouseCursor>
+          </g>
+          {/*<MapPinGo>*/}
+            {/*<path id="svg_2" data-name="svg 2" d="M1488.77,1959.63c-8.25-40.5-22.79-74.2-40.41-105.43-13.06-23.17-28.2-44.55-42.21-67-4.67-7.5-8.71-15.42-13.2-23.2-9-15.57-16.27-33.61-15.81-57,.46-22.87,7.07-41.21,16.61-56.21a110,110,0,0,1,77.22-50.22,116.55,116.55,0,0,1,75,14.21,108.58,108.58,0,0,1,37,35.81c9.62,15,16.25,32.82,16.8,56a103.41,103.41,0,0,1-4.4,32c-2.77,9.24-7.23,17-11.2,25.21-7.75,16.1-17.46,30.85-27.21,45.61C1528,1853.36,1500.71,1898.19,1488.77,1959.63Z" transform="translate(-1370.12 -1592.27)" fill="red" stroke="#000" strokeMiterlimit="10" strokeWidth="14"/>*/}
+            {/*<circle id="svg_4" data-name="svg 4" cx="119.21" cy="107.84" r="39.01" stroke="#000" strokeMiterlimit="10" strokeWidth="14"/>*/}
+          {/*</MapPinGo>*/}
+          {/*<PolygonCircleBottom>*/}
+            {/*<circle cx="32.53" cy="5" r="4" fill="#ff4d4d" stroke="#e00000" strokeMiterlimit="10" strokeWidth="2"/>*/}
+          {/*</PolygonCircleBottom>*/}
+          {/*<PolygonCircleLeft>*/}
+            {/*<circle cx="32.53" cy="5" r="4" fill="#ff4d4d" stroke="#e00000" strokeMiterlimit="10" strokeWidth="2"/>*/}
+          {/*</PolygonCircleLeft>*/}
+          {/*<PolygonCircleRight>*/}
+            {/*<circle cx="32.53" cy="5" r="4" fill="#ff4d4d" stroke="#e00000" strokeMiterlimit="10" strokeWidth="2"/>*/}
+          {/*</PolygonCircleRight>*/}
+          {/*<PolygonCircleTop>*/}
+            {/*<circle cx="32.53" cy="5" r="4" fill="#ff4d4d" stroke="#e00000" strokeMiterlimit="10" strokeWidth="2"/>*/}
+          {/*</PolygonCircleTop>*/}
+          {/*<PolygonLongEdge1>*/}
+            {/*<line x1="158.35" y1="66.27" x2="68.35" y2="118.27" fill="#fff" stroke="#e00000" strokeMiterlimit="10" strokeWidth="2"/>*/}
+          {/*</PolygonLongEdge1>*/}
+          {/*<PolygonLongEdge2>*/}
+            {/*<line x1="158.35" y1="66.27" x2="68.35" y2="118.27" fill="#fff" stroke="#e00000" strokeMiterlimit="10" strokeWidth="2"/>*/}
+          {/*</PolygonLongEdge2>*/}
+          {/*<PolygonShortEdge1>*/}
+            {/*<line x1="22.03" y1="91.5" x2="69.03" y2="118.5" fill="#fff" stroke="#e00000" strokeMiterlimit="10" strokeWidth="2"/>*/}
+          {/*</PolygonShortEdge1>*/}
+          {/*<PolygonShortEdge2>*/}
+            {/*<line x1="22.03" y1="91.5" x2="69.03" y2="118.5" fill="#fff" stroke="#e00000" strokeMiterlimit="10" strokeWidth="2"/>*/}
+          {/*</PolygonShortEdge2>*/}
+          {/*<PolygonFill>*/}
+            {/*<polygon points="139.03 35.5 49.03 87.5 2.04 60.5 94.03 9.5 139.03 35.5" fill="#ff4d4d" stroke="#e00000" strokeMiterlimit="10" strokeWidth="2" opacity="0.6"/>*/}
+          {/*</PolygonFill>*/}
+          {/*<MouseCursor>*/}
+            {/*<polygon fill="#FFFFFF" points="8.2,20.9 8.2,4.9 19.8,16.5 13,16.5 12.6,16.6 "/>*/}
+            {/*<polygon fill="#FFFFFF" points="17.3,21.6 13.7,23.1 9,12 12.7,10.5 "/>*/}
+            {/*<rect x="12.5" y="13.6" transform="matrix(0.9221 -0.3871 0.3871 0.9221 -5.7605 6.5909)" width="2" height="8"/>*/}
+            {/*<polygon points="9.2,7.3 9.2,18.5 12.2,15.6 12.6,15.5 17.4,15.5 "/>*/}
+          {/*</MouseCursor>*/}
         </Svg>
-        <Text1>
-          Efficient routing to save you money.
-        </Text1>
-        <Text2>
-          Use maps to measure jobsites <br/>
-          to refine quoting processes.
-        </Text2>
-        <Text3>
-          Onboard data tracking for <br/>
-          jobs and equipment.
-        </Text3>
+        {/*<Text1>*/}
+          {/*Efficient routing to save you money.*/}
+        {/*</Text1>*/}
+        {/*<Text2>*/}
+          {/*Use maps to measure jobsites <br/>*/}
+          {/*to refine quoting processes.*/}
+        {/*</Text2>*/}
+        {/*<Text3>*/}
+          {/*Onboard data tracking for <br/>*/}
+          {/*jobs and equipment.*/}
+        {/*</Text3>*/}
       </MainDiv>
     )
   }

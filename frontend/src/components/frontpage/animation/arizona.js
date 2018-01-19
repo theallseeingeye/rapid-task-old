@@ -3,233 +3,69 @@ import styled from 'styled-components';
 
 const Div = styled.div`
 		margin: 0 auto; 
-    //min-height: 40vh;
-    //position: relative;
-    //display: block;
-    //border: solid green;
-    //vertical-align: top;
-    //width: 100%;
-    //height: 100%;
-    //position: fixed;
-    //align-self: flex-start;
-    //float: left;
 `;
 
 const Svg = styled.svg`
   	background: hsl(47, 100%, 86%);
-		position: fixed;
-		//position: absolute;
-		//align-self: flex-start;
+		position: fixed; // This is required for the scroll animation to stick as it passes.
 		margin: auto;
-		//top: 0;
-		//vertical-align: top;
-		//border: solid red;
-		//transform: translateY(50%);
-		//float: left;
+	
 `;
 
 class Arizona extends Component {
-  constructor(props) {
-    super(props);
-
-    // div = this.div.bind(this);
-    // animate = this.animate.bind(this);
-
-  }
 
   componentDidMount() {
-    // const controller = new ScrollMagic.Controller();
-    // const item = this.animate;
-    // const div = this.div;
 
-    // const scene = new ScrollMagic.Scene({
-    //   triggerElement: div,
-    //   duration: 500,
-    //   offset: 75
-    // })
-    //   .setTween(item, 0.5, {backgroundColor: "red", autoRound: false})
-    //   .setPin(item)
-    //   .addTo(controller);
+    /* -----------------------------------------------------------------------------------------------------------------
+    This section watches the scroll actions of the user and animate the basic SVG attributes according to scroll
+    percentage.
 
-    // const body = document.body.getElementById("root") ;
-
-
-    // console.log(regex);
-    // console.log(vertHeight);
-    // console.log(window.scrollY); // ScrollY is the scroll position in Y px of browser.
-
-    // function elementTrigger() {
-    //   const rect = arizona.getBoundingClientRect();
-    //
-    //
-    //     // return window.scroll(function () {
-    //     // const hT = arizona.offset().top;
-    //     // const hH = arizona.outerHeight();
-    //     // const wH = window.height();
-    //     // const wS = this.scrollTop();
-    //     // if (wS > (hT + hH - wH)) {
-    //     //   alert('you have made this work!');
-    //     // }
-    //
-    // }
-
-    // window.onscroll = function(){
-    //   //TOP
-    //   if(triggerdiv.getBoundingClientRect().top <= 0){
-    //       console.log("TRIGGER: top of div reached.");
-    //   }
-    // };
-
-      /* just helper function */
-    // const random = function(min, max) {
-    //   let rand = min + Math.random() * (max + 1 - min);
-    //   rand = rand ^ 0;
-    //   return rand;
-    // };
-    //
-    // triggerdiv.addEventListener('onresize', function(){
-    //   triggerdiv.style.background = "rgb("+random(0,255)+','+random(0,255)+','+random(0,255)+")";
-    // });
-
-
-    // const div = document.querySelector('arizona');
-    // const divOffSet = elementTrigger(div);
-    // console.log(div.getBoundingClientRect().top); // This will tell you the position of the element you want to trigger.
-
-
-    // function elementWatcher() {
-    //
-    //     // triggerdiv.style.background = "rgb("+random(0,255)+','+random(0,255)+','+random(0,255)+")";
-    //     if (document.body.scrollTop > 2000 || document.documentElement.scrollTop > 2000) {
-    //        window.onscroll = function() {
-    //          window.requestAnimationFrame(scrollHandler);
-    //        }
-    //     } else {
-    //       arizona.style.background = "blue";
-    //     }
-    //   }
-
-
-    //
-    // window.onresize = function() {
-    //   window.requestAnimationFrame(elementWatcher);
-    // }
-
-  //--------------------------------------------------------------------------------------------------------------------
-
-
-    // This section records the scroll position from the top of the page.
-    // window.addEventListener("scroll", function() {
-    //   const scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop;
-    //   console.log('You have scrolled the page by: ' + scrollTop + 'px');
-    // });
-
-    // window.addEventListener("scroll", function() {
-    //  const divHeight = triggerdiv.getBoundingClientRect().height;
-    //  console.log('The trigger div is this high: ' + divHeight + 'px');
-    // });
-
-    // This is suppose to get the targeted div px location.
-
-
-    // window.addEventListener("scroll", function () {
-    //   const divTrigger = triggerdiv.getBoundingClientRect().top;
-    //   console.log('Div target is at: ' + divTrigger + 'px');
-    // });
-
-
-
-
-    // Gets window size based on position of window.
-    window.onresize = function() {
-      window.requestAnimationFrame(function(){console.log(triggerdiv.getBoundingClientRect().top)});
-    };
-
+    - Watch for which SVG attribute compatibility: https://caniuse.com/#search=svg
+    - To adjust the scroll speed, adjust the div height (vh) to the desired length. The scroll will calculate the
+      animation time-line based on the scroll distance or height of the div.
+     */
     function scrollHandler() {
-        const scrollPosition = Math.round(window.scrollY);
         const regex = /hsl\((\d+),\s*([\d.]+)%,\s*([\d.]+)%\)/;
-        const arizona = document.getElementById("arizona");
-        const triggerdiv = document.getElementById("animation");
+        const arizona = document.getElementById("arizona"); // This is the id for the main SVG
+        const triggerdiv = document.getElementById("animation"); // This is the Parent Div of the SVG
         const mesaLayers = arizona.querySelectorAll("path"); // Returns a list of paths in the svg file.
-        const SVGoffsettop = Math.round(arizona.getBoundingClientRect().top);
         const vertHeight = Math.round(arizona.getBoundingClientRect().height); // Gets the svg's height based on responsive size.
-        const sun = document.getElementById("sun");
-        const startOffSet = (0); // Indicates when to start after the element reaches the top of page.
-        const triggeredDiv =  Math.round(triggerdiv.getBoundingClientRect().top);
+        const startOffSet = 0; // Indicates when to start after the element reaches the top of page.
+        const bottomOffset = 0;
+        const triggeredDiv =  Math.round(triggerdiv.getBoundingClientRect().top); // Top trigger of the div
         const triggeredDivBottom = Math.round(triggerdiv.getBoundingClientRect().bottom);// Triggers when the div reaches the top of page
-        const divHeight = Math.round(triggerdiv.getBoundingClientRect().height);
-        const stopOffset = -vertHeight;
-        const vertRoll = -triggeredDiv / (divHeight-vertHeight); // Percentage of scroll based on height of svg.
+        const divHeight = Math.round(triggerdiv.getBoundingClientRect().height); // Height of the div
+        const vertRoll = (-triggeredDiv / (divHeight - vertHeight)); // Percentage of scroll based on height of svg.
+        const sun = document.getElementById("sun"); // SVG layer by id.
 
-        console.log('TriggeredDiv: ' + triggeredDiv);
-        console.log('divheight: ' + divHeight + ' triggeredDiv: ' + triggeredDiv);
-        console.log(triggeredDivBottom);
 
-        // Need to tell this to trigger when it hits the right div.
-        if ((triggeredDiv <= startOffSet) && (0 <= triggeredDivBottom - vertHeight)) {
+        // Based if the scroll has hit the top trigger or bottom trigger of the div.
+        if ((triggeredDiv <= startOffSet) && ( bottomOffset <= triggeredDivBottom - vertHeight)) {
           Array.prototype.forEach.call(mesaLayers, function (layer) {
-
             const layerFill = layer.getAttribute("fill"); // Get the "fill" out of the paths
-
             const hslComponents = layerFill.match(regex).slice(1); // Match to any hsl to "fill" and remove quotes from hsl and place numbers in array
-
             const newHSL = parseFloat(hslComponents[2]) * vertRoll; // Scroll percentage x last number in hsl row
-
             layer.style.fill = "hsl(" + hslComponents[0] + ", " + hslComponents[1] + "%, " + newHSL + "%)"; // Adds the updated hsl by scroll values. The first two remains the same.
-
             arizona.style.background = "hsl(48, " + 100 * vertRoll + "%, " + 88 * vertRoll + "%)"; // Creates: style="background:rgb(221, 193, 81)
-
             sun.style.transform = "translate(0," + triggeredDiv / 10 + "px"; // Creates: style="transform: translate3d(0px, 50px, 0px);
             arizona.style.transform = "translateY(-" + (window.scrollY-(window.scrollY)*2) + "px)";
-
           })
-        } else if  (triggeredDivBottom -vertHeight <= 0) {
+
+        // This listens for the bottom div trigger
+        } else if  (triggeredDivBottom - vertHeight <= 0) {
           arizona.style.transform = "translateY(-" + (window.scrollY - divHeight + vertHeight) + "px)";
 
+        // This adjusts and scrolls the svg to the right position.
         } else {
-          // arizona.style.transform = "translateY(-" + triggeredDiv + divHeight - vertHeight + "px)";
           arizona.style.transform = "translateY(-" + (window.scrollY) + "px)";
       }
     }
 
-
-
     window.onscroll = function() {
         window.requestAnimationFrame(scrollHandler);
     }
-
     //-----------------------------------------------------------------------------------------------------------------
 
-
-    // function scrollHandler() {
-    //     // Need to tell this to trigger when it hits the right div.
-    //
-    //     if (window.scrollY < vertHeight) {
-    //     Array.prototype.forEach.call(mesaLayers, function(layer) {
-    //
-    //       const layerFill = layer.getAttribute("fill"); // Get the "fill" out of the paths
-    //       const vertRoll = Math.abs(window.scrollY - vertHeight) / vertHeight; // Percentage of scroll based on height of svg.
-    //       const hslComponents = layerFill.match(regex).slice(1); // Match to any hsl to "fill" and remove quotes from hsl and place numbers in array
-    //       const newHSL = parseFloat(hslComponents[2]) * vertRoll; // Scroll percentage x last number in hsl row
-    //
-    //       layer.style.fill = "hsl(" + hslComponents[0] +", "+ hslComponents[1] + "%, " +  newHSL + "%)"; // Adds the updated hsl by scroll values. The first two remains the same.
-    //
-    //       arizona.style.background = "hsl(48, " + 100 * vertRoll + "%, " + 88 * vertRoll + "%)"; // Creates: style="background:rgb(221, 193, 81)
-    //
-    //       sun.style.transform = "translate3d(0," + window.scrollY / 10 + "px, 0)"; // Creates: style="transform: translate3d(0px, 50px, 0px);
-    //
-    //       // console.log(newHSL);
-    //       // console.log(vertRoll);
-    //
-    //     })
-    //     } else {
-    //       arizona.style.transform = "translateY(-"+ (window.scrollY - vertHeight)+"px)";
-    //   }
-    // }
-    //
-    // window.onscroll = function() {
-    //     window.requestAnimationFrame(scrollHandler);
-    // }
   }
 
 

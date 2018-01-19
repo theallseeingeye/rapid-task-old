@@ -1,12 +1,14 @@
 
 /* -----------------------------------------------------------------------------------------------------------------
 This section watches the scroll actions of the user and animate the basic SVG attributes according to scroll
-percentage.
+travel.
 
 - Watch for which SVG attribute compatibility: https://caniuse.com/#search=svg
 - To adjust the scroll speed, adjust the div height (vh) to the desired length. The scroll will calculate the
   animation time-line based on the scroll distance or height of the div.
  */
+
+// For ReactJS- place this under "componentDidMount".
 function scrollHandler() {
     const regex = /hsl\((\d+),\s*([\d.]+)%,\s*([\d.]+)%\)/;
     const arizona = document.getElementById("arizona"); // This is the id for the main SVG

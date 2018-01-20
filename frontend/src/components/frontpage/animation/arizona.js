@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const Div = styled.div`
-		margin: 0 auto; 
+		margin: auto;
 `;
 
 const Svg = styled.svg`
   	background: hsl(47, 100%, 86%);
 		position: fixed; // This is required for the scroll animation to stick as it passes.
-		margin: auto;
-	
+		//top: 50%;
+		//margin-top: -37.5%;
+
 `;
 
 class Arizona extends Component {
@@ -25,25 +26,41 @@ class Arizona extends Component {
       animation time-line based on the scroll distance or height of the div.
      */
     function scrollHandler() {
+        // ELEMENT ID
+        const sun = document.getElementById("sun"); // SVG layer by id.
+        const mainSvg = document.getElementById("arizona"); // This is the id for the main SVG
+        const parentDiv = document.getElementById("scrollAnimation"); // This is the Parent Div of the SVG
+
+        // DATA EXTRACTION
         const regex = /hsl\((\d+),\s*([\d.]+)%,\s*([\d.]+)%\)/;
-        const arizonaSvg = document.getElementById("arizona"); // This is the id for the main SVG
-        const parentDiv = document.getElementById("animation"); // This is the Parent Div of the SVG
-        const svgLayers = arizonaSvg.querySelectorAll("path"); // Returns a list of paths in the svg file.
-        const svgHeight = Math.round(arizonaSvg.getBoundingClientRect().height); // Gets the svg's height based on responsive size.
-        const startOffSet = 0; // Indicates when to start after the element reaches the top of page.
-        const bottomOffSet = 0;
+        const svgLayers = mainSvg.querySelectorAll("path"); // Returns a list of paths in the svg file.
+        const svgHeight = Math.round(mainSvg.getBoundingClientRect().height); // Gets the svg's height based on responsive size.
         const topDivTrigger =  Math.round(parentDiv.getBoundingClientRect().top); // Top trigger of the div
-        const bottomDivTrigger = Math.round(parentDiv.getBoundingClientRect().bottom);// Triggers when the div reaches the top of page
         const divHeight = Math.round(parentDiv.getBoundingClientRect().height); // Height of the div
         const scrollPercentage = (-topDivTrigger / (divHeight - svgHeight)); // Percentage of scroll based on height of svg.
-        const sun = document.getElementById("sun"); // SVG layer by id.
+        // The topDivTrigger counts down to position, we need to flip the sequence to match the scrollY count.
+        const scrollPositionToParentDiv = Math.round(topDivTrigger + (window.pageYOffset || document.documentElement.scrollTop));
+        const divScrollBottomRange = (scrollPositionToParentDiv+divHeight);
+        const userWindowHeight = document.body.clientHeight;
+
+        // Offsets the center of the svg from the top of the div by percentage.
+        const svgPositionOnScroll = (userWindowHeight - svgHeight) * (0.5);
 
 
-        // Based if the scroll has hit between the top trigger and the bottom trigger of the div. IF true, renders svg
-        //    new instructions by the scroll position.
-        if ((topDivTrigger <= startOffSet) && ( bottomOffSet <= bottomDivTrigger - svgHeight)) {
+        if ((scrollPositionToParentDiv) >= window.scrollY) {
+          console.log('above div');
+          mainSvg.style.transform = "translateY(-" + (window.scrollY - svgPositionOnScroll) + "px)";
+
+        } else if ((divScrollBottomRange - svgHeight - svgPositionOnScroll) <= window.scrollY) {
+          console.log('below div');
+          mainSvg.style.transform = "translateY(-" + (window.scrollY - divHeight + svgHeight) + "px)";
+
+        } else {
+          console.log('It Is Inside The DIV');
+          // Below are the SVG Animations:
           // Puts all these in the array and work on them
           Array.prototype.forEach.call(svgLayers, function (layer) {
+            //----------------------------------------------------------------------------------------------------------
             // For each "path" layer, pulls the attribute "fill"
             const layerFill = layer.getAttribute("fill");
             // for each "fill" pulls hsl out and removes quotes.
@@ -53,32 +70,60 @@ class Arizona extends Component {
             // the first two numbers remain the same, the last number is updated by scroll variables
             layer.style.fill = "hsl(" + hslComponents[0] + ", " + hslComponents[1] + "%, " + newHSL + "%)";
             // This adjusts the background color of the svg by the scroll.
-            arizonaSvg.style.background = "hsl(48, " + 100 * scrollPercentage + "%, " + 88 * scrollPercentage + "%)"; // Creates: style="background:rgb(221, 193, 81)
+            mainSvg.style.background = "hsl(48, " + 100 * scrollPercentage + "%, " + 88 * scrollPercentage + "%)"; // Creates: style="background:rgb(221, 193, 81)
             // Transform the sun circle vector by creating: style="transform: translate3d(0px, 50px, 0px);
-            sun.style.transform = "translate(0," + topDivTrigger / 10 + "px";
-          })
+            sun.style.transform = "translateY(" + (topDivTrigger / 10) + "px";
+            //----------------------------------------------------------------------------------------------------------
+            // This allows the SVG to stick and stay, even after refresh.
+            mainSvg.style.transform = "translateY(-" + (scrollPositionToParentDiv - svgPositionOnScroll) + "px";
+          });
+        }
 
-        // This listens for the bottom div trigger
-        } else if  (bottomDivTrigger - svgHeight <= 0) {
-          arizonaSvg.style.transform = "translateY(-" + (window.scrollY - divHeight + svgHeight) + "px)";
+        //
+        // const bottomDivTrigger = Math.round(parentDiv.getBoundingClientRect().bottom);// Triggers when the div reaches the top of page
+        // const startOffSet = 0; // Indicates when to start after the element reaches the top of page.
+        // const bottomOffSet = 0;
 
-        // This adjusts and scrolls the svg to the right position before the top trigger
-        } else {
-          arizonaSvg.style.transform = "translateY(-" + (window.scrollY) + "px)";
-      }
+        // Based if the scroll has hit between the top trigger and the bottom trigger of the div. IF true, renders svg
+        //    new instructions by the scroll position.
+      //   if ((topDivTrigger <= startOffSet) && ( bottomOffSet <= bottomDivTrigger - svgHeight)) {
+      //     // Puts all these in the array and work on them
+      //     Array.prototype.forEach.call(svgLayers, function (layer) {
+      //       // For each "path" layer, pulls the attribute "fill"
+      //       const layerFill = layer.getAttribute("fill");
+      //       // for each "fill" pulls hsl out and removes quotes.
+      //       const hslComponents = layerFill.match(regex).slice(1);
+      //       // hsl is an array of three numbers- multiplies the last number of hsl
+      //       const newHSL = parseFloat(hslComponents[2]) * scrollPercentage;
+      //       // the first two numbers remain the same, the last number is updated by scroll variables
+      //       layer.style.fill = "hsl(" + hslComponents[0] + ", " + hslComponents[1] + "%, " + newHSL + "%)";
+      //       // This adjusts the background color of the svg by the scroll.
+      //       mainSvg.style.background = "hsl(48, " + 100 * scrollPercentage + "%, " + 88 * scrollPercentage + "%)"; // Creates: style="background:rgb(221, 193, 81)
+      //       // Transform the sun circle vector by creating: style="transform: translate3d(0px, 50px, 0px);
+      //       sun.style.transform = "translate(0," + topDivTrigger / 10 + "px";
+      //     })
+      //
+      //   // This listens for the bottom div trigger
+      //   } else if  (bottomDivTrigger - svgHeight <= 0) {
+      //     mainSvg.style.transform = "translateY(-" + (window.scrollY - divHeight + svgHeight) + "px)";
+      //
+      //   // This adjusts and scrolls the svg to the right position before the top trigger
+      //   } else {
+      //     mainSvg.style.transform = "translateY(-" + (window.scrollY) + "px)";
+      // }
     }
 
-    window.onscroll = function() {
-        window.requestAnimationFrame(scrollHandler);
-    }
+    // Live watch of the scroll and inputs the coords for the function.
+    // window.onscroll = function() {
+    //     window.requestAnimationFrame(scrollHandler);
+    // }
     //-----------------------------------------------------------------------------------------------------------------
-
   }
 
 
   render() {
     return (
-      <Div id="animation">
+      <Div id="scrollAnimation">
         <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 279" id="arizona">
           <circle id="sun" fill="#FFF7EB" cx="655" cy="128" r="41.5"/>
           <path fill="hsl(32, 89%, 75%)" d="M750 119.2s-17.5-3.2-26-1.7-25.5 1.5-33.5 4.5-49.5 2.5-55.5 2.5-52-4.1-60.5-3.8c-8.5.3-76.5-5.5-86-3.8-9.5 1.7-34.5 4.2-43.5 3.7s-26-7-41-6.5-43.4 2.3-49.5 2.5-69-.5-77 .5-43-2.6-48-3c-5-.5-18-4.5-25-3.5s-63 4-71 4-45-1.5-52.5-1-54.5 4.9-64.5 3.9-16.4 0-16.4 0L0 279h750V119.2z"/>

@@ -117,12 +117,11 @@ const Arrow = styled.div`
 const FeaturesContainer = styled.div`
   height: 100vh;
   background-color: ${props => props.theme.logoblue};
-  clip-path: polygon(0 0, 100% 0, 100% 93%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 93%, 0 100%);// Order of polygon- (x,y) (TL, TR, BR, BL) 
 `;
 
 const QuotesContainer = styled.div`
-  height: 100vh;
-  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%); // Order of polygon- (x,y) (TL, TR, BR, BL) 
+  height: 200vh;
 `;
 
 const JobCostsContainer = styled.div`

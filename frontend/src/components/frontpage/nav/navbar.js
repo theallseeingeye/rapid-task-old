@@ -38,7 +38,6 @@ const FlexContainer = styled.div`
 const FlexItem = styled.button`
   // Styling
   background: rgba(63, 169, 245, 0.8);
-  border: 1px solid black;
   color: white;
   display: inline-block;
   font-family: ${props => props.theme.Robotofont};

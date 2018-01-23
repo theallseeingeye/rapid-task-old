@@ -8,8 +8,6 @@ const Svg = styled.svg`
 `;
 
 
-
-
 class DevicesSVG extends Component {
     constructor(props) {
     super(props);
@@ -20,7 +18,7 @@ class DevicesSVG extends Component {
   render() {
     return (
       <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 391.06 180.19">
-        <title>Devices</title>
+        <title>Rapid Task Works on all Devices</title>
         <g id="Desktop">
           <g id="desktop-2">
             <path id="body" d="M80.72,0h184a9.75,9.75,0,0,1,9.75,9.75V122.5a0,0,0,0,1,0,0H71a0,0,0,0,1,0,0V9.75A9.75,9.75,0,0,1,80.72,0Z"/>

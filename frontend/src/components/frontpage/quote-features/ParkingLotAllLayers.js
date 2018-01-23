@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled, {keyframes} from 'styled-components';
 import layerScrollHandler from '../../../../utils/jsfunctions/ScrollHandler';
 import GravelLayer from './GravelLayer';
+import ManQuoting from "./ManQuoting"
 import TriggerAction from '../../../../utils/jsfunctions/ScrollTrigger';
 
 
@@ -162,8 +163,10 @@ class ParkingLotLayers extends Component {
     setTimeout(() => {
       this.setState({comment: "is super cool!"})
     }, 1000)
+
     return (
       <Div id="parentDiv">
+        <ManQuoting/>
         <Text1> {this.name} {this.state.comment} </Text1>
         <Text> Okay Cool! This May work! {this.state.name}! </Text>
         <Text3 id="trigger"> Mmmm are you scrolling like a retard? </Text3>

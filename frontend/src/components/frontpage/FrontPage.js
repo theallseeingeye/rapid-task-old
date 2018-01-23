@@ -17,9 +17,6 @@ import MainPage from "./main-page/MainPage";
 
 import CityAnimation from "./map-features/MapFeatures";
 
-
-
-
 const Arrow = styled.div`
   height: 30vh;
 `;
@@ -47,8 +44,8 @@ const MapsContainer = styled.div`
 `;
 
 const EmployeeContainer = styled.div`
-  height: 90vh;
-  background-color: darkorange;
+  height: 220vh;
+  border: solid pink;
 `;
 
 const ClientContainer = styled.div`
@@ -78,7 +75,6 @@ class FrontPage extends Component {
           <EmployeeFeatures/>
         </EmployeeContainer>
         <ClientContainer>
-          Client Features go here. Talk about how we communicate with clients and keep track of them.
           <ClientFeatures/>
         </ClientContainer>
         <div>

@@ -6,6 +6,9 @@ class Footer extends Component {
     return (
       <div>
         This is the FOOT!
+
+        We need to add Media and Investors section. Also include Careers section
+
       </div>
     );
   }

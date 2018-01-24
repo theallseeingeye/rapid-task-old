@@ -75,7 +75,7 @@ class NavBar extends Component {
           <FlexItem flexgrow="1">Features</FlexItem>
           <FlexItem flexgrow="1">Contact</FlexItem>
           <FlexItem flexgrow="1">About</FlexItem>
-          <FlexItem flexgrow="1">TEST4</FlexItem>
+          <FlexItem flexgrow="1">Development</FlexItem>
         </FlexContainer>
       </Nav>
     );

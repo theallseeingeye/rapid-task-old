@@ -6,6 +6,7 @@ import ManQuoting from "./ManQuoting"
 import TriggerAction from '../../../../utils/jsfunctions/ScrollTrigger';
 
 
+
 const Div = styled.div`
    margin: auto;
    max-width: 100%;
@@ -138,14 +139,16 @@ class ParkingLotLayers extends Component {
   componentDidMount() {
 
 
+
+
+
+
     // Magic scroll! This makes the SVG stick on the scroll.
     function scrollHandler() {
       layerScrollHandler("svgMain", "parentDiv", 0.5);
       // TriggerAction("trigger", 2, "svgMain");
       // TriggerAction("trigger", 0, "gravelPin");
       // TriggerAction("trigger", 2, "svgMain");
-
-
     }
 
 

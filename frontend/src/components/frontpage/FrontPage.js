@@ -44,8 +44,7 @@ const MapsContainer = styled.div`
 `;
 
 const EmployeeContainer = styled.div`
-  height: 220vh;
-  border: solid pink;
+  height: 300vh;
 `;
 
 const ClientContainer = styled.div`

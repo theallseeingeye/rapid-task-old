@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import theme from './../../../global-styles/DefaultTheme.js';
+
 const Svg = styled.svg`
   max-width: 90%;
   margin: auto;

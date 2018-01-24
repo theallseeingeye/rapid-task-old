@@ -1,4 +1,3 @@
-import throttle from "lodash.throttle";
 
 /*
 This is the magical scroll that fixes objects to the scroll trigger watch at div ends.
@@ -40,6 +39,7 @@ export default function layerScrollHandler(mainSvgId, parentDivId, svgPosition) 
 
   } else {
     // console.log('It Is Inside The DIV');
+
     // This allows the SVG to stick and stay, even after refresh.
     mainSvg.style.transform = "translateY(-" + (scrollPositionToParentDiv - svgPositionOnScroll) + "px";
   }

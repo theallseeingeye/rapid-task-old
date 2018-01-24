@@ -61,7 +61,7 @@ const Text3 = styled.p`
 `;
 
 const Background = styled.div`
-  background: rgb(59, 79, 90);
+  background: rgb(59, 79, 90); // Background of devices
   height: 20vh;
   justify-content: center;
   align-self: flex-end;

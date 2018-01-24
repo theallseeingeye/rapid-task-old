@@ -39,7 +39,7 @@ const JobCostsContainer = styled.div`
 `;
 
 const MapsContainer = styled.div`
-  height: 90vh;
+  height: 120vh;
   //border: 40px double aqua;
 `;
 

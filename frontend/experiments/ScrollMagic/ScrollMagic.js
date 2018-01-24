@@ -1,4 +1,4 @@
-import ScrollMagic from 'frontend/experiments/ScrollMagic/ScrollMagic';
+import ScrollMagic from 'scrollmagic/scrollmagic/minified/ScrollMagic.min';
 import {TweenMax as Tween,TimelineMax as Timeline} from 'gsap';
 
 

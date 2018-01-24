@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import FrontPage from './components/frontpage/frontpage';
+import FrontPage from './components/frontpage/FrontPage';
 import styled from 'styled-components';
 
 

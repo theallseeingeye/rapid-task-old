@@ -72,7 +72,7 @@ class EmployeeFeatures extends Component {
         <TextLeftLadder>
           <LadderParagraph>
           Employees Empowered With Knowledge vasjdfhaskdfh akjsdfa fdsa sdfajSH FKASDFH ASKDFH ASDFH ASKDJHF ASDHF ASDJ
-             ADSFASDLKF AJSDF KLASDJF LASDFJ ALSDKFJ ALSDJF LASDJF KASLDF JASDKLF JASDLFJ ASLDKFJ ASDF Test text for change
+             ADSFASDLKF AJSDF KLASDJF LAor change
           </LadderParagraph>
         </TextLeftLadder>
         <TextArea>

@@ -19,14 +19,15 @@ Table of Contents
 
 
 
-## Installation 
+# Installation 
+First time setup will need to follow the installation documentation:
+[Windows Installation](/docs/installation_windows.md) or [OS X Installation](/docs/installation_osx.md)
 
 
-Please follow the installation documentation: [Windows Installation](/docs/installation_windows.md) or [OS X Installation](/docs/installation_osx.md)
+# Development Mode <a id="developmentmode"></a>
 
-
-## Development Mode
-
+Backend
+-------
 During development the local, testing, staging and production settings will be different. This is due ease of developing
 on localhosts and requires different setup from production servers. You will need to make sure you are working in the
 right settings at the appropriate stage of the development. Here are the **command lines** to set the right settings 
@@ -43,22 +44,54 @@ Downloading requirements files:
   * Test: ```pip install -r requirements/test.txt```
   * Staging: ```pip install -r requirements/staging.txt```
   * Production: ```pip install -r requirements/production.txt```
-
+  
 Updating to the requirement files:
 * Ensure they are requirements that are used- not cluttered with junk
    * In command line in your virtual environment: pip freeze > requirements/local.txt
       * Can replace local.txt with other versions such as test, staging and production.
-## Running Tests
 
-If you haven't yet installed coverage.py: pip install coverage
-    * For a list of commands type in the command-line:
-        coverage help
-Start and run a test at the command-line in the project root directory:
-    coverage run manage.py test --settings=config.settings.test
-For test results without admin:
-    coverage html --omit="admin.py"
+#### Running Backend Server
+* Make sure you are in the backend project folder. The root is /backend.
+    * Terminal command: ```python manage.py runserver```  
+
+Frontend 
+--------
+
+#### Running Frontend Server
+* Make sure you are not in an virtual environment. If you are, type ```deactivate``` in the terminal.
+* Check that you are in the frontend project folder directory. The root is /frontend.
+* Then use this command to start the server:
+    * Terminal command: ```npm run start``` or ```yarn start```
+
+
+# Running Tests <a id="running-tests"></a>
+
+Backend
+-------
+If you haven't yet installed coverage.py: ```pip install coverage```  
+
+For a list of commands:  ```coverage help```  
+        
+Start and run a test at the command-line in the project root directory:   
+   * ```coverage run manage.py test --settings=config.settings.test``` 
+     
+For test results without admin:  
+   * ```coverage html --omit="admin.py"```  
+        * Then this will create a directory with html that has the coverage report.
+   
 To look at the generated html report (after using html) go to website/htmlcov/index.html. it shows the coverage report.
 
+Frontend
+--------
+
+The tests and coverage uses Jest: https://facebook.github.io/jest/   
+For tests, type in the terminal: ```npm test```   
+For coverage, type in the terminal: ```npm test -- --coverage```  
+
+Snapshots will take a copy of a js styling. When you run the test again it will look at the taken snap shot and compare
+to the one just run. You can verify if it was intentional or not. If wanting a change: jest -u to overwrite the existing
+snapshot.
+      
 
 ## Deployment <a id="deployment"></a>
 
@@ -67,7 +100,7 @@ long it will take. Backup the data before doing any kind of migrations.
 
 ---
 
-## Appendix
+# Appendix
 
 #### Editing these documents?
 

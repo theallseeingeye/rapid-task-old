@@ -1,7 +1,7 @@
 
 /*
 This is the magical scroll that fixes objects to the scroll trigger watch at div ends.
-Requires that the svg layer is "position: fixed" in css.
+Requires that the svg layer has "position: fixed" in css.
 Requires this to initialize this following function under componentWillMount:
 
   function scrollHandler() {
@@ -14,6 +14,7 @@ Requires this to initialize this following function under componentWillMount:
 
  */
 export default function layerScrollHandler(mainSvgId, parentDivId, svgPosition) {
+
   // ELEMENT ID
   const mainSvg = document.getElementById(String(mainSvgId)); // This is the id for the main SVG
   const parentDiv = document.getElementById(String(parentDivId)); // This is the Parent Div of the SVG - WATCH FOR NAMING CONFLICTS!
@@ -28,6 +29,7 @@ export default function layerScrollHandler(mainSvgId, parentDivId, svgPosition) 
   const userWindowHeight = document.body.clientHeight;
   // Offsets the center of the svg from the top of the div by percentage.
   const svgPositionOnScroll = (userWindowHeight - svgHeight) * (svgPosition);
+
 
   if ((scrollPositionToParentDiv) >= window.scrollY) {
     // console.log('above div');

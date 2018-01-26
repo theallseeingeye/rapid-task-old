@@ -5,7 +5,6 @@ import RepeatButton from './Repeat.svg';
 
 
 const MainDiv = styled.div`
-  //border: solid purple;
   margin: auto;
 `;
 
@@ -15,10 +14,8 @@ const Svg = styled.svg`
   align-self: flex-start;
   width: 100%;
   height: 100vh;
-  //border: solid green;
   position: absolute;
-  //position: absolute;
-  //overflow: hidden;
+
 `;
 
 const Text1AnimatePhone = keyframes`

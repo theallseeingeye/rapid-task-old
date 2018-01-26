@@ -24,6 +24,7 @@ const DeviceContainer = styled.div`
   //width: 100%;
   height: 35vh;
   margin: auto;
+  
   //background: linear-gradient(rgba(63,169,245,0) 5%, rgba(100,220,245,0.8) 80%,  rgba(63,169,245,0) 95%);
   display: flex;
   justify-content: center;

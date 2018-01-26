@@ -28,7 +28,7 @@ const FeaturesContainer = styled.div`
 `;
 
 const QuotesContainer = styled.div`
-  height: 200vh;
+  height: 600vh;
 `;
 
 const JobCostsContainer = styled.div`
@@ -39,16 +39,16 @@ const JobCostsContainer = styled.div`
 `;
 
 const MapsContainer = styled.div`
-  height: 120vh;
+  height: 110vh;
   //border: 40px double aqua;
 `;
 
 const EmployeeContainer = styled.div`
-  height: 300vh;
+  height: 260vh;
 `;
 
 const ClientContainer = styled.div`
-  //height: 200vh;
+  //height: 260vh;
   //border: 8px solid gold;
 `;
 

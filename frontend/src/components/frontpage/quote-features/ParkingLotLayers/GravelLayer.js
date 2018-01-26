@@ -1,15 +1,8 @@
 import React, { Component } from 'react';
-import styled from "styled-components";
+import {BaseAnimation} from '../BounceAnimation';
 
-
-import BaseAnimation from './QuotesAnimation';
 
 const GravelLayerAnimate = BaseAnimation.extend`
-  //animation-delay: 1.2s;
-`;
-
-const Text = styled.text`
-  size: 5em;
 `;
 
 class GravelLayer extends Component {

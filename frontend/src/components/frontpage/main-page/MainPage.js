@@ -26,6 +26,7 @@ const BackgroundContainer = styled.div`
 const BackgroundBox = styled.div`
   align-self: flex-start;
   margin: auto;
+  width: 100%;
 `;
 
 const LogoContainer = styled.div`
@@ -77,6 +78,7 @@ const SloganBox = styled.div`
   align-self: flex-end;
   margin-bottom: 2em;
   background-color: ${props => props.theme.logoblue};
+  opacity: 0.8;
   text-align: center;
   height: 3.3em;
 `;

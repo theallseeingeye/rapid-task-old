@@ -5,10 +5,10 @@ const theme = {
   // Fonts
   Robotofont: 'Roboto, sans-serif',
   RobotoCondensedfont: 'Roboto Condensed, sans-serif',
-  logoblue: 'rgba(63,169,245,1)',
 
   // Colors
   mainbackground: 'white',
+  logoblue: 'rgb(63,169,245)',
 
   // Screen Size Break-points
   giantscreen: '1170px',

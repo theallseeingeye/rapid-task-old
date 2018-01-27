@@ -32,8 +32,13 @@ const BounceInDown = keyframes`
 `;
 
 export const BaseAnimation = styled.g`
-  //opacity: 0;
   animation: ${BounceInDown} 0.5s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
+  
+  // In development to allow reverse
+  #reverse {
+    animation-direction: reverse;
+  }
+  
 `;

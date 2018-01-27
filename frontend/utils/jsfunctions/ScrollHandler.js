@@ -13,7 +13,7 @@ Requires this to initialize this following function under componentWillMount:
   }
 
  */
-export default function layerScrollHandler(mainSvgId, parentDivId, svgPosition) {
+export default function layerScrollHandler(mainSvgId, parentDivId) {
 
   // ELEMENT ID
   const mainSvg = document.getElementById(String(mainSvgId)); // This is the id for the main SVG
@@ -27,8 +27,8 @@ export default function layerScrollHandler(mainSvgId, parentDivId, svgPosition) 
   const scrollPositionToParentDiv = topDivTrigger + (window.pageYOffset || document.documentElement.scrollTop);
   const divScrollBottomRange = (scrollPositionToParentDiv + divHeight);
   const userWindowHeight = document.body.clientHeight;
-  // Offsets the center of the svg from the top of the div by percentage.
-  const svgPositionOnScroll = (userWindowHeight - svgHeight) * (svgPosition);
+  // Centers the SVG's viewbox exactly to the middle of y-axis of the user's viewer.
+  const svgPositionOnScroll = (userWindowHeight/2)-(svgHeight/2);
 
 
   if ((scrollPositionToParentDiv) >= window.scrollY) {
@@ -45,6 +45,7 @@ export default function layerScrollHandler(mainSvgId, parentDivId, svgPosition) 
     // This allows the SVG to stick and stay, even after refresh.
     mainSvg.style.transform = "translateY(-" + (scrollPositionToParentDiv - svgPositionOnScroll) + "px";
   }
+
 }
 
 

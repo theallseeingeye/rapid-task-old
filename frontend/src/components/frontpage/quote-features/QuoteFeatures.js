@@ -52,10 +52,8 @@ class Quotes extends Component {
   render() {
     return (
       <div id="parentDiv">
-
         <QuoteTitle> Main Quote Title </QuoteTitle>
         <MainContext> Main context box </MainContext>
-
         <ParkingLotAnimation/>
         <ManQuoting/>
 
@@ -123,12 +121,7 @@ class Quotes extends Component {
           <Context1>
             Pylons text
           </Context1>
-
         </FlexContainer>
-
-
-
-
       </div>
     );
   }

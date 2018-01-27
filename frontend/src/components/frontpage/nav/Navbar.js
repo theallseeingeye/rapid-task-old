@@ -50,7 +50,11 @@ const FlexItem = styled.button`
   text-align: center;
   transition: all 0.5s;
   width: 100%;
+  
+  // Border styling
   border-radius: 10px 0px 10px 0px;
+  transform: skewX(-40deg);
+  
   // z-index tells css the position order it has over the objects.
   z-index: 1;
   

@@ -18,18 +18,18 @@ import PylonsLayer from "./ParkingLotLayers/PylonsLayer";
 const Div = styled.div`
   margin: auto;
   max-width: 50%;
+  width: 100%;
   position: absolute;
 `;
 
 const Svg = styled.svg`
   position: fixed; // This is required for the scroll animation to stick as it passes. For layerScrollHandler Function.
-  max-width: 49vw;
-  border: solid yellow;
-  padding-left: 2px; // Keep svg from left border
+  max-width: 48vw;
+  padding: 2px; // Keep svg from left border
+  z-index: -5; // This makes sure that the layers hide below the div below.
   
   @media (min-width: ${props => props.theme.desktopscreen}) {
     max-width: 500px;
-    margin-left: 15vw;
 `;
 
 class ParkingLotAnimation extends Component {
@@ -163,8 +163,9 @@ class ParkingLotAnimation extends Component {
   componentDidMount() {
 
     // Magic scroll! This makes the parking lot SVG stick on the scroll.
+    // Tweeked SVG up by 200px to adjust for extended viewbox height.
     function scrollHandler() {
-      layerScrollHandler("svgMain", "parentDiv");
+      layerScrollHandler("svgMain", "parentDiv", 100, -100);
     }
 
     window.onscroll = () => {

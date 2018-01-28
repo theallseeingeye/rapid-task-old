@@ -3,10 +3,14 @@ import styled, { keyframes } from 'styled-components';
 import CityJpg from './city.jpg';
 import RepeatButton from './Repeat.svg';
 import BlueTruck from "./MapLayers/BlueTruck";
+import MapPin from "./MapLayers/MapPin";
+import Polygon from "./MapLayers/Polygon";
 
 
 const MainDiv = styled.div`
   margin: auto;
+  background: white;
+  z-index: -3; // Required to let the parking lot layers in above div to hide behind.
 `;
 
 const Svg = styled.svg`
@@ -363,312 +367,6 @@ const Text3 = styled.text`
     }
 `;
 
-
-const MapPin = keyframes`
-
-  from, 20%, 53%, 80%, to {
-    visibility: visible;
-    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-    transform: translate3d(1700px ,3100px,0);
-  }
-
-  40%, 43% {
-    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
-    transform: translate3d(1700px, 2950px, 0);
-  }
-
-  70% {
-    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
-    transform: translate3d(1700px, 3025px, 0);
-  }
-
-  90% {
-    transform: translate3d(1700px, 3075px, 0);
-  }
-`;
-
-const MapPinGo = styled.g`
-  visibility: hidden;
-  position: absolute;
-  animation: ${MapPin} 1.5s 3;
-  animation-fill-mode: forwards;
-  animation-delay: 11.5s;
-`;
-
-const PolygonCircleBottomAnimate = keyframes`
-  from {
-    transform: scale(7.5) translate(198px, 496px);
-    opacity: 0;
-  }
-  39% {
-    transform: scale(7.5) translate(198px, 496px);
-    opacity: 0;
-  }
-  40%, 95% {
-    transform: scale(7.5) translate(198px, 496px);
-    opacity: 1;
-  }
-  to {
-    transform: scale(7.5) translate(198px, 496px);
-    opacity: 0;
-  }
-`;
-
-const PolygonCircleBottom = styled.g`
-  position: absolute;
-  animation: ${PolygonCircleBottomAnimate} 12s;
-  animation-fill-mode: forwards;
-`;
-
-const PolygonCircleLeftAnimate = keyframes`
-  from {
-    transform: scale(7.5) translate(168px, 478px);
-    opacity: 0;
-  }
-  49% {
-    transform: scale(7.5) translate(168px, 478px);
-    opacity: 0;
-  }
-  50%, 95% {
-    transform: scale(7.5) translate(168px, 478px);
-    opacity: 1;
-  }
-  to {
-    transform: scale(7.5) translate(168px, 478px);
-    opacity: 0;
-  }
-`;
-
-const PolygonCircleLeft = styled.g`
-  position: absolute;
-  animation: ${PolygonCircleLeftAnimate} 12s;
-  animation-fill-mode: forwards;
-`;
-
-const PolygonCircleRightAnimate = keyframes`
-  from {
-    transform: scale(7.5) translate(258px, 461px);
-    opacity: 0;
-  }
-  30% {
-    transform: scale(7.5) translate(258px, 461px);
-    opacity: 0;
-  }
-  31%, 95% {
-    transform: scale(7.5) translate(258px, 461px);
-    opacity: 1;
-  }
-  to {
-    transform: scale(7.5) translate(258px, 461px);
-    opacity: 0;
-  }
-`;
-
-const PolygonCircleRight = styled.g`
-  position: absolute;
-  animation: ${PolygonCircleRightAnimate} 12s;
-  animation-fill-mode: forwards;
-`;
-
-const PolygonCircleTopAnimate = keyframes`
-  from {
-    transform: scale(7.5) translate(226px, 443px);
-    opacity: 0;
-  }
-  59% {
-    transform: scale(7.5) translate(226px, 443px);
-    opacity: 0;
-  }
-  60%, 95% {
-    transform: scale(7.5) translate(226px, 443px);
-    opacity: 1;
-  }
-  to {
-    transform: scale(7.5) translate(226px, 443px);
-    opacity: 0;
-  }
-`;
-
-const PolygonCircleTop = styled.g`
-  position: absolute;
-  animation: ${PolygonCircleTopAnimate} 12s;
-  animation-fill-mode: forwards;
-`;
-
-const PolygonLongEdge1Animate = keyframes`
-  from {
-    transform: scale(5) translate(231px, 607px);
-    opacity: 0;
-  }
-  59% {
-    transform: scale(5) translate(231px, 607px);
-    opacity: 0;
-  }
-  60%, 95% {
-    transform: scale(5) translate(231px, 607px);
-    opacity: 1;
-  }
-  to {
-    transform: scale(5) translate(231px, 607px);
-    opacity: 0;
-  }
-`;
-
-const PolygonLongEdge1 = styled.g`
-  position: absolute;
-  animation: ${PolygonLongEdge1Animate} 12s;
-  animation-fill-mode: forwards;
-`;
-
-const PolygonLongEdge2Animate = keyframes`
-  from {
-    transform: scale(5) translate(278px, 635px);
-    opacity: 0;
-  }
-  39% {
-    transform: scale(5) translate(278px, 635px);
-    opacity: 0;
-  }
-  40%, 95% {
-    transform: scale(5) translate(278px, 635px);
-    opacity: 1;
-  }
-  to {
-    transform: scale(5) translate(278px, 635px);
-    opacity: 0;
-  }
-`;
-
-const PolygonLongEdge2 = styled.g`
-  position: absolute;
-  animation: ${PolygonLongEdge2Animate} 12s;
-  animation-fill-mode: forwards;
-`;
-
-const PolygonShortEdge1Animate = keyframes`
-  from {
-    transform: scale(5) translate(278px, 635px);
-    opacity: 0;
-  }
-  49% {
-    transform: scale(5) translate(278px, 635px);
-    opacity: 0;
-  }
-  50%, 95% {
-    transform: scale(5) translate(278px, 635px);
-    opacity: 1;
-  }
-  to {
-    transform: scale(5) translate(278px, 635px);
-    opacity: 0;
-  }
-`;
-
-const PolygonShortEdge1 = styled.g`
-  position: absolute;
-  animation: ${PolygonShortEdge1Animate} 12s;
-  animation-fill-mode: forwards;
-`;
-
-const PolygonShortEdge2Animate = keyframes`
-  from {
-    transform: scale(5) translate(367px, 582px);
-    opacity: 0;
-  }
-  64% {
-    transform: scale(5) translate(367px, 582px);
-    opacity: 0;
-  }
-  65%, 95% {
-    transform: scale(5) translate(367px, 582px);
-    opacity: 1;
-  }
-  to {
-    transform: scale(5) translate(367px, 582px);
-    opacity: 0;
-  }
-`;
-
-const PolygonShortEdge2 = styled.g`
-  position: absolute;
-  animation: ${PolygonShortEdge2Animate} 12s;
-  animation-fill-mode: forwards;
-`;
-
-const PolygonFillAnimate = keyframes`
-  from, 65%{
-    transform: scale(5) translate(297px, 666px);
-    opacity: 0;
-    visibility: visible;
-  }
- 
-  95% {
-    transform: scale(5) translate(297px, 666px);
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-    transform: scale(5) translate(297px, 666px);
-    visibility: visible;
-  }
-`;
-
-const PolygonFill = styled.g`
-  visibility: hidden;
-  position: absolute;
-  animation: ${PolygonFillAnimate} 12s;
-  animation-fill-mode: forwards;
-`;
-
-const MouseCursorAnimate = keyframes`
-  from {
-    transform: scale(10) translate(600px, 150px);
-  }
-  10% {
-    transform: scale(10) translate(400px, 400px);
-  }
-  20% {
-    transform: scale(10) translate(297px, 333px);
-  }
-  30% {
-    transform: scale(10) translate(210px, 341px); //RIGHT POINT
-  }
-  35% {
-    transform: scale(10) translate(205px, 340px);
-  }
-  40% {
-    transform: scale(10) translate(164px, 372px); //BOTTOM POINT
-  }
-  45% {
-    transform: scale(10) translate(157px, 352px);
-  }
-  50% {
-    transform: scale(10) translate(142px, 356px); //LEFT POINT
-  }
-  55% {
-    transform: scale(10) translate(177px, 340px);
-  }
-  60% {
-    transform: scale(10) translate(185px, 328px); //TOP POINT
-  }
-  65% {
-    transform: scale(10) translate(210px, 341px); //RIGHT POINT
-    opacity: 1;
-  }
-  70%, to {
-    transform: scale(10) translate(270px, 376px); //RIGHT POINT
-    opacity: 0;
-  }
-  }
-`;
-
-const MouseCursor = styled.g`
-  position: absolute;
-  animation: ${MouseCursorAnimate} 12s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
-`;
-
 const Repeat = styled.button`
   background-color: transparent;
   border: transparent;
@@ -680,75 +378,46 @@ const Repeat = styled.button`
     transform: translate(0, 87vh);
 `;
 
+const Title = styled.title`
+  
+  // Title Styling
+  font-family: ${props => props.theme.Robotofont};
+  font-weight: 900;
+  font-size: 2em;
+  text-align: center;
+  color: white;
+ 
+
+  background-color: ${props => props.theme.logoblue};
+
+  width: 100%;
+  position: absolute;
+  display: block;
+  margin: auto;
+`;
+
+const MainContext = styled.h1`
+  text-align: center;
+  font-family: ${props => props.theme.RobotoCondensedfont};
+  font-size: 0.5em;
+`;
 class CityAnimation extends Component {
-
-  //
-  // componentDidMount() {
-  //   TweenMax.to(this.truck, 1, {rotationX:200})
-  // }
-  //   const controller = new ScrollMagic.Controller();
-  //   const item = this.animate;
-  //
-  //   // const item = document.getElementById(this.poopyass);
-  //   const truck = this.refs.truck;
-  //
-  //   const scene = new ScrollMagic.Scene({
-  //     triggerElement: item,
-  //     duration: 500,
-  //     offset: 75
-  //   })
-  //     scene.setTween(truck, 0.5, {rotationX: 200})
-  //     scene.setPin(truck)
-  //     .addTo(controller);
-  // }
-
-
   render() {
     return (
       <MainDiv>
-
+        <Title>
+          Geospatial Advantage
+        </Title>
+        <MainContext>
+          Gain competitive advantage with use of high resolution satellite imagery.
+        </MainContext>
         <Svg xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/1999/xlink" viewBox="0 0 6000 6000">
           <image xlinkHref={CityJpg} width="100%" height="100%"/>
           <BlueTruck/>
-          <MapPinGo>
-            <path id="svg_2" data-name="svg 2" d="M1488.77,1959.63c-8.25-40.5-22.79-74.2-40.41-105.43-13.06-23.17-28.2-44.55-42.21-67-4.67-7.5-8.71-15.42-13.2-23.2-9-15.57-16.27-33.61-15.81-57,.46-22.87,7.07-41.21,16.61-56.21a110,110,0,0,1,77.22-50.22,116.55,116.55,0,0,1,75,14.21,108.58,108.58,0,0,1,37,35.81c9.62,15,16.25,32.82,16.8,56a103.41,103.41,0,0,1-4.4,32c-2.77,9.24-7.23,17-11.2,25.21-7.75,16.1-17.46,30.85-27.21,45.61C1528,1853.36,1500.71,1898.19,1488.77,1959.63Z" transform="translate(-1370.12 -1592.27)" fill="red" stroke="#000" strokeMiterlimit="10" strokeWidth="14"/>
-            <circle id="svg_4" data-name="svg 4" cx="119.21" cy="107.84" r="39.01" stroke="#000" strokeMiterlimit="10" strokeWidth="14"/>
-          </MapPinGo>
-          <PolygonCircleBottom>
-            <circle cx="32.53" cy="5" r="4" fill="#ff4d4d" stroke="#e00000" strokeMiterlimit="10" strokeWidth="2"/>
-          </PolygonCircleBottom>
-          <PolygonCircleLeft>
-            <circle cx="32.53" cy="5" r="4" fill="#ff4d4d" stroke="#e00000" strokeMiterlimit="10" strokeWidth="2"/>
-          </PolygonCircleLeft>
-          <PolygonCircleRight>
-            <circle cx="32.53" cy="5" r="4" fill="#ff4d4d" stroke="#e00000" strokeMiterlimit="10" strokeWidth="2"/>
-          </PolygonCircleRight>
-          <PolygonCircleTop>
-            <circle cx="32.53" cy="5" r="4" fill="#ff4d4d" stroke="#e00000" strokeMiterlimit="10" strokeWidth="2"/>
-          </PolygonCircleTop>
-          <PolygonLongEdge1>
-            <line x1="158.35" y1="66.27" x2="68.35" y2="118.27" fill="#fff" stroke="#e00000" strokeMiterlimit="10" strokeWidth="2"/>
-          </PolygonLongEdge1>
-          <PolygonLongEdge2>
-            <line x1="158.35" y1="66.27" x2="68.35" y2="118.27" fill="#fff" stroke="#e00000" strokeMiterlimit="10" strokeWidth="2"/>
-          </PolygonLongEdge2>
-          <PolygonShortEdge1>
-            <line x1="22.03" y1="91.5" x2="69.03" y2="118.5" fill="#fff" stroke="#e00000" strokeMiterlimit="10" strokeWidth="2"/>
-          </PolygonShortEdge1>
-          <PolygonShortEdge2>
-            <line x1="22.03" y1="91.5" x2="69.03" y2="118.5" fill="#fff" stroke="#e00000" strokeMiterlimit="10" strokeWidth="2"/>
-          </PolygonShortEdge2>
-          <PolygonFill>
-            <polygon points="139.03 35.5 49.03 87.5 2.04 60.5 94.03 9.5 139.03 35.5" fill="#ff4d4d" stroke="#e00000" strokeMiterlimit="10" strokeWidth="2" opacity="0.6"/>
-          </PolygonFill>
-          <MouseCursor>
-            <polygon fill="#FFFFFF" points="8.2,20.9 8.2,4.9 19.8,16.5 13,16.5 12.6,16.6 "/>
-            <polygon fill="#FFFFFF" points="17.3,21.6 13.7,23.1 9,12 12.7,10.5 "/>
-            <rect x="12.5" y="13.6" transform="matrix(0.9221 -0.3871 0.3871 0.9221 -5.7605 6.5909)" width="2" height="8"/>
-            <polygon points="9.2,7.3 9.2,18.5 12.2,15.6 12.6,15.5 17.4,15.5 "/>
-          </MouseCursor>
+          <MapPin/>
+          <Polygon/>
           <Text1>
-          Efficient routing to save you money.
+            Efficient routing to save you money.
           </Text1>
           <Text2>
             Use maps to refine quoting processes.

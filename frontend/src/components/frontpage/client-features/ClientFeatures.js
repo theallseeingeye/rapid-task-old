@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import ClientTablet from './ClientTablet';
+import ProgressBar from './Progressbars';
+
 
 const Title = styled.h2`
   
@@ -15,6 +18,8 @@ class ClientFeatures extends Component {
       <div>
         <Title>Impress Your Clients </Title>
         <SubTitle>Never Lose Track Again</SubTitle>
+        <ClientTablet/>
+        <ProgressBar/>
         <p>
           Rapid Task will keep track of all your interactions with the client. Know their work history,
           built in reminders to apply and keep notes to build good raport.
@@ -24,6 +29,7 @@ class ClientFeatures extends Component {
         Can allow Rapid Task to provide automatic updates of the job progress<br/>
         Clients have easy platform to see their quotes and easily accept them<br/>
         Tools to easily communicate the details of the quote<br/>
+        Clients know the outstanding bills
       </div>
     );
   }

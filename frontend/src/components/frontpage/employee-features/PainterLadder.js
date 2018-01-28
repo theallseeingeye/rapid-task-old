@@ -83,6 +83,9 @@ const Text4 = styled.text`
 const Title = styled.text`
   font-size: 0.5em;
   transform: translate(5px, 15px);
+  font-family: ${props => props.theme.Robotofont};
+  font-weight: 900;
+  fill: white;
 `;
 
 class PainterLadder extends Component {

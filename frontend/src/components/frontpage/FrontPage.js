@@ -11,7 +11,7 @@ import InventoryFeatures from "./inventory-features/InventoryFeatures";
 import FinancialFeatures from "./financial-features/FinancialFeatures";
 import AnalyticsFeatures from "./analytics-features/AnalyticsFeatures";
 import About from "./about/About";
-import Contact from "./contact/Contact";
+// import Contact from "./contact/Contact";
 import Footer from "./footer/Footer";
 import MainPage from "./main-page/MainPage";
 
@@ -31,16 +31,8 @@ const QuotesContainer = styled.div`
   height: 600vh;
 `;
 
-const JobCostsContainer = styled.div`
-  //margin: auto;
-  height: 200vh;
-  background-color: greenyellow;
-  //position: relative;
-`;
-
 const MapsContainer = styled.div`
   height: 110vh;
-  //border: 40px double aqua;
 `;
 
 const EmployeeContainer = styled.div`
@@ -54,6 +46,8 @@ const ClientContainer = styled.div`
 
 
 class FrontPage extends Component {
+
+
   render() {
     return (
       <div>
@@ -64,12 +58,12 @@ class FrontPage extends Component {
         <FeaturesContainer>
           <Features/>
         </FeaturesContainer>
-        <QuotesContainer>
-          <Quotes/>
-        </QuotesContainer>
         <MapsContainer>
           <CityAnimation/>
         </MapsContainer>
+        <QuotesContainer>
+          <Quotes/>
+        </QuotesContainer>
         <EmployeeContainer>
           <EmployeeFeatures/>
         </EmployeeContainer>
@@ -93,7 +87,7 @@ class FrontPage extends Component {
           <About/>
         </div>
         <div>
-          <Contact/>
+          {/*<Contact/>*/}
         </div>
         <div>
           <Footer/>

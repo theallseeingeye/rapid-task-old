@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import NavBar from "./../nav/Navbar";
-import Logo from "./../logo/logo"
+import Logo from "../global-svg/logo"
 import Guru from './../main-page/guru-man';
 import OfficeBackground from './../main-page/office-background';
 
@@ -19,6 +19,7 @@ const BackgroundContainer = styled.div`
   opacity: 0.4;
   // To place behind all divs
   z-index: -1;
+  padding: 1px;
   // To hid the sides that are stretching beyond the div
   overflow: hidden;
 `;

@@ -5,7 +5,7 @@ const theme = {
   // Fonts
   Robotofont: 'Roboto, sans-serif',
   RobotoCondensedfont: 'Roboto Condensed, sans-serif',
-  logoblue: 'rgba(63,169,245,1)',
+  logoblue: 'rgba(63,169,245,1)', // hex code is 3FA9F5
 
   // Colors
   mainbackground: 'white',

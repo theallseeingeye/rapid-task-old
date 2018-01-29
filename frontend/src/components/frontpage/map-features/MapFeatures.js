@@ -716,28 +716,6 @@ const Repeat = styled.button`
 `;
 
 class CityAnimation extends Component {
-
-  //
-  // componentDidMount() {
-  //   TweenMax.to(this.truck, 1, {rotationX:200})
-  // }
-  //   const controller = new ScrollMagic.Controller();
-  //   const item = this.animate;
-  //
-  //   // const item = document.getElementById(this.poopyass);
-  //   const truck = this.refs.truck;
-  //
-  //   const scene = new ScrollMagic.Scene({
-  //     triggerElement: item,
-  //     duration: 500,
-  //     offset: 75
-  //   })
-  //     scene.setTween(truck, 0.5, {rotationX: 200})
-  //     scene.setPin(truck)
-  //     .addTo(controller);
-  // }
-
-
   render() {
     return (
       <MainDiv>

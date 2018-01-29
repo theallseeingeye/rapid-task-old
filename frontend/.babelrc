@@ -1,9 +1,10 @@
 {
   "plugins": [
-    "babel-plugin-styled-components"
+    "babel-plugin-styled-components",
+    "transform-class-properties"
   ],
   "presets": [
     "env",
-    "react",
+    "react"
   ]
 }

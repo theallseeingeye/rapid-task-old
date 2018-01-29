@@ -52,6 +52,15 @@ const ClientContainer = styled.div`
   //border: 8px solid gold;
 `;
 
+const ContactContainer = styled.div`
+  @media (min-width: ${props => props.theme.giantscreen}) {
+  height: 105vh;
+`;
+
+const FooterContainer = styled.div`
+  height: 100vh;
+  background-color: ${props => props.theme.logoblue};
+`;
 
 class FrontPage extends Component {
   render() {
@@ -92,12 +101,12 @@ class FrontPage extends Component {
         <div>
           <About/>
         </div>
-        <div>
+        <ContactContainer>
           <Contact/>
-        </div>
-        <div>
+        </ContactContainer>
+        <FooterContainer>
           <Footer/>
-        </div>
+        </FooterContainer>
       </div>
     );
   }

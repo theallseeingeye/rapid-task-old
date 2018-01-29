@@ -2,30 +2,69 @@ import React, { Component } from 'react';
 import Image from './../images/OfficeToBeach.svg';
 import styled from 'styled-components';
 
-const Svg = styled.img`
+const BackgroundContainer = styled.div`
   width: 100%;
-  margin: auto;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  // To fade the background
+  opacity: 1;
+  // To place behind all divs
+  z-index: -1;
+  // To hid the sides that are stretching beyond the div
+  overflow: hidden;
+  @media (min-width: ${props => props.theme.giantscreen}) {
+  overflow: unset;
+  }
 `;
-// function stringifyFormData(fd) {
-//   const data = {};
-// 	for (let key of fd.keys()) {
-//   	data[key] = fd.get(key);
-//   }
-//   return JSON.stringify(data, null, 2);
-// }
-//
-// class ShakingError extends React.Component {
-// 	constructor() { super(); this.state = { key: 0 }; }
-//
-// 	componentWillReceiveProps() {
-//     // update key to remount the component to rerun the animation
-//   	this.setState({ key: ++this.state.key });
-//   }
-//
-//   render() {
-//   	return <div key={this.state.key} className="bounce">{this.props.text}</div>;
-//   }
-// }
+
+const BackgroundBox = styled.div`
+  align-self: flex-start;
+  margin: auto;
+  @media (min-width: ${props => props.theme.giantscreen}) {
+  width: 100%;
+  }
+`;
+
+const Svg = styled.img`
+  height: 100vh;
+  @media (min-width: ${props => props.theme.giantscreen}) {
+  height: unset;
+  width: 100%;
+  }
+`;
+
+const FormElements = styled.form`
+  transform: translate(10%, -7%);
+  position: absolute;
+  font-size: 1.6em;
+  opacity: 0.7;
+  @media (min-width: ${props => props.theme.desktopscreen}) {
+  font-size: 2.4em;
+  transform: translate(10%, 20%);
+  }
+`;
+
+const Title = styled.p`
+  font-size: 1.2em;
+  transform: translate(5%, 50%);
+  opacity: 1;
+`;
+
+const Name = styled.input`
+  border-radius: 6px;
+`;
+
+const Email = styled.input`
+  border-radius: 6px;
+`;
+
+const Subscribe = styled.input`
+  border-radius: 20px;
+  background-color: ${props => props.theme.logoblue};
+  border-color: darkcyan;
+  font-size: 1.1em;
+`;
 
 class Contact extends Component {
   constructor(props) {
@@ -67,99 +106,25 @@ class Contact extends Component {
   render() {
     return (
         <div>
-          <Svg src={Image}/>
-          <form onSubmit={this.handleSubmit}>
+          <BackgroundContainer>
+            <BackgroundBox>
 
-            <input placeholder='Name' name='name' value={this.state.fields.name} onChange={this.handleChange} required/>
-            <br />
-            <input placeholder='Email' name='email' value={this.state.fields.email} onChange={this.handleChange} type="email" required />
-            <br />
-            <input type="submit" value="Subscribe"/>
-          </form>
-            <div>
-                <h3>Names</h3>
-                <ul>
-                    { this.state.people.map(({name, email}, i) => <li key={i}>{name}({email})</li>)}
-                </ul>
-            </div>
+              <Svg src={Image}/>
+            </BackgroundBox>
+          </BackgroundContainer>
+              <FormElements onSubmit={this.handleSubmit}>
+                <Title>Stay in the loop!</Title>
+                <Name placeholder='Name' name='name' value={this.state.fields.name} onChange={this.handleChange} required/>
+                <br />
+                <br />
+                <Email placeholder='Email' name='email' value={this.state.fields.email} onChange={this.handleChange} type="email" required />
+                <br />
+                <br />
+                <Subscribe type="submit" value="Subscribe"/>
+              </FormElements>
         </div>
     );
   }
-
 }
-
-//   constructor() {
-//     super();
-//     this.state = {};
-//     this.handleSubmit = this.handleSubmit.bind(this);
-//   }
-//
-//   handleSubmit(event) {
-//     event.preventDefault();
-//     if (!event.target.checkValidity()) {
-//     	this.setState({
-//         invalid: true,
-//         displayErrors: true,
-//       });
-//       return;
-//     }
-//     const form = event.target;
-//     const data = new FormData(form);
-//
-//
-//     this.setState({
-//     	res: stringifyFormData(data),
-//       invalid: false,
-//       displayErrors: false,
-//     });
-//
-//     // fetch('/api/form-submit-url', {
-//     //   method: 'POST',
-//     //   body: data,
-//     // });
-//   }
-//
-//   render() {
-//   	const { res, invalid, displayErrors } = this.state;
-//     return (
-//     	<div>
-//         <form
-//           onSubmit={this.handleSubmit}
-//           noValidate
-//           className={displayErrors ? 'displayErrors' : ''}
-//          >
-//           <label htmlFor="username">Username:</label>
-//           <input
-//             id="username"
-//             name="username"
-//             type="text"
-//             data-parse="uppercase"
-//           />
-//
-//           <label htmlFor="email">Email:</label>
-//           <input id="email" name="email" type="email" required />
-//
-//           <button>Send data!</button>
-//         </form>
-//
-//
-//
-//         <div className="res-block">
-//           {invalid && (
-//             <ShakingError text="Form is not valid" />
-//           )}
-//           {!invalid && res && (
-//           	<div>
-//               <h3>Transformed data to be sent:</h3>
-//               <pre>FormData {res}</pre>
-//           	</div>
-//           )}
-//         </div>
-//     	</div>
-//     );
-//   }
-// }
-
-
 
 export default Contact;

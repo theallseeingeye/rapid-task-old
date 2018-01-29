@@ -11,7 +11,7 @@ import InventoryFeatures from "./inventory-features/InventoryFeatures";
 import FinancialFeatures from "./financial-features/FinancialFeatures";
 import AnalyticsFeatures from "./analytics-features/AnalyticsFeatures";
 import About from "./about/About";
-// import Contact from "./contact/Contact";
+import Contact from "./contact/Contact";
 import Footer from "./footer/Footer";
 import MainPage from "./main-page/MainPage";
 
@@ -40,14 +40,21 @@ const EmployeeContainer = styled.div`
 `;
 
 const ClientContainer = styled.div`
-  //height: 260vh;
+  //height: 200vh;
   //border: 8px solid gold;
 `;
 
+const ContactContainer = styled.div`
+  @media (min-width: ${props => props.theme.giantscreen}) {
+  height: 105vh;
+`;
+
+const FooterContainer = styled.div`
+  height: 100vh;
+  background-color: ${props => props.theme.logoblue};
+`;
 
 class FrontPage extends Component {
-
-
   render() {
     return (
       <div>
@@ -86,12 +93,12 @@ class FrontPage extends Component {
         <div>
           <About/>
         </div>
-        <div>
-          {/*<Contact/>*/}
-        </div>
-        <div>
+        <ContactContainer>
+          <Contact/>
+        </ContactContainer>
+        <FooterContainer>
           <Footer/>
-        </div>
+        </FooterContainer>
       </div>
     );
   }

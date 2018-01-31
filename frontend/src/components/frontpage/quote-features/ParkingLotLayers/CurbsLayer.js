@@ -1,14 +1,9 @@
 import React, { Component } from 'react';
-import {BaseAnimation} from '../BounceAnimation';
-
-
-const CurbsLayerAnimate = BaseAnimation.extend`
-`;
 
 class CurbsLayer extends Component {
   render() {
     return (
-      <CurbsLayerAnimate>
+      <g id="curbsLayer">
         <g>
           <polygon points="210.17 123.39 210.2 125.64 333.14 53.94 333.11 51.7 210.17 123.39" fill="#bababa"/>
           <polygon points="208.35 122.32 208.38 124.56 210.2 125.64 210.17 123.39 208.35 122.32" fill="#d1d1d1"/>
@@ -44,7 +39,7 @@ class CurbsLayer extends Component {
           <polygon points="147.03 281.09 147 283.33 145.18 284.4 145.21 282.16 147.03 281.09" fill="#bababa"/>
           <polygon points="104.8 258.59 106.6 257.54 147.04 281.1 145.21 282.16 104.8 258.59" fill="#e2e2e2"/>
         </g>
-      </CurbsLayerAnimate>
+      </g>
     )
   }
 }

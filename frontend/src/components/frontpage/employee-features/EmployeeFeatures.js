@@ -26,7 +26,8 @@ const TextArea = styled.div`
 class EmployeeFeatures extends Component {
   render() {
     return (
-      <Div>
+      <Div id="parkingLotEnd">
+        {/*This id is the end trigger for parking lot layers*/}
         <PainterLadder/>
         <TextArea>
           <p> Employees will know all the details of the task to perform the work. This was automatically pulled together

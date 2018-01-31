@@ -6,7 +6,6 @@ const Svg = styled.svg`
   width: 140vw;
   margin: auto;
   position: absolute;
-  overflow: hidden;
   transform: translateX(2%);
   z-index: -5;
 `;

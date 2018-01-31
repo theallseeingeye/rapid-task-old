@@ -1,14 +1,9 @@
 import React, { Component } from 'react';
-import {BaseAnimation} from '../BounceAnimation';
-
-
-const TreesLayerAnimate = BaseAnimation.extend`
-`;
 
 class TreesLayer extends Component {
   render() {
     return (
-      <TreesLayerAnimate>
+      <g id="treesLayer">
        <g id="Tree_7">
           <g opacity="0.19">
             <path d="M179.64,400.4c3.35,1.94,3.38,5.08,0,7a13.35,13.35,0,0,1-12.1,0c-3.36-1.94-3.38-5.08-.05-7A13.37,13.37,0,0,1,179.64,400.4Z" transform="translate(-24.25 -141.52)" fill="#181816"/>
@@ -113,7 +108,7 @@ class TreesLayer extends Component {
           <path d="M247.79,190.54a1.53,1.53,0,0,1,0-.23,4.07,4.07,0,0,1,7.79-1.63,6.25,6.25,0,0,1,2.11-1.23c5.53-1.14,5.54,5.2,5.71,5a5.22,5.22,0,0,0-1.42-5.66c-3.51-2.81-6-.89-6.58-.7a4.79,4.79,0,0,0-4-2.73,3.69,3.69,0,0,0-4,3.71c0,.07-.15,1.31-.15,1.39-1.23.27-3.53,1.62-3.53,4a5.55,5.55,0,0,0,.49,2.25A5.49,5.49,0,0,1,247.79,190.54Z" transform="translate(-24.25 -141.52)" fill="#71991c"/>
           <path d="M257.25,192.92a4,4,0,0,1,2.67,3.47c.74-.34,2.17.16,2.76.36,2.53.88,3.34,3.33,2.58,5.94a4.55,4.55,0,0,0-3.22-7.75,3.36,3.36,0,0,0-5.63-2.21A3.59,3.59,0,0,1,257.25,192.92Z" transform="translate(-24.25 -141.52)" fill="#71991c"/>
         </g>
-      </TreesLayerAnimate>
+      </g>
     )
   }
 }

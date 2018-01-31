@@ -14,6 +14,7 @@ import About from "./about/About";
 import Contact from "./contact/Contact";
 import Footer from "./footer/Footer";
 import MainPage from "./main-page/MainPage";
+import AnimationTest from "../../../experiments/animation/animation"
 
 import CityAnimation from "./map-features/MapFeatures";
 
@@ -40,7 +41,7 @@ const EmployeeContainer = styled.div`
 `;
 
 const ClientContainer = styled.div`
-  //height: 200vh;
+  height: 200vh;
   //border: 8px solid gold;
 `;
 
@@ -66,7 +67,7 @@ class FrontPage extends Component {
           <Features/>
         </FeaturesContainer>
         <MapsContainer>
-          <CityAnimation/>
+          {/*<CityAnimation/>*/}
         </MapsContainer>
         <QuotesContainer>
           <Quotes/>
@@ -89,6 +90,7 @@ class FrontPage extends Component {
         </div>
         <div>
           <AnalyticsFeatures/>
+          {/*<AnimationTest/>*/}
         </div>
         <div>
           <About/>

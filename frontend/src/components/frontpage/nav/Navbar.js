@@ -53,7 +53,11 @@ const FlexItem = styled.button`
   
   // Border styling
   border-radius: 10px 0px 10px 0px;
-  transform: skewX(-40deg);
+
+  @media (min-width: ${props => props.theme.tabletscreen}) {
+      transform: skewX(-40deg);
+  };
+  
   
   // z-index tells css the position order it has over the objects.
   z-index: 1;

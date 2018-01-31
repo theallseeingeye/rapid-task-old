@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import layerScrollHandler from '../../../../utils/jsfunctions/ScrollHandler';
-import {triggerAction, scrollDirection} from '../../../../utils/jsfunctions/ScrollTrigger';
-
 import BottomLayer from "./ParkingLotLayers/BottomLayer";
 import GravelLayer from "./ParkingLotLayers/GravelLayer";
 import AsphaltLayer from "./ParkingLotLayers/AsphaltLayer";
@@ -13,7 +10,7 @@ import LampsLayer from "./ParkingLotLayers/LampsLayer";
 import TreesLayer from "./ParkingLotLayers/TreesLayer";
 import LinesLayer from "./ParkingLotLayers/LinesLayer";
 import PylonsLayer from "./ParkingLotLayers/PylonsLayer";
-
+import ScrollMagic from "./ScrollMagicGsapAdapter";
 
 const Div = styled.div`
   margin: auto;
@@ -26,188 +23,151 @@ const Svg = styled.svg`
   position: fixed; // This is required for the scroll animation to stick as it passes. For layerScrollHandler Function.
   max-width: 48vw;
   padding: 2px; // Keep svg from left border
-  z-index: -5; // This makes sure that the layers hide below the div below.
-  
-  @media (min-width: ${props => props.theme.desktopscreen}) {
-    max-width: 500px;
+  z-index: -6; // This makes sure that the layers hide below the div below.
+  top: 25vh;
+
+  // @media (min-width: {props => props.theme.desktopscreen}) {
+  //   max-width: 500px;
 `;
 
+
 class ParkingLotAnimation extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      bottomLayerHidden: true,
-      gravelLayerHidden: true,
-      asphaltLayerHidden: true,
-      curbsLayerHidden: true,
-      grassLayerHidden: true,
-      lampsLayerHidden: true,
-      treesLayerHidden: true,
-      linesLayerHidden: true,
-      pylonsLayerHidden: true,
-    }
-  }
-
-  // "triggerAction" sets the trigger to the desired div for a trigger. Activates when the window scroll reaches the div coords.
-  // triggerAction(targeted div for trigger, Offset from top of targeted div, object to activate)
-  //
-  // First condition: If true: show the layer
-  // Second condition: If true: remove the layer
-  bottomLayerTrigger() {
-    if (triggerAction("bottomTrigger", 0.5, "svgMain") === "Activate") {
-      this.setState({
-        bottomLayerHidden: false
-      })
-    } else if ((triggerAction("bottomTrigger", 0.5, "svgMain") === "Not Active")) {
-      this.setState({
-        bottomLayerHidden: true
-      })
-    }
-  }
-  gravelLayerTrigger() {
-    if (triggerAction("gravelTrigger", 0.5, "svgMain") ===  "Activate") {
-      this.setState({
-        gravelLayerHidden: false
-      })
-    } else if ((triggerAction("gravelTrigger", 0.5, "svgMain") === "Not Active")) {
-      this.setState({
-        gravelLayerHidden: true
-      })
-    }
-  }
-
-  asphaltLayerTrigger() {
-    if ((triggerAction("asphaltTrigger", 0.5, "svgMain") === "Activate")) {
-      this.setState({
-        asphaltLayerHidden: false
-      })
-    } else if ((triggerAction("asphaltTrigger", 0.5, "svgMain") === "Not Active")) {
-      this.setState({
-        asphaltLayerHidden: true
-      })
-    }
-  }
-
-  curbsLayerTrigger() {
-    if (triggerAction("curbsTrigger", 0.5, "svgMain") ===  "Activate") {
-      this.setState({
-        curbsLayerHidden: false
-      })
-    } else if ((triggerAction("curbsTrigger", 0.5, "svgMain") === "Not Active")) {
-      this.setState({
-        curbsLayerHidden: true
-      })
-    }
-  }
-
-  grassLayerTrigger() {
-    if (triggerAction("grassTrigger", 0.5, "svgMain") ===  "Activate") {
-      this.setState({
-        grassLayerHidden: false
-      })
-    } else if ((triggerAction("grassTrigger", 0.5, "svgMain") === "Not Active")) {
-      this.setState({
-        grassLayerHidden: true
-      })
-    }
-  }
-
-  lampsLayerTrigger() {
-    if (triggerAction("lampsTrigger", 0.5, "svgMain") ===  "Activate") {
-      this.setState({
-        lampsLayerHidden: false
-      })
-    } else if ((triggerAction("lampsTrigger", 0.5, "svgMain") === "Not Active")) {
-      this.setState({
-        lampsLayerHidden: true
-      })
-    }
-  }
-
-  treesLayerTrigger() {
-    if (triggerAction("treesTrigger", 0.5, "svgMain") ===  "Activate") {
-      this.setState({
-        treesLayerHidden: false
-      })
-    } else if ((triggerAction("treesTrigger", 0.5, "svgMain") === "Not Active")) {
-      this.setState({
-        treesLayerHidden: true
-      })
-    }
-  }
-  linesLayerTrigger() {
-    if (triggerAction("linesTrigger", 0.5, "svgMain") ===  "Activate") {
-      this.setState({
-        linesLayerHidden: false
-      })
-    } else if ((triggerAction("linesTrigger", 0.5, "svgMain") === "Not Active")) {
-      this.setState({
-        linesLayerHidden: true
-      })
-    }
-  }
-
-  pylonsLayerTrigger() {
-    if (triggerAction("pylonsTrigger", 0.5, "svgMain") ===  "Activate") {
-      this.setState({
-        pylonsLayerHidden: false
-      })
-    } else if ((triggerAction("pylonsTrigger", 0.5, "svgMain") === "Not Active")) {
-      this.setState({
-        pylonsLayerHidden: true
-      })
-    }
-  }
 
   componentDidMount() {
+    const mainSVG = document.getElementById("svgMain");
+    const parentDIV = document.getElementById("parentDiv");
+    const triggerEnd = document.getElementById("endTrigger"); // The start of the next div which is the employees section
 
-    // Magic scroll! This makes the parking lot SVG stick on the scroll.
-    // Tweeked SVG up by 200px to adjust for extended viewbox height.
-    function scrollHandler() {
-      layerScrollHandler("svgMain", "parentDiv", 100, -100);
-    }
+    // Init controller
+    const controller = new ScrollMagic.Controller();
 
-    window.onscroll = () => {
-      // This applies the user's scroll values on the following functions:
-      window.requestAnimationFrame(scrollHandler);
-      this.bottomLayerTrigger();
-      this.asphaltLayerTrigger();
-      this.gravelLayerTrigger();
-      this.curbsLayerTrigger();
-      this.grassLayerTrigger();
-      this.lampsLayerTrigger();
-      this.treesLayerTrigger();
-      this.linesLayerTrigger();
-      this.pylonsLayerTrigger();
-    }
+    // To set each layer invisible before doing anything.
+    TweenMax.set([
+      // mainSVG,
+      bottomLayer,
+      gravelLayer,
+      asphaltLayer,
+      curbsLayer,
+      grassLayer,
+      lampsLayer,
+      treesLayer,
+      linesLayer,
+      pylonsLayer,
+    ], {autoAlpha:0});
+
+    // There is a slight start delay on mobile- This sets the trigger sooner before the visible trigger. This allows
+    // the scrollMagic to trigger on time for the first layer to trigger.
+    const preload = TweenMax.to(bottomLayer, 0.1, {autoAlpha:0});
+
+    // Gsap's animations
+    const tweenBottom = TweenMax.to(bottomLayer, 0.4, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
+    const tweenGravel = TweenMax.to(gravelLayer, 0.4, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
+    const tweenAsphalt = TweenMax.to(asphaltLayer, 0.4, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
+    const tweenCurbs = TweenMax.to(curbsLayer, 0.4, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
+    const tweenGrass = TweenMax.to(grassLayer, 0.4, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
+    const tweenLamps = TweenMax.to(lampsLayer, 0.4, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
+    const tweenTrees = TweenMax.to(treesLayer, 0.4, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
+    const tweenLines = TweenMax.to(linesLayer, 0.4, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
+    const tweenPylons = TweenMax.to(pylonsLayer, 0.4, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
+
+    const endTween = TweenMax.to(mainSVG, 0.1, {autoAlpha:0});
+
+
+    const sceneMain = new ScrollMagic.Scene({
+      triggerElement: parentDIV,
+    })
+      .setTween(preload)
+      .setPin(mainSVG)
+      .addTo(controller);
+
+    const scene = new ScrollMagic.Scene({
+      triggerElement: bottomTrigger, // Starting scene when it reaches this point.
+    })
+      .setTween(tweenBottom) // binds scroll position to the tween
+      .setPin(mainSVG) // The element we want to pin. This pin puts the element to a fixed position
+      .addTo(controller); // Adds this scene to the controller. (can add multiple scene to controller)
+
+    const scene2 = new ScrollMagic.Scene({
+      triggerElement: gravelTrigger,
+    })
+      .setTween(tweenGravel)
+      .setPin(mainSVG)
+      .addTo(controller);
+
+    const scene3 = new ScrollMagic.Scene({
+      triggerElement: asphaltTrigger,
+    })
+      .setTween(tweenAsphalt)
+      .setPin(mainSVG)
+      .addTo(controller);
+
+    const scene4 = new ScrollMagic.Scene({
+      triggerElement: curbsTrigger,
+    })
+      .setTween(tweenCurbs)
+      .setPin(mainSVG)
+      .addTo(controller);
+
+    const scene5 = new ScrollMagic.Scene({
+      triggerElement: grassTrigger,
+    })
+      .setTween(tweenGrass)
+      .setPin(mainSVG)
+      .addTo(controller);
+
+    const scene6 = new ScrollMagic.Scene({
+      triggerElement: lampsTrigger,
+    })
+      .setTween(tweenLamps)
+      .setPin(mainSVG)
+      .addTo(controller);
+
+    const scene7 = new ScrollMagic.Scene({
+      triggerElement: treesTrigger,
+    })
+      .setTween(tweenTrees)
+      .setPin(mainSVG)
+      .addTo(controller);
+
+    const scene8 = new ScrollMagic.Scene({
+      triggerElement: linesTrigger,
+    })
+      .setTween(tweenLines)
+      .setPin(mainSVG)
+      .addTo(controller);
+
+    const scene9 = new ScrollMagic.Scene({
+      triggerElement: pylonsTrigger,
+    })
+      .setTween(tweenPylons)
+      .setPin(mainSVG)
+      .addTo(controller);
+
+    // This ends all of the tween by changing alpha to 0. Uses the bottom div trigger on the main div of this.
+    const sceneEnd = new ScrollMagic.Scene({
+      triggerElement: triggerEnd,
+      offset: 200
+    })
+      .setTween(endTween)
+      .setPin(mainSVG)
+      .addTo(controller);
   }
 
   // NOTE: The order of these elements layers are important to display correctly.
   render() {
     return (
-      <Div>
-        <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 587.98 900" id="svgMain">
+      <Div id="targetLayer">
+        <Svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 587.98 900" id="svgMain">
           <title>Rapid Task Layered Lot</title>
-            {!this.state.bottomLayerHidden && <BottomLayer/>}
-
-            {/*/!*This allows the reverse animation to trigger*!/*/}
-            {/*{(() => {*/}
-              {/*switch (this.state.bottomLayerHidden) {*/}
-                {/*case "forward": return <AsphaltLayer/>;*/}
-                {/*case "reverse": return <AsphaltLayer id="reverse"/>*/}
-              {/*}*/}
-            {/*})()}*/}
-
-
-            {!this.state.gravelLayerHidden && <GravelLayer/>}
-            {!this.state.asphaltLayerHidden && <AsphaltLayer/>}
-            {!this.state.linesLayerHidden && <LinesLayer/>}
-            {!this.state.grassLayerHidden && <GrassLayer/>}
-            {!this.state.curbsLayerHidden && <CurbsLayer/>}
-            {!this.state.lampsLayerHidden && <LampsLayer/>}
-            {!this.state.treesLayerHidden && <TreesLayer/>}
-            {!this.state.pylonsLayerHidden && <PylonsLayer/>}
+          <BottomLayer/>
+          <GravelLayer/>
+          <AsphaltLayer/>
+          <CurbsLayer/>
+          <GrassLayer/>
+          <LampsLayer/>
+          <TreesLayer/>
+          <LinesLayer/>
+          <PylonsLayer/>
         </Svg>
       </Div>
     );

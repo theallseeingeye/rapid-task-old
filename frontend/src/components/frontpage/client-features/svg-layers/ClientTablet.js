@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import theme from "../../../../global-styles/DefaultTheme";
 
 const Svg = styled.svg`
   max-width: 30%;
@@ -8,6 +9,11 @@ const Svg = styled.svg`
 `;
 
 class ClientTablet extends Component {
+  constructor(props) {
+    super(props);
+
+    this.color = theme.logoblue;
+  }
   render() {
     return (
       <Svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 216.15 700.7">
@@ -69,7 +75,7 @@ class ClientTablet extends Component {
         </g>
         <g>
           <path id="Tablet_Body" data-name="Tablet Body" d="M239.89,326.29l-48.4-3.66a3.07,3.07,0,0,0-3.3,2.83L183,394.31a3.08,3.08,0,0,0,2.83,3.3l48.4,3.66a3.08,3.08,0,0,0,3.3-2.83l5.21-68.85A3.08,3.08,0,0,0,239.89,326.29Z" transform="translate(-26.59 -322.62)" fill="#fda939"/>
-          <path id="Screen" d="M182,334.61h62a1.12,1.12,0,0,1,1.12,1.12v47a1.12,1.12,0,0,1-1.12,1.12H182a1.11,1.11,0,0,1-1.11-1.11v-47a1.11,1.11,0,0,1,1.11-1.11Z" transform="translate(-187.79 221.97) rotate(-85.68)" fill="#66c"/>
+          <path id="Screen" d="M182,334.61h62a1.12,1.12,0,0,1,1.12,1.12v47a1.12,1.12,0,0,1-1.12,1.12H182a1.11,1.11,0,0,1-1.11-1.11v-47a1.11,1.11,0,0,1,1.11-1.11Z" transform="translate(-187.79 221.97) rotate(-85.68)" fill={this.color}/>
           <circle id="Tablet_Button" data-name="Tablet Button" cx="210.33" cy="395.35" r="2.56" transform="translate(-226.33 252.65) rotate(-85.68)" fill="#e08619"/>
           <path id="Screen_Glare" data-name="Screen Glare" d="M239,342.75,186.2,388.11v.17a1.12,1.12,0,0,0,1,1.2l24.11,1.82L237,369.25Z" transform="translate(-26.59 -322.62)" fill="#a7b2c7" opacity="0.46"/>
           <polygon id="Screen_Glare2" data-name="Screen Glare2" points="160.81 49.68 211.33 6.26 187.2 4.43 162.63 25.55 160.81 49.68" fill="#a7b2c7" opacity="0.46"/>

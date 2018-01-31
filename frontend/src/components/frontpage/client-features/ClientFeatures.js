@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import ClientTablet from './ClientTablet';
-import ProgressBar from './Progressbars';
+import ClientTablet from './svg-layers/ClientTablet';
+import ProgressBar from './svg-layers/Progressbars';
 
 
 const Title = styled.h2`

@@ -3,6 +3,13 @@ import styled from 'styled-components';
 import ParkingLotAnimation from './ParkingLotAnimation'
 import ManQuoting from "./ManQuoting"
 
+const Div = styled.div`
+  overflow: hidden;
+  width: 100vw;
+  margin: auto;
+  border: solid yellow;
+  position: relative; // Required to help arrange the divs- especially the trigger div, as we need it to the bottom.
+`;
 
 const QuoteTitle = styled.p`
   margin: auto;
@@ -75,16 +82,21 @@ const FlexContainer = styled.div`
   
   // Alignment 
   height: 530vh;
-  
-  //border: solid deeppink;
 `;
 
+// This div is required for the scrollMagic to trigger the tween animation of the Parking Lot Layers off.
+const EndTrigger = styled.div`
+  bottom: 0;
+  position: absolute;
+  height: 1px;
+  width: 100%;
+`;
 
 
 class Quotes extends Component {
   render() {
     return (
-      <div id="parentDiv">
+      <Div id="parentDiv">
 
         <QuoteTitle> Automatic Quoting </QuoteTitle>
         <ManQuoting/>
@@ -191,8 +203,8 @@ class Quotes extends Component {
 
         </Columns>
 
-
-      </div>
+        <EndTrigger id="endTrigger"/>
+      </Div>
     );
   }
 }

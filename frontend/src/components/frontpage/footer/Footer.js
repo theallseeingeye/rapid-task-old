@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
 
-const Copyright = styled.p`
+const Copyright = styled.div`
   font-size: 1.2em;
   float: right;
   margin-right: 15px;

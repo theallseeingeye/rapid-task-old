@@ -1,14 +1,9 @@
 import React, { Component } from 'react';
-import {BaseAnimation} from '../BounceAnimation';
-
-
-const LampsLayerAnimate = BaseAnimation.extend`
-`;
 
 class LampsLayer extends Component {
   render() {
     return (
-      <LampsLayerAnimate>
+      <g id="lampsLayer">
         <g id="Lamp_1">
           <path d="M27.54,283.7a1.07,1.07,0,0,1,.46-.9l.61-.36a1.08,1.08,0,0,0-.46.9,2.71,2.71,0,0,0,1.15,2.18l.08,0,.1,0a.6.6,0,0,0,.56,0l-.61.36a.48.48,0,0,1-.22.06h-.17a.93.93,0,0,1-.28-.11l-.08,0A2.71,2.71,0,0,1,27.54,283.7Z" transform="translate(-24.25 -141.52)" fill="#5e737c"/>
           <path d="M28.65,283a1,1,0,0,1,.94.12l.12.07a2.83,2.83,0,0,1,1.21,2.28,1,1,0,0,1-.44.85l-.6.36a1,1,0,0,0,.44-.85,2.83,2.83,0,0,0-1.21-2.28l-.12-.07a1,1,0,0,0-.94-.12Z" transform="translate(-24.25 -141.52)" fill="#5e737c"/>
@@ -177,7 +172,7 @@ class LampsLayer extends Component {
           <rect x="159.96" y="100.42" width="1.98" height="1.48" fill="#7a8d93"/>
           <rect x="160.56" y="100.42" width="0.79" height="1.54" fill="#30515e"/>
         </g>
-      </LampsLayerAnimate>
+      </g>
     )
   }
 }

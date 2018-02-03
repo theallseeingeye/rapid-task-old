@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import ClientTablet from './svg-layers/ClientTablet';
-import ProgressBar from './svg-layers/Progressbars';
+
 
 
 const Title = styled.h2`
@@ -12,14 +12,21 @@ const SubTitle = styled.h3`
 
 `;
 
+const JobTitle = styled.p`
+  margin: auto;
+`;
+
 class ClientFeatures extends Component {
   render() {
+
+
     return (
       <div>
         <Title>Impress Your Clients </Title>
         <SubTitle>Never Lose Track Again</SubTitle>
         <ClientTablet/>
-        <ProgressBar/>
+
+
         <p>
           Rapid Task will keep track of all your interactions with the client. Know their work history,
           built in reminders to apply and keep notes to build good raport.

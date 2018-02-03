@@ -7,7 +7,6 @@ const Div = styled.div`
   overflow: hidden;
   width: 100vw;
   margin: auto;
-  border: solid yellow;
   position: relative; // Required to help arrange the divs- especially the trigger div, as we need it to the bottom.
 `;
 

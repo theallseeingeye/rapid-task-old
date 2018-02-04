@@ -5,7 +5,8 @@ const Copyright = styled.div`
   font-size: 1.2em;
   float: right;
   margin-right: 15px;
-  transform: translateY(-85px);
+  height: 10vh;
+  transform: translateY(-65px);
 `;
 
 const Divider = styled.div`
@@ -71,7 +72,7 @@ class Footer extends Component {
         </FindOutMore>
         <Copyright>
           <div className='dateValue'>
-            © {this.state.dateYear}, RapidTask Inc.
+            © {this.state.dateYear}, RapidTask
           </div>
         </Copyright>
       </div>

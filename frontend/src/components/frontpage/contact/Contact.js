@@ -13,9 +13,6 @@ const BackgroundContainer = styled.div`
   z-index: -1;
   // To hid the sides that are stretching beyond the div
   overflow: hidden;
-  @media (min-width: ${props => props.theme.giantscreen}) {
-  overflow: unset;
-  }
 `;
 
 const BackgroundBox = styled.div`
@@ -105,24 +102,23 @@ class Contact extends Component {
 
   render() {
     return (
-        <div>
-          <BackgroundContainer>
-            <BackgroundBox>
-
-              <Svg src={Image}/>
-            </BackgroundBox>
-          </BackgroundContainer>
-              <FormElements onSubmit={this.handleSubmit}>
-                <Title>Stay in the loop!</Title>
-                <Name placeholder='Name' name='name' value={this.state.fields.name} onChange={this.handleChange} required/>
-                <br />
-                <br />
-                <Email placeholder='Email' name='email' value={this.state.fields.email} onChange={this.handleChange} type="email" required />
-                <br />
-                <br />
-                <Subscribe type="submit" value="Subscribe"/>
-              </FormElements>
-        </div>
+      <div>
+        <BackgroundContainer>
+          <BackgroundBox>
+            <Svg src={Image}/>
+          </BackgroundBox>
+        </BackgroundContainer>
+          <FormElements onSubmit={this.handleSubmit}>
+            <Title>Stay in the loop!</Title>
+            <Name placeholder='Name' name='name' value={this.state.fields.name} onChange={this.handleChange} required/>
+            <br />
+            <br />
+            <Email placeholder='Email' name='email' value={this.state.fields.email} onChange={this.handleChange} type="email" required />
+            <br />
+            <br />
+            <Subscribe type="submit" value="Subscribe"/>
+          </FormElements>
+      </div>
     );
   }
 }

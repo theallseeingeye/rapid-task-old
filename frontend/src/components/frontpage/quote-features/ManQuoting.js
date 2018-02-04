@@ -8,6 +8,16 @@ const Svg = styled.svg`
   position: absolute;
   transform: translateX(2%);
   z-index: -5;
+  
+  // @media (min-width: {props => props.theme.tabletscreen}) {
+  //  max-width: 1500px; // To keep the layers from getting too big
+  //  transform: translateX(-20%); // Shift the svg more to the right side
+  // }
+  
+  @media (min-width: ${props => props.theme.desktopscreen}) {
+   max-width: 1500px; // To keep the layers from getting too big
+   transform: translateX(15%); // Shift the svg more to the right side
+  }
 `;
 
 class ManQuoting extends Component {
@@ -15,6 +25,7 @@ class ManQuoting extends Component {
     super(props);
 
     this.color = theme.logoblue;
+    this.color2 = "#9ed4fa";
   }
 
   render() {
@@ -22,12 +33,12 @@ class ManQuoting extends Component {
       <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 884.84 1122.59">
         <title>QuoteManExciting</title>
         <g id="Background">
-          <rect id="DarkLarge" x="305.36" y="78.53" width="196.39" height="974.1" rx="98.2" ry="98.2" transform="translate(-312.12 429.08) rotate(-45)" fill="#3364ff"/>
+          <rect id="DarkLarge" x="305.36" y="78.53" width="196.39" height="974.1" rx="98.2" ry="98.2" transform="translate(-312.12 429.08) rotate(-45)" fill={this.color2}/>
           <rect id="MediumSmall" x="415.19" y="339.48" width="33.41" height="795.04" rx="16.7" ry="16.7" transform="translate(-425.03 499.33) rotate(-45)" fill={this.color}/>
           <rect id="MediumLarge" x="366.17" y="45.54" width="342.91" height="907.21" rx="171.45" ry="171.45" transform="translate(-225.87 504.42) rotate(-45)" fill={this.color}/>
           <rect id="MediumMedium" x="610.94" y="-63.31" width="33.41" height="633.7" rx="16.7" ry="16.7" transform="translate(-25.85 496.14) rotate(-45)" fill={this.color}/>
-          <rect id="DarkMedium" x="523.99" y="-110.11" width="72.46" height="974.1" rx="36.23" ry="36.23" transform="translate(-132.85 484.61) rotate(-45)" fill="#3364ff"/>
-          <rect id="DarkMedium-2" data-name="DarkMedium" x="456.68" y="491.29" width="72.46" height="752.88" rx="36.23" ry="36.23" transform="translate(-499.6 580.76) rotate(-45)" fill="#3364ff"/>
+          <rect id="DarkMedium" x="523.99" y="-110.11" width="72.46" height="974.1" rx="36.23" ry="36.23" transform="translate(-132.85 484.61) rotate(-45)" fill={this.color2}/>
+          <rect id="DarkMedium-2" data-name="DarkMedium" x="456.68" y="491.29" width="72.46" height="752.88" rx="36.23" ry="36.23" transform="translate(-499.6 580.76) rotate(-45)" fill={this.color2}/>
           <g id="Protractor">
             <rect id="trail" x="734.92" y="432.34" width="20.37" height="441.73" rx="10.18" ry="10.18" transform="translate(-274.04 696.26) rotate(-45)" fill="#fff" opacity="0.29"/>
             <g>
@@ -227,6 +238,12 @@ class ManQuoting extends Component {
             <path id="ear" d="M546.46,337.17c-3-1.46-7.76,1.72-10.6,7.1s-2.69,10.93.33,12.4,7.76-1.72,10.6-7.1S549.47,338.63,546.46,337.17Z" transform="translate(-30.39 -21.93)" fill="#d57c78"/>
             <path id="glasses" d="M516.67,329.4c-9.77-1.75-13.61.37-15.54-.16s-4.16-4.31-13.46-7.78-14.61-.71-14.61-.71l-1.15,4.2a9.52,9.52,0,0,1,1.2,2.54c-.12.84-.22,1.75-.27,2.72-.18,3.08,1.25,5.63,3.55,6.36l9.3,2.93.22.06c3.1.85,6.46-.95,8.55-4.27a19.35,19.35,0,0,0,1.53-1.88,2.26,2.26,0,0,1,1.48-.86A6,6,0,0,1,502.6,334a2.25,2.25,0,0,1,.83,1.49,19.5,19.5,0,0,0,.36,2.4c.11,3.92,2.09,7.17,5.19,8l9.71,2.27c2.35.55,4.88-.93,6.29-3.66.44-.86.82-1.69,1.15-2.48a9.51,9.51,0,0,1,2.33-1.57l1.15-4.2S526.44,331.15,516.67,329.4Zm-30.42,8.91-9.47-3c-1.75-.55-2.83-2.59-2.69-5.07a25.58,25.58,0,0,1,1.15-6.54c.52-1.47,3.14-3.48,9.67-1.69l.89.26c5.18,1.6,7.92,3.23,8.89,5.28.62,1.3.55,2.86-.22,4.93C492.94,336.67,489.4,339.17,486.25,338.31Zm37.62,5.57c-1.14,2.21-3.11,3.41-4.89,3l-9.49-2.21-.17,0c-3.15-.86-4.92-4.81-4.13-9.19.39-2.17,1.13-3.55,2.32-4.35,1.88-1.27,5.07-1.27,10.34,0l.9.23c6.53,1.79,7.76,4.85,7.46,6.38A25.58,25.58,0,0,1,523.88,343.88Z" transform="translate(-30.39 -21.93)" fill="#4e2c42"/>
           </g>
+          <g id="rightarm">
+            <path id="rightcuff" d="M367.07,337.24l1.44-1.66L366,333.4a1.42,1.42,0,0,0-2,.15l-.51.59-8.62,10-.51.59a1.42,1.42,0,0,0,.15,2l2.53,2.18,1.44-1.66Z" transform="translate(-30.39 -21.93)" fill="#c9daf5"/>
+            <path id="rightarm-2" data-name="rightarm" d="M484.36,409.25a11,11,0,1,0,4.12-21.58l-55.16-10.55a72.32,72.32,0,0,1-33.63-16.29l-31.91-27.57-1.44,1.66-1.44,1.66-8.62,10-1.44,1.66-.51.59a1.42,1.42,0,0,0,.15,2l30.83,26.65a94.36,94.36,0,0,0,43.86,21.24Z" transform="translate(-30.39 -21.93)" fill="#4e2c42"/>
+            <path id="rightwrist" d="M356.49,328.1a6.59,6.59,0,1,0-8.62,10l7,6,8.62-10Z" transform="translate(-30.39 -21.93)" fill="#e28f84"/>
+            <path id="Righthand" d="M332.82,312a3.12,3.12,0,0,1,5.78-.77.79.79,0,0,0,1.15.27,3.11,3.11,0,0,1,4.51,1.07.79.79,0,0,0,1.15.27,3.11,3.11,0,0,1,4.74,1.61.79.79,0,0,0,1,.5,3.06,3.06,0,0,1,1.81-.12,3.12,3.12,0,0,1,2.32,3.76l-.54,2.28a2.33,2.33,0,0,0,.58,2.15c3.06,3.2,4.5,6.78,3.45,9.56-1.71,4.52-9.34,5.21-17,1.55C326.88,327.1,329.11,327.61,332.82,312Z" transform="translate(-30.39 -21.93)" fill="#e28f84"/>
+          </g>
           <g id="jacket">
             <path id="tie" d="M507.86,457s.15-9.71,1.59-23v0c-1-11.68-1.76-25.55-2-31.38,0-.24-.07-1.38-.08-1.42a4.45,4.45,0,0,1,.65-2.54l1.39-2.28-3.57-11.07-3.61,11.86L503,399a4.46,4.46,0,0,1,.36,2.31s-.17,1-.17,1.06-.49,6.84-1.1,14.65c-.85,10.74-1.31,23.54-1.32,23.67" transform="translate(-30.39 -21.93)" fill="#d7485f"/>
             <rect id="shirtbody" x="499.25" y="480.74" width="16.58" height="56.25" transform="translate(-106.29 67.24) rotate(-9.35)" fill="#c9daf5"/>
@@ -257,12 +274,6 @@ class ManQuoting extends Component {
             <path id="leftcuff" d="M485.64,436.79l1-2.1-3.2-1.57a1.52,1.52,0,0,0-2,.69l-6.93,14.11a1.52,1.52,0,0,0,.69,2l3.2,1.57Z" transform="translate(-30.39 -21.93)" fill="#c9daf5"/>
             <path id="leftarm-2" data-name="leftarm" d="M542.21,477.19a23,23,0,0,0,10.36-10.42,22.42,22.42,0,0,0,1.9-5.6l13.41-67.94a11.72,11.72,0,1,0-23-4.54l-13.24,67.15L485,432.91a1.52,1.52,0,0,0-2,.69l-9,18.32a1.52,1.52,0,0,0,.69,2L522,477.23A23,23,0,0,0,542.21,477.19Z" transform="translate(-30.39 -21.93)" fill="#5a384d"/>
             <path id="lefthandpoint" d="M452.88,421.42a2.05,2.05,0,0,0,0-3l-9.31-8.87a2.24,2.24,0,1,1,3.09-3.25l4.11,3.92a89.1,89.1,0,0,0,11.87,9.51c1.6,1.07,3.22,2.59,5,4.09,5.62,4.65,7.39,12,3.95,16.39s-10.78,4.21-16.4-.44C451.91,437,441.83,431.4,452.88,421.42Z" transform="translate(-30.39 -21.93)" fill="#e28f84"/>
-          </g>
-          <g id="rightarm">
-            <path id="rightcuff" d="M367.07,337.24l1.44-1.66L366,333.4a1.42,1.42,0,0,0-2,.15l-.51.59-8.62,10-.51.59a1.42,1.42,0,0,0,.15,2l2.53,2.18,1.44-1.66Z" transform="translate(-30.39 -21.93)" fill="#c9daf5"/>
-            <path id="rightarm-2" data-name="rightarm" d="M484.36,409.25a11,11,0,1,0,4.12-21.58l-55.16-10.55a72.32,72.32,0,0,1-33.63-16.29l-31.91-27.57-1.44,1.66-1.44,1.66-8.62,10-1.44,1.66-.51.59a1.42,1.42,0,0,0,.15,2l30.83,26.65a94.36,94.36,0,0,0,43.86,21.24Z" transform="translate(-30.39 -21.93)" fill="#4e2c42"/>
-            <path id="rightwrist" d="M356.49,328.1a6.59,6.59,0,1,0-8.62,10l7,6,8.62-10Z" transform="translate(-30.39 -21.93)" fill="#e28f84"/>
-            <path id="Righthand" d="M332.82,312a3.12,3.12,0,0,1,5.78-.77.79.79,0,0,0,1.15.27,3.11,3.11,0,0,1,4.51,1.07.79.79,0,0,0,1.15.27,3.11,3.11,0,0,1,4.74,1.61.79.79,0,0,0,1,.5,3.06,3.06,0,0,1,1.81-.12,3.12,3.12,0,0,1,2.32,3.76l-.54,2.28a2.33,2.33,0,0,0,.58,2.15c3.06,3.2,4.5,6.78,3.45,9.56-1.71,4.52-9.34,5.21-17,1.55C326.88,327.1,329.11,327.61,332.82,312Z" transform="translate(-30.39 -21.93)" fill="#e28f84"/>
           </g>
         </g>
       </Svg>

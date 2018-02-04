@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
+// ScrollMagic and GSAP is used here!
+import ScrollMagic from "../../../../utils/jsfunctions/ScrollMagicGsapAdapter"; //Custom adapter that lets us use GSAP and ScrollMagic in React
+
+// SVG Layers
 import BottomLayer from "./ParkingLotLayers/BottomLayer";
 import GravelLayer from "./ParkingLotLayers/GravelLayer";
 import AsphaltLayer from "./ParkingLotLayers/AsphaltLayer";
@@ -10,40 +14,35 @@ import LampsLayer from "./ParkingLotLayers/LampsLayer";
 import TreesLayer from "./ParkingLotLayers/TreesLayer";
 import LinesLayer from "./ParkingLotLayers/LinesLayer";
 import PylonsLayer from "./ParkingLotLayers/PylonsLayer";
-import ScrollMagic from "./ScrollMagicGsapAdapter";
 
 const Div = styled.div`
-  margin: auto;
-  max-width: 50%;
-  width: 100%;
+  width: 49vw;
   position: absolute;
+  display: flex;
+  justify-content: right; // To keep it close to text on large screen
 `;
 
 const Svg = styled.svg`
-  position: fixed; // This is required for the scroll animation to stick as it passes. For layerScrollHandler Function.
-  max-width: 48vw;
-  padding: 2px; // Keep svg from left border
-  z-index: -6; // This makes sure that the layers hide below the div below.
-  top: 25vh;
-
-  // @media (min-width: {props => props.theme.desktopscreen}) {
-  //   max-width: 500px;
+  position: fixed; // This is required to make the svg stick to scroll.
+  max-width: 48vw; // This is for small mobile screens
+  padding-left: 2px; // Keep svg from left border
+  z-index: -6; // This makes sure that the svg layers hide below the next div for effect.
+  top: 25vh; // center the svg on the page vertically.
+  
+   @media (min-width: ${props => props.theme.desktopscreen}) {
+     max-width: 500px; // To keep the layers from getting too big
+     top: 10vh; // Adjust the layers to the middle vertical height
+   }
 `;
 
 
 class ParkingLotAnimation extends Component {
-
   componentDidMount() {
     const mainSVG = document.getElementById("svgMain");
     const parentDIV = document.getElementById("parentDiv");
     const triggerEnd = document.getElementById("endTrigger"); // The start of the next div which is the employees section
 
-    // Init controller
-    const controller = new ScrollMagic.Controller();
-
-    // To set each layer invisible before doing anything.
-    TweenMax.set([
-      // mainSVG,
+    const layerId = [
       bottomLayer,
       gravelLayer,
       asphaltLayer,
@@ -53,15 +52,21 @@ class ParkingLotAnimation extends Component {
       treesLayer,
       linesLayer,
       pylonsLayer,
-    ], {autoAlpha:0});
+    ];
+
+    // Init controller
+    const controller = new ScrollMagic.Controller();
+
+    // To set each layer invisible before doing anything.
+    TweenMax.set([layerId], {autoAlpha:0});
 
     // There is a slight start delay on mobile- This sets the trigger sooner before the visible trigger. This allows
     // the scrollMagic to trigger on time for the first layer to trigger.
-    const preload = TweenMax.to(bottomLayer, 0.1, {autoAlpha:0});
+    const preload = TweenMax.to(bottomLayer, 0.01, {autoAlpha:0});
 
     // Gsap's animations
-    const tweenBottom = TweenMax.to(bottomLayer, 0.4, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
-    const tweenGravel = TweenMax.to(gravelLayer, 0.4, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
+    const tweenBottom = TweenMax.to(bottomLayer, 0.3, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
+    const tweenGravel = TweenMax.to(gravelLayer, 0.3, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
     const tweenAsphalt = TweenMax.to(asphaltLayer, 0.4, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
     const tweenCurbs = TweenMax.to(curbsLayer, 0.4, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
     const tweenGrass = TweenMax.to(grassLayer, 0.4, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
@@ -70,11 +75,13 @@ class ParkingLotAnimation extends Component {
     const tweenLines = TweenMax.to(linesLayer, 0.4, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
     const tweenPylons = TweenMax.to(pylonsLayer, 0.4, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
 
-    const endTween = TweenMax.to(mainSVG, 0.1, {autoAlpha:0});
 
+    // This is to hide all the svg layers.
+    const endTween = TweenMax.to(mainSVG, 0.3, {autoAlpha:0});
 
+    // ScrollMagic Scenes.
     const sceneMain = new ScrollMagic.Scene({
-      triggerElement: parentDIV,
+      triggerElement: parentDIV, // This the top of main div of QuoteFeatures.js
     })
       .setTween(preload)
       .setPin(mainSVG)
@@ -156,17 +163,17 @@ class ParkingLotAnimation extends Component {
   // NOTE: The order of these elements layers are important to display correctly.
   render() {
     return (
-      <Div id="targetLayer">
+      <Div>
         <Svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 587.98 900" id="svgMain">
           <title>Rapid Task Layered Lot</title>
           <BottomLayer/>
           <GravelLayer/>
           <AsphaltLayer/>
-          <CurbsLayer/>
+          <LinesLayer/>
           <GrassLayer/>
+          <CurbsLayer/>
           <LampsLayer/>
           <TreesLayer/>
-          <LinesLayer/>
           <PylonsLayer/>
         </Svg>
       </Div>

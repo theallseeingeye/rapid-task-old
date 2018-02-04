@@ -14,7 +14,7 @@ import About from "./about/About";
 import Contact from "./contact/Contact";
 import Footer from "./footer/Footer";
 import MainPage from "./main-page/MainPage";
-import AnimationTest from "../../../experiments/animation/animation"
+
 
 import CityAnimation from "./map-features/MapFeatures";
 
@@ -67,7 +67,7 @@ class FrontPage extends Component {
           <Features/>
         </FeaturesContainer>
         <MapsContainer>
-          {/*<CityAnimation/>*/}
+          <CityAnimation/>
         </MapsContainer>
         <QuotesContainer>
           <Quotes/>
@@ -90,7 +90,6 @@ class FrontPage extends Component {
         </div>
         <div>
           <AnalyticsFeatures/>
-          {/*<AnimationTest/>*/}
         </div>
         <div>
           <About/>

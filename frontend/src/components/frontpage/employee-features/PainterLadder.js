@@ -122,7 +122,7 @@ class PainterLadder extends Component {
               <tspan x="-32" dy="1.2em">tspan line 3</tspan>
               <tspan x="-36" dy="1.2em">tspan linsgfgfgdfgfdggf</tspan>
               <tspan x="-40" dy="1.2em">tspan line 3</tspan>
-              <tspan x="-44" dy="1.2em">tspan linfffe 3</tspan>
+              <tspan x="-44" dy="1.2em">tspan line 3</tspan>
             </Text4>
 
 

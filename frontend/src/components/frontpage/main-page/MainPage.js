@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 import NavBar from "./../nav/Navbar";
 import Logo from "../global-svg/logo"
 import Guru from './../main-page/guru-man';
@@ -49,6 +49,7 @@ const LogoBox = styled.div`
   @media (min-width: ${props => props.theme.tabletscreen}) {
     margin-top: 4em;
     max-width: 800px;
+  }
 `;
 
 const GuruContainer = styled.div`
@@ -106,6 +107,33 @@ const TextStyle3 = styled.p`
   margin: auto;
 `;
 
+const LightSpeed = keyframes`
+  from {
+    transform: translate3d(100%, 0, 0) skewX(-30deg);
+    opacity: 0;
+  }
+
+  60% {
+    transform: skewX(20deg);
+    opacity: 1;
+  }
+
+  80% {
+    transform: skewX(-5deg);
+    opacity: 1;
+  }
+
+  to {
+    transform: none;
+    opacity: 1;
+  }
+`;
+
+const LightSpeedIn = styled.div`
+  animation: ${LightSpeed} 0.4s;
+  animation-timing-function: ease-out;
+`;
+
 class MainPage extends Component {
   render() {
     return (
@@ -113,7 +141,9 @@ class MainPage extends Component {
         <NavBar/>
         <LogoContainer>
           <LogoBox>
-            <Logo/>
+            <LightSpeedIn>
+             <Logo/>
+            </LightSpeedIn>
           </LogoBox>
         </LogoContainer>
         <BackgroundContainer>

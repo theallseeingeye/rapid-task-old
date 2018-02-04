@@ -26,10 +26,11 @@ class ProgressBars extends Component {
   }
 
   componentDidMount() {
+    // Settings
     const logoBlue = this.color;
     const buttonSecondary = "green";
-    const buttonClickTime = 0.3;
-    const progressBarSpeed = 3;
+    const buttonClickTime = 1;
+    const progressBarSpeed = 5;
     const buttonHoldTime = 3;
     const randomStart = Math.random()*20;
 
@@ -123,9 +124,10 @@ class ProgressBars extends Component {
              <rect width="100" height="5" rx="2" ry="2" fill={this.color}/>
           </clipPath>
         </defs>
-          <rect id="grayBar" width="100" height="5" rx="2" ry="2" fill="gray"/>
-          <rect ref={x => {this.blueBar = x}} width="100" height="5" fill={this.color} clipPath="url(#maskPath)"/>
-          <rect ref={x => {this.buttonProgress = x}} x="67" y="6" width="36" height="7" fill={this.color}/>
+
+        <rect id="grayBar" width="100" height="5" rx="2" ry="2" fill="gray"/>
+        <rect ref={x => {this.blueBar = x}} width="100" height="5" fill={this.color} clipPath="url(#maskPath)"/>
+        <rect ref={x => {this.buttonProgress = x}} x="67" y="6" width="36" height="7" fill={this.color}/>
 
         {/*Status Text*/}
         <TextStatus innerRef={e => {this.statusQuotePending = e}} x="1" y="10" dy="0.1">

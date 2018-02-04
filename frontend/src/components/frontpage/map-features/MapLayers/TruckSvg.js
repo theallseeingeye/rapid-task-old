@@ -1,44 +1,9 @@
 import React, { Component } from 'react';
-import styled, {keyframes} from "styled-components";
 
-const SouthEast = keyframes`
-  from {
-    transform: translate(2600px, 1500px);
-    visibility: visible;
-    opacity: 0;
-  }
-  10%, 20% {
-    transform: translate(2600px, 1500px);
-    opacity: 1;
-  }
-
-  33% {
-    transform: translate(3800px, 2200px);
-  }
-
-  45% {
-    transform: translate(4150px, 2350px) rotateY(180deg);
-  }
-  to {
-    transform: translate(2000px, 3575px) rotateY(180deg);
-    visibility: visible;
-  }
-`;
-
-const SouthEastGo = styled.g`
-  visibility: hidden;
-  position: absolute;
-  animation: ${SouthEast} 8s;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
-  animation-delay: 15s;
-
-`;
-
-class BlueTruck extends Component {
+class TruckSvg extends Component {
   render() {
     return (
-     <SouthEastGo>
+     <g>
         <g opacity="0.6">
         <path d="M685.77,304.21c-13.34-8-44.1-4.9-63.5,4.51l-52.59,25.51c-19.41,9.41-24.26,23.54-10.89,31.54l132.85,79.47c13.39,8,39.84,6.81,59.26-2.59l52.61-25.53c19.38-9.41,28.52-25.46,15.13-33.49Z" transform="translate(-542.27 -225.68)" fill="#1a1a1a"/>
         </g>
@@ -114,9 +79,9 @@ class BlueTruck extends Component {
         <path d="M583.61,332.8c1.9,7.3,7.57,13.22,12.67,13.21s7.73-5.91,5.85-13.18-7.56-13.22-12.66-13.23S581.74,325.49,583.61,332.8Z" transform="translate(-542.27 -225.68)" fill="#fff"/>
         <path d="M595.48,337.53a5.11,5.11,0,0,0,.7-4.09c-.56-3-2.71-5.62-4.85-5.91a2.33,2.33,0,0,0-1.39.21,2.29,2.29,0,0,1,2.16-.86c2.13.29,4.32,2.91,4.87,5.92C597.39,335.07,596.74,336.91,595.48,337.53Z" transform="translate(-542.27 -225.68)" fill="#9d9a95"/>
         <path d="M612.43,351.39c3.39-1.23,8.93-.95,13.89-3.68,11.82-39.12-54.44-81.48-58.72-28C570.23,286.8,622.67,313,612.43,351.39Z" transform="translate(-542.27 -225.68)" fill="#2873a7"/>
-      </SouthEastGo>
+      </g>
     );
   }
 }
 
-export default BlueTruck;
+export default TruckSvg;

@@ -14,12 +14,10 @@ const Svg = styled.svg`
   //  transform: translateX(-20%); // Shift the svg more to the right side
   // }
   
-    
   @media (min-width: ${props => props.theme.desktopscreen}) {
    max-width: 1500px; // To keep the layers from getting too big
    transform: translateX(15%); // Shift the svg more to the right side
   }
- 
 `;
 
 class ManQuoting extends Component {
@@ -27,6 +25,7 @@ class ManQuoting extends Component {
     super(props);
 
     this.color = theme.logoblue;
+    this.color2 = "#9ed4fa";
   }
 
   render() {
@@ -34,12 +33,12 @@ class ManQuoting extends Component {
       <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 884.84 1122.59">
         <title>QuoteManExciting</title>
         <g id="Background">
-          <rect id="DarkLarge" x="305.36" y="78.53" width="196.39" height="974.1" rx="98.2" ry="98.2" transform="translate(-312.12 429.08) rotate(-45)" fill="#3364ff"/>
+          <rect id="DarkLarge" x="305.36" y="78.53" width="196.39" height="974.1" rx="98.2" ry="98.2" transform="translate(-312.12 429.08) rotate(-45)" fill={this.color2}/>
           <rect id="MediumSmall" x="415.19" y="339.48" width="33.41" height="795.04" rx="16.7" ry="16.7" transform="translate(-425.03 499.33) rotate(-45)" fill={this.color}/>
           <rect id="MediumLarge" x="366.17" y="45.54" width="342.91" height="907.21" rx="171.45" ry="171.45" transform="translate(-225.87 504.42) rotate(-45)" fill={this.color}/>
           <rect id="MediumMedium" x="610.94" y="-63.31" width="33.41" height="633.7" rx="16.7" ry="16.7" transform="translate(-25.85 496.14) rotate(-45)" fill={this.color}/>
-          <rect id="DarkMedium" x="523.99" y="-110.11" width="72.46" height="974.1" rx="36.23" ry="36.23" transform="translate(-132.85 484.61) rotate(-45)" fill="#3364ff"/>
-          <rect id="DarkMedium-2" data-name="DarkMedium" x="456.68" y="491.29" width="72.46" height="752.88" rx="36.23" ry="36.23" transform="translate(-499.6 580.76) rotate(-45)" fill="#3364ff"/>
+          <rect id="DarkMedium" x="523.99" y="-110.11" width="72.46" height="974.1" rx="36.23" ry="36.23" transform="translate(-132.85 484.61) rotate(-45)" fill={this.color2}/>
+          <rect id="DarkMedium-2" data-name="DarkMedium" x="456.68" y="491.29" width="72.46" height="752.88" rx="36.23" ry="36.23" transform="translate(-499.6 580.76) rotate(-45)" fill={this.color2}/>
           <g id="Protractor">
             <rect id="trail" x="734.92" y="432.34" width="20.37" height="441.73" rx="10.18" ry="10.18" transform="translate(-274.04 696.26) rotate(-45)" fill="#fff" opacity="0.29"/>
             <g>

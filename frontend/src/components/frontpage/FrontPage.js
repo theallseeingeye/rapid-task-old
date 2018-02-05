@@ -15,6 +15,7 @@ import Contact from "./contact/Contact";
 import Footer from "./footer/Footer";
 import MainPage from "./main-page/MainPage";
 
+
 import CityAnimation from "./map-features/MapFeatures";
 
 const Arrow = styled.div`
@@ -28,30 +29,31 @@ const FeaturesContainer = styled.div`
 `;
 
 const QuotesContainer = styled.div`
-  height: 200vh;
-`;
-
-const JobCostsContainer = styled.div`
-  //margin: auto;
-  height: 200vh;
-  background-color: greenyellow;
-  //position: relative;
+  height: 600vh;
 `;
 
 const MapsContainer = styled.div`
-  height: 90vh;
-  //border: 40px double aqua;
+  height: 110vh;
 `;
 
 const EmployeeContainer = styled.div`
-  height: 300vh;
+  height: 260vh;
 `;
 
 const ClientContainer = styled.div`
-  //height: 200vh;
+  height: 200vh;
   //border: 8px solid gold;
 `;
 
+const ContactContainer = styled.div`
+  @media (min-width: ${props => props.theme.giantscreen}) {
+  height: 105vh;
+`;
+
+const FooterContainer = styled.div`
+  height: 100vh;
+  background-color: ${props => props.theme.logoblue};
+`;
 
 class FrontPage extends Component {
   render() {
@@ -64,12 +66,12 @@ class FrontPage extends Component {
         <FeaturesContainer>
           <Features/>
         </FeaturesContainer>
-        <QuotesContainer>
-          <Quotes/>
-        </QuotesContainer>
         <MapsContainer>
           <CityAnimation/>
         </MapsContainer>
+        <QuotesContainer>
+          <Quotes/>
+        </QuotesContainer>
         <EmployeeContainer>
           <EmployeeFeatures/>
         </EmployeeContainer>
@@ -92,12 +94,12 @@ class FrontPage extends Component {
         <div>
           <About/>
         </div>
-        <div>
+        <ContactContainer>
           <Contact/>
-        </div>
-        <div>
+        </ContactContainer>
+        <FooterContainer>
           <Footer/>
-        </div>
+        </FooterContainer>
       </div>
     );
   }

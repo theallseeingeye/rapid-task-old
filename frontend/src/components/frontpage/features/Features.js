@@ -24,6 +24,7 @@ const DeviceContainer = styled.div`
   //width: 100%;
   height: 35vh;
   margin: auto;
+  
   //background: linear-gradient(rgba(63,169,245,0) 5%, rgba(100,220,245,0.8) 80%,  rgba(63,169,245,0) 95%);
   display: flex;
   justify-content: center;
@@ -60,16 +61,16 @@ const Text3 = styled.p`
   size: 0.5em;
 `;
 
-const Background = styled.div`
-  background: rgb(59, 79, 90); // Background of devices
-  height: 20vh;
-  justify-content: center;
-  align-self: flex-end;
-  position: absolute; 
-  width: 100%; 
-  margin-bottom: 2vh;
-  z-index: -1;    
-`;
+// const Background = styled.div`
+//   background: rgb(59, 79, 90); // Background of devices
+//   height: 20vh;
+//   justify-content: center;
+//   align-self: flex-end;
+//   position: absolute;
+//   //width: 100vw;
+//   margin-bottom: 2vh;
+//   z-index: 1;
+// `;
 
 class Features extends Component {
   render() {
@@ -80,7 +81,7 @@ class Features extends Component {
         </TextTitle>
         <DeviceContainer>
           <DevicesSVG/>
-          <Background/>
+          {/*<Background/>*/}
         </DeviceContainer>
         <TextTitle>
         You now can automate every business task at your fingertips.

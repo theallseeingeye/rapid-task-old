@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-
 const Nav = styled.nav`
   bottom: 0;
   position: fixed;
@@ -12,17 +11,14 @@ const Nav = styled.nav`
   @media (min-width: ${props => props.theme.tabletscreen}) {
     bottom: initial;
     position: absolute;
-    top: 10px;
+    top: 10px; // Brings the nav bar from the top
   }
 `;
 
 const FlexContainer = styled.div`
   align-content: flex-end;
   display: flex;
-  flex-wrap: nowrap;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  margin: 0 auto;
 
   // Adjusts the size of the nav-bar according to screen sizes.
    @media (min-width: ${props => props.theme.tabletscreen}) {
@@ -39,18 +35,22 @@ const FlexItem = styled.button`
   // Styling
   background: rgba(63, 169, 245, 0.8);
   color: white;
-  display: inline-block;
   font-family: ${props => props.theme.Robotofont};
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: bold;
-  height: 100%;
   margin: auto; 
   padding: 10px 5px;
   position: relative;
   text-align: center;
-  transition: all 0.5s;
-  width: 100%;
-  border-radius: 10px 0px 10px 0px;
+
+  // Border styling
+  border-radius: 10px 10px 0 0;
+
+  @media (min-width: ${props => props.theme.tabletscreen}) {
+      transform: skewX(-32deg);
+        border-radius: 10px 10px 10px 10px;
+  };
+  
   // z-index tells css the position order it has over the objects.
   z-index: 1;
   
@@ -58,7 +58,6 @@ const FlexItem = styled.button`
   align-self: auto;
   flex-grow: ${props => props.flexgrow};
   flex-shrink: ${props => props.flexshrink};
-  flex-basis: ${props => props.flexbasis};
 
   :hover {
     background: rgba(63, 169, 245, 0.3);
@@ -67,15 +66,13 @@ const FlexItem = styled.button`
 
 class NavBar extends Component {
   render() {
-
-
     return (
       <Nav>
         <FlexContainer>
           <FlexItem flexgrow="1">Features</FlexItem>
           <FlexItem flexgrow="1">Contact</FlexItem>
           <FlexItem flexgrow="1">About</FlexItem>
-          <FlexItem flexgrow="1">TEST4</FlexItem>
+          <FlexItem flexgrow="1">Development</FlexItem>
         </FlexContainer>
       </Nav>
     );

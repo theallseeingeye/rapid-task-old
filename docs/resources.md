@@ -46,7 +46,9 @@ Table of Contents
    
 ### Compatibility Check
 [Javascript Compatibility Check](https://caniuse.com/#home)
-* Checks compatibility across browsers, with ages of versions.
+* Checks compatibility across browsers, with ages of versions.  
+[Website Market Share Data](http://gs.statcounter.com/)
+* Shows browser market share and device market share.
 
 
 ### Other Web Tools

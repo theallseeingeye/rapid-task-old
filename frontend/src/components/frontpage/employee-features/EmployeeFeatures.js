@@ -5,39 +5,31 @@ import PainterWalking from "./PainterWalking";
 import PainterLadder from "./PainterLadder";
 import PaintingBorder from "./PaintingBorder"
 
-const Title = styled.h2`
-  margin-right: -60vw; // keeps text left of painter
-  margin-top: auto; // to keep to top of div
-  width: 40vw; // keeps the width of the text left of painter
-  position: relative; // Makes it not conflict the painter
-  text-align: right; // Keeps text next to painter
-  font-size: 5vh;
-`;
-
-const SubTitle = styled.h3`
-`;
 
 const Div = styled.div`
   width: 100%;
-  background-color: ${props => props.theme.logoblue};
+  overflow: hidden;
 `;
 
-const TextArea = styled.p`
-  //padding-top: 15vh; // adjusts the element from the top under the title
-  margin: auto;
+const SubTitle = styled.h3`
+  //border: solid orange;
 `;
+
+const TextArea = styled.div`
+  //padding-top: 15vh; // adjusts the element from the top under the title
+  margin-top: 1vh;
+  //border: solid pink;
+  position: absolute;
+`;
+
 
 class EmployeeFeatures extends Component {
   render() {
     return (
-      <Div>
-        <PaintingBorder/>
+      <Div id="parkingLotEnd">
+        {/*This id is the end trigger for parking lot layers*/}
         <PainterLadder/>
         <TextArea>
-              <Title> Automate Employee Tasks </Title>
-          <SubTitle>
-            Employees Empowered With Knowledge
-          </SubTitle>
           <p> Employees will know all the details of the task to perform the work. This was automatically pulled together
             from the quotes previously made. No more second guessing the job details.
           </p>

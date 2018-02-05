@@ -6,6 +6,7 @@ class FinancialFeatures extends Component {
     return (
       <div>
         Financial Features Goes Here!
+        Testing this shit
       </div>
     );
   }

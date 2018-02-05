@@ -3,7 +3,6 @@ import styled, { keyframes } from 'styled-components';
 
 const Svg = styled.svg`
   height: 100%;
-
   @media (min-width: ${props => props.theme.desktopscreen}) {
     max-width: 1000px;
   }

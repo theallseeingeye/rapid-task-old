@@ -4,10 +4,12 @@
   "description": "Web browser for Rapid Task",
   "main": "webpack.config.js",
   "dependencies": {
+    "gsap": "^1.20.3",
     "jest-cli": "^21.2.1",
     "lodash": "^4.17.4",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "scrollmagic": "^2.0.5",
     "styled-components": "^2.2.4"
   },
   "devDependencies": {
@@ -15,6 +17,7 @@
     "babel-jest": "^21.2.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-styled-components": "^1.3.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "clean-webpack-plugin": "^0.1.17",

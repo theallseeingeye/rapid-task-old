@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styled, { keyframes } from 'styled-components';
-import RepeatButton from './Repeat.svg';
 import MapAnimation from './MapLayers/MapAnimation';
 
 

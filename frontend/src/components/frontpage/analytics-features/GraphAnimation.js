@@ -164,7 +164,7 @@ class GraphAnimation extends Component {
 
     //
     function colorizer(polyline, polyline1) {
-      if (polyline < polyline1) {
+      if (polyline > polyline1) {
         return "green";
       } else {
         return "red";
@@ -186,7 +186,7 @@ class GraphAnimation extends Component {
       .to(this.polyline4, .1, {attr: {points: p[7].x + ", " + p[7].y + " " + p[7].x2 + ", " + p[7].y2}})
 
       .to(this.polyline5, .1, {attr: {points: p[8].x + ", " + p[8].y + " " + p[8].x2 + ", " + p[8].y2}})   //segment 5
-      .to(this.polyline5, .1, {stroke: colorizer(random[2],random[3]), attr: {points: p[9].x + ", " + p[9].y + " " + p[9].x2 + ", " + p[9].y2}})
+      .to(this.polyline5, .1, {stroke: colorizer(random[1],random[2]), attr: {points: p[9].x + ", " + p[9].y + " " + p[9].x2 + ", " + p[9].y2}})
 
       .to(this.polyline6, .1, {attr: {points: p[10].x + ", " + p[10].y + " " + p[10].x2 + ", " + p[10].y2}})   //segment 6
       .to(this.polyline6, .1, {attr: {points: p[11].x + ", " + p[11].y + " " + p[11].x2 + ", " + p[11].y2}})

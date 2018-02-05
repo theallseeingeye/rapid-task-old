@@ -16,174 +16,160 @@ class GraphAnimation extends Component {
     // const randomHeight = Math.random()*300;
 
 
-
+    const barWidth = 20;
     const range = 300;
+    const maxPosition = 20;
+    const dataCount = 20;
 
-    const test2 = 1 + ": " + "'" + Math.round(Math.random() * range) + "'";
+    const random = Array.from({length: maxPosition}, () => Math.floor(Math.random() * range)); // USE THIS FOR RANDOMIZER randomizer[1]
+    const polyArray = [...new Array((dataCount*2)+1)].map((el, index) => index); //Iterates array count [1, 2, 3, 4, 5, 6...]
 
-    console.log("this one: " + test2);
 
-    const random = {
-      a: Math.random() * range,
-      b: Math.random() * range,
-      c: Math.random() * range,
-      d: Math.random() * range,
-      e: Math.random() * range,
-      f: Math.random() * range,
-      g: Math.random() * range,
-      h: Math.random() * range,
-      i: Math.random() * range,
-      j: Math.random() * range,
-      k: Math.random() * range,
-      l: Math.random() * range,
-      m: Math.random() * range,
-      n: Math.random() * range,
-      o: Math.random() * range,
-      p: Math.random() * range,
-      q: Math.random() * range,
-      r: Math.random() * range,
-      s: Math.random() * range,
-      t: Math.random() * range,
-      u: Math.random() * range,
-    };
 
-    console.log(random.a);
-    console.log(random.b);
+    console.log(random);
+
+    // random.forEach(function(random){
+    //     console.log(0 + ", " + random + " " + 0 + ", " + random);
+    //
+    // });
+
+
+
 
     const p = [
-      {x: 0, y: random.a, x2: 0, y2: random.a}, // 0 First position
-      {x: 0, y: random.a, x2: 20, y2: random.a}, // 1 Change to from first
+      {x: 0, y: random[0], x2: 0, y2: random[0]}, // 0 First position
+      {x: 0, y: random[0], x2: 20, y2: random[0]}, // 1 Change to from first
 
-      {x: 20, y: random.a, x2: 20, y2: random.a}, // 2 second position
-      {x: 20, y: random.a, x2: 20, y2: random.b}, // 3 change from second
+      {x: 20, y: random[0], x2: 20, y2: random[0]}, // 2 second position
+      {x: 20, y: random[0], x2: 20, y2: random[1]}, // 3 change from second
 
-      {x: 20, y: random.b, x2: 20, y2: random.b}, // 4 third position
-      {x: 20, y: random.b, x2: 40, y2: random.b}, // 5 change from third
+      {x: 20, y: random[1], x2: 20, y2: random[1]}, // 4 third position
+      {x: 20, y: random[1], x2: 40, y2: random[1]}, // 5 change from third
 
-      {x: 40, y: random.b, x2: 40, y2: random.b}, // 6 fourth position
-      {x: 40, y: random.b, x2: 40, y2: random.c}, // 7 change from fourth
+      {x: 40, y: random[1], x2: 40, y2: random[1]}, // 6 fourth position
+      {x: 40, y: random[1], x2: 40, y2: random[2]}, // 7 change from fourth
 
-      {x: 40, y: random.c, x2: 40, y2: random.c}, // 8 fifth position
-      {x: 40, y: random.c, x2: 60, y2: random.c}, // 9 change from fifth
+      {x: 40, y: random[2], x2: 40, y2: random[2]}, // 8 fifth position
+      {x: 40, y: random[2], x2: 60, y2: random[2]}, // 9 change from fifth
 
-      {x: 60, y: random.c, x2: 60, y2: random.c}, // 10 sixth position
-      {x: 60, y: random.c, x2: 60, y2: random.d}, // 11 change from sixth
+      {x: 60, y: random[2], x2: 60, y2: random[2]}, // 10 sixth position
+      {x: 60, y: random[2], x2: 60, y2: random[3]}, // 11 change from sixth
 
-      {x: 60, y: random.d, x2: 60, y2: random.d}, // 12 seventh position
-      {x: 60, y: random.d, x2: 80, y2: random.d}, // 13 change from seventh
+      {x: 60, y: random[3], x2: 60, y2: random[3]}, // 12 seventh position
+      {x: 60, y: random[3], x2: 80, y2: random[3]}, // 13 change from seventh
 
-      {x: 80, y: random.d, x2: 80, y2: random.d}, // 14 eighth position
-      {x: 80, y: random.d, x2: 80, y2: random.e}, // 15 change from eighth
+      {x: 80, y: random[3], x2: 80, y2: random[3]}, // 14 eighth position
+      {x: 80, y: random[3], x2: 80, y2: random[4]}, // 15 change from eighth
 
-      {x: 80, y: random.e, x2: 80, y2: random.e}, // 16 ninth position
-      {x: 80, y: random.e, x2: 100, y2: random.e}, // 17 change from ninth
+      {x: 80, y: random[4], x2: 80, y2: random[4]}, // 16 ninth position
+      {x: 80, y: random[4], x2: 100, y2: random[4]}, // 17 change from ninth
 
-      {x: 100, y: random.e, x2: 100, y2: random.e}, // 18 tenth position
-      {x: 100, y: random.e, x2: 100, y2: random.f}, // 19 change from tenth
+      {x: 100, y: random[4], x2: 100, y2: random[4]}, // 18 tenth position
+      {x: 100, y: random[4], x2: 100, y2: random[5]}, // 19 change from tenth
 
-      {x: 100, y: random.f, x2: 100, y2: random.f}, // 20
-      {x: 100, y: random.f, x2: 120, y2: random.f}, // 21
+      {x: 100, y: random[5], x2: 100, y2: random[5]}, // 20
+      {x: 100, y: random[5], x2: 120, y2: random[5]}, // 21
 
-      {x: 120, y: random.f, x2: 120, y2: random.f}, // 22
-      {x: 120, y: random.f, x2: 120, y2: random.g}, // 23
+      {x: 120, y: random[5], x2: 120, y2: random[5]}, // 22
+      {x: 120, y: random[5], x2: 120, y2: random[6]}, // 23
 
-      {x: 120, y: random.g, x2: 120, y2: random.g}, // 24
-      {x: 120, y: random.g, x2: 140, y2: random.g}, // 25
+      {x: 120, y: random[6], x2: 120, y2: random[6]}, // 24
+      {x: 120, y: random[6], x2: 140, y2: random[6]}, // 25
 
-      {x: 140, y: random.g, x2: 140, y2: random.g}, // 26
-      {x: 140, y: random.g, x2: 140, y2: random.h}, // 27
+      {x: 140, y: random[6], x2: 140, y2: random[6]}, // 26
+      {x: 140, y: random[6], x2: 140, y2: random[7]}, // 27
 
-      {x: 140, y: random.h, x2: 140, y2: random.h}, // 28
-      {x: 140, y: random.h, x2: 160, y2: random.h}, // 29
+      {x: 140, y: random[7], x2: 140, y2: random[7]}, // 28
+      {x: 140, y: random[7], x2: 160, y2: random[7]}, // 29
 
-      {x: 160, y: random.h, x2: 160, y2: random.h}, // 30
-      {x: 160, y: random.h, x2: 160, y2: random.i}, // 31
+      {x: 160, y: random[7], x2: 160, y2: random[7]}, // 30
+      {x: 160, y: random[7], x2: 160, y2: random[8]}, // 31
 
-      {x: 160, y: random.i, x2: 160, y2: random.i}, // 32
-      {x: 160, y: random.i, x2: 180, y2: random.i}, // 33
+      {x: 160, y: random[8], x2: 160, y2: random[8]}, // 32
+      {x: 160, y: random[8], x2: 180, y2: random[8]}, // 33
 
-      {x: 180, y: random.i, x2: 180, y2: random.i}, // 34
-      {x: 180, y: random.i, x2: 180, y2: random.j}, // 35
+      {x: 180, y: random[8], x2: 180, y2: random[8]}, // 34
+      {x: 180, y: random[8], x2: 180, y2: random[9]}, // 35
 
-      {x: 180, y: random.j, x2: 180, y2: random.j}, // 36
-      {x: 180, y: random.j, x2: 200, y2: random.j}, // 37
+      {x: 180, y: random[9], x2: 180, y2: random[9]}, // 36
+      {x: 180, y: random[9], x2: 200, y2: random[9]}, // 37
 
-      {x: 200, y: random.j, x2: 200, y2: random.j}, // 38
-      {x: 200, y: random.j, x2: 200, y2: random.k}, // 39
+      {x: 200, y: random[9], x2: 200, y2: random[9]}, // 38
+      {x: 200, y: random[9], x2: 200, y2: random[10]}, // 39
 
-      {x: 200, y: random.k, x2: 200, y2: random.k}, // 40
-      {x: 200, y: random.k, x2: 220, y2: random.k}, // 41
+      {x: 200, y: random[10], x2: 200, y2: random[10]}, // 40
+      {x: 200, y: random[10], x2: 220, y2: random[10]}, // 41
 
-      {x: 220, y: random.k, x2: 220, y2: random.k}, // 42
-      {x: 220, y: random.k, x2: 220, y2: random.l}, // 43
+      {x: 220, y: random[10], x2: 220, y2: random[10]}, // 42
+      {x: 220, y: random[10], x2: 220, y2: random[11]}, // 43
 
-      {x: 220, y: random.l, x2: 220, y2: random.l}, // 44
-      {x: 220, y: random.l, x2: 240, y2: random.l}, // 45
+      {x: 220, y: random[11], x2: 220, y2: random[11]}, // 44
+      {x: 220, y: random[11], x2: 240, y2: random[11]}, // 45
 
-      {x: 240, y: random.l, x2: 240, y2: random.l}, // 46
-      {x: 240, y: random.l, x2: 240, y2: random.m}, // 47
+      {x: 240, y: random[11], x2: 240, y2: random[11]}, // 46
+      {x: 240, y: random[11], x2: 240, y2: random[12]}, // 47
 
-      {x: 240, y: random.m, x2: 240, y2: random.m}, // 48
-      {x: 240, y: random.m, x2: 260, y2: random.m}, // 49
+      {x: 240, y: random[12], x2: 240, y2: random[12]}, // 48
+      {x: 240, y: random[12], x2: 260, y2: random[12]}, // 49
 
-      {x: 260, y: random.m, x2: 260, y2: random.m}, // 50
-      {x: 260, y: random.m, x2: 260, y2: random.n}, // 51
+      {x: 260, y: random[12], x2: 260, y2: random[12]}, // 50
+      {x: 260, y: random[12], x2: 260, y2: random[13]}, // 51
 
-      {x: 260, y: random.n, x2: 260, y2: random.n}, // 52
-      {x: 260, y: random.n, x2: 280, y2: random.n}, // 53
+      {x: 260, y: random[13], x2: 260, y2: random[13]}, // 52
+      {x: 260, y: random[13], x2: 280, y2: random[13]}, // 53
 
-      {x: 280, y: random.n, x2: 280, y2: random.n}, // 54
-      {x: 280, y: random.n, x2: 280, y2: random.o}, // 55
+      {x: 280, y: random[13], x2: 280, y2: random[13]}, // 54
+      {x: 280, y: random[13], x2: 280, y2: random[14]}, // 55
 
-      {x: 280, y: random.o, x2: 280, y2: random.o}, // 56
-      {x: 280, y: random.o, x2: 300, y2: random.o}, // 57
+      {x: 280, y: random[14], x2: 280, y2: random[14]}, // 56
+      {x: 280, y: random[14], x2: 300, y2: random[14]}, // 57
 
-      {x: 300, y: random.o, x2: 300, y2: random.o}, // 58
-      {x: 300, y: random.o, x2: 300, y2: random.p}, // 59
+      {x: 300, y: random[14], x2: 300, y2: random[14]}, // 58
+      {x: 300, y: random[14], x2: 300, y2: random[15]}, // 59
 
-      {x: 300, y: random.p, x2: 300, y2: random.p}, // 60
-      {x: 300, y: random.p, x2: 320, y2: random.p}, // 61
+      {x: 300, y: random[15], x2: 300, y2: random[15]}, // 60
+      {x: 300, y: random[15], x2: 320, y2: random[15]}, // 61
 
-      {x: 320, y: random.p, x2: 320, y2: random.p}, // 62
-      {x: 320, y: random.p, x2: 320, y2: random.q}, // 63
+      {x: 320, y: random[15], x2: 320, y2: random[15]}, // 62
+      {x: 320, y: random[15], x2: 320, y2: random[16]}, // 63
 
-      {x: 320, y: random.q, x2: 320, y2: random.q}, // 64
-      {x: 320, y: random.q, x2: 340, y2: random.q}, // 65
+      {x: 320, y: random[16], x2: 320, y2: random[16]}, // 64
+      {x: 320, y: random[16], x2: 340, y2: random[16]}, // 65
 
-      {x: 340, y: random.q, x2: 340, y2: random.q}, // 66
-      {x: 340, y: random.q, x2: 340, y2: random.r}, // 67
+      {x: 340, y: random[16], x2: 340, y2: random[16]}, // 66
+      {x: 340, y: random[16], x2: 340, y2: random[17]}, // 67
 
-      {x: 340, y: random.r, x2: 340, y2: random.r}, // 68
-      {x: 340, y: random.r, x2: 360, y2: random.r}, // 69
+      {x: 340, y: random[17], x2: 340, y2: random[17]}, // 68
+      {x: 340, y: random[17], x2: 360, y2: random[17]}, // 69
 
-      {x: 360, y: random.r, x2: 360, y2: random.r}, // 70
-      {x: 360, y: random.r, x2: 360, y2: random.s}, // 71
+      {x: 360, y: random[17], x2: 360, y2: random[17]}, // 70
+      {x: 360, y: random[17], x2: 360, y2: random[18]}, // 71
 
-      {x: 360, y: random.s, x2: 360, y2: random.s}, // 72
-      {x: 360, y: random.s, x2: 380, y2: random.s}, // 73
+      {x: 360, y: random[18], x2: 360, y2: random[18]}, // 72
+      {x: 360, y: random[18], x2: 380, y2: random[18]}, // 73
 
-      {x: 380, y: random.s, x2: 380, y2: random.s}, // 74
-      {x: 380, y: random.s, x2: 380, y2: random.t}, // 75
+      {x: 380, y: random[18], x2: 380, y2: random[18]}, // 74
+      {x: 380, y: random[18], x2: 380, y2: random[19]}, // 75
 
-      {x: 380, y: random.t, x2: 380, y2: random.t}, // 76
-      {x: 380, y: random.t, x2: 400, y2: random.t}, // 77
+      {x: 380, y: random[19], x2: 380, y2: random[19]}, // 76
+      {x: 380, y: random[19], x2: 400, y2: random[19]}, // 77
 
-      {x: 400, y: random.t, x2: 400, y2: random.t}, // 78
-      {x: 400, y: random.t, x2: 400, y2: random.u}, // 79
+      {x: 400, y: random[19], x2: 400, y2: random[19]}, // 78
+      {x: 400, y: random[19], x2: 400, y2: random[20]}, // 79
 
 
-      // {x:100, y:random.b, x2:1000, y2:0},
+      // {x:100, y:random[1], x2:1000, y2:0},
     ];
 
 
-
-    colorizer = (polyline, polyline1) => {
-        if (polyline < polyline1) {
-          return "green";
-        } else {
-          return "red";
-        }
-      };
+    //
+    function colorizer(polyline, polyline1) {
+      if (polyline < polyline1) {
+        return "green";
+      } else {
+        return "red";
+      }
+    }
 
     const chartDraw = new TimelineMax({});
 
@@ -194,37 +180,37 @@ class GraphAnimation extends Component {
       .to(this.polyline2, .1, {attr: {points: p[3].x + ", " + p[3].y + " " + p[3].x2 + ", " + p[3].y2}})
 
       .to(this.polyline3, .1, {attr: {points: p[4].x + ", " + p[4].y + " " + p[4].x2 + ", " + p[4].y2}})   //segment 3
-      .to(this.polyline3, .1, {attr: {points: p[5].x + ", " + p[5].y + " " + p[5].x2 + ", " + p[5].y2}})
+      .to(this.polyline3, .1, {stroke: colorizer(random[0],random[1]), attr: {points: p[5].x + ", " + p[5].y + " " + p[5].x2 + ", " + p[5].y2}})
 
       .to(this.polyline4, .1, {attr: {points: p[6].x + ", " + p[6].y + " " + p[6].x2 + ", " + p[6].y2}})   //segment 4
       .to(this.polyline4, .1, {attr: {points: p[7].x + ", " + p[7].y + " " + p[7].x2 + ", " + p[7].y2}})
 
       .to(this.polyline5, .1, {attr: {points: p[8].x + ", " + p[8].y + " " + p[8].x2 + ", " + p[8].y2}})   //segment 5
-      .to(this.polyline5, .1, {attr: {points: p[9].x + ", " + p[9].y + " " + p[9].x2 + ", " + p[9].y2}})
+      .to(this.polyline5, .1, {stroke: colorizer(random[2],random[3]), attr: {points: p[9].x + ", " + p[9].y + " " + p[9].x2 + ", " + p[9].y2}})
 
       .to(this.polyline6, .1, {attr: {points: p[10].x + ", " + p[10].y + " " + p[10].x2 + ", " + p[10].y2}})   //segment 6
       .to(this.polyline6, .1, {attr: {points: p[11].x + ", " + p[11].y + " " + p[11].x2 + ", " + p[11].y2}})
 
       .to(this.polyline7, .1, {attr: {points: p[12].x + ", " + p[12].y + " " + p[12].x2 + ", " + p[12].y2}})   //segment 7
-      .to(this.polyline7, .1, {attr: {points: p[13].x + ", " + p[13].y + " " + p[13].x2 + ", " + p[13].y2}})
+      .to(this.polyline7, .1, {stroke: colorizer(random[5],random[7]), attr: {points: p[13].x + ", " + p[13].y + " " + p[13].x2 + ", " + p[13].y2}})
 
       .to(this.polyline8, .1, {attr: {points: p[14].x + ", " + p[14].y + " " + p[14].x2 + ", " + p[14].y2}})   //segment 8
       .to(this.polyline8, .1, {attr: {points: p[15].x + ", " + p[15].y + " " + p[15].x2 + ", " + p[15].y2}})
 
       .to(this.polyline9, .1, {attr: {points: p[16].x + ", " + p[16].y + " " + p[16].x2 + ", " + p[16].y2}})   //segment 9
-      .to(this.polyline9, .1, {attr: {points: p[17].x + ", " + p[17].y + " " + p[17].x2 + ", " + p[17].y2}})
+      .to(this.polyline9, .1, {stroke: colorizer(random[7],random[9]), attr: {points: p[17].x + ", " + p[17].y + " " + p[17].x2 + ", " + p[17].y2}})
 
       .to(this.polyline10, .1, {attr: {points: p[18].x + ", " + p[18].y + " " + p[18].x2 + ", " + p[18].y2}})   //segment 10
       .to(this.polyline10, .1, {attr: {points: p[19].x + ", " + p[19].y + " " + p[19].x2 + ", " + p[19].y2}})
 
       .to(this.polyline11, .1, {attr: {points: p[20].x + ", " + p[20].y + " " + p[20].x2 + ", " + p[20].y2}})   //segment 11
-      .to(this.polyline11, .1, {attr: {points: p[21].x + ", " + p[21].y + " " + p[21].x2 + ", " + p[21].y2}})
+      .to(this.polyline11, .1, {stroke: colorizer(random[9],random[11]), attr: {points: p[21].x + ", " + p[21].y + " " + p[21].x2 + ", " + p[21].y2}})
 
       .to(this.polyline12, .1, {attr: {points: p[22].x + ", " + p[22].y + " " + p[22].x2 + ", " + p[22].y2}})   //segment 12
       .to(this.polyline12, .1, {attr: {points: p[23].x + ", " + p[23].y + " " + p[23].x2 + ", " + p[23].y2}})
 
       .to(this.polyline13, .1, {attr: {points: p[24].x + ", " + p[24].y + " " + p[24].x2 + ", " + p[24].y2}})   //segment 13
-      .to(this.polyline13, .1, {attr: {points: p[25].x + ", " + p[25].y + " " + p[25].x2 + ", " + p[25].y2}})
+      .to(this.polyline13, .1, {stroke: colorizer(random[11],random[13]), attr: {points: p[25].x + ", " + p[25].y + " " + p[25].x2 + ", " + p[25].y2}})
 
       .to(this.polyline14, .1, {attr: {points: p[26].x + ", " + p[26].y + " " + p[26].x2 + ", " + p[26].y2}})   //segment 14
       .to(this.polyline14, .1, {attr: {points: p[27].x + ", " + p[27].y + " " + p[27].x2 + ", " + p[27].y2}})
@@ -306,8 +292,12 @@ class GraphAnimation extends Component {
 
       .to(this.polyline40, .1, {attr: {points: p[78].x + ", " + p[78].y + " " + p[78].x2 + ", " + p[78].y2}})   //segment 40
       .to(this.polyline40, .1, {attr: {points: p[79].x + ", " + p[79].y + " " + p[79].x2 + ", " + p[79].y2}})
-      .set(this.svg, {autoAlpha: 0});
+      // .set(this.svg, {autoAlpha: 0});
+
+
+
   }
+
 
 
 

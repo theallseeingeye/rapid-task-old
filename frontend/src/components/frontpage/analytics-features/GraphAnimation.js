@@ -270,7 +270,7 @@ class GraphAnimation extends Component {
         {x: 380, y: random[19], x2: 400, y2: random[19]}, // 77
 
         {x: 400, y: random[19], x2: 400, y2: random[19]}, // 78
-        {x: 400, y: random[19], x2: 400, y2: random[20]}, // 79
+        {x: 400, y: random[19], x2: 400, y2: range}, // 79
       ];
 
 

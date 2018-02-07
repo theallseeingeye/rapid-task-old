@@ -41,6 +41,7 @@ class ProgressBars extends Component {
       .set([
         this.statusQuotePending,
         this.buttonProgress,
+        this.buttonProgress2,
         this.statusQuoteApproved,
         this.statusJobScheduled,
         this.statusJobCompleted,
@@ -57,7 +58,7 @@ class ProgressBars extends Component {
       .set(this.statusQuotePending, {autoAlpha:1}) //text appears
       .to(this.blueBar, progressBarSpeed, {attr:{width: 20}, transformOrigin:"50% 50%"}) // bar moves
       .set(this.buttonProgress, {autoAlpha:1})
-      .set(this.approveQuote, {autoAlpha:1})
+      .set(this.approveQuote, {autoAlpha:1, width: 37})
       .set(this.buttonProgress, {fill:buttonSecondary, delay: buttonHoldTime}) // Button turns red
       .set(this.buttonProgress, {fill:logoBlue, delay: buttonClickTime}) // Button turns back to blue
       .set(this.approveQuote, {autoAlpha:0})
@@ -80,11 +81,11 @@ class ProgressBars extends Component {
 
       // Move to next task
       .to(this.blueBar, progressBarSpeed, {attr:{width: 60}, transformOrigin:"50% 50%"})
-      .set(this.buttonProgress, {autoAlpha:1})
+      .set(this.buttonProgress2, {autoAlpha:1})
       .set(this.viewJobProgress, {autoAlpha:1})
-      .set(this.buttonProgress, {fill:buttonSecondary, delay: buttonHoldTime}) // Button turns red
-      .set(this.buttonProgress, {fill:logoBlue, delay: buttonClickTime}) // Button turns back to blue
-      .set(this.buttonProgress, {autoAlpha:0})
+      .set(this.buttonProgress2, {fill:buttonSecondary, delay: buttonHoldTime}) // Button turns red
+      .set(this.buttonProgress2, {fill:logoBlue, delay: buttonClickTime}) // Button turns back to blue
+      .set(this.buttonProgress2, {autoAlpha:0})
       .set(this.viewJobProgress, {autoAlpha:0})
       .set(this.statusJobScheduled, {autoAlpha:0})
       .set(this.statusJobCompleted, {autoAlpha:1})
@@ -128,6 +129,7 @@ class ProgressBars extends Component {
         <rect id="grayBar" width="100" height="5" rx="2" ry="2" fill="gray"/>
         <rect ref={x => {this.blueBar = x}} width="100" height="5" fill={this.color} clipPath="url(#maskPath)"/>
         <rect ref={x => {this.buttonProgress = x}} x="67" y="6" width="36" height="7" fill={this.color}/>
+        <rect ref={x => {this.buttonProgress2 = x}} x="64" y="6" width="40" height="7" fill={this.color}/>
 
         {/*Status Text*/}
         <TextStatus innerRef={e => {this.statusQuotePending = e}} x="1" y="10" dy="0.1">
@@ -150,19 +152,19 @@ class ProgressBars extends Component {
         </TextStatus>
 
         {/*Button Text*/}
-        <TextButton innerRef={e => {this.approveQuote = e}} x="68" y="10" dy="0.1">
+        <TextButton innerRef={e => {this.approveQuote = e}} x="68" y="11" dy="0.1">
           Approve Quote
         </TextButton>
-        <TextButton innerRef={e => {this.scheduleJob = e}} x="68" y="10" dy="0.1">
+        <TextButton innerRef={e => {this.scheduleJob = e}} x="69" y="11" dy="0.1">
           Schedule Job
         </TextButton>
-        <TextButton innerRef={e => {this.viewJobProgress = e}} x="68" y="10" dy="0.1">
+        <TextButton innerRef={e => {this.viewJobProgress = e}} x="65" y="11" dy="0.1">
           Pass Inspection
         </TextButton>
-        <TextButton innerRef={e => {this.inspectionApproved = e}} x="68" y="10" dy="0.1">
+        <TextButton innerRef={e => {this.inspectionApproved = e}} x="75" y="11" dy="0.1">
           Pay Bill
         </TextButton>
-        <TextButton innerRef={e => {this.closeJob = e}} x="68" y="10" dy="0.1">
+        <TextButton innerRef={e => {this.closeJob = e}} x="73" y="11" dy="0.1">
           Close Job
         </TextButton>
       </Svg>

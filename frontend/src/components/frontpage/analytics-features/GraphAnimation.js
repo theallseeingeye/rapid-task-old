@@ -513,6 +513,7 @@ class GraphAnimation extends Component {
         .set(this.polyline38, {autoAlpha: 0})
         .to(this.polyline39, barSpeed, {strokeWidth: (300 - random[19]), y: ((300 - random[19]) / 2)})
         .set(this.polyline40, {autoAlpha: 0})
+        .to(this.svg, 0.8, {autoAlpha: 0, delay: 1});
 
   }
 

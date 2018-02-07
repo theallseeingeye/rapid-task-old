@@ -28,11 +28,11 @@ const Svg = styled.svg`
   padding-left: 2px; // Keep svg from left border
   z-index: -6; // This makes sure that the svg layers hide below the next div for effect.
   top: 25vh; // center the svg on the page vertically.
-  
-   @media (min-width: ${props => props.theme.desktopscreen}) {
-     max-width: 500px; // To keep the layers from getting too big
-     top: 10vh; // Adjust the layers to the middle vertical height
-   }
+    
+  @media (min-width: ${props => props.theme.desktopscreen}) {
+   max-width: 500px; // To keep the layers from getting too big
+   top: 10vh; // Adjust the layers to the middle vertical height
+  }
 `;
 
 
@@ -74,7 +74,6 @@ class ParkingLotAnimation extends Component {
     const tweenTrees = TweenMax.to(treesLayer, 0.4, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
     const tweenLines = TweenMax.to(linesLayer, 0.4, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
     const tweenPylons = TweenMax.to(pylonsLayer, 0.4, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
-
 
     // This is to hide all the svg layers.
     const endTween = TweenMax.to(mainSVG, 0.3, {autoAlpha:0});

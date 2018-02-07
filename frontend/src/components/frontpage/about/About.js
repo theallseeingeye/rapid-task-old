@@ -17,6 +17,8 @@ class About extends Component {
     return (
       <MainDiv>
             ABOUT RAPID TASK!
+            About our skills and what we know
+            Let them know what we need to get this project going.
       </MainDiv>
     );
   }

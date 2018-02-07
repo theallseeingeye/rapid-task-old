@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import DevicesSVG from './DevicesSVG';
+import DevicesSVG from './DeviceSvg';
 import BulletPoint from './bullet-point.svg';
+import CloudsSvg from "./CloudsSvg";
 
 const FeatureDiv = styled.div`
-  height: 100%;
+  height: 130vh;
+  position: relative;
+  width: 100%;
 `;
 
 const TextTitle = styled.p`
@@ -40,7 +43,7 @@ const List = styled.ul`
   margin: auto;
   margin-top: 2em;
   margin-bottom: 2em;
-  position: relative;
+  //position: absolute;
   height: 50vh;
 `;
 
@@ -55,11 +58,6 @@ const ListText = styled.a`
   font-size: 1.0em;
 `;
 
-const Text3 = styled.p`
-  font-family: ${props => props.theme.RobotoCondensedfont};
-  margin: auto;
-  size: 0.5em;
-`;
 
 // const Background = styled.div`
 //   background: rgb(59, 79, 90); // Background of devices
@@ -134,8 +132,11 @@ class Features extends Component {
           </ListItem>
         </List>
         <TextFooter>
-          Since Rapid Task Focuses On Each Business Task, it is Flexible For All Service Based Businesses
+          Since Rapid Task Focuses On Each Business Task, it is Flexible For All Service Based Businesses <br/><br/>
+          Strong secure cloud integration
         </TextFooter>
+
+        <CloudsSvg/>
       </FeatureDiv>
     );
   }

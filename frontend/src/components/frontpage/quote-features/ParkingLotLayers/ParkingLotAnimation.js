@@ -2,18 +2,18 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 // ScrollMagic and GSAP is used here!
-import ScrollMagic from "../../../../utils/jsfunctions/ScrollMagicGsapAdapter"; //Custom adapter that lets us use GSAP and ScrollMagic in React
+import ScrollMagic from "../../../../../utils/jsfunctions/ScrollMagicGsapAdapter"; //Custom adapter that lets us use GSAP and ScrollMagic in React
 
 // SVG Layers
-import BottomLayer from "./ParkingLotLayers/BottomLayer";
-import GravelLayer from "./ParkingLotLayers/GravelLayer";
-import AsphaltLayer from "./ParkingLotLayers/AsphaltLayer";
-import CurbsLayer from "./ParkingLotLayers/CurbsLayer";
-import GrassLayer from "./ParkingLotLayers/GrassLayer";
-import LampsLayer from "./ParkingLotLayers/LampsLayer";
-import TreesLayer from "./ParkingLotLayers/TreesLayer";
-import LinesLayer from "./ParkingLotLayers/LinesLayer";
-import PylonsLayer from "./ParkingLotLayers/PylonsLayer";
+import BottomLayer from "./BottomLayer";
+import GravelLayer from "./GravelLayer";
+import AsphaltLayer from "./AsphaltLayer";
+import CurbsLayer from "./CurbsLayer";
+import GrassLayer from "./GrassLayer";
+import LampsLayer from "./LampsLayer";
+import TreesLayer from "./TreesLayer";
+import LinesLayer from "./LinesLayer";
+import PylonsLayer from "./PylonsLayer";
 
 const Div = styled.div`
   width: 49vw;
@@ -28,6 +28,7 @@ const Svg = styled.svg`
   padding-left: 2px; // Keep svg from left border
   z-index: -6; // This makes sure that the svg layers hide below the next div for effect.
   top: 25vh; // center the svg on the page vertically.
+    
     
   @media (min-width: ${props => props.theme.desktopscreen}) {
    max-width: 500px; // To keep the layers from getting too big
@@ -76,7 +77,7 @@ class ParkingLotAnimation extends Component {
     const tweenPylons = TweenMax.to(pylonsLayer, 0.4, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
 
     // This is to hide all the svg layers.
-    const endTween = TweenMax.to(mainSVG, 0.3, {autoAlpha:0});
+    const endTween = TweenMax.to(mainSVG, 0.01, {autoAlpha:0}); // Require this to fade out super fast to stop flashing below.
 
     // ScrollMagic Scenes.
     const sceneMain = new ScrollMagic.Scene({
@@ -152,7 +153,7 @@ class ParkingLotAnimation extends Component {
     // This ends all of the tween by changing alpha to 0. Uses the bottom div trigger on the main div of this.
     const sceneEnd = new ScrollMagic.Scene({
       triggerElement: triggerEnd,
-      offset: 200
+      offset: 300
     })
       .setTween(endTween)
       .setPin(mainSVG)

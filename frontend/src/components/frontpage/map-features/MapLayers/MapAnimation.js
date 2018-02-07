@@ -69,30 +69,39 @@ const PolyFill = styled.polygon`
 `;
 
 const TextBox = styled.div`
-  font-family: ${props => props.theme.RobotoCondensedfont};
-  font-size: 0.8em;
   bottom: 0;
   position: absolute;
-  width: 100vw;
-  background-color: ${props => props.theme.logoblue};
-  height: 15vh;
+  width: 100%;
+  background: linear-gradient(to bottom,  rgba(63,169,245,0.8), rgba(63,169,245,1));
+  height: 8vh;
   z-index: 2;
-  display: flex;
-  justify-content: center;
 `;
 
 const PinText = styled.p`
   position: absolute;
   visibility: hidden;
-  font-size: 1.2em;
-  font-family: ${props => props.theme.Robotofont};
+  width: 100%;
+  
+  // To center the text
+  line-height: 8vh;
+  text-align: center;
+  vertical-align: middle;
+  margin: auto;
+  
+  // Font Styling
+  font-size: 1.5em;
+  color: white;
+  font-family: ${props => props.theme.RobotoCondensedfont};
 `;
 
 const TruckText = PinText.extend`
 `;
 
 const PolyText = PinText.extend`
+  font-size: 1.3em;
 `;
+
+
 
 class MapAnimation extends Component {
   constructor(props) {
@@ -138,9 +147,9 @@ class MapAnimation extends Component {
 
     // Pin animate
     MapAnimate.set(this.svg, {scale: 1})
-      .set(this.pinText, {autoAlpha: 1})
       .to(this.svg, 1, {scale: 1.7, transformOrigin: '50% 50%', x: 80, y: 50, delay: 1})
       .set(this.pin, {autoAlpha: 1})
+      .set(this.pinText, {autoAlpha: 1})
       .to(this.svg, 1, {scale: 1, transformOrigin: '50% 50%', x: 0, y: 100, delay: 5})
       .set(this.pin, {autoAlpha: 0})
       .set(this.pinText, {autoAlpha: 0});
@@ -148,20 +157,17 @@ class MapAnimation extends Component {
     // Truck
     MapAnimate.set(this.truck, {autoAlpha: 1, transform: 'translate(390px, 230px) scale(0.13)'})
       .set(this.truckText, {autoAlpha: 1})
-      .set(this.svg, {scale:1})
-      .to(this.svg, 0.5, {scale:1.7, transformOrigin:'50% 50%', x:20, y: 200})
+      .to(this.svg, 0.5, {scale:1.7, transformOrigin:'50% 50%', x:20, y: 100})
       .to(this.svg, 2, {x:-60, y: 200})
       .to(this.truck, 2, {autoAlpha:1, x: 640, y: 375}, '-=2')
       .to(this.truck, 0.2, {scaleX:-0.13, transformOrigin:'50% 50%'}, '-=0.2') //To flip the truck
       .to(this.svg, 2, {x:60, y:100})
       .to(this.truck, 2, {x: 300, y: 572}, '-=2')
-      .to(this.svg, 0.5, {scale:1, x:0, y:100})
+      // .to(this.svg, 0.5, {scale:1, x:0, y:100})
       .set(this.truck, {autoAlpha: 0})
       .set(this.truckText, {autoAlpha: 0});
 
-
-
-    // Polygon edit
+    // Polygon Animate
     MapAnimate.to(this.svg, 2, {scale:1.7, x: 100, y:20 })
       .set(this.polyText, {autoAlpha: 1})
       .to(this.pointer, 1, {autoAlpha: 1, x:this.bottomLeftCornerX, y:this.bottomLeftCornerY}, "-=1")
@@ -216,9 +222,9 @@ class MapAnimation extends Component {
           </PointerContainer>
         </Svg>
         <TextBox>
-          <PinText innerRef={x => this.pinText = x}>Specify Exact Points</PinText>
+          <PinText innerRef={x => this.pinText = x}>Pin Point Specific Areas</PinText>
           <TruckText innerRef={x => this.truckText = x}>Efficient Route Planner For Employees</TruckText>
-          <PolyText innerRef={x => this.polyText = x}>Powerful Measurement Tools For Quote Calculations</PolyText>
+          <PolyText innerRef={x => this.polyText = x}>Accurately Measure Areas and Place Boundaries</PolyText>
         </TextBox>
       </Div>
     );

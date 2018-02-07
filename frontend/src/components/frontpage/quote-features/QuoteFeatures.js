@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import ParkingLotAnimation from './ParkingLotAnimation'
-import ManQuoting from "./ManQuoting"
+import ParkingLotAnimation from './ParkingLotLayers/ParkingLotAnimation';
+import ManQuoting from "./ParkingLotLayers/ManQuoting";
+import Arrow from "../global-svg/Arrow";
 
 const Div = styled.div`
   overflow: hidden;
@@ -22,7 +23,6 @@ const QuoteTitle = styled.p`
 `;
 
 const MainContext = styled.p`
-  float: left;
   width: 100%;
   text-align: left;
   margin-top: 50vh;
@@ -34,6 +34,7 @@ const Example = styled.p`
   text-align: center;
   //border: solid pink;
   margin: auto;
+  margin-top: 15vh;
 `;
 
 const Title1 = styled.p`
@@ -42,34 +43,30 @@ const Title1 = styled.p`
   margin: auto;
   font-family: ${props => props.theme.Robotofont};
   font-weight: 900;
-  text-align: left;
+  text-align: center;
   width: 100%;
 `;
 
 const Context1 = styled.p`
   flex-grow: 1;
-  //border: solid blue;
   margin: auto;
   font-family: ${props => props.theme.RobotoCondensedfont};
-  //font-style: 900;
+  padding: 10px;
   font-weight: 400;
 `;
 
 const Columns = styled.div`
   display: flex;
-  //border: solid red;
   justify-content: center;
 `;
 
 const RightColumn = styled.div`
-  //border: solid blue;
   flex: 1; // width of flexbox compared to others
   Width: 50vw;
   margin-top: 80vh;
 `;
 
 const LeftColumn = styled.div`
-  //border: solid green;
   flex: 1;
   width: 50vw;
 `;
@@ -92,46 +89,39 @@ const EndTrigger = styled.div`
 `;
 
 
+
 class Quotes extends Component {
   render() {
     return (
       <Div id="parentDiv">
 
-        <QuoteTitle> Automatic Quoting </QuoteTitle>
+        <QuoteTitle>Automate Quotes</QuoteTitle>
         <ManQuoting/>
 
         <Columns >
 
           <LeftColumn>
-
-            <MainContext>
-              Let Rapid Task remove the tedious steps and automatically calculate your quotes for you. Easily customize your
-              estimating process that works for your business.
-            </MainContext>
-            <Example>
-              EXAMPLE
-            </Example>
-            <ParkingLotAnimation/>
-          </LeftColumn>
-
-          <RightColumn>
-
-
-             {/*Elements tagged with id's for identifying triggers*/}
+            {/*Elements tagged with id's for identifying triggers*/}
             <FlexContainer>
+              <MainContext>
+                Rapid Task removes the tedious steps of placing quotes for your jobs. Easily customize your
+                estimating process that works for your business.
+              </MainContext>
+              <Example>
+                EXAMPLE
+              </Example>
               <Title1 id="bottomTrigger">
-                Quoting <br/>
-                a <br/>
-                Parking Lot
+                Quoting a Parking Lot
               </Title1>
               <Context1>
-                We begin with simple information:<br/>
-                Provide customer information<br/>
-                Enter location of site<br/>
-                Select Job Type<br/>
-                Enter Measurement of parking lot.<br/>
-              </Context1>
+                Never repeat yourself and only enter data once!
+                Provide description of: <br/>
+                Select Customer<br/>
+                Add Location<br/>
+                Input Dimensions<br/>
+                All of this information is automatically carried across your business tasks
 
+              </Context1>
               <Title1 id="gravelTrigger">
                 First Step
               </Title1>
@@ -140,30 +130,29 @@ class Quotes extends Component {
                 Add "Packed Gravel":<br/>
                 Next Select Equipment Required. Each equip will have metrics of how long to do a task. <br/>
                 ( Show equipment working on the surface.)
-
-
               </Context1>
-
               <Title1 id="asphaltTrigger">
-                Asphalt Layer Text!
+                Paving the Lot
               </Title1>
               <Context1>
                 Select Crew and receive estimated time for how long to complete project. Add more or less to try to meet
                 with scheduled date.
               </Context1>
-
               <Title1 id="curbsTrigger">
-                Curbs Title
+                Install Curbs
               </Title1>
               <Context1>
-                Curbs
+                Curbs. Only enter the total linear measurement required, and select concrete type. That is all! The
+                materials, labour and overhead is automatically calculated for your quote.
               </Context1>
 
               <Title1 id="grassTrigger">
                 Landscaping
               </Title1>
               <Context1>
-                Grass Text
+                Turn on Rapid Task's schedule watch on specific tasks.
+                As soon as curbs are completed, Rapid Task can assist scheduling the landscapers to come immediately after,
+                while keeping the project schedule on time.
               </Context1>
 
               <Title1 id="lampsTrigger">
@@ -177,27 +166,32 @@ class Quotes extends Component {
               </Context1>
 
               <Title1 id="treesTrigger">
-                Trees Title
+                Plant Trees
               </Title1>
               <Context1>
                 Add details of where trees are located. Crew can receive this information when it comes to doing the task
               </Context1>
 
               <Title1 id="linesTrigger">
-                Lines Title
+                Paint Traffic Lines
               </Title1>
               <Context1>
                 Can simplify your quoting steps such as simply providing line count and provides all the numbers based on
-                previous average labour time.
+                previous average labour time. Keep track of what materials are needing to be ordered to complete the
+                project. Rapid Task can notify in advance of important supply order dates.
               </Context1>
 
               <Title1 id="pylonsTrigger">
-                Pylons Title
+                Employees Instructions
               </Title1>
               <Context1>
                 This is where we can add specific instructions specifically for employees. Set Pylons to let the paint dry.
               </Context1>
             </FlexContainer>
+          </LeftColumn>
+
+          <RightColumn>
+            <ParkingLotAnimation/>
           </RightColumn>
 
         </Columns>

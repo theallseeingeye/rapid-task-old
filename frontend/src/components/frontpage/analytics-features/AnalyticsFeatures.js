@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import GraphAnimation from './GraphAnimation'
+import GraphAnimation from './GraphAnimation';
+import styled from 'styled-components';
+
+
 
 class AnalyticsFeatures extends Component {
   render() {

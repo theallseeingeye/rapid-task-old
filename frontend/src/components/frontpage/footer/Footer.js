@@ -12,7 +12,7 @@ const Copyright = styled.div`
 const Divider = styled.div`
   height: 5vh;
   background-color: rgba(113, 130, 161, 1);
-  transform: translateY(-16px);
+  transform: translateY(-17px);
 `;
 
 const FindOutMore = styled.div`

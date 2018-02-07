@@ -291,7 +291,7 @@ class GraphAnimation extends Component {
       .to(this.polyline39, .1, {attr: {points: p[77].x + ", " + p[77].y + " " + p[77].x2 + ", " + p[77].y2}})
 
       .to(this.polyline40, .1, {attr: {points: p[78].x + ", " + p[78].y + " " + p[78].x2 + ", " + p[78].y2}})   //segment 40
-      .to(this.polyline40, .1, {attr: {points: p[79].x + ", " + p[79].y + " " + p[79].x2 + ", " + p[79].y2}})
+      .to(this.polyline40, .1, {stroke: colorizer(random[19],random[20]), attr: {points: p[79].x + ", " + p[79].y + " " + p[79].x2 + ", " + p[79].y2}})
       // .set(this.svg, {autoAlpha: 0});
 
 

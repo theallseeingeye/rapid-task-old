@@ -25,6 +25,7 @@ const BackgroundBox = styled.div`
 
 const Svg = styled.img`
   height: 100vh;
+  margin: auto;
   @media (min-width: ${props => props.theme.giantscreen}) {
   height: unset;
   width: 100%;

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import FinancialFeatures from './FinancialFeatures';
+import FinancialFeatures from './ManFinance';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');

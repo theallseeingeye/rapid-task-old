@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const MainDiv = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 102vh;
-  background-color: rgba(113, 130, 161, 1);
+  height: 55vh;
+  background: white;
+  background: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,1));
 `;
 
 

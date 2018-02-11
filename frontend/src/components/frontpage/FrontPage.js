@@ -7,7 +7,6 @@ import Quotes from "./quote-features/QuoteFeatures";
 import EmployeeFeatures from "./employee-features/EmployeeFeatures";
 import ClientFeatures from "./client-features/ClientFeatures";
 import CalendarFeatures from "./calendar-features/CalendarFeatures";
-import InventoryFeatures from "./inventory-features/InventoryFeatures";
 import FinancialFeatures from "./financial-features/FinancialFeatures";
 import AnalyticsFeatures from "./analytics-features/AnalyticsFeatures";
 import About from "./about/About";
@@ -45,20 +44,20 @@ const ClientContainer = styled.div`
   //border: 8px solid gold;
 `;
 
+const CalendarContainer = styled.div`
+  height: 135vh;
+`;
+
 const AboutContainer = styled.div`
-  height: 100vh;
-  background-color: rgba(113, 130, 161, 1);
-  
+  height: 1vh;
 `;
 
 const ContactContainer = styled.div`
-  @media (min-width: ${props => props.theme.giantscreen}) {
-  height: 100vh;
+  height: 75vh;
 `;
 
 const FooterContainer = styled.div`
-  height: 40vh;
-
+ height: 0vh;
 `;
 
 class FrontPage extends Component {
@@ -84,13 +83,9 @@ class FrontPage extends Component {
         <ClientContainer>
           <ClientFeatures/>
         </ClientContainer>
-        <div>
-          Calendar/Scheduling- Talk about calendar features and how it is seamlessly integrated with everything
+        <CalendarContainer>
           <CalendarFeatures/>
-        </div>
-        <div>
-          <InventoryFeatures/>
-        </div>
+        </CalendarContainer>
         <div>
           <FinancialFeatures/>
         </div>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Image from './../images/OfficeToBeach.svg';
+import OfficeBeach from './OfficeBeach';
 import styled from 'styled-components';
 
 const BackgroundContainer = styled.div`
@@ -12,35 +12,21 @@ const BackgroundContainer = styled.div`
   // To place behind all divs
   z-index: -1;
   // To hid the sides that are stretching beyond the div
-  overflow: hidden;
 `;
 
 const BackgroundBox = styled.div`
   align-self: flex-start;
   margin: auto;
-  @media (min-width: ${props => props.theme.giantscreen}) {
   width: 100%;
-  }
 `;
 
-const Svg = styled.img`
-  height: 100vh;
-  margin: auto;
-  @media (min-width: ${props => props.theme.giantscreen}) {
-  height: unset;
-  width: 100%;
-  }
-`;
+
 
 const FormElements = styled.form`
-  transform: translate(10%, -7%);
+  margin: 0.25em;
   position: absolute;
   font-size: 1.6em;
   opacity: 0.7;
-  @media (min-width: ${props => props.theme.desktopscreen}) {
-  font-size: 2.4em;
-  transform: translate(10%, 20%);
-  }
 `;
 
 const Title = styled.p`
@@ -106,7 +92,7 @@ class Contact extends Component {
       <div>
         <BackgroundContainer>
           <BackgroundBox>
-            <Svg src={Image}/>
+            <OfficeBeach/>
           </BackgroundBox>
         </BackgroundContainer>
           <FormElements onSubmit={this.handleSubmit}>

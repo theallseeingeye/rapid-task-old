@@ -48,8 +48,8 @@ const FormElements = styled.form`
 `;
 
 const Title = styled.p`
+  font-weight: bold;
   font-size: 1.2em;
-  transform: translate(5%, 50%);
   opacity: 1;
 `;
 
@@ -114,7 +114,7 @@ class Contact extends Component {
           </BackgroundBox>
         </BackgroundContainer>
           <FormElements onSubmit={this.handleSubmit}>
-            <Title>Stay in the loop!</Title>
+            <Title>Stay in the Loop!</Title>
             <Name placeholder='Name' name='name' value={this.state.fields.name} onChange={this.handleChange} required/>
             <br />
             <br />

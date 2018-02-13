@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Image from './../images/OfficeToBeach.svg';
+import OfficeBeach from './OfficeBeach';
 import styled from 'styled-components';
 
 const BackgroundContainer = styled.div`
@@ -11,41 +11,45 @@ const BackgroundContainer = styled.div`
   opacity: 1;
   // To place behind all divs
   z-index: -1;
+  height: unset;
   // To hid the sides that are stretching beyond the div
   overflow: hidden;
+   @media (min-width: ${props => props.theme.tabletscreen}) {
+  height: 150vh;
+  }
+  @media (min-width: ${props => props.theme.desktopscreen}) {
+  height: 180vh;
+  }
+  @media (min-width: ${props => props.theme.giantscreen}) {
+  height: 170vw;
+  }
 `;
 
 const BackgroundBox = styled.div`
   align-self: flex-start;
   margin: auto;
-  @media (min-width: ${props => props.theme.giantscreen}) {
   width: 100%;
-  }
-`;
-
-const Svg = styled.img`
-  height: 100vh;
-  margin: auto;
-  @media (min-width: ${props => props.theme.giantscreen}) {
-  height: unset;
-  width: 100%;
-  }
 `;
 
 const FormElements = styled.form`
-  transform: translate(10%, -7%);
+  margin: 0.25em;
   position: absolute;
   font-size: 1.6em;
   opacity: 0.7;
-  @media (min-width: ${props => props.theme.desktopscreen}) {
-  font-size: 2.4em;
-  transform: translate(10%, 20%);
+  
+  @media (min-width: ${props => props.theme.tabletscreen}) {
+  margin-top: 40vw;
+  margin-left: 2em;
+  }
+  @media (min-width: ${props => props.theme.giantscreen}) {
+  margin-top: 50vw;
+  margin-left: 2em;
   }
 `;
 
 const Title = styled.p`
+  font-weight: bold;
   font-size: 1.2em;
-  transform: translate(5%, 50%);
   opacity: 1;
 `;
 
@@ -106,11 +110,11 @@ class Contact extends Component {
       <div>
         <BackgroundContainer>
           <BackgroundBox>
-            <Svg src={Image}/>
+            <OfficeBeach/>
           </BackgroundBox>
         </BackgroundContainer>
           <FormElements onSubmit={this.handleSubmit}>
-            <Title>Stay in the loop!</Title>
+            <Title>Stay in the Loop!</Title>
             <Name placeholder='Name' name='name' value={this.state.fields.name} onChange={this.handleChange} required/>
             <br />
             <br />

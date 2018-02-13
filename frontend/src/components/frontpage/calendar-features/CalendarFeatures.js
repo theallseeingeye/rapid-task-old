@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import CalendarSvg from "./CalendarSvg";
+import PhoneCalendar from './PhoneCalendar';
 
 const MainDiv = styled.div`
   margin: auto;
-  position: absolute;
-  height: 130vh;
-  border: solid red;
-  
+  position: relative;
+  height: 140vh;
 `;
 
 const Header = styled.h1`
@@ -26,16 +24,9 @@ const FlexContainter = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   width: 100%;
+  margin-top: 5vh;
   //border: solid green;
   height: 115vh;
-`;
-
-const Svg = styled.svg`
-  height: 90vh;
-  margin: auto;
-  min-width: 350px;
-  //border: solid red;
-  flex-grow: 1;
 `;
 
 const Text1 = styled.div`
@@ -59,7 +50,6 @@ const Text2 = styled.div`
   flex-grow: 1;
 `;
 
-
 class CalendarFeatures extends Component {
   render() {
     return (
@@ -72,7 +62,7 @@ class CalendarFeatures extends Component {
             assign and schedule a team to make sure the job gets done promply. Don't worry, you will have the opportunity
             to make any changes you desire.
           </Text1>
-          <CalendarSvg/>
+          <PhoneCalendar/>
           <Text2><h3>Prefer to do your scheduling hands on?</h3>
             RapidTask's integrated calendar makes setting and adjusting schedules easier than ever before on whatever
             device you prefer to work on. Once you are done tinkering we will let your employees know how the changes

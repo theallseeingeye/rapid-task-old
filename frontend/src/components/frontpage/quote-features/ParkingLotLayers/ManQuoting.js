@@ -25,7 +25,7 @@ class ManQuoting extends Component {
     super(props);
 
     this.color = theme.logoblue;
-    this.color2 = "#9ed4fa";
+    this.color2 = theme.logobluedark;
   }
 
   render() {

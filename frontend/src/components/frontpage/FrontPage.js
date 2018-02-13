@@ -7,7 +7,6 @@ import Quotes from "./quote-features/QuoteFeatures";
 import EmployeeFeatures from "./employee-features/EmployeeFeatures";
 import ClientFeatures from "./client-features/ClientFeatures";
 import CalendarFeatures from "./calendar-features/CalendarFeatures";
-import InventoryFeatures from "./inventory-features/InventoryFeatures";
 import FinancialFeatures from "./financial-features/FinancialFeatures";
 import AnalyticsFeatures from "./analytics-features/AnalyticsFeatures";
 import About from "./about/About";
@@ -41,8 +40,20 @@ const EmployeeContainer = styled.div`
 `;
 
 const ClientContainer = styled.div`
-  height: 200vh;
-  //border: 8px solid gold;
+  height: 150vh;
+  border: 8px solid gold;
+`;
+
+const CalendarContainer = styled.div`
+  height: 130vh;
+`;
+
+const FinancialContainer = styled.div`
+  height: 450vh;
+`;
+
+const AnalyticsContainer = styled.div`
+  height: 100vh;
 `;
 
 const AboutContainer = styled.div`
@@ -58,7 +69,6 @@ const ContactContainer = styled.div`
 
 const FooterContainer = styled.div`
   height: 40vh;
-
 `;
 
 class FrontPage extends Component {
@@ -84,19 +94,15 @@ class FrontPage extends Component {
         <ClientContainer>
           <ClientFeatures/>
         </ClientContainer>
-        <div>
-          Calendar/Scheduling- Talk about calendar features and how it is seamlessly integrated with everything
+        <CalendarContainer>
           <CalendarFeatures/>
-        </div>
-        <div>
-          <InventoryFeatures/>
-        </div>
-        <div>
+        </CalendarContainer>
+        <FinancialContainer>
           <FinancialFeatures/>
-        </div>
-        <div>
+        </FinancialContainer>
+        <AnalyticsContainer>
           <AnalyticsFeatures/>
-        </div>
+        </AnalyticsContainer>
         <AboutContainer>
           <About/>
         </AboutContainer>

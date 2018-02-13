@@ -63,7 +63,7 @@ class ParkingLotAnimation extends Component {
 
     // There is a slight start delay on mobile- This sets the trigger sooner before the visible trigger. This allows
     // the scrollMagic to trigger on time for the first layer to trigger.
-    const preload = TweenMax.to(bottomLayer, 0.01, {autoAlpha:0});
+    const preload = TweenMax.to(bottomLayer, 0.001, {autoAlpha:0});
 
     // Gsap's animations
     const tweenBottom = TweenMax.to(bottomLayer, 0.3, {autoAlpha: 1, ease: Bounce.easeOut, y:200});

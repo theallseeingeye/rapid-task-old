@@ -64,6 +64,9 @@ class EmployeeFeatures extends Component {
             Rapid Task works for any type of employees. Can apply access payroll for staff members who are
             given permission. Supervisors can have access to more control for updating information.
           </p>
+          <p>
+            Easily distribute notices, updates and training information across your employees.
+          </p>
         </TextArea>
       </Div>
     );

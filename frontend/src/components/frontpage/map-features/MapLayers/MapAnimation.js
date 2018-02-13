@@ -11,7 +11,6 @@ import CityBottom from './cityBottom1000px.gif';
 
 import CityPark from './cityCommunityPark.gif';
 import CityTop from './cityTallBuildings.gif';
-import theme from "../../../../global-styles/DefaultTheme";
 
 const Div = styled.div`
   position: absolute;
@@ -98,7 +97,7 @@ const TruckText = PinText.extend`
 `;
 
 const PolyText = PinText.extend`
-  font-size: 1.3em;
+  font-size: 1.0em;
 `;
 
 

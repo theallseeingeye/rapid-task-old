@@ -11,7 +11,18 @@ const BackgroundContainer = styled.div`
   opacity: 1;
   // To place behind all divs
   z-index: -1;
+  height: unset;
   // To hid the sides that are stretching beyond the div
+  overflow: hidden;
+   @media (min-width: ${props => props.theme.tabletscreen}) {
+  height: 150vh;
+  }
+  @media (min-width: ${props => props.theme.desktopscreen}) {
+  height: 180vh;
+  }
+  @media (min-width: ${props => props.theme.giantscreen}) {
+  height: 170vw;
+  }
 `;
 
 const BackgroundBox = styled.div`
@@ -20,13 +31,20 @@ const BackgroundBox = styled.div`
   width: 100%;
 `;
 
-
-
 const FormElements = styled.form`
   margin: 0.25em;
   position: absolute;
   font-size: 1.6em;
   opacity: 0.7;
+  
+  @media (min-width: ${props => props.theme.tabletscreen}) {
+  margin-top: 40vw;
+  margin-left: 2em;
+  }
+  @media (min-width: ${props => props.theme.giantscreen}) {
+  margin-top: 50vw;
+  margin-left: 2em;
+  }
 `;
 
 const Title = styled.p`

@@ -17,12 +17,16 @@ const FindOutMore = styled.div`
     color: slategray;
   }
   @media (min-width: ${props => props.theme.tabletscreen}) {
+  margin-top: 40vw;
+  margin-right: 3em;
   font-size: 1.5em;
   }
   @media (min-width: ${props => props.theme.desktopscreen}) {
+  margin-top: 50vw;
   font-size: 1.8em;
   }
   @media (min-width: ${props => props.theme.giantscreen}) {
+  margin-top: 75vw;
   font-size: 2em;
   }
 `;
@@ -33,7 +37,6 @@ const Logo = styled.svg`
 `;
 
 const AboutHeader = styled.p`
-  color: darkslategray;
   font-weight: bold;
   font-size: 1.3em;
 `;
@@ -52,7 +55,7 @@ class Footer extends Component {
   render() {
     return (
       <div>
-        <Logo id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 1000">
+        <Logo id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 600">
               <title>Untitled-2</title>
               <circle cx="384.5" cy="350" r="234.5" fill="#fff"/>
               <g>

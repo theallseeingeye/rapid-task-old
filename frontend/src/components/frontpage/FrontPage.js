@@ -10,6 +10,7 @@ import CalendarFeatures from "./calendar-features/CalendarFeatures";
 import FinancialFeatures from "./financial-features/FinancialFeatures";
 import AnalyticsFeatures from "./analytics-features/AnalyticsFeatures";
 import About from "./about/About";
+import ContactMask from "./contact/ContactMask";
 import Contact from "./contact/Contact";
 import Footer from "./footer/Footer";
 import MainPage from "./main-page/MainPage";
@@ -96,6 +97,7 @@ class FrontPage extends Component {
           <About/>
         </AboutContainer>
         <ContactContainer>
+          <ContactMask/>
           <Contact/>
         </ContactContainer>
         <FooterContainer>

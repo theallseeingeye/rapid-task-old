@@ -76,8 +76,9 @@ const Text3 = styled.text`
 `;
 
 const Text4 = styled.text`
-  font-size: 0.5em;
+  font-size: 0.4em;
   transform: translate(90px, 100px);
+  font-family: ${props => props.theme.Robotofont};
 `;
 
 const Title = styled.text`
@@ -98,7 +99,7 @@ class PainterLadder extends Component {
   render() {
     return (
       <Div>
-        <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140.38 270">
+        <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 145 270">
           <title>PaintingLady</title>
           <PainterLady id="PainterLadder">
 
@@ -111,18 +112,18 @@ class PainterLadder extends Component {
             </Title>
 
             <Text4 x="0" y="0" dy="0">
-              <tspan x="0" dy=".6em">1111111111111</tspan>
-              <tspan x="-4" dy="1.2em">1111111111111</tspan>
-              <tspan x="-8" dy="1.2em">tspan line 3dddd</tspan>
-              <tspan x="-12" dy="1.2em">tspan line 3</tspan>
-              <tspan x="-16" dy="1.2em">tspan line 3</tspan>
-              <tspan x="-20" dy="1.2em">tspan linessdfgsdfg 3</tspan>
-              <tspan x="-24" dy="1.2em">tspan line 1</tspan>
-              <tspan x="-28" dy="1.2em">tspan lingsdsfg 2</tspan>
-              <tspan x="-32" dy="1.2em">tspan line 3</tspan>
-              <tspan x="-36" dy="1.2em">tspan linsgfgfgdfgfdggf</tspan>
-              <tspan x="-40" dy="1.2em">tspan line 3</tspan>
-              <tspan x="-44" dy="1.2em">tspan line 3</tspan>
+              <tspan x="-4" dy=".6em">Once your quote</tspan>
+              <tspan x="-7.5" dy="1.5em">has been accepted,</tspan>
+              <tspan x="-11" dy="1.5em">Rapid Task keeps</tspan>
+              <tspan x="-14.5" dy="1.5em">track of equipment</tspan>
+              <tspan x="-17" dy="1.5em">usage, employee</tspan>
+              <tspan x="-20.5" dy="1.5em">performance, and job</tspan>
+              <tspan x="-24" dy="1.5em">progress. This ensures</tspan>
+              <tspan x="-27.5" dy="1.5em">that you get the most out</tspan>
+              <tspan x="-31" dy="1.5em">of your equipment and have</tspan>
+              <tspan x="-34.5" dy="1.5em">the right people onsite</tspan>
+              <tspan x="-38" dy="1.5em">getting the job completed</tspan>
+              <tspan x="-41.5" dy="1.5em">quicker than ever before.</tspan>
             </Text4>
 
 
@@ -270,6 +271,10 @@ class PainterLadder extends Component {
             <path d="M342.61,328.29h0Z" transform="translate(-261.05 -322.82)" fill="#39f"/>
             <path d="M342.62,328.29h0l.78.31-.77-.3Z" transform="translate(-261.05 -322.82)" fill="#39f"/>
           </g>
+          /*Baseboard*/
+            <polygon points="250 225 0 225 0 245 250 245 250 225" fill="#e7e3e9"/>
+            <polygon points="250 224 0 224 0 226 250 226 250 224" fill="#f7f9fc"/>
+          /*Baseboard*/
         </PaintedWall>
       </Div>
     );

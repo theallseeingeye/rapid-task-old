@@ -6,6 +6,7 @@ const FindOutMore = styled.div`
   line-height: 1.4em;
   font-size: 1.2em;
   margin-right: 1em;
+  margin-top: 2em;
 
   a:link {
     color: black;
@@ -17,16 +18,16 @@ const FindOutMore = styled.div`
     color: slategray;
   }
   @media (min-width: ${props => props.theme.tabletscreen}) {
-  margin-top: 40vw;
+  margin-top: 50vw;
   margin-right: 3em;
   font-size: 1.5em;
   }
   @media (min-width: ${props => props.theme.desktopscreen}) {
-  margin-top: 50vw;
+  margin-top: 65vw;
   font-size: 1.8em;
   }
   @media (min-width: ${props => props.theme.giantscreen}) {
-  margin-top: 75vw;
+  margin-top: 80vw;
   font-size: 2em;
   }
 `;
@@ -55,7 +56,7 @@ class Footer extends Component {
   render() {
     return (
       <div>
-        <Logo id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 600">
+        <Logo id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 115 2000 600">
               <title>Untitled-2</title>
               <circle cx="384.5" cy="350" r="234.5" fill="#fff"/>
               <g>

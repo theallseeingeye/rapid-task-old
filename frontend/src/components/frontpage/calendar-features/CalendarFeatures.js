@@ -9,44 +9,48 @@ const MainDiv = styled.div`
 `;
 
 const Header = styled.h1`
-  font-size: 1.1em;
+  font-family: ${props => props.theme.Robotofont};
   color: black;
   margin: 0 auto;
   text-align: center;
   display: block;
   width: 100%;
-  //border: solid yellow;
+  border: solid yellow;
 `;
 
 const FlexContainter = styled.div`
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
+  //flex-wrap: wrap;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: flex-end;
   width: 100%;
-  margin-top: 5vh;
-  //border: solid green;
-  height: 115vh;
+  border: solid green;
+  height: 100vh;
 `;
 
-const Text1 = styled.div`
+const Text1 = styled.p`
+  font-family: ${props => props.theme.Robotofont};
   font-size: 1em;
-  align-self: center;
-  justify-self: center;
-  margin: 0 auto;
-  min-width: 300px;
-  height: 25vh;
-  //border: solid gray;
+  //align-self: center;
+  //justify-self: center;
+  margin: auto;
+  //min-width: 300px;
+  //height: 25vh;
+  border: solid gray;
+  //max-width: 500px;
   flex-grow: 1;
 `;
 
-const Text2 = styled.div`
+const Text2 = styled.p`
+  font-family: ${props => props.theme.Robotofont};
   font-size: 1em;
-  justify-self: center;
-  align-self: center;
-  min-width: 300px;
-  //border: solid purple;
-  height: 28vh;
+  //justify-self: center;
+  //align-self: center;
+  margin: auto;
+  //min-width: 300px;
+  border: solid purple;
+  //max-width: 500px;
   flex-grow: 1;
 `;
 

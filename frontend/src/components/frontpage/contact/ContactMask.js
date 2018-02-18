@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const MainDiv = styled.div`
-  height: 1vh;
+  height: 0vh;
 `;
 
 const Mask = styled.div`

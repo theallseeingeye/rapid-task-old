@@ -25,7 +25,6 @@ const Arrow = styled.div`
 const FeaturesContainer = styled.div`
   height: 130vh;
   background-color: ${props => props.theme.logoblue};
-  //clip-path: polygon(0 0, 100% 0, 100% 93%, 0 100%);// Order of polygon- (x,y) (TL, TR, BR, BL) 
 `;
 
 const QuotesContainer = styled.div`
@@ -42,25 +41,20 @@ const EmployeeContainer = styled.div`
 
 const ClientContainer = styled.div`
   height: 150vh;
-  border: 8px solid gold;
+  //border: 8px solid gold;
 `;
 
 const CalendarContainer = styled.div`
-  height: 130vh;
+  height: 135vh;
 `;
 
 const FinancialContainer = styled.div`
-  height: 450vh;
-`;
-
-const AnalyticsContainer = styled.div`
-  height: 100vh;
+  height: 550vh;
 `;
 
 const AboutContainer = styled.div`
-  height: 100vh;
-  background-color: rgba(113, 130, 161, 1);
-  
+  height: 30vh;
+  //border: solid red;
 `;
 
 const ContactContainer = styled.div`
@@ -68,7 +62,7 @@ const ContactContainer = styled.div`
 `;
 
 const FooterContainer = styled.div`
-  height: 0vh;
+ height: 0vh;
 `;
 
 class FrontPage extends Component {
@@ -100,9 +94,9 @@ class FrontPage extends Component {
         <FinancialContainer>
           <FinancialFeatures/>
         </FinancialContainer>
-        <AnalyticsContainer>
+        <div>
           <AnalyticsFeatures/>
-        </AnalyticsContainer>
+        </div>
         <AboutContainer>
           <About/>
         </AboutContainer>

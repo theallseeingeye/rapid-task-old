@@ -15,10 +15,10 @@ const BackgroundContainer = styled.div`
   // To hid the sides that are stretching beyond the div
   overflow: hidden;
    @media (min-width: ${props => props.theme.tabletscreen}) {
-  height: 150vh;
+  height: 160vh;
   }
   @media (min-width: ${props => props.theme.desktopscreen}) {
-  height: 180vh;
+  height: 210vh;
   }
   @media (min-width: ${props => props.theme.giantscreen}) {
   height: 170vw;
@@ -32,6 +32,7 @@ const BackgroundBox = styled.div`
 `;
 
 const FormElements = styled.form`
+  font-family: ${props => props.theme.Robotofont};
   margin: 0.25em;
   position: absolute;
   font-size: 1.6em;

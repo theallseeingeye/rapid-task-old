@@ -49,11 +49,11 @@ const CalendarContainer = styled.div`
 `;
 
 const FinancialContainer = styled.div`
-  height: 550vh;
+  height: 450vh;
 `;
 
 const AboutContainer = styled.div`
-  height: 30vh;
+  height: 40vh;
   //border: solid red;
 `;
 

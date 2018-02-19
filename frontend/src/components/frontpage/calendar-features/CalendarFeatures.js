@@ -29,20 +29,20 @@ const FlexContainter = styled.div`
   height: 100vh;
 `;
 
-const Text1 = styled.p`
+const Text1 = styled.div`
   font-family: ${props => props.theme.Robotofont};
   font-size: 1em;
   //align-self: center;
   //justify-self: center;
   margin: auto;
   //min-width: 300px;
-  //height: 25vh;
+  height: 28vh;
   border: solid gray;
   //max-width: 500px;
   flex-grow: 1;
 `;
 
-const Text2 = styled.p`
+const Text2 = styled.div`
   font-family: ${props => props.theme.Robotofont};
   font-size: 1em;
   //justify-self: center;
@@ -51,6 +51,7 @@ const Text2 = styled.p`
   //min-width: 300px;
   border: solid purple;
   //max-width: 500px;
+  height: 25vh;
   flex-grow: 1;
 `;
 

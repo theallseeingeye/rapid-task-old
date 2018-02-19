@@ -94,6 +94,7 @@ class FinancialFeatures extends Component {
         <FinanceTitle id="InvoiceActivateTrigger"> Automated book-keeping</FinanceTitle>
         <ManFinance/>
 
+
         <Columns>
 
 

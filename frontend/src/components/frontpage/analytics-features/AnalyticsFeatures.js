@@ -6,7 +6,7 @@ const Div = styled.div`
   overflow: hidden;
   position: absolute;
   width: 100%;
-  border: solid yellow;
+  //border: solid yellow;
 `;
 
 const Title = styled.p`

@@ -9,13 +9,13 @@ const Div = styled.div`
 `;
 
 const Svg = styled.svg`
-  width: 100%;
+  width: 50%;
   height: 80vh;
 `;
 
 const Polyline = styled.polygon`
   stroke: ${props => props.theme.logoblue};
-  stroke-width: 0px;
+  stroke-width: 1px;
 `;
 
 class GraphAnimation extends Component {
@@ -23,21 +23,20 @@ class GraphAnimation extends Component {
   constructor(props) {
     super(props);
 
-    this.color = theme.logoblue;
-    // this.AnimateChart = this.AnimateChart.bind(this);
-
+    this.color = theme.logoblue; // Colors the bars blue
   }
-
 
   componentDidMount() {
     const barWidth = 5;
     const range = 300;
-    const maxPosition = 80;
-    const dataCount = 40;
+    const maxPosition = 20;
+    const dataCount = 20;
 
     // Animate Speed
     const barSpeed = 0.05;
     const lineSpeed = 0.05;
+    const barFadeSpeed = 0.1;
+    const barFadeStagger = 0.05;
 
     // Selects the color of the line based on previous bar value
     function colorizer(polyline, polyline1) {
@@ -47,24 +46,6 @@ class GraphAnimation extends Component {
         return "red";
       }
     }
-
-    // const elements = [];
-    //
-    // function PolyList() {
-    //   return polyArray.map((number) =>
-    //     document.getElementById("ChartAnimate"+number)
-    //   );
-    // }
-    //
-    //
-    //
-    //
-    // console.log(PolyList[1]);
-
-
-
-
-    const polyArray = [...new Array(((dataCount) * 2) + 1)].map((value, index) => index); //Iterates array count [0, 1, 2, 3, 4, 5, 6...]
 
 
     // function everyFour(index) {
@@ -188,482 +169,385 @@ class GraphAnimation extends Component {
     // console.log(random);
 
 
+    function AnimateChart() {
+      const polyArray = [...new Array(((dataCount) * 2) + 1)].map((value, index) => index); //Iterates array count [0, 1, 2, 3, 4, 5, 6...]
+      const random = Array.from({length: dataCount}, () => Math.round(Math.random() * range)); // USE THIS FOR RANDOMIZER randomizer[1]
 
+      // Finds the id of polylines and assigns it.
+      function PolyId(x) {
+        return x = document.getElementById("ChartAnimate"+x);
+      }
+      // Creates a numbered array to each polyline.
+      const PolyNumber = polyArray.map(x => PolyId(x));
 
+      const p = [
+        {x: 0, y: random[0], x2: 0, y2: random[0]}, // 0 First position
+        {x: 0, y: random[0], x2: 20, y2: random[0]}, // 1 Change to from first
+        ///////// vertical movement
+        {x: 20, y: random[0], x2: 20, y2: random[0]}, // 2 second position
+        {x: 20, y: random[0], x2: 20, y2: random[1]}, // 3 change from second
+        // Horizontal movement
+        {x: 20, y: random[1], x2: 20, y2: random[1]}, // 4 third position
+        {x: 20, y: random[1], x2: 40, y2: random[1]}, // 5 change from third
+        ///////////
+        {x: 40, y: random[1], x2: 40, y2: random[1]}, // 6 fourth position
+        {x: 40, y: random[1], x2: 40, y2: random[2]}, // 7 change from fourth
 
-  function AnimateChart() {
-
-    const random = Array.from({length: maxPosition + 5}, () => Math.floor(Math.random() * range)); // USE THIS FOR RANDOMIZER randomizer[1]
-
-    const ChartSvg = document.getElementById("ChartSvg");
-    const polyline1 = document.getElementById("ChartAnimate1");
-    const polyline2 = document.getElementById("ChartAnimate2");
-    const polyline3 = document.getElementById("ChartAnimate3");
-    const polyline4 = document.getElementById("ChartAnimate4");
-    const polyline5 = document.getElementById("ChartAnimate5");
-    const polyline6 = document.getElementById("ChartAnimate6");
-    const polyline7 = document.getElementById("ChartAnimate7");
-    const polyline8 = document.getElementById("ChartAnimate8");
-    const polyline9 = document.getElementById("ChartAnimate9");
-    const polyline10 = document.getElementById("ChartAnimate10");
-    const polyline11 = document.getElementById("ChartAnimate11");
-    const polyline12 = document.getElementById("ChartAnimate12");
-    const polyline13 = document.getElementById("ChartAnimate13");
-    const polyline14 = document.getElementById("ChartAnimate14");
-    const polyline15 = document.getElementById("ChartAnimate15");
-    const polyline16 = document.getElementById("ChartAnimate16");
-    const polyline17 = document.getElementById("ChartAnimate17");
-    const polyline18 = document.getElementById("ChartAnimate18");
-    const polyline19 = document.getElementById("ChartAnimate19");
-    const polyline20 = document.getElementById("ChartAnimate20");
-    const polyline21 = document.getElementById("ChartAnimate21");
-    const polyline22 = document.getElementById("ChartAnimate22");
-    const polyline23 = document.getElementById("ChartAnimate23");
-    const polyline24 = document.getElementById("ChartAnimate24");
-    const polyline25 = document.getElementById("ChartAnimate25");
-    const polyline26 = document.getElementById("ChartAnimate26");
-    const polyline27 = document.getElementById("ChartAnimate27");
-    const polyline28 = document.getElementById("ChartAnimate28");
-    const polyline29 = document.getElementById("ChartAnimate29");
-    const polyline30 = document.getElementById("ChartAnimate30");
-    const polyline31 = document.getElementById("ChartAnimate31");
-    const polyline32 = document.getElementById("ChartAnimate32");
-    const polyline33 = document.getElementById("ChartAnimate33");
-    const polyline34 = document.getElementById("ChartAnimate34");
-    const polyline35 = document.getElementById("ChartAnimate35");
-    const polyline36 = document.getElementById("ChartAnimate36");
-    const polyline37 = document.getElementById("ChartAnimate37");
-    const polyline38 = document.getElementById("ChartAnimate38");
-    const polyline39 = document.getElementById("ChartAnimate39");
-    const polyline40 = document.getElementById("ChartAnimate40");
-
-
-    const p = [
-      {x: 0, y: random[0], x2: 0, y2: random[0]}, // 0 First position
-      {x: 0, y: random[0], x2: 20, y2: random[0]}, // 1 Change to from first
-      ///////// vertical movement
-      {x: 20, y: random[0], x2: 20, y2: random[0]}, // 2 second position
-      {x: 20, y: random[0], x2: 20, y2: random[1]}, // 3 change from second
-      // Horizontal movement
-      {x: 20, y: random[1], x2: 20, y2: random[1]}, // 4 third position
-      {x: 20, y: random[1], x2: 40, y2: random[1]}, // 5 change from third
-      ///////////
-      {x: 40, y: random[1], x2: 40, y2: random[1]}, // 6 fourth position
-      {x: 40, y: random[1], x2: 40, y2: random[2]}, // 7 change from fourth
+        {x: 40, y: random[2], x2: 40, y2: random[2]}, // 8 fifth position
+        {x: 40, y: random[2], x2: 60, y2: random[2]}, // 9 change from fifth
 
-      {x: 40, y: random[2], x2: 40, y2: random[2]}, // 8 fifth position
-      {x: 40, y: random[2], x2: 60, y2: random[2]}, // 9 change from fifth
+        {x: 60, y: random[2], x2: 60, y2: random[2]}, // 10 sixth position
+        {x: 60, y: random[2], x2: 60, y2: random[3]}, // 11 change from sixth
 
-      {x: 60, y: random[2], x2: 60, y2: random[2]}, // 10 sixth position
-      {x: 60, y: random[2], x2: 60, y2: random[3]}, // 11 change from sixth
+        {x: 60, y: random[3], x2: 60, y2: random[3]}, // 12 seventh position
+        {x: 60, y: random[3], x2: 80, y2: random[3]}, // 13 change from seventh
 
-      {x: 60, y: random[3], x2: 60, y2: random[3]}, // 12 seventh position
-      {x: 60, y: random[3], x2: 80, y2: random[3]}, // 13 change from seventh
+        {x: 80, y: random[3], x2: 80, y2: random[3]}, // 14 eighth position
+        {x: 80, y: random[3], x2: 80, y2: random[4]}, // 15 change from eighth
 
-      {x: 80, y: random[3], x2: 80, y2: random[3]}, // 14 eighth position
-      {x: 80, y: random[3], x2: 80, y2: random[4]}, // 15 change from eighth
+        {x: 80, y: random[4], x2: 80, y2: random[4]}, // 16 ninth position
+        {x: 80, y: random[4], x2: 100, y2: random[4]}, // 17 change from ninth
 
-      {x: 80, y: random[4], x2: 80, y2: random[4]}, // 16 ninth position
-      {x: 80, y: random[4], x2: 100, y2: random[4]}, // 17 change from ninth
+        {x: 100, y: random[4], x2: 100, y2: random[4]}, // 18 tenth position
+        {x: 100, y: random[4], x2: 100, y2: random[5]}, // 19 change from tenth
 
-      {x: 100, y: random[4], x2: 100, y2: random[4]}, // 18 tenth position
-      {x: 100, y: random[4], x2: 100, y2: random[5]}, // 19 change from tenth
+        {x: 100, y: random[5], x2: 100, y2: random[5]}, // 20
+        {x: 100, y: random[5], x2: 120, y2: random[5]}, // 21
 
-      {x: 100, y: random[5], x2: 100, y2: random[5]}, // 20
-      {x: 100, y: random[5], x2: 120, y2: random[5]}, // 21
+        {x: 120, y: random[5], x2: 120, y2: random[5]}, // 22
+        {x: 120, y: random[5], x2: 120, y2: random[6]}, // 23
 
-      {x: 120, y: random[5], x2: 120, y2: random[5]}, // 22
-      {x: 120, y: random[5], x2: 120, y2: random[6]}, // 23
+        {x: 120, y: random[6], x2: 120, y2: random[6]}, // 24
+        {x: 120, y: random[6], x2: 140, y2: random[6]}, // 25
 
-      {x: 120, y: random[6], x2: 120, y2: random[6]}, // 24
-      {x: 120, y: random[6], x2: 140, y2: random[6]}, // 25
+        {x: 140, y: random[6], x2: 140, y2: random[6]}, // 26
+        {x: 140, y: random[6], x2: 140, y2: random[7]}, // 27
 
-      {x: 140, y: random[6], x2: 140, y2: random[6]}, // 26
-      {x: 140, y: random[6], x2: 140, y2: random[7]}, // 27
+        {x: 140, y: random[7], x2: 140, y2: random[7]}, // 28
+        {x: 140, y: random[7], x2: 160, y2: random[7]}, // 29
 
-      {x: 140, y: random[7], x2: 140, y2: random[7]}, // 28
-      {x: 140, y: random[7], x2: 160, y2: random[7]}, // 29
+        {x: 160, y: random[7], x2: 160, y2: random[7]}, // 30
+        {x: 160, y: random[7], x2: 160, y2: random[8]}, // 31
 
-      {x: 160, y: random[7], x2: 160, y2: random[7]}, // 30
-      {x: 160, y: random[7], x2: 160, y2: random[8]}, // 31
+        {x: 160, y: random[8], x2: 160, y2: random[8]}, // 32
+        {x: 160, y: random[8], x2: 180, y2: random[8]}, // 33
 
-      {x: 160, y: random[8], x2: 160, y2: random[8]}, // 32
-      {x: 160, y: random[8], x2: 180, y2: random[8]}, // 33
+        {x: 180, y: random[8], x2: 180, y2: random[8]}, // 34
+        {x: 180, y: random[8], x2: 180, y2: random[9]}, // 35
 
-      {x: 180, y: random[8], x2: 180, y2: random[8]}, // 34
-      {x: 180, y: random[8], x2: 180, y2: random[9]}, // 35
+        {x: 180, y: random[9], x2: 180, y2: random[9]}, // 36
+        {x: 180, y: random[9], x2: 200, y2: random[9]}, // 37
 
-      {x: 180, y: random[9], x2: 180, y2: random[9]}, // 36
-      {x: 180, y: random[9], x2: 200, y2: random[9]}, // 37
+        {x: 200, y: random[9], x2: 200, y2: random[9]}, // 38
+        {x: 200, y: random[9], x2: 200, y2: random[10]}, // 39
 
-      {x: 200, y: random[9], x2: 200, y2: random[9]}, // 38
-      {x: 200, y: random[9], x2: 200, y2: random[10]}, // 39
+        {x: 200, y: random[10], x2: 200, y2: random[10]}, // 40
+        {x: 200, y: random[10], x2: 220, y2: random[10]}, // 41
 
-      {x: 200, y: random[10], x2: 200, y2: random[10]}, // 40
-      {x: 200, y: random[10], x2: 220, y2: random[10]}, // 41
+        {x: 220, y: random[10], x2: 220, y2: random[10]}, // 42
+        {x: 220, y: random[10], x2: 220, y2: random[11]}, // 43
 
-      {x: 220, y: random[10], x2: 220, y2: random[10]}, // 42
-      {x: 220, y: random[10], x2: 220, y2: random[11]}, // 43
+        {x: 220, y: random[11], x2: 220, y2: random[11]}, // 44
+        {x: 220, y: random[11], x2: 240, y2: random[11]}, // 45
 
-      {x: 220, y: random[11], x2: 220, y2: random[11]}, // 44
-      {x: 220, y: random[11], x2: 240, y2: random[11]}, // 45
+        {x: 240, y: random[11], x2: 240, y2: random[11]}, // 46
+        {x: 240, y: random[11], x2: 240, y2: random[12]}, // 47
 
-      {x: 240, y: random[11], x2: 240, y2: random[11]}, // 46
-      {x: 240, y: random[11], x2: 240, y2: random[12]}, // 47
+        {x: 240, y: random[12], x2: 240, y2: random[12]}, // 48
+        {x: 240, y: random[12], x2: 260, y2: random[12]}, // 49
 
-      {x: 240, y: random[12], x2: 240, y2: random[12]}, // 48
-      {x: 240, y: random[12], x2: 260, y2: random[12]}, // 49
+        {x: 260, y: random[12], x2: 260, y2: random[12]}, // 50
+        {x: 260, y: random[12], x2: 260, y2: random[13]}, // 51
 
-      {x: 260, y: random[12], x2: 260, y2: random[12]}, // 50
-      {x: 260, y: random[12], x2: 260, y2: random[13]}, // 51
+        {x: 260, y: random[13], x2: 260, y2: random[13]}, // 52
+        {x: 260, y: random[13], x2: 280, y2: random[13]}, // 53
 
-      {x: 260, y: random[13], x2: 260, y2: random[13]}, // 52
-      {x: 260, y: random[13], x2: 280, y2: random[13]}, // 53
+        {x: 280, y: random[13], x2: 280, y2: random[13]}, // 54
+        {x: 280, y: random[13], x2: 280, y2: random[14]}, // 55
 
-      {x: 280, y: random[13], x2: 280, y2: random[13]}, // 54
-      {x: 280, y: random[13], x2: 280, y2: random[14]}, // 55
+        {x: 280, y: random[14], x2: 280, y2: random[14]}, // 56
+        {x: 280, y: random[14], x2: 300, y2: random[14]}, // 57
 
-      {x: 280, y: random[14], x2: 280, y2: random[14]}, // 56
-      {x: 280, y: random[14], x2: 300, y2: random[14]}, // 57
+        {x: 300, y: random[14], x2: 300, y2: random[14]}, // 58
+        {x: 300, y: random[14], x2: 300, y2: random[15]}, // 59
 
-      {x: 300, y: random[14], x2: 300, y2: random[14]}, // 58
-      {x: 300, y: random[14], x2: 300, y2: random[15]}, // 59
+        {x: 300, y: random[15], x2: 300, y2: random[15]}, // 60
+        {x: 300, y: random[15], x2: 320, y2: random[15]}, // 61
 
-      {x: 300, y: random[15], x2: 300, y2: random[15]}, // 60
-      {x: 300, y: random[15], x2: 320, y2: random[15]}, // 61
-
-      {x: 320, y: random[15], x2: 320, y2: random[15]}, // 62
-      {x: 320, y: random[15], x2: 320, y2: random[16]}, // 63
-
-      {x: 320, y: random[16], x2: 320, y2: random[16]}, // 64
-      {x: 320, y: random[16], x2: 340, y2: random[16]}, // 65
-
-      {x: 340, y: random[16], x2: 340, y2: random[16]}, // 66
-      {x: 340, y: random[16], x2: 340, y2: random[17]}, // 67
-
-      {x: 340, y: random[17], x2: 340, y2: random[17]}, // 68
-      {x: 340, y: random[17], x2: 360, y2: random[17]}, // 69
-
-      {x: 360, y: random[17], x2: 360, y2: random[17]}, // 70
-      {x: 360, y: random[17], x2: 360, y2: random[18]}, // 71
-
-      {x: 360, y: random[18], x2: 360, y2: random[18]}, // 72
-      {x: 360, y: random[18], x2: 380, y2: random[18]}, // 73
-
-      {x: 380, y: random[18], x2: 380, y2: random[18]}, // 74
-      {x: 380, y: random[18], x2: 380, y2: random[19]}, // 75
-
-      {x: 380, y: random[19], x2: 380, y2: random[19]}, // 76
-      {x: 380, y: random[19], x2: 400, y2: random[19]}, // 77
-
-      {x: 400, y: random[19], x2: 400, y2: random[19]}, // 78
-      {x: 400, y: random[19], x2: 400, y2: range}, // 79
-    ];
-
-
-    //
-    // const polyList = polyArray.map(x => "this.polyline"+x);
-    //
-    //
-    // console.log(polyline1);
-    // console.log(this.polyline2);
-    //
-
-    const chartDraw = new TimelineMax({onComplete:AnimateChart});
-
-    // const chartDraw = new TimelineMax({repeat: -1});
-
-    chartDraw
-      .to(polyline1, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[0].x + ", " + p[0].y + " " + p[0].x2 + ", " + p[0].y2}})  //segment 1
-      .to(polyline1, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[1].x + ", " + p[1].y + " " + p[1].x2 + ", " + p[1].y2}})
-
-      .to(polyline2, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[2].x + ", " + p[2].y + " " + p[2].x2 + ", " + p[2].y2}})   //segment 2
-      .to(polyline2, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[3].x + ", " + p[3].y + " " + p[3].x2 + ", " + p[3].y2}})
-      .to(polyline3, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[4].x + ", " + p[4].y + " " + p[4].x2 + ", " + p[4].y2}})   //segment 3
-      .to(polyline3, lineSpeed, {
-        stroke: colorizer(random[0], random[1]),
-        attr: {points: p[5].x + ", " + p[5].y + " " + p[5].x2 + ", " + p[5].y2}
-      })
-
-      .to(polyline4, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[6].x + ", " + p[6].y + " " + p[6].x2 + ", " + p[6].y2}})   //segment 4
-      .to(polyline4, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[7].x + ", " + p[7].y + " " + p[7].x2 + ", " + p[7].y2}})
-      .to(polyline5, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[8].x + ", " + p[8].y + " " + p[8].x2 + ", " + p[8].y2}})   //segment 5
-      .to(polyline5, lineSpeed, {
-        stroke: colorizer(random[1], random[2]),
-        attr: {points: p[9].x + ", " + p[9].y + " " + p[9].x2 + ", " + p[9].y2}
-      })
-
-      .to(polyline6, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[10].x + ", " + p[10].y + " " + p[10].x2 + ", " + p[10].y2}})   //segment 6
-      .to(polyline6, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[11].x + ", " + p[11].y + " " + p[11].x2 + ", " + p[11].y2}})
-      .to(polyline7, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[12].x + ", " + p[12].y + " " + p[12].x2 + ", " + p[12].y2}})   //segment 7
-      .to(polyline7, lineSpeed, {
-        stroke: colorizer(random[2], random[3]),
-        attr: {points: p[13].x + ", " + p[13].y + " " + p[13].x2 + ", " + p[13].y2}
-      })
-
-      .to(polyline8, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[14].x + ", " + p[14].y + " " + p[14].x2 + ", " + p[14].y2}})   //segment 8
-      .to(polyline8, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[15].x + ", " + p[15].y + " " + p[15].x2 + ", " + p[15].y2}})
-      .to(polyline9, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[16].x + ", " + p[16].y + " " + p[16].x2 + ", " + p[16].y2}})   //segment 9
-      .to(polyline9, lineSpeed, {
-        stroke: colorizer(random[3], random[4]),
-        attr: {points: p[17].x + ", " + p[17].y + " " + p[17].x2 + ", " + p[17].y2}
-      })
-
-      .to(polyline10, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[18].x + ", " + p[18].y + " " + p[18].x2 + ", " + p[18].y2}})   //segment 10
-      .to(polyline10, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[19].x + ", " + p[19].y + " " + p[19].x2 + ", " + p[19].y2}})
-      .to(polyline11, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[20].x + ", " + p[20].y + " " + p[20].x2 + ", " + p[20].y2}})   //segment 11
-      .to(polyline11, lineSpeed, {
-        stroke: colorizer(random[4], random[5]),
-        attr: {points: p[21].x + ", " + p[21].y + " " + p[21].x2 + ", " + p[21].y2}
-      })
-
-      .to(polyline12, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[22].x + ", " + p[22].y + " " + p[22].x2 + ", " + p[22].y2}})   //segment 12
-      .to(polyline12, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[23].x + ", " + p[23].y + " " + p[23].x2 + ", " + p[23].y2}})
-      .to(polyline13, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[24].x + ", " + p[24].y + " " + p[24].x2 + ", " + p[24].y2}})   //segment 13
-      .to(polyline13, lineSpeed, {
-        stroke: colorizer(random[5], random[6]),
-        attr: {points: p[25].x + ", " + p[25].y + " " + p[25].x2 + ", " + p[25].y2}
-      })
-
-      .to(polyline14, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[26].x + ", " + p[26].y + " " + p[26].x2 + ", " + p[26].y2}})   //segment 14
-      .to(polyline14, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[27].x + ", " + p[27].y + " " + p[27].x2 + ", " + p[27].y2}})
-      .to(polyline15, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[28].x + ", " + p[28].y + " " + p[28].x2 + ", " + p[28].y2}})   //segment 15
-      .to(polyline15, lineSpeed, {
-        stroke: colorizer(random[6], random[7]),
-        attr: {points: p[29].x + ", " + p[29].y + " " + p[29].x2 + ", " + p[29].y2}
-      })
-
-      .to(polyline16, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[30].x + ", " + p[30].y + " " + p[30].x2 + ", " + p[30].y2}})   //segment 16
-      .to(polyline16, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[31].x + ", " + p[31].y + " " + p[31].x2 + ", " + p[31].y2}})
-      .to(polyline17, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[32].x + ", " + p[32].y + " " + p[32].x2 + ", " + p[32].y2}})   //segment 17
-      .to(polyline17, lineSpeed, {
-        stroke: colorizer(random[7], random[8]),
-        attr: {points: p[33].x + ", " + p[33].y + " " + p[33].x2 + ", " + p[33].y2}
-      })
-
-      .to(polyline18, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[34].x + ", " + p[34].y + " " + p[34].x2 + ", " + p[34].y2}})   //segment 18
-      .to(polyline18, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[35].x + ", " + p[35].y + " " + p[35].x2 + ", " + p[35].y2}})
-      .to(polyline19, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[36].x + ", " + p[36].y + " " + p[36].x2 + ", " + p[36].y2}})   //segment 19
-      .to(polyline19, lineSpeed, {
-        stroke: colorizer(random[8], random[9]),
-        attr: {points: p[37].x + ", " + p[37].y + " " + p[37].x2 + ", " + p[37].y2}
-      })
-
-      .to(polyline20, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[38].x + ", " + p[38].y + " " + p[38].x2 + ", " + p[38].y2}})   //segment 20
-      .to(polyline20, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[39].x + ", " + p[39].y + " " + p[39].x2 + ", " + p[39].y2}})
-
-      .to(polyline21, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[40].x + ", " + p[40].y + " " + p[40].x2 + ", " + p[40].y2}})   //segment 21
-      .to(polyline21, lineSpeed, {
-        stroke: colorizer(random[9], random[10]),
-        attr: {points: p[41].x + ", " + p[41].y + " " + p[41].x2 + ", " + p[41].y2}
-      })
-
-      .to(polyline22, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[42].x + ", " + p[42].y + " " + p[42].x2 + ", " + p[42].y2}})   //segment 22
-      .to(polyline22, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[43].x + ", " + p[43].y + " " + p[43].x2 + ", " + p[43].y2}})
-
-      .to(polyline23, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[44].x + ", " + p[44].y + " " + p[44].x2 + ", " + p[44].y2}})   //segment 23
-      .to(polyline23, lineSpeed, {
-        stroke: colorizer(random[10], random[11]),
-        attr: {points: p[45].x + ", " + p[45].y + " " + p[45].x2 + ", " + p[45].y2}
-      })
-
-      .to(polyline24, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[46].x + ", " + p[46].y + " " + p[46].x2 + ", " + p[46].y2}})   //segment 24
-      .to(polyline24, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[47].x + ", " + p[47].y + " " + p[47].x2 + ", " + p[47].y2}})
-
-      .to(polyline25, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[48].x + ", " + p[48].y + " " + p[48].x2 + ", " + p[48].y2}})   //segment 25
-      .to(polyline25, lineSpeed, {
-        stroke: colorizer(random[11], random[12]),
-        attr: {points: p[49].x + ", " + p[49].y + " " + p[49].x2 + ", " + p[49].y2}
-      })
-
-      .to(polyline26, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[50].x + ", " + p[50].y + " " + p[50].x2 + ", " + p[50].y2}})   //segment 26
-      .to(polyline26, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[51].x + ", " + p[51].y + " " + p[51].x2 + ", " + p[51].y2}})
-
-      .to(polyline27, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[52].x + ", " + p[52].y + " " + p[52].x2 + ", " + p[52].y2}})   //segment 27
-      .to(polyline27, lineSpeed, {
-        stroke: colorizer(random[12], random[13]),
-        attr: {points: p[53].x + ", " + p[53].y + " " + p[53].x2 + ", " + p[53].y2}
-      })
-
-      .to(polyline28, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[54].x + ", " + p[54].y + " " + p[54].x2 + ", " + p[54].y2}})   //segment 28
-      .to(polyline28, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[55].x + ", " + p[55].y + " " + p[55].x2 + ", " + p[55].y2}})
-
-      .to(polyline29, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[56].x + ", " + p[56].y + " " + p[56].x2 + ", " + p[56].y2}})   //segment 29
-      .to(polyline29, lineSpeed, {
-        stroke: colorizer(random[13], random[14]),
-        attr: {points: p[57].x + ", " + p[57].y + " " + p[57].x2 + ", " + p[57].y2}
-      })
-
-      .to(polyline30, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[58].x + ", " + p[58].y + " " + p[58].x2 + ", " + p[58].y2}})   //segment 30
-      .to(polyline30, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[59].x + ", " + p[59].y + " " + p[59].x2 + ", " + p[59].y2}})
-
-      .to(polyline31, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[60].x + ", " + p[60].y + " " + p[60].x2 + ", " + p[60].y2}})   //segment 31
-      .to(polyline31, lineSpeed, {
-        stroke: colorizer(random[14], random[15]),
-        attr: {points: p[61].x + ", " + p[61].y + " " + p[61].x2 + ", " + p[61].y2}
-      })
-
-      .to(polyline32, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[62].x + ", " + p[62].y + " " + p[62].x2 + ", " + p[62].y2}})   //segment 32
-      .to(polyline32, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[63].x + ", " + p[63].y + " " + p[63].x2 + ", " + p[63].y2}})
-
-      .to(polyline33, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[64].x + ", " + p[64].y + " " + p[64].x2 + ", " + p[64].y2}})   //segment 33
-      .to(polyline33, lineSpeed, {
-        stroke: colorizer(random[15], random[16]),
-        attr: {points: p[65].x + ", " + p[65].y + " " + p[65].x2 + ", " + p[65].y2}
-      })
-
-      .to(polyline34, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[66].x + ", " + p[66].y + " " + p[66].x2 + ", " + p[66].y2}})   //segment 34
-      .to(polyline34, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[67].x + ", " + p[67].y + " " + p[67].x2 + ", " + p[67].y2}})
-
-      .to(polyline35, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[68].x + ", " + p[68].y + " " + p[68].x2 + ", " + p[68].y2}})   //segment 35
-      .to(polyline35, lineSpeed, {
-        stroke: colorizer(random[16], random[17]),
-        attr: {points: p[69].x + ", " + p[69].y + " " + p[69].x2 + ", " + p[69].y2}
-      })
-
-      .to(polyline36, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[70].x + ", " + p[70].y + " " + p[70].x2 + ", " + p[70].y2}})   //segment 36
-      .to(polyline36, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[71].x + ", " + p[71].y + " " + p[71].x2 + ", " + p[71].y2}})
-
-      .to(polyline37, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[72].x + ", " + p[72].y + " " + p[72].x2 + ", " + p[72].y2}})   //segment 37
-      .to(polyline37, lineSpeed, {
-        stroke: colorizer(random[17], random[18]),
-        attr: {points: p[73].x + ", " + p[73].y + " " + p[73].x2 + ", " + p[73].y2}
-      })
-
-      .to(polyline38, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[74].x + ", " + p[74].y + " " + p[74].x2 + ", " + p[74].y2}})   //segment 38
-      .to(polyline38, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[75].x + ", " + p[75].y + " " + p[75].x2 + ", " + p[75].y2}})
-
-      .to(polyline39, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[76].x + ", " + p[76].y + " " + p[76].x2 + ", " + p[76].y2}})   //segment 39
-      .to(polyline39, lineSpeed, {
-        stroke: colorizer(random[18], random[19]),
-        attr: {points: p[77].x + ", " + p[77].y + " " + p[77].x2 + ", " + p[77].y2}
-      })
-
-      .to(polyline40, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[78].x + ", " + p[78].y + " " + p[78].x2 + ", " + p[78].y2}})   //segment 40
-      .to(polyline40, lineSpeed, {strokeWidth: 1, autoAlpha: 1, attr: {points: p[79].x + ", " + p[79].y + " " + p[79].x2 + ", " + p[79].y2}})
-
-
-      // Fills in the bars and erases the vertical lines.
-      .to(polyline1, barSpeed, {strokeWidth: (300 - random[0]), y: ((300 - random[0]) / 2)})
-      .to(polyline2, barSpeed, {autoAlpha: 0})
-      .to(polyline3, barSpeed, {strokeWidth: (300 - random[1]), y: ((300 - random[1]) / 2)})
-      .to(polyline4, barSpeed, {autoAlpha: 0})
-      .to(polyline5, barSpeed, {strokeWidth: (300 - random[2]), y: ((300 - random[2]) / 2)})
-      .to(polyline6, barSpeed, {autoAlpha: 0})
-      .to(polyline7, barSpeed, {strokeWidth: (300 - random[3]), y: ((300 - random[3]) / 2)})
-      .to(polyline8, barSpeed, {autoAlpha: 0})
-      .to(polyline9, barSpeed, {strokeWidth: (300 - random[4]), y: ((300 - random[4]) / 2)})
-      .to(polyline10, barSpeed, {autoAlpha: 0})
-      .to(polyline11, barSpeed, {strokeWidth: (300 - random[5]), y: ((300 - random[5]) / 2)})
-      .to(polyline12, barSpeed, {autoAlpha: 0})
-      .to(polyline13, barSpeed, {strokeWidth: (300 - random[6]), y: ((300 - random[6]) / 2)})
-      .to(polyline14, barSpeed, {autoAlpha: 0})
-      .to(polyline15, barSpeed, {strokeWidth: (300 - random[7]), y: ((300 - random[7]) / 2)})
-      .to(polyline16, barSpeed, {autoAlpha: 0})
-      .to(polyline17, barSpeed, {strokeWidth: (300 - random[8]), y: ((300 - random[8]) / 2)})
-      .to(polyline18, barSpeed, {autoAlpha: 0})
-      .to(polyline19, barSpeed, {strokeWidth: (300 - random[9]), y: ((300 - random[9]) / 2)})
-      .to(polyline20, barSpeed, {autoAlpha: 0})
-      .to(polyline21, barSpeed, {strokeWidth: (300 - random[10]), y: ((300 - random[10]) / 2)})
-      .to(polyline22, barSpeed, {autoAlpha: 0})
-      .to(polyline23, barSpeed, {strokeWidth: (300 - random[11]), y: ((300 - random[11]) / 2)})
-      .to(polyline24, barSpeed, {autoAlpha: 0})
-      .to(polyline25, barSpeed, {strokeWidth: (300 - random[12]), y: ((300 - random[12]) / 2)})
-      .to(polyline26, barSpeed, {autoAlpha: 0})
-      .to(polyline27, barSpeed, {strokeWidth: (300 - random[13]), y: ((300 - random[13]) / 2)})
-      .to(polyline28, barSpeed, {autoAlpha: 0})
-      .to(polyline29, barSpeed, {strokeWidth: (300 - random[14]), y: ((300 - random[14]) / 2)})
-      .to(polyline30, barSpeed, {autoAlpha: 0})
-      .to(polyline31, barSpeed, {strokeWidth: (300 - random[15]), y: ((300 - random[15]) / 2)})
-      .to(polyline32, barSpeed, {autoAlpha: 0})
-      .to(polyline33, barSpeed, {strokeWidth: (300 - random[16]), y: ((300 - random[16]) / 2)})
-      .to(polyline34, barSpeed, {autoAlpha: 0})
-      .to(polyline35, barSpeed, {strokeWidth: (300 - random[17]), y: ((300 - random[17]) / 2)})
-      .to(polyline36, barSpeed, {autoAlpha: 0})
-      .to(polyline37, barSpeed, {strokeWidth: (300 - random[18]), y: ((300 - random[18]) / 2)})
-      .to(polyline38, barSpeed, {autoAlpha: 0})
-      .to(polyline39, barSpeed, {strokeWidth: (300 - random[19]), y: ((300 - random[19]) / 2)})
-      .to(polyline40, barSpeed, {autoAlpha: 0})
-
-      // Erases out all the remainder polylines that are still visible.
-      .to(polyline1, barSpeed / 2, {strokeWidth: 0, autoAlpha: 0})
-      .to(polyline3, barSpeed / 2, {strokeWidth: 0, autoAlpha: 0})
-      .to(polyline5, barSpeed / 2, {strokeWidth: 0, autoAlpha: 0})
-      .to(polyline7, barSpeed / 2, {strokeWidth: 0, autoAlpha: 0})
-      .to(polyline9, barSpeed / 2, {strokeWidth: 0, autoAlpha: 0})
-      .to(polyline11, barSpeed / 2, {strokeWidth: 0, autoAlpha: 0})
-      .to(polyline13, barSpeed / 2, {strokeWidth: 0, autoAlpha: 0})
-      .to(polyline15, barSpeed / 2, {strokeWidth: 0, autoAlpha: 0})
-      .to(polyline17, barSpeed / 2, {strokeWidth: 0, autoAlpha: 0})
-      .to(polyline19, barSpeed / 2, {strokeWidth: 0, autoAlpha: 0})
-      .to(polyline21, barSpeed / 2, {strokeWidth: 0, autoAlpha: 0})
-      .to(polyline23, barSpeed / 2, {strokeWidth: 0, autoAlpha: 0})
-      .to(polyline25, barSpeed / 2, {strokeWidth: 0, autoAlpha: 0})
-      .to(polyline27, barSpeed / 2, {strokeWidth: 0, autoAlpha: 0})
-      .to(polyline29, barSpeed / 2, {strokeWidth: 0, autoAlpha: 0})
-      .to(polyline31, barSpeed / 2, {strokeWidth: 0, autoAlpha: 0})
-      .to(polyline33, barSpeed / 2, {strokeWidth: 0, autoAlpha: 0})
-      .to(polyline35, barSpeed / 2, {strokeWidth: 0, autoAlpha: 0})
-      .to(polyline37, barSpeed / 2, {strokeWidth: 0, autoAlpha: 0})
-      .to(polyline39, barSpeed / 2, {strokeWidth: 0, autoAlpha: 0})
-
-      .set(polyline1, {clearProps:"all"})
-      .set(polyline2, {clearProps:"all"})
-      .set(polyline3, {clearProps:"all"})
-      .set(polyline4, {clearProps:"all"})
-      .set(polyline5, {clearProps:"all"})
-      .set(polyline6, {clearProps:"all"})
-      .set(polyline7, {clearProps:"all"})
-      .set(polyline8, {clearProps:"all"})
-      .set(polyline9, {clearProps:"all"})
-      .set(polyline10, {clearProps:"all"})
-      .set(polyline11, {clearProps:"all"})
-      .set(polyline12, {clearProps:"all"})
-      .set(polyline13, {clearProps:"all"})
-      .set(polyline14, {clearProps:"all"})
-      .set(polyline15, {clearProps:"all"})
-      .set(polyline16, {clearProps:"all"})
-      .set(polyline17, {clearProps:"all"})
-      .set(polyline18, {clearProps:"all"})
-      .set(polyline19, {clearProps:"all"})
-      .set(polyline20, {clearProps:"all"})
-      .set(polyline21, {clearProps:"all"})
-      .set(polyline22, {clearProps:"all"})
-      .set(polyline23, {clearProps:"all"})
-      .set(polyline24, {clearProps:"all"})
-      .set(polyline25, {clearProps:"all"})
-      .set(polyline26, {clearProps:"all"})
-      .set(polyline27, {clearProps:"all"})
-      .set(polyline28, {clearProps:"all"})
-      .set(polyline29, {clearProps:"all"})
-      .set(polyline30, {clearProps:"all"})
-      .set(polyline31, {clearProps:"all"})
-      .set(polyline32, {clearProps:"all"})
-      .set(polyline33, {clearProps:"all"})
-      .set(polyline34, {clearProps:"all"})
-      .set(polyline35, {clearProps:"all"})
-      .set(polyline36, {clearProps:"all"})
-      .set(polyline37, {clearProps:"all"})
-      .set(polyline38, {clearProps:"all"})
-      .set(polyline39, {clearProps:"all"})
-      .set(polyline40, {clearProps:"all"});
-      // chartDraw.invalidate();
-      // chartDraw.pause(0);
-      // chartDraw.invalidate;
-
-    // return chartDraw;
+        {x: 320, y: random[15], x2: 320, y2: random[15]}, // 62
+        {x: 320, y: random[15], x2: 320, y2: random[16]}, // 63
+
+        {x: 320, y: random[16], x2: 320, y2: random[16]}, // 64
+        {x: 320, y: random[16], x2: 340, y2: random[16]}, // 65
+
+        {x: 340, y: random[16], x2: 340, y2: random[16]}, // 66
+        {x: 340, y: random[16], x2: 340, y2: random[17]}, // 67
+
+        {x: 340, y: random[17], x2: 340, y2: random[17]}, // 68
+        {x: 340, y: random[17], x2: 360, y2: random[17]}, // 69
+
+        {x: 360, y: random[17], x2: 360, y2: random[17]}, // 70
+        {x: 360, y: random[17], x2: 360, y2: random[18]}, // 71
+
+        {x: 360, y: random[18], x2: 360, y2: random[18]}, // 72
+        {x: 360, y: random[18], x2: 380, y2: random[18]}, // 73
+
+        {x: 380, y: random[18], x2: 380, y2: random[18]}, // 74
+        {x: 380, y: random[18], x2: 380, y2: random[19]}, // 75
+
+        {x: 380, y: random[19], x2: 380, y2: random[19]}, // 76
+        {x: 380, y: random[19], x2: 400, y2: random[19]}, // 77
+
+        {x: 400, y: random[19], x2: 400, y2: random[19]}, // 78
+        {x: 400, y: random[19], x2: 400, y2: range}, // 79
+      ];
+
+
+      // Initialize the Animation
+      const chartDraw = new TimelineMax({onComplete: AnimateChart}); // Call itself once animation completes.
+
+      function pointPosition(index) {
+        return {points: p[index].x + ", " + p[index].y + " " + p[index].x2 + ", " + p[index].y2}
+      }
+
+      chartDraw.to(PolyNumber[1], lineSpeed, {attr: pointPosition(0)})  //segment 1
+        .to(PolyNumber[1], lineSpeed, {autoAlpha:1, attr: pointPosition(1)})
+
+
+        .to(PolyNumber[2], lineSpeed, {attr: pointPosition(2)})   //segment 2
+        .to(PolyNumber[2], lineSpeed, {autoAlpha:1, attr: pointPosition(3)})
+
+
+        .to(PolyNumber[3], lineSpeed, {attr: pointPosition(4)})   //segment 3
+        .to(PolyNumber[3], lineSpeed, {autoAlpha:1, stroke: colorizer(random[0], random[1]), attr: pointPosition(5)})
+
+        .to(PolyNumber[4], lineSpeed, {attr: pointPosition(6)})   //segment 4
+        .to(PolyNumber[4], lineSpeed, {autoAlpha:1, attr: pointPosition(7)})
+
+
+        .to(PolyNumber[5], lineSpeed, {attr: pointPosition(8)})   //segment 5
+        .to(PolyNumber[5], lineSpeed, {autoAlpha:1, stroke: colorizer(random[1], random[2]), attr: pointPosition(9)})
+
+
+        .to(PolyNumber[6], lineSpeed, {attr: pointPosition(10)})   //segment 6
+        .to(PolyNumber[6], lineSpeed, {autoAlpha:1, attr: pointPosition(11)})
+
+
+        .to(PolyNumber[7], lineSpeed, {attr: pointPosition(12)})   //segment 7
+        .to(PolyNumber[7], lineSpeed, {autoAlpha:1, stroke: colorizer(random[2], random[3]), attr: pointPosition(13)})
+
+
+        .to(PolyNumber[8], lineSpeed, {attr: pointPosition(14)})   //segment 8
+        .to(PolyNumber[8], lineSpeed, {autoAlpha:1, attr: pointPosition(15)})
+
+
+        .to(PolyNumber[9], lineSpeed, {attr: pointPosition(16)})   //segment 9
+        .to(PolyNumber[9], lineSpeed, {autoAlpha:1, stroke: colorizer(random[3], random[4]), attr: pointPosition(17)})
+
+
+        .to(PolyNumber[10], lineSpeed, {attr: pointPosition(18)})   //segment 10
+        .to(PolyNumber[10], lineSpeed, {autoAlpha:1, attr: pointPosition(19)})
+
+
+        .to(PolyNumber[11], lineSpeed, {attr: pointPosition(20)})   //segment 11
+        .to(PolyNumber[11], lineSpeed, {autoAlpha:1, stroke: colorizer(random[4], random[5]), attr: pointPosition(21)})
+
+
+        .to(PolyNumber[12], lineSpeed, {attr: pointPosition(22)})   //segment 12
+        .to(PolyNumber[12], lineSpeed, {autoAlpha:1, attr: pointPosition(23)})
+
+
+        .to(PolyNumber[13], lineSpeed, {attr: pointPosition(24)})   //segment 13
+        .to(PolyNumber[13], lineSpeed, {autoAlpha:1, stroke: colorizer(random[5], random[6]), attr: pointPosition(25)})
+
+
+        .to(PolyNumber[14], lineSpeed, {attr: pointPosition(26)})   //segment 14
+        .to(PolyNumber[14], lineSpeed, {autoAlpha:1, attr: pointPosition(27)})
+
+        .to(PolyNumber[15], lineSpeed, {attr: pointPosition(28)})   //segment 15
+        .to(PolyNumber[15], lineSpeed, {autoAlpha:1, stroke: colorizer(random[6], random[7]), attr: pointPosition(29)})
+
+        .to(PolyNumber[16], lineSpeed, {attr: pointPosition(30)})   //segment 16
+        .to(PolyNumber[16], lineSpeed, {autoAlpha:1, attr: pointPosition(31)})
+
+        .to(PolyNumber[17], lineSpeed, {attr: pointPosition(32)})   //segment 17
+        .to(PolyNumber[17], lineSpeed, {autoAlpha:1, stroke: colorizer(random[7], random[8]), attr: pointPosition(33)})
+
+        .to(PolyNumber[18], lineSpeed, {attr: pointPosition(34)})   //segment 18
+        .to(PolyNumber[18], lineSpeed, {autoAlpha:1, attr: pointPosition(35)})
+
+        .to(PolyNumber[19], lineSpeed, {attr: pointPosition(36)})   //segment 19
+        .to(PolyNumber[19], lineSpeed, {autoAlpha:1, stroke: colorizer(random[8], random[9]), attr: pointPosition(37)})
+
+        .to(PolyNumber[20], lineSpeed, {attr: pointPosition(38)})   //segment 20
+        .to(PolyNumber[20], lineSpeed, {autoAlpha:1, attr: pointPosition(39)})
+
+        .to(PolyNumber[21], lineSpeed, {attr: pointPosition(40)})   //segment 21
+        .to(PolyNumber[21], lineSpeed, {autoAlpha:1, stroke: colorizer(random[9], random[10]), attr: pointPosition(41)})
+
+        .to(PolyNumber[22], lineSpeed, {attr: pointPosition(42)})   //segment 22
+        .to(PolyNumber[22], lineSpeed, {autoAlpha:1, attr: pointPosition(43)})
+
+        .to(PolyNumber[23], lineSpeed, {attr: pointPosition(44)})   //segment 23
+        .to(PolyNumber[23], lineSpeed, {autoAlpha:1, stroke: colorizer(random[10], random[11]), attr: pointPosition(45)})
+
+        .to(PolyNumber[24], lineSpeed, {attr: pointPosition(46)})   //segment 24
+        .to(PolyNumber[24], lineSpeed, {autoAlpha:1, attr: pointPosition(47)})
+
+        .to(PolyNumber[25], lineSpeed, {attr: pointPosition(48)})   //segment 25
+        .to(PolyNumber[25], lineSpeed, {autoAlpha:1, stroke: colorizer(random[11], random[12]), attr: pointPosition(49)})
+
+        .to(PolyNumber[26], lineSpeed, {attr: pointPosition(50)})   //segment 26
+        .to(PolyNumber[26], lineSpeed, {autoAlpha:1, attr: pointPosition(51)})
+
+        .to(PolyNumber[27], lineSpeed, {attr: pointPosition(52)})   //segment 27
+        .to(PolyNumber[27], lineSpeed, {autoAlpha:1, stroke: colorizer(random[12], random[13]), attr: pointPosition(53)})
+
+        .to(PolyNumber[28], lineSpeed, {attr: pointPosition(54)})   //segment 28
+        .to(PolyNumber[28], lineSpeed, {autoAlpha:1, attr: pointPosition(55)})
+
+        .to(PolyNumber[29], lineSpeed, {attr: pointPosition(56)})   //segment 29
+        .to(PolyNumber[29], lineSpeed, {autoAlpha:1, stroke: colorizer(random[13], random[14]), attr: pointPosition(57)})
+
+        .to(PolyNumber[30], lineSpeed, {attr: pointPosition(58)})   //segment 30
+        .to(PolyNumber[30], lineSpeed, {autoAlpha:1, attr: pointPosition(59)})
+
+        .to(PolyNumber[31], lineSpeed, {attr: pointPosition(60)})   //segment 31
+        .to(PolyNumber[31], lineSpeed, {autoAlpha:1, stroke: colorizer(random[14], random[15]), attr: pointPosition(61)})
+
+        .to(PolyNumber[32], lineSpeed, {attr: pointPosition(62)})   //segment 32
+        .to(PolyNumber[32], lineSpeed, {autoAlpha:1, attr: pointPosition(63)})
+
+        .to(PolyNumber[33], lineSpeed, {attr: pointPosition(64)})   //segment 33
+        .to(PolyNumber[33], lineSpeed, {autoAlpha:1, stroke: colorizer(random[15], random[16]), attr: pointPosition(65)})
+
+        .to(PolyNumber[34], lineSpeed, {attr: pointPosition(66)})   //segment 34
+        .to(PolyNumber[34], lineSpeed, {autoAlpha:1, attr: pointPosition(67)})
+
+        .to(PolyNumber[35], lineSpeed, {attr: pointPosition(68)})   //segment 35
+        .to(PolyNumber[35], lineSpeed, {autoAlpha:1, stroke: colorizer(random[16], random[17]), attr: pointPosition(69)})
+
+        .to(PolyNumber[36], lineSpeed, {attr: pointPosition(70)})   //segment 36
+        .to(PolyNumber[36], lineSpeed, {autoAlpha:1, attr: pointPosition(71)})
+
+        .to(PolyNumber[37], lineSpeed, {attr: pointPosition(72)})   //segment 37
+        .to(PolyNumber[37], lineSpeed, {autoAlpha:1, stroke: colorizer(random[17], random[18]), attr: pointPosition(73)})
+
+        .to(PolyNumber[38], lineSpeed, {attr: pointPosition(74)})   //segment 38
+        .to(PolyNumber[38], lineSpeed, {autoAlpha:1, attr: pointPosition(75)})
+
+        .to(PolyNumber[39], lineSpeed, {attr: pointPosition(76)})   //segment 39
+        .to(PolyNumber[39], lineSpeed, {autoAlpha:1, stroke: colorizer(random[18], random[19]), attr: pointPosition(77)})
+
+        .to(PolyNumber[40], lineSpeed, {attr: pointPosition(78)})   //segment 40
+        .to(PolyNumber[40], lineSpeed, {autoAlpha:1, attr: pointPosition(79)});
+
+        // Fills in the bars and erases the vertical lines.
+
+        // function ass() {
+        //   return polyArray % 2 === 0;
+        // }
+        //
+        //
+        // function BarsFillIn() {
+        //   if (PolyNumber % 2 === 0 ) { // Select each vertical line and fill down width
+        //     chartDraw.staggerTo(PolyNumber, barSpeed, {strokeWidth: (300 - random[0]), y: ((300 - random[0]) / 2)})
+        //   } else {
+        //     chartDraw.staggerTo(PolyNumber, barSpeed, {autoAlpha: 0})
+        //   }
+        // }
+        // console.log(BarsFillIn());
+        // console.log(PolyNumber);
+
+        chartDraw.to(PolyNumber[1], barSpeed, {strokeWidth: (300 - random[0]), y: ((300 - random[0]) / 2)})
+        .to(PolyNumber[2], barSpeed, {autoAlpha: 0})
+        .to(PolyNumber[3], barSpeed, {strokeWidth: (300 - random[1]), y: ((300 - random[1]) / 2)})
+        .to(PolyNumber[4], barSpeed, {autoAlpha: 0})
+        .to(PolyNumber[5], barSpeed, {strokeWidth: (300 - random[2]), y: ((300 - random[2]) / 2)})
+        .to(PolyNumber[6], barSpeed, {autoAlpha: 0})
+        .to(PolyNumber[7], barSpeed, {strokeWidth: (300 - random[3]), y: ((300 - random[3]) / 2)})
+        .to(PolyNumber[8], barSpeed, {autoAlpha: 0})
+        .to(PolyNumber[9], barSpeed, {strokeWidth: (300 - random[4]), y: ((300 - random[4]) / 2)})
+        .to(PolyNumber[10], barSpeed, {autoAlpha: 0})
+        .to(PolyNumber[11], barSpeed, {strokeWidth: (300 - random[5]), y: ((300 - random[5]) / 2)})
+        .to(PolyNumber[12], barSpeed, {autoAlpha: 0})
+        .to(PolyNumber[13], barSpeed, {strokeWidth: (300 - random[6]), y: ((300 - random[6]) / 2)})
+        .to(PolyNumber[14], barSpeed, {autoAlpha: 0})
+        .to(PolyNumber[15], barSpeed, {strokeWidth: (300 - random[7]), y: ((300 - random[7]) / 2)})
+        .to(PolyNumber[16], barSpeed, {autoAlpha: 0})
+        .to(PolyNumber[17], barSpeed, {strokeWidth: (300 - random[8]), y: ((300 - random[8]) / 2)})
+        .to(PolyNumber[18], barSpeed, {autoAlpha: 0})
+        .to(PolyNumber[19], barSpeed, {strokeWidth: (300 - random[9]), y: ((300 - random[9]) / 2)})
+        .to(PolyNumber[20], barSpeed, {autoAlpha: 0})
+        .to(PolyNumber[21], barSpeed, {strokeWidth: (300 - random[10]), y: ((300 - random[10]) / 2)})
+        .to(PolyNumber[22], barSpeed, {autoAlpha: 0})
+        .to(PolyNumber[23], barSpeed, {strokeWidth: (300 - random[11]), y: ((300 - random[11]) / 2)})
+        .to(PolyNumber[24], barSpeed, {autoAlpha: 0})
+        .to(PolyNumber[25], barSpeed, {strokeWidth: (300 - random[12]), y: ((300 - random[12]) / 2)})
+        .to(PolyNumber[26], barSpeed, {autoAlpha: 0})
+        .to(PolyNumber[27], barSpeed, {strokeWidth: (300 - random[13]), y: ((300 - random[13]) / 2)})
+        .to(PolyNumber[28], barSpeed, {autoAlpha: 0})
+        .to(PolyNumber[29], barSpeed, {strokeWidth: (300 - random[14]), y: ((300 - random[14]) / 2)})
+        .to(PolyNumber[30], barSpeed, {autoAlpha: 0})
+        .to(PolyNumber[31], barSpeed, {strokeWidth: (300 - random[15]), y: ((300 - random[15]) / 2)})
+        .to(PolyNumber[32], barSpeed, {autoAlpha: 0})
+        .to(PolyNumber[33], barSpeed, {strokeWidth: (300 - random[16]), y: ((300 - random[16]) / 2)})
+        .to(PolyNumber[34], barSpeed, {autoAlpha: 0})
+        .to(PolyNumber[35], barSpeed, {strokeWidth: (300 - random[17]), y: ((300 - random[17]) / 2)})
+        .to(PolyNumber[36], barSpeed, {autoAlpha: 0})
+        .to(PolyNumber[37], barSpeed, {strokeWidth: (300 - random[18]), y: ((300 - random[18]) / 2)})
+        .to(PolyNumber[38], barSpeed, {autoAlpha: 0})
+        .to(PolyNumber[39], barSpeed, {strokeWidth: (300 - random[19]), y: ((300 - random[19]) / 2)})
+        .to(PolyNumber[40], barSpeed, {autoAlpha: 0});
+
+        // Erases out all the remainder PolyNumber[s that are still visible.
+        function BarsFadeOut() {
+          return chartDraw.staggerTo(PolyNumber, barFadeSpeed, {strokeWidth: 0, autoAlpha: 0}, barFadeStagger); // NEED TO eliminate the evens in this list.
+        }
+        BarsFadeOut();
+        // chartDraw.to(PolyNumber[1], barFadeSpeed, {strokeWidth: 0, autoAlpha: 0})
+        // .to(PolyNumber[3], barFadeSpeed, {strokeWidth: 0, autoAlpha: 0})
+        // .to(PolyNumber[5], barFadeSpeed, {strokeWidth: 0, autoAlpha: 0})
+        // .to(PolyNumber[7], barFadeSpeed, {strokeWidth: 0, autoAlpha: 0})
+        // .to(PolyNumber[9], barFadeSpeed, {strokeWidth: 0, autoAlpha: 0})
+        // .to(PolyNumber[11], barFadeSpeed, {strokeWidth: 0, autoAlpha: 0})
+        // .to(PolyNumber[13], barFadeSpeed, {strokeWidth: 0, autoAlpha: 0})
+        // .to(PolyNumber[15], barFadeSpeed, {strokeWidth: 0, autoAlpha: 0})
+        // .to(PolyNumber[17], barFadeSpeed, {strokeWidth: 0, autoAlpha: 0})
+        // .to(PolyNumber[19], barFadeSpeed, {strokeWidth: 0, autoAlpha: 0})
+        // .to(PolyNumber[21], barFadeSpeed, {strokeWidth: 0, autoAlpha: 0})
+        // .to(PolyNumber[23], barFadeSpeed, {strokeWidth: 0, autoAlpha: 0})
+        // .to(PolyNumber[25], barFadeSpeed, {strokeWidth: 0, autoAlpha: 0})
+        // .to(PolyNumber[27], barFadeSpeed, {strokeWidth: 0, autoAlpha: 0})
+        // .to(PolyNumber[29], barFadeSpeed, {strokeWidth: 0, autoAlpha: 0})
+        // .to(PolyNumber[31], barFadeSpeed, {strokeWidth: 0, autoAlpha: 0})
+        // .to(PolyNumber[33], barFadeSpeed, {strokeWidth: 0, autoAlpha: 0})
+        // .to(PolyNumber[35], barFadeSpeed, {strokeWidth: 0, autoAlpha: 0})
+        // .to(PolyNumber[37], barFadeSpeed, {strokeWidth: 0, autoAlpha: 0})
+        // .to(PolyNumber[39], barFadeSpeed, {strokeWidth: 0, autoAlpha: 0});
+
+        // Clears the values that were created. Array of PolyNumbers.
+        function ClearProps() {
+          return chartDraw.set(PolyNumber, {clearProps: "all"})
+        }
+        ClearProps();
+
+        // Add back the autoAlpha that the clearProps have removed. Required to prevent the lines reappearing.
+        // Array of PolyNumbers
+        function MakeInvisible() {
+          return chartDraw.set(PolyNumber, {autoAlpha:0})
+        }
+        MakeInvisible();
     }
 
+    // Calls the function animation to run
     AnimateChart();
-
   }
 
 
   render() {
     const dataCount = 20;
     const polyArray = [...new Array(((dataCount) * 2) + 1)].map((value, index) => index);
-
-    console.log(polyArray);
 
     function PolyList() {
       return polyArray.map((number) =>

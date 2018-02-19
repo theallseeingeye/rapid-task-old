@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import OfficeBeach from './OfficeBeach';
 import styled from 'styled-components';
+import SubscriptionForm from './SubscriptionForm';
+
 
 const BackgroundContainer = styled.div`
   width: 100%;
@@ -70,60 +72,16 @@ const Subscribe = styled.input`
 `;
 
 class Contact extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      fields: {
-        name: '',
-        email: ''
-      },
-      people: [],
-    };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  };
-
-  handleChange(event) {
-    const fields = this.state.fields;
-    fields[event.target.name] = event.target.value;
-    this.setState({ fields});
-    console.log(event.target.name)
-  };
-
-  handleSubmit(event)  {
-    const people = [
-      ...this.state.people,
-      this.state.fields,
-    ];
-    this.setState({
-      people,
-      fields: {
-        name: '',
-        email: ''
-      }
-    });
-    event.preventDefault();
-  };
-
   render() {
     return (
       <div>
+        <SubscriptionForm/>
         <BackgroundContainer>
+
           <BackgroundBox>
             <OfficeBeach/>
           </BackgroundBox>
         </BackgroundContainer>
-          <FormElements onSubmit={this.handleSubmit}>
-            <Title>Stay in the Loop!</Title>
-            <Name placeholder='Name' name='name' value={this.state.fields.name} onChange={this.handleChange} required/>
-            <br />
-            <br />
-            <Email placeholder='Email' name='email' value={this.state.fields.email} onChange={this.handleChange} type="email" required />
-            <br />
-            <br />
-            <Subscribe type="submit" value="Subscribe"/>
-          </FormElements>
       </div>
     );
   }

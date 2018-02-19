@@ -45,20 +45,25 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Local Apps
-    'rapid_task.polls.apps.PollsConfig',
-    'rapid_task.profiles.apps.ProfilesConfig',
-    'rapid_task.authentication.apps.AuthenticationConfig',
+    # 'rapid_task.polls.apps.PollsConfig',
+    # 'rapid_task.profiles.apps.ProfilesConfig',
+    # 'rapid_task.authentication.apps.AuthenticationConfig',
     'rapid_task.core.apps.CoreConfig',
+    'rapid_task.subscribers.apps.SubscribersConfig',
 
     # Third Party Apps
     'admin_honeypot',
     'rest_framework',
     'rest_framework.authtoken',
     'djoser',
-
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    # Third Party:
+    # This middleware needs to be placed the highest.
+    'corsheaders.middleware.CorsMiddleware',
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -124,7 +129,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Edmonton'
 
 USE_I18N = True
 
@@ -146,12 +151,11 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAdminUser',
     ),
-
 }
 
 
 # This tells Django that we are using this custom user model instead of the django default.
-AUTH_USER_MODEL = 'authentication.Account'
+# AUTH_USER_MODEL = 'authentication.Account'
 
 # The JWT_AUTH is the settings for setting up the JWT Tokens. Most of these are already in default settings.
 # For more information go to: http://getblimp.github.io/django-rest-framework-jwt/
@@ -189,7 +193,6 @@ JWT_AUTH = {
 
     'JWT_AUTH_HEADER_PREFIX': 'JWT',
     'JWT_AUTH_COOKIE': None,
-
 }
 
 DJOSER = {

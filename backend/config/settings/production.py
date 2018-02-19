@@ -28,8 +28,12 @@ DEBUG = False
 # If this is not correctly set, it can spit back 500 errors. Keep this restrictive for security measures.
 ALLOWED_HOSTS = [
     '.rapidtask.com',
-    '.rapidtask.ca',
 ]
+
+CORS_ORIGIN_WHITELIST = (
+    'www.rapidtask.com',
+    'rapidtask.com'
+)
 
 # Forces the use of cookies over HTTPS
 SESSION_COOKIE_SECURE = True

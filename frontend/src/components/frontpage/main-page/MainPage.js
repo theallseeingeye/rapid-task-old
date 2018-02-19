@@ -25,9 +25,6 @@ const BackgroundContainer = styled.div`
 `;
 
 const BackgroundBox = styled.div`
-  align-self: flex-start;
-  margin: auto;
-  width: 100%;
 `;
 
 const LogoContainer = styled.div`

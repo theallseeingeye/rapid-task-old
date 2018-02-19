@@ -43,7 +43,6 @@ const List = styled.ul`
   margin: auto;
   margin-top: 2em;
   margin-bottom: 2em;
-  //position: absolute;
   height: 50vh;
 `;
 
@@ -58,17 +57,6 @@ const ListText = styled.a`
   font-size: 1.0em;
 `;
 
-
-// const Background = styled.div`
-//   background: rgb(59, 79, 90); // Background of devices
-//   height: 20vh;
-//   justify-content: center;
-//   align-self: flex-end;
-//   position: absolute;
-//   //width: 100vw;
-//   margin-bottom: 2vh;
-//   z-index: 1;
-// `;
 
 class Features extends Component {
   render() {

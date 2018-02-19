@@ -94,6 +94,9 @@ The installed packages must be written here with explanation for it's use. You m
 * django-admin-honeypot  
     This is to hide the default admin link for the django. This will log anyone who tries to access  /admin/ site  
     * License: MIT
+* django-cors-headers 2.1.0
+    This allows the CORS headers to the frontend. Easy implementation of cross-domain requests for REST.
+    * License: Free and open
     
 **FRONTEND**  
 
@@ -141,4 +144,10 @@ The installed packages must be written here with explanation for it's use. You m
    * react-test-renderer  
         * Takes a snapshot of the DOM tree rendered by React DOM    
         
-   License: MIT - Facebook      
+   License: MIT - Facebook     
+* Axios
+    Promise based HTTP client for the browser and node.js. Allows us to communicate with the backend api
+    License: MIT 
+* Validators
+    A package that handles validators and sanitation of forms
+    License: MIT

@@ -4,13 +4,15 @@
   "description": "Web browser for Rapid Task",
   "main": "webpack.config.js",
   "dependencies": {
+    "axios": "^0.17.1",
     "gsap": "^1.20.3",
     "jest-cli": "^21.2.1",
     "lodash": "^4.17.4",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "scrollmagic": "^2.0.5",
-    "styled-components": "^2.2.4"
+    "styled-components": "^2.2.4",
+    "validator": "^9.4.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

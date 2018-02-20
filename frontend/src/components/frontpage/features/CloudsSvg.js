@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import theme from './../../../global-styles/DefaultTheme.js';
 
 const Svg = styled.svg`
   width: 100%;
@@ -32,7 +31,6 @@ const LowerLarge2 = styled.path`
   //visibility: hidden;
 `;
 
-
 const LowerMedium = styled.path`
   transform: translate(-15px, 33px);
   //visibility: hidden;
@@ -44,21 +42,7 @@ const LowerSmall = styled.path`
 
 `;
 
-
-
-
-
-
-
-
-
 class CloudsSvg extends Component {
-    constructor(props) {
-    super(props);
-
-    this.color = theme.logoblue;
-  }
-
   render() {
     return (
       <Svg id="clouds" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 120">

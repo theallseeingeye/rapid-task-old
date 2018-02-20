@@ -24,7 +24,6 @@ const Arrow = styled.div`
 
 const FeaturesContainer = styled.div`
   height: 130vh;
-  background-color: ${props => props.theme.logoblue};
 `;
 
 const QuotesContainer = styled.div`

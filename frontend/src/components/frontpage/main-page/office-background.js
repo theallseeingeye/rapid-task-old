@@ -8,7 +8,7 @@ const Svg = styled.svg`
 class OfficeBackground extends Component {
   render() {
     return (
-     <Svg id="CleanedUp" xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/1999/xlink" viewBox="0 0 3184.54 1503.04">
+     <Svg id="CleanedUp" xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/1999/xlink" viewBox="0 0 3184.54 1503.04" preserveAspectRatio="none">
       <defs>
         <radialGradient id="radial-gradient" cx="15971.23" cy="-5006.84" r="7042.05" gradientTransform="translate(-13930.06 5312.35)" gradientUnits="userSpaceOnUse">
           <stop offset="0" stopColor="#fefbce"/>

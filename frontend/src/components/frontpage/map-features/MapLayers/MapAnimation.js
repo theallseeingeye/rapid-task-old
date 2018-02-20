@@ -6,9 +6,7 @@ import BlueTruck from "./TruckSvg";
 import MapPin from "./MapPin";
 import Pointer from "./Pointer";
 
-
 import CityBottom from './cityBottom1000px.gif';
-
 import CityPark from './cityCommunityPark.gif';
 import CityTop from './cityTallBuildings.gif';
 
@@ -28,6 +26,7 @@ const Svg = styled.svg`
 
 const BottomCity = styled.image`
   //transform: translate(500px, 100px) scale(0.5);
+  xlinkHref: ${CityBottom};
 `;
 
 const CityLawn = styled.image`
@@ -162,7 +161,6 @@ class MapAnimation extends Component {
       .to(this.truck, 0.2, {scaleX:-0.13, transformOrigin:'50% 50%'}, '-=0.2') //To flip the truck
       .to(this.svg, 2, {x:60, y:100})
       .to(this.truck, 2, {x: 300, y: 572}, '-=2')
-      // .to(this.svg, 0.5, {scale:1, x:0, y:100})
       .set(this.truck, {autoAlpha: 0})
       .set(this.truckText, {autoAlpha: 0});
 
@@ -196,7 +194,8 @@ class MapAnimation extends Component {
     return (
       <Div>
         <Svg xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000" innerRef={x => this.svg = x}>
-          <BottomCity xlinkHref={CityBottom} width="100%" height="100%"/>
+          {/*<BottomCity xlinkHref={CityBottom} width="100%" height="100%"/>*/}
+          <BottomCity media="(min-width: 500px)" xlinkHref={CityBottom} width="100%" height="100%"/>
           <CityLawn xlinkHref={CityPark} width="23%" height="23%"/>
           <TruckContainer innerRef={x => this.truck = x}>
             <BlueTruck/>

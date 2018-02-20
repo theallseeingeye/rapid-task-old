@@ -23,7 +23,6 @@ const Arrow = styled.div`
 
 const FeaturesContainer = styled.div`
   height: 130vh;
-  background-color: ${props => props.theme.logoblue};
 `;
 
 const QuotesContainer = styled.div`
@@ -51,7 +50,7 @@ const CalendarContainer = styled.div`
 `;
 
 const FinancialContainer = styled.div`
-  height: 450vh;
+  height: 600vh;
 `;
 
 const AnalyticsContainer = styled.div`

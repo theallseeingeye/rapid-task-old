@@ -19,7 +19,6 @@ const BackgroundContainer = styled.div`
   opacity: 0.4;
   // To place behind all divs
   z-index: -1;
-  padding: 1px;
   // To hid the sides that are stretching beyond the div
   overflow: hidden;
 `;

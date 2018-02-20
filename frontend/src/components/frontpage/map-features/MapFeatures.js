@@ -30,6 +30,7 @@ const Title = styled.title`
 `;
 
 const MainContext = styled.h1`
+  width: 100%;
   text-align: center;
   font-family: ${props => props.theme.RobotoCondensedfont};
   font-size: 1em;
@@ -46,6 +47,7 @@ const MapDetails = styled.div`
   margin-top: 80vh;
   padding: 5px;
   position: absolute;
+  text-align: center;
   z-index: 2;
   width: 100%;
   font-family: ${props => props.theme.Robotofont};
@@ -67,7 +69,6 @@ class CityAnimation extends Component {
           -Use of GPS and trip planning to integrate with scheduling of employees' days and travel costs <br/>
           -Measure distances and calculate areas to show job boundaries and use as measurements for quotes
         </MapDetails>
-
       </MainDiv>
     );
   }

@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import DevicesSVG from './DeviceSvg';
-import BulletPoint from './bullet-point.svg';
 import CloudsSvg from "./CloudsSvg";
 
 const FeatureDiv = styled.div`
   height: 130vh;
   position: relative;
   width: 100%;
+  background: linear-gradient(white 20%, ${props => props.theme.logoblue} 27%, ${props => props.theme.logoblue} 27%);
 `;
 
 const TextTitle = styled.p`
@@ -19,44 +19,46 @@ const TextTitle = styled.p`
 `;
 
 const TextFooter = styled.p`
-  font-size: 1em;
-  height: 10vh;
+  font-family: ${props => props.theme.RobotoCondensedfont};
+  font-size: 1.3em;
+  height: 5vh;
+  margin: auto;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+  margin-top: 5vh;
 `;
 
 const DeviceContainer = styled.div`
-  //width: 100%;
   height: 35vh;
   margin: auto;
-  
-  //background: linear-gradient(rgba(63,169,245,0) 5%, rgba(100,220,245,0.8) 80%,  rgba(63,169,245,0) 95%);
   display: flex;
   justify-content: center;
   align-self: center;
 `;
 
-const List = styled.ul`
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-  justify-content: center;
-  list-style-image: url(${BulletPoint});
+const List = styled.div`
+  padding: 5px;
+  list-style: none;
+  text-align: center;
   margin: auto;
   margin-top: 2em;
   margin-bottom: 2em;
   height: 50vh;
 `;
 
-const ListItem = styled.li`
+const ListItem = styled.p`
   height: 6vh;
   position: relative;
+  margin: auto;
 `;
 
 const ListText = styled.a`
   font-family: ${props => props.theme.Robotofont};
   margin: auto;
   font-size: 1.0em;
+  color: white;
 `;
-
 
 class Features extends Component {
   render() {
@@ -67,30 +69,29 @@ class Features extends Component {
         </TextTitle>
         <DeviceContainer>
           <DevicesSVG/>
-          {/*<Background/>*/}
         </DeviceContainer>
         <TextTitle>
-        You now can automate every business task at your fingertips.
+          You now can automate every business task at your fingertips
         </TextTitle>
         <List>
           <ListItem>
             <ListText>
-              Creates Simple Steps for Producing Faster and More Accurate Quotes
+              Simple Steps for Producing Faster and Accurate Quotes
             </ListText>
           </ListItem>
           <ListItem>
             <ListText>
-              Proves Business Organization to Clients
+              Improves Your Business Organization
             </ListText>
           </ListItem>
           <ListItem>
             <ListText>
-              Knows The Exact Status and Progress of All Your Jobs
+              Know the Exact Status and Progress of All Your Jobs
             </ListText>
           </ListItem>
           <ListItem>
             <ListText>
-              Automates Paper Work of Invoicing and Billing
+              Automates Invoicing and Billing
             </ListText>
           </ListItem>
           <ListItem>
@@ -120,10 +121,8 @@ class Features extends Component {
           </ListItem>
         </List>
         <TextFooter>
-          Since Rapid Task Focuses On Each Business Task, it is Flexible For All Service Based Businesses <br/><br/>
-          Strong secure cloud integration
+          Flexible For All Service Based Businesses
         </TextFooter>
-
         <CloudsSvg/>
       </FeatureDiv>
     );

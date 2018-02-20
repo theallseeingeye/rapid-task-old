@@ -8,7 +8,6 @@ const Svg = styled.svg`
   height: 90%;
 `;
 
-
 class DevicesSVG extends Component {
     constructor(props) {
     super(props);
@@ -18,7 +17,7 @@ class DevicesSVG extends Component {
 
   render() {
     return (
-      <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 391.06 180.19">
+      <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 341 180.19">
         <title>Rapid Task Works on all Devices</title>
         <g id="Desktop">
           <g id="desktop-2">
@@ -53,7 +52,7 @@ class DevicesSVG extends Component {
             <rect x="28.82" y="146.81" width="15.29" height="13.56" fill="#333"/>
           </g>
         </g>
-        <g id="Laptop">
+        <g id="Laptop" transform="translate(-50, 10)">
           <g id="laptop-2">
             <path id="screen_base" d="M242.14,72.67H364.59a3.94,3.94,0,0,1,3.94,3.94V158.5a0,0,0,0,1,0,0H238.2a0,0,0,0,1,0,0V76.61A3.94,3.94,0,0,1,242.14,72.67Z"/>
             <rect id="base" x="216.28" y="158.5" width="174.17" height="4.83" fill="#ccc"/>

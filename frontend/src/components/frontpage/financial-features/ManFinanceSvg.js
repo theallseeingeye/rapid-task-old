@@ -7,7 +7,7 @@ const Svg = styled.svg`
   margin: auto;
   position: absolute;
   transform: translateX(-29.4%);
-  z-index: -5;
+  z-index: 1;
   
     @media (min-width: ${props => props.theme.desktopscreen}) {
    max-width: 1500px; // To keep the layers from getting too big

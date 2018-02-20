@@ -4,40 +4,43 @@ import axios from "axios/index";
 import validator from 'validator';
 
 const FormElements = styled.form`
-  margin: 0.25em;
-  position: absolute;
-  font-size: 1.6em;
-  opacity: 0.7;
-  
-  @media (min-width: ${props => props.theme.tabletscreen}) {
-  margin-top: 40vw;
-  margin-left: 2em;
-  }
-  @media (min-width: ${props => props.theme.giantscreen}) {
-  margin-top: 50vw;
-  margin-left: 2em;
-  }
+  width: 100%;
+  text-align: center;
 `;
 
 const Title = styled.p`
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: 2em;
   opacity: 1;
+`;
+
+const Subtitle = styled.p`
+  font-weight: bold;
+  @media (min-width: ${props => props.theme.tabletscreen}) {
+  font-size: 1.5em;
+  }
 `;
 
 const Name = styled.input`
   border-radius: 6px;
+  font-size: 1.6em;
+  border-color: ${props => props.theme.logoblue};
+  border-width: 4px;
 `;
 
 const Email = styled.input`
   border-radius: 6px;
+  font-size: 1.6em;
+  border-color: ${props => props.theme.logoblue};
+  border-width: 4px;
 `;
 
 const Subscribe = styled.input`
   border-radius: 20px;
-  background-color: ${props => props.theme.logoblue};
-  border-color: darkcyan;
-  font-size: 1.1em;
+  background-color: transparent;
+  border-color: ${props => props.theme.logoblue};
+  font-size: 1.6em;
+  border-width: 4px;
 `;
 
 
@@ -123,7 +126,12 @@ class SubscriptionForm extends Component {
   render() {
     return (
       <FormElements onSubmit={this.handleSubmit}>
-        <Title>Stay in the Loop!</Title>
+        <Title>
+          Stay in the Loop!
+        </Title>
+        <Subtitle>
+          We will get in touch with exciting new developments and contests as we get closer to release.
+        </Subtitle>
         <Name
           placeholder='Name'
           name='name'

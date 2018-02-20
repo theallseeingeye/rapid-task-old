@@ -12,10 +12,12 @@ const Div = styled.div`
 `;
 
 const SubTitle = styled.h3`
+
   //border: solid orange;
 `;
 
 const TextArea = styled.div`
+  font-family: ${props => props.theme.Robotofont};
   //padding-top: 15vh; // adjusts the element from the top under the title
   margin-top: 1vh;
   //border: solid pink;

@@ -10,7 +10,6 @@ import CalendarFeatures from "./calendar-features/CalendarFeatures";
 import FinancialFeatures from "./financial-features/FinancialFeatures";
 import AnalyticsFeatures from "./analytics-features/AnalyticsFeatures";
 import About from "./about/About";
-import ContactMask from "./contact/ContactMask";
 import Contact from "./contact/Contact";
 import Footer from "./footer/Footer";
 import MainPage from "./main-page/MainPage";
@@ -28,6 +27,7 @@ const FeaturesContainer = styled.div`
 
 const QuotesContainer = styled.div`
   height: 600vh;
+  
 `;
 
 const MapsContainer = styled.div`
@@ -40,28 +40,33 @@ const EmployeeContainer = styled.div`
 
 const ClientContainer = styled.div`
   height: 150vh;
-  //border: 8px solid gold;
 `;
 
 const CalendarContainer = styled.div`
-  height: 135vh;
+  height: 130vh;
+  @media (min-width: ${props => props.theme.tabletscreen}) {
+  height: 145vh;
+  }
 `;
 
 const FinancialContainer = styled.div`
   height: 450vh;
 `;
 
+const AnalyticsContainer = styled.div`
+  height: 100vh;
+`;
+
 const AboutContainer = styled.div`
-  height: 40vh;
-  //border: solid red;
+  height: 48vh;
 `;
 
 const ContactContainer = styled.div`
-  height: 75vh;
+  height: 35vh;
 `;
 
 const FooterContainer = styled.div`
- height: 0vh;
+  height: 100vh;
 `;
 
 class FrontPage extends Component {
@@ -93,14 +98,13 @@ class FrontPage extends Component {
         <FinancialContainer>
           <FinancialFeatures/>
         </FinancialContainer>
-        <div>
+        <AnalyticsContainer>
           <AnalyticsFeatures/>
-        </div>
+        </AnalyticsContainer>
         <AboutContainer>
           <About/>
         </AboutContainer>
         <ContactContainer>
-          <ContactMask/>
           <Contact/>
         </ContactContainer>
         <FooterContainer>

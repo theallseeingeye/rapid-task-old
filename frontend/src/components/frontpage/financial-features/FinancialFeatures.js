@@ -15,8 +15,8 @@ const FinanceTitle = styled.p`
   font-weight: 900;
   font-size: 2.5em;
   text-align: right;
+  width: 99%;
   position: absolute;
-  width: 95%;
 `;
 
 const RightColumn = styled.div`
@@ -73,7 +73,16 @@ const Context1 = styled.p`
 `;
 
 const MainContent = styled.p`
-  height: 30vh;
+  height: 50vh;
+  font-family: ${props => props.theme.Robotofont};
+  float: right;
+  text-align: right;
+  margin-right: 2%;
+  @media (min-width: ${props => props.theme.tabletscreen}) {
+  //margin-top: 10vw;
+  font-size: 1.5em;
+  opacity: 0.7;
+  }
 `;
 
 // This div is required to close the animation of the invoice.
@@ -91,7 +100,8 @@ class FinancialFeatures extends Component {
   render() {
     return (
       <Div>
-        <FinanceTitle id="InvoiceActivateTrigger"> Automated book-keeping</FinanceTitle>
+        <FinanceTitle id="InvoiceActivateTrigger">Automated book-keeping</FinanceTitle>
+
         <ManFinance/>
 
 
@@ -105,137 +115,151 @@ class FinancialFeatures extends Component {
           </LeftColumn>
 
           <RightColumn>
+
             <FlexContainerRight>
 
               <MainContent>
-                Blah blah
+                What used to take hours in administrative work becomes simple with Rapid Task. In order to save
+                you time on invoicing and taxes, Rapid Task gathers information from your quote, as well as jobsite data and automatically
+                prepares documents for your review. Here's an example showing just how easy this can be with Rapid Task!
               </MainContent>
 
               <Title1 id="InvoiceTitleTrigger">
-                InvoiceTitleTrigger
+
               </Title1>
               <Context1>
-                Never repeat yourself and only enter data once!
               </Context1>
               <Title1 id="InvoiceHeaderTrigger">
-                InvoiceHeaderTrigger
+                 Automatically enter customer's address and information
               </Title1>
               <Context1>
-                Never repeat yourself and only enter data once!
+                In order to serve your clients better we make sure that you can always remember important details about your
+                customers. This information is consistent from first contact, to quote, to invoice, to a lasting relationship
               </Context1>
               <Title1 id="InvoiceBoxTrigger">
-                InvoiceBoxTrigger
+                Customize your invoice layout
               </Title1>
               <Context1>
-                Never repeat yourself and only enter data once!
+                In our interface you have ultimate freedom to setup the invoice with branding that suits your business.
+                We are here to handle the data for you
               </Context1>
               <Title1 id="InvoiceLine4ATrigger">
-                InvoiceLine4ATrigger
+                Rapid Task enters job description
               </Title1>
               <Context1>
-                Never repeat yourself and only enter data once!
+                We are happy to do the heavy lifting. Rapid Task enters data from the job automatically using information
+                from your quote, and onsite data.
               </Context1>
               <Title1 id="InvoiceLine4BTrigger">
-                InvoiceLine4BTrigger
+                Automatically calculates job costs
               </Title1>
               <Context1>
-                Never repeat yourself and only enter data once!
+                Based on real information drawn from work completed for this client, Rapid Task compiles an accurate price
+                for the job
               </Context1>
               <Title1 id="InvoiceLine5ATrigger">
-                InvoiceLine5ATrigger
+                Applies subcontracted
               </Title1>
               <Context1>
-                Never repeat yourself and only enter data once!
+                All of the work done by subcontractors is automatically included and just needs to be reviewed
               </Context1>
               <Title1 id="InvoiceLine5BTrigger">
-                InvoiceLine5bTrigger
+                Subcontracted margins
               </Title1>
               <Context1>
-                Never repeat yourself and only enter data once!
+                Any additional margins added to subcontracted work are applied here.
               </Context1>
               <Title1 id="InvoiceLine6ATrigger">
-                InvoiceLine6ATrigger
+                Progress payments
               </Title1>
               <Context1>
-                Never repeat yourself and only enter data once!
+                Keep track of large projects and partial payments on jobs
               </Context1>
               <Title1 id="InvoiceLine6BTrigger">
-                InvoiceLine6BTrigger
+                Progree payment details
               </Title1>
               <Context1>
-                Never repeat yourself and only enter data once!
+                Display percentage of work completed compared with payments due
               </Context1>
               <Title1 id="InvoiceLine6CTrigger">
-                InvoiceLine6CTrigger
+                Payment in percentage
               </Title1>
               <Context1>
-                Never repeat yourself and only enter data once!
+                Rapid Task tracks your progress payments automatically so you can have some peace of mind
               </Context1>
               <Title1 id="InvoiceLine7ATrigger">
-                InvoiceLine7ATrigger
+                Customized, detailed descriptions of work completed
               </Title1>
               <Context1>
-                Never repeat yourself and only enter data once!
+                For any of the information presented in your invoice you will maintain complete control of what is visible
+                on the client's end.
               </Context1>
               <Title1 id="InvoiceLine7BTrigger">
-                InvoiceLine7BTrigger
+                Costs per unit
               </Title1>
               <Context1>
-                Never repeat yourself and only enter data once!
+                As mentioned, you will have final say in all information shared with the client. This allows you to show
+                any relevant equipment or material cost you wish to share.
               </Context1>
               <Title1 id="InvoiceLine8ATrigger">
-                InvoiceLine8ATrigger
+                Splitting and combining invoices
               </Title1>
               <Context1>
-                Never repeat yourself and only enter data once!
+                Rapid Task has the versatility to meet any clients needs, including splitting and combining to fit their
+                situation
               </Context1>
               <Title1 id="InvoiceLine8BTrigger">
-                InvoiceLine8BTrigger
+                Easy reference to invoices for this client
               </Title1>
               <Context1>
-                Never repeat yourself and only enter data once!
+                This way you can keep track of all of the work done for this client automatically and provide better service
+                over the lifetime customer provider relationship
               </Context1>
               <Title1 id="InvoiceLine9ATrigger">
-                InvoiceLine9ATrigger
+                GST
               </Title1>
               <Context1>
-                Never repeat yourself and only enter data once!
+                Based on your state or province, Rapid Task applies any relevant taxes
               </Context1>
               <Title1 id="InvoiceLine9BTrigger">
-                InvoiceLine9BTrigger
+                Total charges to be paid by your client
               </Title1>
               <Context1>
-                Never repeat yourself and only enter data once!
+                After compiling all of the job information, Rapid Task produces an accurate and clear price which will be
+                sent off to the client once approved
               </Context1>
               <Title1 id="InvoiceLine10Trigger">
-                InvoiceLine10Trigger
+                Payment due-date
               </Title1>
               <Context1>
-                Never repeat yourself and only enter data once!
+                When your clients receive an invoice using Rapid Task, they will be connected directly to our internal
+                payment processing so we can make sure you get your money faster than ever. If we don't catch them on the
+                first go around we'll take care of sending reminders before the due date comes.
               </Context1>
              <Title1 id="InvoiceFooter1Trigger">
-                InvoiceFooter1Trigger
+                Invoice number
               </Title1>
               <Context1>
-                Never repeat yourself and only enter data once!
+                This helps to keep your business organized. If you would prefer, we can help you build a system to manage this
               </Context1>
              <Title1 id="InvoiceFooter2Trigger">
-                InvoiceFooter2Trigger
+                Create a digital signature to sign off your completed work
               </Title1>
               <Context1>
-                Never repeat yourself and only enter data once!
+
               </Context1>
              <Title1 id="InvoiceStampTrigger">
-                InvoiceStampTrigger
+                Applies warranty, terms and conditions
               </Title1>
               <Context1>
-                Never repeat yourself and only enter data once!
+                Conditions and warranty referenced in your estimate will be applied and communicated here
               </Context1>
              <Title1 id="InvoicePaidTrigger">
-                InvoicePaidTrigger
+                Rapid Task will catalog your paid invoices
               </Title1>
               <Context1>
-                Never repeat yourself and only enter data once!
+                Never miss a payment. With Rapid Task's integrated payment system it is easier for your clients to make
+                payments
               </Context1>
 
             </FlexContainerRight>

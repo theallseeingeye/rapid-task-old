@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import GraphAnimation from './GraphAnimation'
+import CalendarGraph from './CalendarGraph'
 
 const Div = styled.div`
   overflow: hidden;
   position: absolute;
   width: 100%;
-  //border: solid yellow;
+  border: solid yellow;
 `;
 
 const Title = styled.p`
@@ -14,9 +15,27 @@ const Title = styled.p`
   font-weight: 900;
   color: black;
   font-size: 2em;
-  position: absolute;
   margin: auto;
   top: 0;
+`;
+
+const Text1 = styled.p`
+
+`;
+
+const Text2 = styled.p`
+
+`;
+
+const Graph1 = styled.div`
+  position: absolute;
+  width: 100%;
+`;
+
+const Graph2 = styled.div`
+  transform: translate(200px, 200px);
+  border: solid red;
+  width: 100%;
 `;
 
 
@@ -26,7 +45,17 @@ class AnalyticsFeatures extends Component {
     return (
       <Div>
         <Title> Strong Data Means Stronger Business</Title>
-        <GraphAnimation/>
+        <Text1>
+
+        </Text1>
+        <Graph1>
+          <GraphAnimation key="1"/>
+        </Graph1>
+        <Text2>
+          AFDSLJABJDABLKADFJBJFDAIJBFDAJBFDAJBFDAB
+        </Text2>
+        <CalendarGraph/>
+
       </Div>
     );
   }

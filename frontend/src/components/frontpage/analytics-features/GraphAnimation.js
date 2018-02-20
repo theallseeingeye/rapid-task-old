@@ -6,11 +6,13 @@ import theme from "../../../global-styles/DefaultTheme";
 const Div = styled.div`
   width: 100%;
   position: absolute;
+  //border: solid black;
 `;
 
 const Svg = styled.svg`
   width: 50%;
-  height: 80vh;
+  border: solid black;
+  border-width: 0 0 3px 3px;
 `;
 
 const Polyline = styled.polygon`

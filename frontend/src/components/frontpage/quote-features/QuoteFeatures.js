@@ -53,6 +53,8 @@ const Context1 = styled.p`
   font-family: ${props => props.theme.RobotoCondensedfont};
   padding: 10px;
   font-weight: 400;
+  font-size: 0.8em;
+  text-align: justify;
 `;
 
 const Columns = styled.div`

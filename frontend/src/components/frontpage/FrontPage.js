@@ -50,7 +50,7 @@ const CalendarContainer = styled.div`
 `;
 
 const FinancialContainer = styled.div`
-  height: 450vh;
+  height: 600vh;
 `;
 
 const AnalyticsContainer = styled.div`

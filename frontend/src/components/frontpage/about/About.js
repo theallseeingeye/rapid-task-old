@@ -3,21 +3,20 @@ import styled from 'styled-components';
 
 const Text = styled.div`
   font-family: ${props => props.theme.Robotofont};
-  width: 100%;
   line-height: 1.4em;
   text-align: center;
+  width: 95%;
+  margin: 2.5%;
   @media (min-width: ${props => props.theme.tabletscreen}) {
-  //margin-top: 10vw;
-  font-size: 1.4em;
-  //opacity: 0.7;
+  font-size: 1.5em;
   }
   @media (min-width: ${props => props.theme.desktopscreen}) {
-  font-size: 1.6em;
-  font-weight: bold;
+  width: 60%;
+  margin-left: 20%;
   }
   @media (min-width: ${props => props.theme.giantscreen}) {
-  margin-top: 5vw;
-  font-size: 1.8em;
+  width: 60%;
+  margin-left: 20%;
   line-height: 2em;
   }
 `;

@@ -10,7 +10,7 @@ import CalendarFeatures from "./calendar-features/CalendarFeatures";
 import FinancialFeatures from "./financial-features/FinancialFeatures";
 import AnalyticsFeatures from "./analytics-features/AnalyticsFeatures";
 import About from "./about/About";
-import Contact from "./contact/Contact";
+import SubscriptionForm from './contact/SubscriptionForm';
 import Footer from "./footer/Footer";
 import MainPage from "./main-page/MainPage";
 
@@ -59,11 +59,11 @@ const AnalyticsContainer = styled.div`
 `;
 
 const AboutContainer = styled.div`
-  height: 48vh;
+  height: 35vh;
 `;
 
 const ContactContainer = styled.div`
-  height: 35vh;
+  height: 48vh;
 `;
 
 const FooterContainer = styled.div`
@@ -106,7 +106,7 @@ class FrontPage extends Component {
           <About/>
         </AboutContainer>
         <ContactContainer>
-          <Contact/>
+          <SubscriptionForm/>
         </ContactContainer>
         <FooterContainer>
           <Footer/>

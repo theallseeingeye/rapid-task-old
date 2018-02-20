@@ -6,6 +6,7 @@ import validator from 'validator';
 const FormElements = styled.form`
   width: 100%;
   text-align: center;
+  font-family: ${props => props.theme.Robotofont};
 `;
 
 const Title = styled.p`
@@ -15,7 +16,6 @@ const Title = styled.p`
 `;
 
 const Subtitle = styled.p`
-  font-weight: bold;
   @media (min-width: ${props => props.theme.tabletscreen}) {
   font-size: 1.5em;
   }
@@ -127,10 +127,10 @@ class SubscriptionForm extends Component {
     return (
       <FormElements onSubmit={this.handleSubmit}>
         <Title>
-          Stay in the Loop!
+          Stay in the Loop
         </Title>
         <Subtitle>
-          We will get in touch with exciting new developments and contests as we get closer to release.
+          Don't miss any of the exciting new developments and contests as we get closer to release!
         </Subtitle>
         <Name
           placeholder='Name'

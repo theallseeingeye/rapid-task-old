@@ -15,8 +15,6 @@ const Text = styled.div`
   margin-left: 20%;
   }
   @media (min-width: ${props => props.theme.giantscreen}) {
-  width: 60%;
-  margin-left: 20%;
   line-height: 2em;
   }
 `;

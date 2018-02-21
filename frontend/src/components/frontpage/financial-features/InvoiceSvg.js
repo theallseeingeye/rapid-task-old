@@ -6,6 +6,12 @@ const Svg = styled.svg`
   width: 35vw;
   position: fixed;
   top: 25vh; //Makes the invoice appear to the middle in fixed position
+    @media (min-width: ${props => props.theme.giantscreen}) {
+    width: 20vw;
+    }
+   max-width: 350px;
+
+  
 `;
 
 const CreditCard = styled.g`

@@ -2,21 +2,43 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import ManFinance from "./ManFinanceSvg"
 import InvoiceSvg from "./InvoiceSvg";
+import theme from "../../../global-styles/DefaultTheme";
 
 const Div = styled.div`
   overflow: hidden;
   margin: auto;
-  height:600vh;
+  height: 1400vw;
   position: relative;
+  @media (min-width: ${props => props.theme.tabletscreen}) {
+  height: 660vh;
+  }
+`;
+
+const Svg = styled.svg`
+  width: 140vw;
+  margin: auto;
+  position: absolute;
+  transform: translateX(-29.4%);
+  z-index: -3;
+  @media (min-width: ${props => props.theme.desktopscreen}) {
+  max-width: 1500px; // To keep the layers from getting too big
+  }
 `;
 
 const FinanceTitle = styled.p`
   font-family: ${props => props.theme.Robotofont};
-  font-weight: 900;
+  //font-weight: 900;
   font-size: 2.5em;
   text-align: right;
   width: 99%;
   position: absolute;
+  z-index: 2;
+  @media (min-width: ${props => props.theme.tabletscreen}) {
+  font-weight: 900;
+  }
+  @media (min-width: ${props => props.theme.giantscreen}) {
+  width: 79%;
+  }
 `;
 
 const WhiteDiv = styled.div` // This div box is to help hide the invoice scroll. Older mobile delays the appearance.
@@ -24,24 +46,31 @@ const WhiteDiv = styled.div` // This div box is to help hide the invoice scroll.
   z-index: -1;
   background-color: white;
   width: 100%;
-  height: 45vh;
+  height: 30vh;
 `;
 
 const RightColumn = styled.div`
+  width: 65vw;
   flex: 1; // width of flexbox compared to others
-  Width: 65vw;
   margin-top: 50vh;
+      @media (min-width: ${props => props.theme.giantscreen}) {
+   width: 80vw;
+  }
 `;
 
 const LeftColumn = styled.div`
   width: 35vw;
-  z-index: -5;
+  z-index: -2;
   position: relative;
+  max-width: 350px;
+      @media (min-width: ${props => props.theme.giantscreen}) {
+   width: 20vw;
+  }
 `;
 
 const FlexContainerLeft = styled.div`
   //display: flex;
-  //justify-content: left;
+
   float: right;
   //display: block;
   margin-right: 98%;
@@ -51,13 +80,20 @@ const FlexContainerRight = styled.div`
   // Flex box container options
   display: flex;
   flex-direction: column;
-  
+  justify-content: space-evenly;
   // Alignment 
-  height: 350vh;
+  height: 1300vw;
+  @media (min-width: ${props => props.theme.tabletscreen}) {
+  height: 600vh;
+  font-size: 1.5em;
+  }
 `;
 
 const Columns = styled.div`
   display: flex;
+  @media (min-width: ${props => props.theme.giantscreen}) {
+  margin: 0 15% 0 15%;
+  }
 `;
 
 
@@ -67,6 +103,7 @@ const Title1 = styled.div`
   font-weight: 900;
   padding-left: 10px;
   padding-right: 10px;
+  flex-grow: 0.001;
 `;
 
 const Context1 = styled.div`
@@ -75,6 +112,7 @@ const Context1 = styled.div`
   padding-right: 10px;
   font-weight: 400;
   text-align: justify;
+  flex-grow: 1;
 `;
 
 const MainContent = styled.p`
@@ -82,10 +120,17 @@ const MainContent = styled.p`
   font-family: ${props => props.theme.Robotofont};
   float: right;
   text-align: right;
-  margin-right: 2%;
+  margin: 35vh 2% 5vh 0;
+  z-index: 1;
   @media (min-width: ${props => props.theme.tabletscreen}) {
-    font-size: 1.5em;
-    opacity: 0.7;
+    margin-top: 51vh;
+    margin-left: 10vh;
+  }
+  @media (min-width: ${props => props.theme.desktopscreen}) {
+    margin-top: 75vh; 
+  }
+  @media (min-width: ${props => props.theme.giantscreen}) {
+    margin-top: 60vh; 
   }
 `;
 
@@ -101,6 +146,12 @@ const DivEnd = styled.div`
 
 
 class FinancialFeatures extends Component {
+    constructor(props) {
+    super(props);
+
+    this.color = theme.logoblue;
+    this.color2 = "#9ed4fa";
+  }
   render() {
     return (
       <Div>
@@ -108,7 +159,10 @@ class FinancialFeatures extends Component {
         <FinanceTitle id="InvoiceActivateTrigger">Automated Accounting</FinanceTitle>
 
         <ManFinance/>
-
+        <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 884.84 1122.59">
+          <rect x="203.03" y="339.48" width="33.41" height="795.04" rx="16.7" ry="16.7" transform="translate(117.58 1391.58) rotate(-135)" fill={this.color}/>
+          <rect x="122.49" y="491.29" width="72.46" height="752.88" rx="36.23" ry="36.23" transform="translate(-79.02 1571.6) rotate(-135)" fill={this.color2}/>
+        </Svg>
         <Columns>
 
           <LeftColumn>

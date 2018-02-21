@@ -8,9 +8,9 @@ const Svg = styled.svg`
   position: absolute;
   transform: translateX(-29.4%);
   z-index: 1;
-  
-    @media (min-width: ${props => props.theme.desktopscreen}) {
-   max-width: 1500px; // To keep the layers from getting too big
+  @media (min-width: ${props => props.theme.desktopscreen}) {
+  max-width: 1500px; // To keep the layers from getting too big
+  }
  `;
 
 class ManFinance extends Component {
@@ -24,11 +24,11 @@ class ManFinance extends Component {
     return (
       <Svg id="Background" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 884.84 1122.59">
         <rect id="DarkLarge" x="130.45" y="70.49" width="196.39" height="1029.04" rx="98.2" ry="98.2" transform="translate(240.27 1138.42) rotate(-135)" fill={this.color2}/>
-        <rect id="MediumSmall" x="203.03" y="339.48" width="33.41" height="795.04" rx="16.7" ry="16.7" transform="translate(117.58 1391.58) rotate(-135)" fill={this.color}/>
+
         <rect id="MediumLarge" x="-57.45" y="45.54" width="342.91" height="907.21" rx="171.45" ry="171.45" transform="translate(105.28 910.77) rotate(-135)" fill={this.color}/>
         <rect id="MediumMedium" x="8.42" y="-64.45" width="33.41" height="633.7" rx="16.7" ry="16.7" transform="translate(128.03 426.71) rotate(-135)" fill={this.color}/>
         <rect id="DarkMedium" x="55.17" y="-110.11" width="72.46" height="974.1" rx="36.23" ry="36.23" transform="translate(153.1 686.18) rotate(-135)" fill={this.color2}/>
-        <rect id="DarkMedium-2" data-name="DarkMedium" x="122.49" y="491.29" width="72.46" height="752.88" rx="36.23" ry="36.23" transform="translate(-79.02 1571.6) rotate(-135)" fill={this.color2}/>
+
         <rect id="trail" x="171.1" y="285.65" width="29.09" height="558.44" rx="13" ry="13" transform="translate(181.09 1073.63) rotate(-135)" fill="#fff" opacity="0.29"/>
         <path d="M368.51,384.29q4.28,6.57,3.92,10.9t-4.4,8.53a16.7,16.7,0,0,1-9.82,5.19,12.58,12.58,0,0,1-10.32-3.18l-3.72,3.87-2.38-2.28,3.67-3.82q-8-9.83.85-20.27l4.31,4.14q-5.51,6.71-1.51,12.33l13.42-14q-7.05-10.67.49-18.51,4.25-4.42,9.27-4.78a13.63,13.63,0,0,1,9.56,3.19l3.7-3.84,2.38,2.28-3.7,3.84q7.26,8.28,0,17.41l-4.33-4.16q4.11-5,.71-9.45Zm-1.85-2.83,11.59-12.06q-5.57-3.58-10.57,1.61-2.69,2.8-2.61,5.32A10.84,10.84,0,0,0,366.66,381.46ZM351.5,402q5.83,4.21,11.92-2.13a9.13,9.13,0,0,0,2.8-5q.3-2.4-1.88-6.23Z" transform="translate(263.61 -21.93)" fill="green"/>
         <rect x="225.53" y="272.87" width="27.3" height="771.52" rx="13" ry="13" transform="translate(206.19 1271.56) rotate(-135)" fill="#fff" opacity="0.29"/>

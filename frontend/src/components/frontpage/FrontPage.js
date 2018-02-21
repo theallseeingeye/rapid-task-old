@@ -43,14 +43,17 @@ const ClientContainer = styled.div`
 `;
 
 const CalendarContainer = styled.div`
-  height: 130vh;
+  height: 170vh;
   @media (min-width: ${props => props.theme.tabletscreen}) {
   height: 145vh;
   }
 `;
 
 const FinancialContainer = styled.div`
-  height: 600vh;
+  height: 1400vw;
+  @media (min-width: ${props => props.theme.tabletscreen}) {
+  height: 660vh;
+  }
 `;
 
 const AnalyticsContainer = styled.div`

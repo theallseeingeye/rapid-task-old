@@ -6,7 +6,6 @@ const Svg = styled.svg`
   margin: auto;
   min-width: 350px;
   max-width: 800px;
-  border: solid red;
   flex-grow: 3;
   @media (min-width: ${props => props.theme.tabletscreen}) {
   height: 75vh;

@@ -56,9 +56,6 @@ const FinancialContainer = styled.div`
   }
 `;
 
-const AnalyticsContainer = styled.div`
-  height: 100vh;
-`;
 
 const AboutContainer = styled.div`
   height: 35vh;
@@ -101,9 +98,9 @@ class FrontPage extends Component {
         <FinancialContainer>
           <FinancialFeatures/>
         </FinancialContainer>
-        <AnalyticsContainer>
-          <AnalyticsFeatures/>
-        </AnalyticsContainer>
+
+        <AnalyticsFeatures/>
+
         <AboutContainer>
           <About/>
         </AboutContainer>

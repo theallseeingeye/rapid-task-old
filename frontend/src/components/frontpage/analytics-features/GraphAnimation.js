@@ -3,16 +3,8 @@ import styled from 'styled-components';
 import {TweenMax} from 'gsap';
 import theme from "../../../global-styles/DefaultTheme";
 
-const Div = styled.div`
-  width: 100%;
-  position: absolute;
-  //border: solid black;
-`;
-
 const Svg = styled.svg`
-  width: 50%;
-  border: solid black;
-  border-width: 0 0 3px 3px;
+  width: 100%;
 `;
 
 const Polyline = styled.polygon`
@@ -558,11 +550,9 @@ class GraphAnimation extends Component {
     }
 
     return (
-      <Div>
-        <Svg id="ChartSvg" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-          <PolyList/>
-        </Svg>
-      </Div>
+      <Svg id="ChartSvg" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+        <PolyList/>
+      </Svg>
     )
   }
 }

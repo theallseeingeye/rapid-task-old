@@ -6,7 +6,7 @@ import Arrow from "../global-svg/Arrow";
 
 const Div = styled.div`
   overflow: hidden;
-  width: 100vw;
+  //width: 100vw;
   margin: auto;
   position: relative; // Required to help arrange the divs- especially the trigger div, as we need it to the bottom.
 `;
@@ -59,22 +59,25 @@ const Context1 = styled.p`
 
 const Columns = styled.div`
   display: flex;
-  justify-content: center;
+  //justify-content: center;
+  //border: solid red;
+  width: 100%;
 `;
 
 const RightColumn = styled.div`
-  flex: 1; // width of flexbox compared to others
-  Width: 50vw;
+  //flex: 1; // width of flexbox compared to others
+  Width: 45vw;
   margin-top: 80vh;
 `;
 
 const LeftColumn = styled.div`
-  flex: 1;
-  width: 50vw;
+  //flex: 1;
+  width: 45vw;
+
 `;
 
 const FlexContainer = styled.div`
-  // Flex box container options
+   //Flex box container options
   display: flex;
   flex-direction: column;
   
@@ -86,7 +89,7 @@ const FlexContainer = styled.div`
 const EndTrigger = styled.div`
   bottom: 0;
   position: absolute;
-  height: 1px;
+  height: 1px; // Need this to give something to trigger on.
   width: 100%;
 `;
 

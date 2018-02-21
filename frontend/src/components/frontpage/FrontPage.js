@@ -21,10 +21,6 @@ const Arrow = styled.div`
   height: 30vh;
 `;
 
-const FeaturesContainer = styled.div`
-  height: 130vh;
-`;
-
 const QuotesContainer = styled.div`
   height: 600vh;
   
@@ -77,9 +73,7 @@ class FrontPage extends Component {
         <Arrow>
           <Introduction/>
         </Arrow>
-        <FeaturesContainer>
-          <Features/>
-        </FeaturesContainer>
+        <Features/>
         <MapsContainer>
           <CityAnimation/>
         </MapsContainer>

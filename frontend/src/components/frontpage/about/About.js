@@ -24,7 +24,7 @@ class About extends Component {
     return (
       <div>
         <Text>
-          Our goal is to help make running and growing your business easier than ever!
+          Our goal is to help you run and grow your business with more ease than ever!
           At Rapid Task, we are still working on building our business too.
           We are currently seeking investment in order to expand our team so we can deliver a first-rate product to you sooner.
           If you are interested in getting in touch with our team we can be reached at <br/>

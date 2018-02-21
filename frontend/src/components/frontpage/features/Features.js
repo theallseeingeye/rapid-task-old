@@ -4,7 +4,7 @@ import DevicesSVG from './DeviceSvg';
 import CloudsSvg from "./CloudsSvg";
 
 const FeatureDiv = styled.div`
-  height: 130vh;
+  height: 145vh;
   position: relative;
   width: 100%;
   background: linear-gradient(white 20%, ${props => props.theme.logoblue} 27%, ${props => props.theme.logoblue} 27%);
@@ -42,9 +42,10 @@ const List = styled.div`
   list-style: none;
   text-align: center;
   margin: auto;
-  margin-top: 2em;
-  margin-bottom: 2em;
-  height: 50vh;
+  height: 70vh;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
 `;
 
 const ListItem = styled.p`

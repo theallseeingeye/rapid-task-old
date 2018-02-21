@@ -10,6 +10,7 @@ const theme = {
 
   // Colors
   mainbackground: 'white',
+  bluebackground: 'rgba(63,169,245,1)',
 
   // Screen Size Break-points
   giantscreen: '1170px',

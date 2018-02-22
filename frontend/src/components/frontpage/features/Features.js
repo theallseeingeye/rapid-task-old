@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import DevicesSVG from './DeviceSvg';
-import CloudsSvg from "./CloudsSvg";
+import DevicesSVG from './Svg/DeviceSvg';
+import CloudsSvg from "./Svg/CloudsSvg";
 
 const FeatureDiv = styled.div`
-  height: 130vh;
+  height: 145vh;
   position: relative;
   width: 100%;
   background: linear-gradient(white 20%, ${props => props.theme.logoblue} 27%, ${props => props.theme.logoblue} 27%);
@@ -12,10 +12,10 @@ const FeatureDiv = styled.div`
 
 const TextTitle = styled.p`
   font-family: ${props => props.theme.Robotofont};
-  font-weight: 900;
   text-align: center;
   margin: auto;
   padding: 4px;
+  font-size: 1.2em;
 `;
 
 const TextFooter = styled.p`
@@ -42,9 +42,10 @@ const List = styled.div`
   list-style: none;
   text-align: center;
   margin: auto;
-  margin-top: 2em;
-  margin-bottom: 2em;
-  height: 50vh;
+  height: 70vh;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
 `;
 
 const ListItem = styled.p`
@@ -59,6 +60,7 @@ const ListText = styled.a`
   font-size: 1.0em;
   color: white;
 `;
+
 
 class Features extends Component {
   render() {
@@ -96,7 +98,7 @@ class Features extends Component {
           </ListItem>
           <ListItem>
             <ListText>
-              Provides Accurate Performance of Employees
+              Provides Statistical Performance Reports of Employees
             </ListText>
           </ListItem>
           <ListItem>
@@ -116,7 +118,7 @@ class Features extends Component {
           </ListItem>
           <ListItem>
             <ListText>
-              Understand Your Business Health With Powerful Analytics
+              Understand Your Business's Health With Powerful Analytics
             </ListText>
           </ListItem>
         </List>

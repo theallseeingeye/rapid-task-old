@@ -4,9 +4,8 @@ import {TweenMax} from 'gsap';
 
 
 const Svg = styled.svg`
-  height: 120vh;
-  margin-left: 5%;
-  margin-top: 30vh;
+  height: 145vh;
+  margin-left: 5px;
 `;
 
 
@@ -29,19 +28,15 @@ class CalendarGraph extends Component {
 
     function AnimateCalendar() {
 
-
       const CalendarAnimate = new TimelineMax({onComplete: AnimateCalendar}); // Call itself once animation completes.
-
 
         for (let i = 0; i < dataCount; i++) {
         const random = Math.random();
-        // const randomColor = ("rgba(63, 169, 245," + random + ")");
-
-          CalendarAnimate.to(BoxNumber[i], 0.05, {fill: ("rgba(63, 169, 245," + random + ")")});
+          // const randomColor = ("rgba(63, 169, 245," + random + ")");
+          CalendarAnimate.to(BoxNumber[i], 0.05, {fill: ("rgba(255, 255, 255," + random + ")")});
         }
-        CalendarAnimate.to(BoxNumber, 2, {fill: "none"});
+        CalendarAnimate.to(BoxNumber, 2, {fill: "white"});
       }
-
       AnimateCalendar();
 
   }
@@ -51,23 +46,23 @@ class CalendarGraph extends Component {
   render() {
     return (
       <Svg viewBox="0 0 150 950">
-        <svg viewBox="0 0 150 950">
-          <text x="40" y="35"> YEAR </text>
-          <text x="40" y="-125" transform="rotate(90)" > Jan </text>
-          <text x="110" y="-125" transform="rotate(90)" > Feb </text>
-          <text x="178" y="-125" transform="rotate(90)" > Mar </text>
-          <text x="265" y="-125" transform="rotate(90)" > Apr </text>
-          <text x="330" y="-125" transform="rotate(90)" > May </text>
-          <text x="398" y="-125" transform="rotate(90)" > Jun </text>
-          <text x="485" y="-125" transform="rotate(90)" > Jul </text>
-          <text x="553" y="-125" transform="rotate(90)" > Aug </text>
-          <text x="620" y="-125" transform="rotate(90)" > Sep </text>
-          <text x="705" y="-125" transform="rotate(90)" > Oct </text>
-          <text x="772" y="-125" transform="rotate(90)" > Nov </text>
-          <text x="840" y="-125" transform="rotate(90)" > Dec </text>
+        <svg viewBox="0 0 150 950" fill="white">
+          <text x="40" y="15"> YEAR </text>
+          <text x="20" y="-125" transform="rotate(90)" > Jan </text>
+          <text x="90" y="-125" transform="rotate(90)" > Feb </text>
+          <text x="158" y="-125" transform="rotate(90)" > Mar </text>
+          <text x="245" y="-125" transform="rotate(90)" > Apr </text>
+          <text x="310" y="-125" transform="rotate(90)" > May </text>
+          <text x="378" y="-125" transform="rotate(90)" > Jun </text>
+          <text x="465" y="-125" transform="rotate(90)" > Jul </text>
+          <text x="533" y="-125" transform="rotate(90)" > Aug </text>
+          <text x="600" y="-125" transform="rotate(90)" > Sep </text>
+          <text x="685" y="-125" transform="rotate(90)" > Oct </text>
+          <text x="752" y="-125" transform="rotate(90)" > Nov </text>
+          <text x="820" y="-125" transform="rotate(90)" > Dec </text>
         </svg>
-        <g transform="translate(0 40) scale(-1 1) rotate(90)">
-          <g fill="none" stroke="#ccc">
+        <g transform="translate(0 18) scale(-1 1) rotate(90)">
+          <g fill="white" stroke="#ccc">
             <rect width="17" height="17" x="0" y="17"/>
             <rect width="17" height="17" x="0" y="34" id="calendarBoxId0">
                 <title>1990-01-02: 2.1%</title>

@@ -5,20 +5,21 @@ import theme from "../../../global-styles/DefaultTheme";
 
 const Svg = styled.svg`
   width: 100%;
+  margin-top: 20vh;
 `;
 
 const Polyline = styled.polygon`
-  stroke: ${props => props.theme.logoblue};
+  stroke: rgba(255, 255, 255, 0.8);
   stroke-width: 1px;
 `;
 
 class GraphAnimation extends Component {
 
-  constructor(props) {
-    super(props);
-
-    this.color = theme.logoblue; // Colors the bars blue
-  }
+  // constructor(props) {
+  //   super(props);
+  //
+  //   this.color = theme.logoblue; // Colors the bars blue
+  // }
 
   componentDidMount() {
     const barWidth = 5;
@@ -35,9 +36,9 @@ class GraphAnimation extends Component {
     // Selects the color of the line based on previous bar value
     function colorizer(polyline, polyline1) {
       if (polyline >= polyline1) {
-        return theme.logoblue;
+        return "rgba(255, 255, 255, 0.8)";
       } else {
-        return "red";
+        return "rgba(255, 0, 0, 0.8)";
       }
     }
 

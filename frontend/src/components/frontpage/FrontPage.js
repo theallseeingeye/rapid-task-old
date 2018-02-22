@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import Introduction from "./introduction/Introduction";
 import Features from "./features/Features";
 import Quotes from "./quote-features/QuoteFeatures";
 import PainterLadder from "./employee-features/PainterLadder";
@@ -18,14 +17,6 @@ import MainPage from "./main-page/MainPage";
 
 import CityAnimation from "./map-features/MapFeatures";
 
-const Arrow = styled.div`
-  height: 30vh;
-`;
-
-const FeaturesContainer = styled.div`
-  height: 130vh;
-`;
-
 const QuotesContainer = styled.div`
   height: 600vh;
   
@@ -40,15 +31,8 @@ class FrontPage extends Component {
     return (
       <div>
         <MainPage/>
-        <Arrow>
-          <Introduction/>
-        </Arrow>
-        <FeaturesContainer>
-          <Features/>
-        </FeaturesContainer>
-        <MapsContainer>
-          <CityAnimation/>
-        </MapsContainer>
+        <Features/>
+        <CityAnimation/>
         <QuotesContainer>
           <Quotes/>
         </QuotesContainer>

@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import styled, {keyframes} from 'styled-components';
 
-const IntroductionDiv = styled.div`
-  //width: 100%;
+const Div = styled.div`
+  position: absolute;
+  height: 17vh;
+  bottom: 4vh;
+  width: 100%;
+  align-content: center;
 `;
 
 const Text = styled.p`
@@ -12,7 +16,7 @@ const Text = styled.p`
   margin: auto;
 `;
 
-const Arrow = styled.svg`
+const ArrowSvg = styled.svg`
   height: 10vh;
   margin: auto;
   display: block;
@@ -35,22 +39,22 @@ const ArrowAnimation = styled.g`
   animation-timing-function: ease-in-out;
 `;
 
-class Introduction extends Component {
+class Arrow extends Component {
   render() {
     return (
-      <IntroductionDiv>
+      <Div>
         <Text>
           Let us show you how you can perfect your business!
         </Text>
-        <Arrow xmlns="http://www.w3.org/2000/svg" viewBox="0 0 473.03 300">
+        <ArrowSvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 473.03 300">
           <title>Rapid Task Arrow</title>
           <ArrowAnimation>
             <path d="M307.25,799l-201-201a10.27,10.27,0,0,0-14.52,0l-18,18a10.27,10.27,0,0,0,0,14.52L307.25,864,540.76,630.51a10.27,10.27,0,0,0,0-14.52l-18-18a10.27,10.27,0,0,0-14.52,0Z" transform="translate(-70.73 -595)" fill="#3fa9f5"/>
           </ArrowAnimation>
-        </Arrow>
-      </IntroductionDiv>
+        </ArrowSvg>
+      </Div>
     );
   }
 }
 
-export default Introduction;
+export default Arrow;

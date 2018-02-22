@@ -218,10 +218,11 @@ class FinancialFeatures extends Component {
                 from your quote and added revisions made by your business.
               </Context1>
               <Title1 id="InvoiceLine5ATrigger">
-                Applies
+                Easily Organize Expenses for Each Job
               </Title1>
               <Context1>
-                All of the work done by subcontractors is automatically included and just needs to be reviewed
+                With an easy platform for your employees to enter expenses, You will be able to quickly review and verify
+                the expenses.
               </Context1>
               <Title1 id="InvoiceLine5BTrigger">
                 Subcontracted margins

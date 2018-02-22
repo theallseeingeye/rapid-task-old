@@ -15,6 +15,16 @@ const Div = styled.div`
   width: 100%;
   overflow: hidden;
   height: 80vh;
+  
+  @media (min-width: ${props => props.theme.tabletscreen}) {
+    height: 65vh;
+  }
+  @media (min-width: ${props => props.theme.desktopscreen}) {
+    height: 65vh;
+  }
+  @media (min-width: ${props => props.theme.giantscreen}) {
+    height: 70vh;
+  }
 `;
 
 const Svg = styled.svg`
@@ -22,11 +32,21 @@ const Svg = styled.svg`
   transform: translate(0px, 100px);
   position: absolute;
   z-index: -3;
-`;
-
-const BottomCity = styled.image`
-  //transform: translate(500px, 100px) scale(0.5);
-  xlinkHref: ${CityBottom};
+  
+  @media (min-width: ${props => props.theme.tabletscreen}) {
+    width: 70vw;
+    margin-left: 18vw;
+  }
+  
+  @media (min-width: ${props => props.theme.desktopscreen}) {
+    width: 50vw;
+    margin-left: 25vw;
+  }
+  
+  @media (min-width: ${props => props.theme.giantscreen}) {
+    width: 500px;
+    margin-left: 30vw;
+  }
 `;
 
 const CityLawn = styled.image`
@@ -38,16 +58,11 @@ const TopCity = styled.image`
 `;
 
 const TruckContainer = styled.g`
-  //transform: translate(400px, 350px) scale(0.18);
   visibility: hidden;
 `;
 
 const PinContainer = styled.g`
-  //transform: scale(0.1);
   visibility: hidden;
-`;
-
-const Polygon = styled.g`
 `;
 
 const PointerContainer = styled.g`
@@ -98,8 +113,6 @@ const TruckText = PinText.extend`
 const PolyText = PinText.extend`
   font-size: 1.0em;
 `;
-
-
 
 class MapAnimation extends Component {
   constructor(props) {
@@ -194,8 +207,7 @@ class MapAnimation extends Component {
     return (
       <Div>
         <Svg xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000" innerRef={x => this.svg = x}>
-          {/*<BottomCity xlinkHref={CityBottom} width="100%" height="100%"/>*/}
-          <BottomCity media="(min-width: 500px)" xlinkHref={CityBottom} width="100%" height="100%"/>
+          <image xlinkHref={CityBottom} width="100%" height="100%"/>
           <CityLawn xlinkHref={CityPark} width="23%" height="23%"/>
           <TruckContainer innerRef={x => this.truck = x}>
             <BlueTruck/>
@@ -204,7 +216,7 @@ class MapAnimation extends Component {
           <PinContainer innerRef={x => this.pin = x}>
             <MapPin/>
           </PinContainer>
-          <Polygon>
+          <g>
             <PolyFill innerRef={x => this.polyFill = x} fill="#ff4d4d" stroke="#e00000" strokeMiterlimit="10" strokeWidth="2"/>
             <CornerPoint innerRef={x => this.trc = x} cx={this.topRightCornerX} cy={this.topRightCornerY} r="4" fill="#ff4d4d" stroke="#e00000" strokeMiterlimit="10" strokeWidth="2"/>
             <CornerPoint innerRef={x => this.brc = x} cx={this.bottomRightCornerX} cy={this.bottomRightCornerY} r="4" fill="#ff4d4d" stroke="#e00000" strokeMiterlimit="10" strokeWidth="2"/>
@@ -214,7 +226,7 @@ class MapAnimation extends Component {
             <LineDraw innerRef={x => this.lineLeft = x} fill="#fff" stroke="#e00000" strokeMiterlimit="10" strokeWidth="2"/>
             <LineDraw innerRef={y => this.lineTop = y} fill="#fff" stroke="#e00000" strokeMiterlimit="10" strokeWidth="2"/>
             <LineDraw innerRef={x => this.lineRight = x} fill="#fff" stroke="#e00000" strokeMiterlimit="10" strokeWidth="2"/>
-          </Polygon>
+          </g>
           <PointerContainer innerRef={x => this.pointer = x}>
             <Pointer/>
           </PointerContainer>

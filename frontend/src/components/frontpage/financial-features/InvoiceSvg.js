@@ -249,6 +249,7 @@ class InvoiceSvg extends Component {
       })
       .setTween(tweenEnd)
       .setPin(mainSVG)
+      .offset(300)
       .addTo(controller);
   }
 

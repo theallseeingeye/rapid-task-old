@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import DevicesSVG from './DeviceSvg';
-import CloudsSvg from "./CloudsSvg";
+import DevicesSVG from './Svg/DeviceSvg';
+import CloudsSvg from "./Svg/CloudsSvg";
 
 const FeatureDiv = styled.div`
   height: 145vh;
@@ -12,10 +12,10 @@ const FeatureDiv = styled.div`
 
 const TextTitle = styled.p`
   font-family: ${props => props.theme.Robotofont};
-  font-weight: 900;
   text-align: center;
   margin: auto;
   padding: 4px;
+  font-size: 1.2em;
 `;
 
 const TextFooter = styled.p`
@@ -61,6 +61,7 @@ const ListText = styled.a`
   color: white;
 `;
 
+
 class Features extends Component {
   render() {
     return (
@@ -97,7 +98,7 @@ class Features extends Component {
           </ListItem>
           <ListItem>
             <ListText>
-              Provides Accurate Performance of Employees
+              Provides Statistical Performance Reports of Employees
             </ListText>
           </ListItem>
           <ListItem>
@@ -117,7 +118,7 @@ class Features extends Component {
           </ListItem>
           <ListItem>
             <ListText>
-              Understand Your Business Health With Powerful Analytics
+              Understand Your Business's Health With Powerful Analytics
             </ListText>
           </ListItem>
         </List>

@@ -7,7 +7,8 @@ const Svg = styled.svg`
   margin: auto;
   position: absolute;
   transform: translateX(2%);
-  z-index: -5;
+  z-index: -3;
+  margin-top: 5vh;
   
   // @media (min-width: {props => props.theme.tabletscreen}) {
   //  max-width: 1500px; // To keep the layers from getting too big
@@ -15,8 +16,8 @@ const Svg = styled.svg`
   // }
   
   @media (min-width: ${props => props.theme.desktopscreen}) {
-   max-width: 1500px; // To keep the layers from getting too big
-   transform: translateX(15%); // Shift the svg more to the right side
+   max-width: 1000px; // To keep the layers from getting too big
+   transform: translateX(50%); // Shift the svg more to the right side
   }
 `;
 

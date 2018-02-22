@@ -2,47 +2,58 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import ParkingLotAnimation from './ParkingLotLayers/ParkingLotAnimation';
 import ManQuoting from "./ParkingLotLayers/ManQuoting";
-import Arrow from "../global-svg/Arrow";
 
 const Div = styled.div`
   overflow: hidden;
-  //width: 100vw;
   margin: auto;
   position: relative; // Required to help arrange the divs- especially the trigger div, as we need it to the bottom.
+  border: solid green;
 `;
 
 const QuoteTitle = styled.p`
-  margin: auto;
+  margin: 0 auto;
   font-family: ${props => props.theme.Robotofont};
-  font-weight: 900;
   font-size: 2.5em;
   text-align: center;
-  padding-left: 2px;
   position: absolute;
-  margin-top: 5vh;
+  margin-top: 15vh;
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 100%;
+  
+  @media (min-width: ${props => props.theme.tabletscreen}) {
+ 
+  }
+  
+  @media (min-width: ${props => props.theme.desktopscreen}) {
+    margin-left: 25vw;
+    text-align: left;
+    margin-top: 20vh;
+  }
+  
+  
 `;
 
 const MainContext = styled.p`
-  width: 100%;
+  width: 50%;
+  margin: auto;
   text-align: left;
-  margin-top: 50vh;
+  margin-left: 5px;
+  font-size: 1.2em;
+  font-family: ${props => props.theme.RobotoCondensedfont};
 `;
 
 const Example = styled.p`
   font-family: ${props => props.theme.Robotofont};
   float: right;
   text-align: center;
-  //border: solid pink;
   margin: auto;
   margin-top: 15vh;
 `;
 
 const Title1 = styled.p`
   flex-grow: 0.1;
-  //border: solid red;
   margin: auto;
   font-family: ${props => props.theme.Robotofont};
-  font-weight: 900;
   text-align: center;
   width: 100%;
 `;
@@ -52,8 +63,6 @@ const Context1 = styled.p`
   margin: auto;
   font-family: ${props => props.theme.RobotoCondensedfont};
   padding: 10px;
-  font-weight: 400;
-  font-size: 0.8em;
   text-align: justify;
 `;
 
@@ -73,6 +82,7 @@ const RightColumn = styled.div`
 const LeftColumn = styled.div`
   //flex: 1;
   width: 45vw;
+  margin-top: 80vh;
 
 `;
 
@@ -93,25 +103,44 @@ const EndTrigger = styled.div`
   width: 100%;
 `;
 
+const WhiteDiv = styled.div`
+  // This div is to block the animation from appearing near the top above the estimating man.
+  width: 100%;
+  height: 70vh;
+  position: absolute;
+  background: white;
+  z-index: -5;
+`;
+
+const WhiteBar = styled.div`
+  background-color: rgba(255, 255, 255, 0.8);
+  position: absolute;
+  width: 100%;
+  height: 28vh;
+  margin-top: 60vh;
+`;
+
+
 
 
 class Quotes extends Component {
   render() {
     return (
       <Div id="parentDiv">
-
+        <WhiteDiv/>
         <QuoteTitle>Automate Quotes</QuoteTitle>
         <ManQuoting/>
-
+        <WhiteBar>
+          <MainContext>
+            Providing accurate quotes can be tedious and time consuming. Rapid Task removes the tedious steps, allowing
+            you to build your quotes quckly. We allow easy custom estimating processes that works for your business.
+          </MainContext>
+        </WhiteBar>
         <Columns >
-
           <LeftColumn>
             {/*Elements tagged with id's for identifying triggers*/}
             <FlexContainer>
-              <MainContext>
-                Rapid Task removes the tedious steps of placing quotes for your jobs. Easily customize your
-                estimating process that works for your business.
-              </MainContext>
+
               <Example>
                 EXAMPLE
               </Example>
@@ -119,13 +148,12 @@ class Quotes extends Component {
                 Quoting a Parking Lot
               </Title1>
               <Context1>
-                Never repeat yourself and only enter data once!
-                Provide description of: <br/>
-                Select Customer<br/>
-                Add Location<br/>
-                Input Dimensions<br/>
-                All of this information is automatically carried across your business tasks
-
+                Rapid Task will automatically propagate data from existing Customers or assist in creating a new profile
+                for your customer. We want to make sure that you don't have to enter information more than once. Let us
+                handle your contacts with efficiency. After you select your customer you want to provide a quote for,
+                we help you follow steps that way information is never missed from your quotes. Lets start with the
+                Parking Lot that we want to build a quote for. The basic information will only require dimension of the
+                land you are developing on, then you select the tasks that are required for the construction.
               </Context1>
               <Title1 id="gravelTrigger">
                 First Step

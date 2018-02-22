@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import Introduction from "./introduction/Introduction";
 import Features from "./features/Features";
 import Quotes from "./quote-features/QuoteFeatures";
 import EmployeeFeatures from "./employee-features/EmployeeFeatures";
@@ -17,17 +16,9 @@ import MainPage from "./main-page/MainPage";
 
 import CityAnimation from "./map-features/MapFeatures";
 
-const Arrow = styled.div`
-  height: 30vh;
-`;
-
 const QuotesContainer = styled.div`
   height: 600vh;
   
-`;
-
-const MapsContainer = styled.div`
-  height: 110vh;
 `;
 
 const EmployeeContainer = styled.div`
@@ -52,7 +43,6 @@ const FinancialContainer = styled.div`
   }
 `;
 
-
 const AboutContainer = styled.div`
   height: 35vh;
 `;
@@ -70,13 +60,8 @@ class FrontPage extends Component {
     return (
       <div>
         <MainPage/>
-        <Arrow>
-          <Introduction/>
-        </Arrow>
         <Features/>
-        <MapsContainer>
-          <CityAnimation/>
-        </MapsContainer>
+        <CityAnimation/>
         <QuotesContainer>
           <Quotes/>
         </QuotesContainer>

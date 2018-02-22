@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import styled, {keyframes} from 'styled-components';
 import NavBar from "./../nav/Navbar";
 import Logo from "../global-svg/logo"
-import Guru from './../main-page/guru-man';
-import OfficeBackground from './../main-page/office-background';
+import Guru from './Svg/GuruManSvg';
+import OfficeBackground from './Svg/OfficeBackgroundSvg';
+import Arrow from './Svg/ArrowSvg';
 
-const TopDiv = styled.div`
-  height: 70vh;
+const Div = styled.div`
+  height: 100vh;
 `;
 
 const BackgroundContainer = styled.div`
@@ -15,15 +16,9 @@ const BackgroundContainer = styled.div`
   position: absolute;
   display: flex;
   justify-content: center;
-  // To fade the background
-  opacity: 0.4;
-  // To place behind all divs
-  z-index: -1;
-  // To hid the sides that are stretching beyond the div
-  overflow: hidden;
-`;
-
-const BackgroundBox = styled.div`
+  opacity: 0.4;   // To fade the background
+  z-index: -1;  // To place behind all divs
+  overflow: hidden;  // To hide the sides that are stretching beyond the div
 `;
 
 const LogoContainer = styled.div`
@@ -133,7 +128,7 @@ const LightSpeedIn = styled.div`
 class MainPage extends Component {
   render() {
     return (
-      <TopDiv>
+      <Div>
         <NavBar/>
         <LogoContainer>
           <LogoBox>
@@ -143,9 +138,9 @@ class MainPage extends Component {
           </LogoBox>
         </LogoContainer>
         <BackgroundContainer>
-          <BackgroundBox>
+          <div>
             <OfficeBackground/>
-          </BackgroundBox>
+          </div>
         </BackgroundContainer>
         <GuruContainer>
           <GuruBox>
@@ -165,7 +160,8 @@ class MainPage extends Component {
             </TextStyle3>
           </SloganBox>
         </SloganContainer>
-      </TopDiv>
+        <Arrow/>
+      </Div>
     );
   }
 }

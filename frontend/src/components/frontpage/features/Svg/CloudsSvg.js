@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Svg = styled.svg`
   width: 100%;
-  bottom: 0;
+  bottom: -1px; // Required to hide this phantom line that is showing up on some devices.
   position: absolute;
 `;
 

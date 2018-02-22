@@ -31,8 +31,9 @@ const Svg = styled.svg`
     
     
   @media (min-width: ${props => props.theme.desktopscreen}) {
-   max-width: 500px; // To keep the layers from getting too big
+   max-width: 400px; // To keep the layers from getting too big
    top: 10vh; // Adjust the layers to the middle vertical height
+   margin-left: 10%;
   }
 `;
 

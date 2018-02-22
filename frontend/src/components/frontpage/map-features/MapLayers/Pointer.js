@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 class Pointer extends Component {
   render() {
 

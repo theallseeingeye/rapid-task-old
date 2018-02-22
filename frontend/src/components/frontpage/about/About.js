@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
+const Div = styled.div`
+  height: 35vh;
+`;
 const Text = styled.div`
   font-family: ${props => props.theme.Robotofont};
   line-height: 1.4em;
@@ -22,7 +25,7 @@ const Text = styled.div`
 class About extends Component {
   render() {
     return (
-      <div>
+      <Div>
         <Text>
           Our goal is to help make running and growing your business easier than ever!
           At Rapid Task, we are still working on building our business too.
@@ -30,7 +33,7 @@ class About extends Component {
           If you are interested in getting in touch with our team we can be reached at <br/>
           inquiries@rapidtask.com
         </Text>
-      </div>
+      </Div>
     );
   }
 }

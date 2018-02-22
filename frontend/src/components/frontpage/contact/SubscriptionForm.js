@@ -7,6 +7,7 @@ const FormElements = styled.form`
   width: 100%;
   text-align: center;
   font-family: ${props => props.theme.Robotofont};
+  height: 48vh;
 `;
 
 const Title = styled.p`

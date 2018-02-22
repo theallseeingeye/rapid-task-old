@@ -2,26 +2,34 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import PainterThumbsUp from "./PainterThumbsUp";
 import PainterWalking from "./PainterWalking";
-import PainterLadder from "./PainterLadder";
-import PaintingBorder from "./PaintingBorder"
-
 
 const Div = styled.div`
-  width: 100%;
-  overflow: hidden;
+  height: 175vh;
+  @media (min-width: ${props => props.theme.tabletscreen}) {
+  height: 135vh;
+  }
+  @media (min-width: ${props => props.theme.desktopscreen}) {
+  height: 130vh;
+  }
+  @media (min-width: ${props => props.theme.giantscreen}) {
+  height: 140vh;
+  }
 `;
 
-const SubTitle = styled.h3`
-
-  //border: solid orange;
+const SubTitle = styled.p`
+  font-size: 1.33em;
 `;
 
 const TextArea = styled.div`
   font-family: ${props => props.theme.Robotofont};
-  //padding-top: 15vh; // adjusts the element from the top under the title
-  margin-top: 1vh;
-  //border: solid pink;
   position: absolute;
+  margin: 0 5px 0 5px;
+  @media (min-width: ${props => props.theme.tabletscreen}) {
+  font-size: 1.5em;
+  }
+  @media (min-width: ${props => props.theme.giantscreen}) {
+  margin: 0 20vw 0 20vw;
+  }
 `;
 
 
@@ -30,7 +38,7 @@ class EmployeeFeatures extends Component {
     return (
       <Div id="parkingLotEnd">
         {/*This id is the end trigger for parking lot layers*/}
-        <PainterLadder/>
+
         <TextArea>
           <p> Employees will know all the details of the task to perform the work. This was automatically pulled together
             from the quotes previously made. No more second guessing the job details.

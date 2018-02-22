@@ -5,10 +5,10 @@ import ProgressBar from './Progressbars';
 import RapidTaskLogo from './../../global-svg/logo'
 
 const Svg = styled.svg`
-  max-width: 80%;
-  height: 80vh;
+  width: 100%;
   margin: auto;
   display: block;
+  min-width: 360px;
 `;
 
 const HandPoint = styled.g`

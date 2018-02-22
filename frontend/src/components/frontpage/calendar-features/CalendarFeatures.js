@@ -5,8 +5,12 @@ import PhoneCalendar from './PhoneCalendar';
 const MainDiv = styled.div`
   margin: auto;
   position: relative;
-  height: 140vh;
+  height: 170vh;
+  margin: 0 5px 0 5px;
   font-family: ${props => props.theme.Robotofont};
+  @media (min-width: ${props => props.theme.tabletscreen}) {
+  height: 145vh;
+  }
   @media (min-width: ${props => props.theme.giantscreen}) {
   width: 60%;
   margin-left: 20%;
@@ -18,6 +22,7 @@ const Header = styled.p`
   display: block;
   width: 100%;
   font-size: 2.5em;
+  margin-top: 2em;
   @media (min-width: ${props => props.theme.tabletscreen}) {
   font-weight: 900;
   }
@@ -25,7 +30,6 @@ const Header = styled.p`
     width: 60%;
     margin-left: 20%;
   }
-  
 `;
 
 const FlexContainter = styled.div`
@@ -53,13 +57,14 @@ const Text = styled.div`
 
 const Subhead = styled.p`
   font-size: 2em;
+  margin-top: -0.5em;
 `;
 
 class CalendarFeatures extends Component {
   render() {
     return (
       <MainDiv>
-        <Header>No More Dealing with Complicated Schedules</Header>
+        <Header>No More Dealing With Complicated Schedules</Header>
         <FlexContainter>
           <Subhead>Let us handle the scheduling for you</Subhead>
           <Text>

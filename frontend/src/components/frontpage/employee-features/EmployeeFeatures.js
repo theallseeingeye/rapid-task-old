@@ -4,44 +4,28 @@ import PainterThumbsUp from "./PainterThumbsUp";
 import PainterWalking from "./PainterWalking";
 
 const Div = styled.div`
-  height: 175vh;
+  height: 225vh;
+  width: 100%;
+  max-width: 1200px;
+  max-height: 1350px;
+  margin: auto;
   @media (min-width: ${props => props.theme.tabletscreen}) {
-  height: 135vh;
-  }
-  @media (min-width: ${props => props.theme.desktopscreen}) {
-  height: 130vh;
-  }
-  @media (min-width: ${props => props.theme.giantscreen}) {
-  height: 140vh;
+  height: 100vh;
   }
 `;
 
 const SubTitle = styled.p`
-  font-size: 1.33em;
+  font-size: 1.5em;
 `;
 
 const TextArea = styled.div`
   font-family: ${props => props.theme.Robotofont};
-  position: absolute;
   margin: 0 5px 0 5px;
-  @media (min-width: ${props => props.theme.tabletscreen}) {
-  font-size: 1.5em;
-  }
-  @media (min-width: ${props => props.theme.giantscreen}) {
-  margin: 0 20vw 0 20vw;
-  }
-`;
-
-const Subheader = styled.div`
-  text-align: justify;
-  padding: 10px;
-  position: absolute;
 `;
 
 const TextSection = styled.div`
-  margin-top: 25vh;
+  margin-top: 5vh;
 `;
-
 
 class EmployeeFeatures extends Component {
   render() {
@@ -49,13 +33,13 @@ class EmployeeFeatures extends Component {
       <Div id="parkingLotEnd">
         {/*This id is the end trigger for parking lot layers*/}
         <TextArea>
-          <Subheader>
+
             You can empower your employees by making them feel responsibile and important. Rapid Task can provide employees
             transparent work schedule with job details in advanced. Employees can be informed each job details that were
             carried from the build of the quotes. Your employees will feel more better prepared. Happier employees creates
             a better business.
 
-          </Subheader>
+
           <TextSection>
             <SubTitle>
               Time Tracking

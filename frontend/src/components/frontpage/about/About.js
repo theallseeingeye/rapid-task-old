@@ -10,15 +10,16 @@ const Text = styled.div`
   text-align: center;
   width: 95%;
   margin: 2.5%;
+  max-width: 1200px;
   @media (min-width: ${props => props.theme.tabletscreen}) {
   font-size: 1.5em;
   }
   @media (min-width: ${props => props.theme.desktopscreen}) {
-  width: 60%;
-  margin-left: 20%;
+  
   }
   @media (min-width: ${props => props.theme.giantscreen}) {
   line-height: 2em;
+  margin: auto;
   }
 `;
 

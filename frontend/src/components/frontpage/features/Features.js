@@ -8,6 +8,27 @@ const FeatureDiv = styled.div`
   position: relative;
   width: 100%;
   background: linear-gradient(white 20%, ${props => props.theme.logoblue} 27%, ${props => props.theme.logoblue} 27%);
+  
+  
+  
+  
+  @media (min-width: ${props => props.theme.tabletscreen}) {
+
+  }
+  @media (min-width: ${props => props.theme.desktopscreen}) {
+    max-height: 1500px;
+  }
+  @media (min-width: ${props => props.theme.giantscreen}) {
+
+  }
+  
+  
+  
+  
+
+  
+  
+  
 `;
 
 const TextTitle = styled.p`
@@ -46,6 +67,21 @@ const List = styled.div`
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
+
+  margin-top: 5vh;
+  
+  
+  
+  @media (min-width: ${props => props.theme.tabletscreen}) {
+
+  }
+  @media (min-width: ${props => props.theme.desktopscreen}) {
+      max-height: 500px;
+  }
+  @media (min-width: ${props => props.theme.giantscreen}) {
+
+  }
+  
 `;
 
 const ListItem = styled.p`

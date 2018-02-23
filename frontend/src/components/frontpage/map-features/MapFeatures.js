@@ -18,13 +18,13 @@ const Div = styled.div`
   height: 80vh;
   
   @media (min-width: ${props => props.theme.tabletscreen}) {
-    height: 65vh;
+    height: 66vh;
   }
   @media (min-width: ${props => props.theme.desktopscreen}) {
-    height: 65vh;
+    height: 51vh;
   }
   @media (min-width: ${props => props.theme.giantscreen}) {
-    height: 70vh;
+    height: 51vh;
   }
 `;
 
@@ -92,14 +92,15 @@ class CityAnimation extends Component {
           <MapAnimation/>
         </Div>
         <MapDetails>
-          Place markers to very specific areas of the map. Each marker can provide description of the tasks for your
-          clients and employees to read. This can save yourself multiple trips to the site explaining the job tasks <br/><br/>
-          Use of GPS on mobile devices will help guide your employees to use the most efficient route to the job sites.
-          Also monitor odd activities, such as employees not being on the jobsite while clocking their time. These features
-          are available to help your business save unnecessary expenses. <br/><br/>
-          Useful measuring tools that can accurately measure out regions of the properties to calculate for your quotes.
-          You have options of calculating square footage, linear foot and more. Have ease to pick the units for your
-          calculations. You can link each drawn measurement to your quotes.
+          Integrating the use of maps is a smart choice for keeping your business organized. You can use the high detailed
+          satellite imagery to help illustrate the job details for your employees. Save on equipment expenses by directing
+          your employees the most efficient route to work sites. Rapid Task can monitor the gps locations
+          of the employees to the scheduled work locations, to ensure schedule is being kept, if not notifications if there are any discrepancy. The use of
+          maps are not only for your employees, but also your clients. As you build your quotes, you can use the maps to
+          mark and measure for your quotes. With that you can choose to show the details of the markings with the clients
+          to ensure that you both are on the same terms of agreement. All of your markings and notes made from each
+          job will be stored for your convenience and to calculate analytics to help further perfect your business. This
+          is an excellent way keep a very detailed record of your business automatically for any legal matters.
         </MapDetails>
       </MainDiv>
     );

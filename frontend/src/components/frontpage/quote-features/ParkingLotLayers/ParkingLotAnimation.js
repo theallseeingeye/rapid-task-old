@@ -14,9 +14,11 @@ import LampsLayer from "./LampsLayer";
 import TreesLayer from "./TreesLayer";
 import LinesLayer from "./LinesLayer";
 import PylonsLayer from "./PylonsLayer";
+import EquipmentLayer from "./EquipmentLayer";
+
 
 const Div = styled.div`
-  width: 49vw;
+  width: 45vw;
   position: absolute;
   display: flex;
   justify-content: right; // To keep it close to text on large screen
@@ -24,8 +26,8 @@ const Div = styled.div`
 
 const Svg = styled.svg`
   position: fixed; // This is required to make the svg stick to scroll.
-  max-width: 48vw; // This is for small mobile screens
-  padding-left: 2px; // Keep svg from left border
+  max-width: 45vw; // This is for small mobile screens
+  padding-left: 10px; // Keep svg from left border
   z-index: -6; // This makes sure that the svg layers hide below the next div for effect.
   top: 25vh; // center the svg on the page vertically.
     
@@ -47,6 +49,7 @@ class ParkingLotAnimation extends Component {
     const layerId = [
       bottomLayer,
       gravelLayer,
+      equipmentLayer,
       asphaltLayer,
       curbsLayer,
       grassLayer,
@@ -69,6 +72,7 @@ class ParkingLotAnimation extends Component {
     // Gsap's animations
     const tweenBottom = TweenMax.to(bottomLayer, 0.3, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
     const tweenGravel = TweenMax.to(gravelLayer, 0.3, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
+    const tweenEquipment = TweenMax.to(equipmentLayer, 0.3, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
     const tweenAsphalt = TweenMax.to(asphaltLayer, 0.4, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
     const tweenCurbs = TweenMax.to(curbsLayer, 0.4, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
     const tweenGrass = TweenMax.to(grassLayer, 0.4, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
@@ -99,6 +103,13 @@ class ParkingLotAnimation extends Component {
       triggerElement: gravelTrigger,
     })
       .setTween(tweenGravel)
+      .setPin(mainSVG)
+      .addTo(controller);
+
+    const sceneEquipment = new ScrollMagic.Scene({
+      triggerElement: equipmentTrigger,
+    })
+      .setTween(tweenEquipment)
       .setPin(mainSVG)
       .addTo(controller);
 
@@ -169,6 +180,7 @@ class ParkingLotAnimation extends Component {
           <title>Rapid Task Layered Lot</title>
           <BottomLayer/>
           <GravelLayer/>
+          <EquipmentLayer/>
           <AsphaltLayer/>
           <LinesLayer/>
           <GrassLayer/>

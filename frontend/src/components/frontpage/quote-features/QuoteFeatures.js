@@ -4,10 +4,18 @@ import ParkingLotAnimation from './ParkingLotLayers/ParkingLotAnimation';
 import ManQuoting from "./ParkingLotLayers/ManQuoting";
 
 const Div = styled.div`
+  height: 400vh;
+  //max-height: 4200px;
+
+  display: block;
+  
   overflow: hidden;
   margin: auto;
   position: relative; // Required to help arrange the divs- especially the trigger div, as we need it to the bottom.
-  border: solid green;
+  
+
+  
+  
 `;
 
 const QuoteTitle = styled.p`
@@ -64,6 +72,7 @@ const Context1 = styled.p`
   font-family: ${props => props.theme.RobotoCondensedfont};
   padding: 10px;
   text-align: justify;
+  font-size: 0.9em;
 `;
 
 const Columns = styled.div`
@@ -81,7 +90,7 @@ const RightColumn = styled.div`
 
 const LeftColumn = styled.div`
   //flex: 1;
-  width: 45vw;
+  width: 54vw;
   margin-top: 80vh;
 
 `;
@@ -156,69 +165,100 @@ class Quotes extends Component {
                 land you are developing on, then you select the tasks that are required for the construction.
               </Context1>
               <Title1 id="gravelTrigger">
-                First Step
+                Selecting Materials
               </Title1>
               <Context1>
-                You easily plan the steps <br/>
-                Add "Packed Gravel":<br/>
-                Next Select Equipment Required. Each equip will have metrics of how long to do a task. <br/>
-                ( Show equipment working on the surface.)
+                Easily plan the steps of your jobs. Select the tasks from a menu and Rapid Task will calculate
+                all the requirements you need to perform the task. You can choose options of materials that are required
+                and the costs will be automatically applied. Rapid Task will help keep track the cost of materials by
+                supplier costs, delivery costs, application rate and quantity required. For budget minded clients, you have
+                the ability to quickly adjust your quotes or build multiple price options for them. Rapid Task
+                can carry forward any product warranty information and safety data sheets to your client's quote. The
+                list of required materials can be placed on a order request, to ensure your products arrive on time for the
+                project.
+              </Context1>
+              <Title1 id="equipmentTrigger">
+                Assign Equipment
+              </Title1>
+              <Context1>
+                Assign available equipment to perform specific tasks of the project. Rapid Task can calculate the costs
+                for using each equipment by using overhead costs, fuel consumption, rental fees, delivery fees, labour cost and
+                maintenance automatically as you apply them. As employees perform the jobs with the equipment, Rapid Task
+                will monitor the metrics used to calculate the costs and adjust the costs as needed.
               </Context1>
               <Title1 id="asphaltTrigger">
                 Paving the Lot
               </Title1>
               <Context1>
-                Select Crew and receive estimated time for how long to complete project. Add more or less to try to meet
-                with scheduled date.
+                Providing a well detailed quote can be time consuming and many businesses just simply guess their calculations.
+                Not with Rapid Task, you can easily plan specific details with little effort. You can have full
+                control on selecting your crews to do particular tasks. Rapid Task will provide estimated labour time based
+                on the crew's historical performance rate, that way you have an more accurate project time-line. This allows
+                you to schedule in more work and be more efficient.
               </Context1>
               <Title1 id="curbsTrigger">
-                Install Curbs
+                Installing Curbs
               </Title1>
               <Context1>
-                Curbs. Only enter the total linear measurement required, and select concrete type. That is all! The
-                materials, labour and overhead is automatically calculated for your quote.
+                Rapid Task is focused on streamlining your quoting process. If you need to price out installation of curbs,
+                only enter the total linear measurement required, and select the type of concrete that is to be used.
+                That is all! The full details of required materials, labour and overhead is automatically calculated
+                for your quote. Don't worry, we want to make sure you feel in control and allow customization as needed.
               </Context1>
 
               <Title1 id="grassTrigger">
                 Landscaping
               </Title1>
               <Context1>
-                Turn on Rapid Task's schedule watch on specific tasks.
-                As soon as curbs are completed, Rapid Task can assist scheduling the landscapers to come immediately after,
-                while keeping the project schedule on time.
+                You can allow Rapid Task to watch specific steps of the project. As soon as curbs are completed,
+                Rapid Task can assist scheduling the landscapers to come immediately after. This is an excellent tool
+                to help keep your projects on schedule.
               </Context1>
 
               <Title1 id="lampsTrigger">
                 Install Street Lamps
               </Title1>
               <Context1>
-                Sub-contractor request for quote with ease. <br/>
-                Enter specs for sub contractors<br/>
-                Send request for quote to subcontractors by a click<br/>
-                Automatically keep tracks of quote requests and notifies when to review.
+                Handling and managing many quotes from sub-contractors can be daunting.
+                Rapid Task can automate the process for you. Simply carry forward the entered specifications of the job
+                to your list of sub-contractors. Set a due date, and Rapid Task will monitor and remind them to submit.
+                All of the specifications and requirements will be detailed and clear for each contractor, which makes
+                awarding the bid easy. You can keep track of the service quality the contractors provide for future reference.
               </Context1>
 
               <Title1 id="treesTrigger">
                 Plant Trees
               </Title1>
               <Context1>
-                Add details of where trees are located. Crew can receive this information when it comes to doing the task
+                All of the job details are in one place. No more losing track of emails or spending countless time
+                finding specific details of the project. Rapid Task will handle images, drawings, notes, and communication
+                with your employees and clients. Clearly show the details of which type of tree
+                and where to plant them as you plan your quotes. Your clients can see and approve the details and your
+                employees can easily view the platform and gain accurate details to do
+                their jobs correctly. Less mistakes, more profit. Simple as that.
               </Context1>
 
               <Title1 id="linesTrigger">
                 Paint Traffic Lines
               </Title1>
               <Context1>
-                Can simplify your quoting steps such as simply providing line count and provides all the numbers based on
-                previous average labour time. Keep track of what materials are needing to be ordered to complete the
-                project. Rapid Task can notify in advance of important supply order dates.
+                You have the flexibility of how you want to put your quotes together. Rapid Task can provide options
+                of how to calculate the jobs, such as counting number of parking lines, or specific details such as
+                how many mils to apply, line width, linear length and traffic marking product. You can decide your
+                quoting processes, but keep in mind Rapid Task can help you more if you provide further details.
+                You can assign the quoting platform to your staff members and go through a checklist of important
+                steps to calculate the quotes. Easily set up a perfect system for yourself and your staff.
               </Context1>
 
               <Title1 id="pylonsTrigger">
-                Employees Instructions
+                Employee Instructions
               </Title1>
               <Context1>
-                This is where we can add specific instructions specifically for employees. Set Pylons to let the paint dry.
+                Finally you will have the time to consider other factors of the job that needs to be taken in consideration.
+                Safety meetings, extra training can be factored in. Specific site environment that would add more time to the
+                project. The more details implemented in the quotes, the more self driven your business will be. You can specify
+                your employees to place traffic cones to protect the traffic markings while the paint dries. Rapid Task
+                wants to make sure your business is successful and help make all of your jobs profitable.
               </Context1>
             </FlexContainer>
           </LeftColumn>

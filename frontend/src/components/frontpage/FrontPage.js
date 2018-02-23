@@ -16,10 +16,6 @@ import MainPage from "./main-page/MainPage";
 
 import CityAnimation from "./map-features/MapFeatures";
 
-const QuotesContainer = styled.div`
-  height: 600vh;
-  
-`;
 
 const EmployeeContainer = styled.div`
   height: 260vh;
@@ -62,9 +58,8 @@ class FrontPage extends Component {
         <MainPage/>
         <Features/>
         <CityAnimation/>
-        <QuotesContainer>
-          <Quotes/>
-        </QuotesContainer>
+        <Quotes/>
+
         <EmployeeContainer>
           <EmployeeFeatures/>
         </EmployeeContainer>

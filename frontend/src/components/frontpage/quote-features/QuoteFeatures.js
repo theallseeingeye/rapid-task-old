@@ -12,10 +12,7 @@ const Div = styled.div`
   overflow: hidden;
   margin: auto;
   position: relative; // Required to help arrange the divs- especially the trigger div, as we need it to the bottom.
-  
-
-  
-  
+ 
 `;
 
 const QuoteTitle = styled.p`

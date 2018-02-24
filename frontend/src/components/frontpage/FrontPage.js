@@ -34,31 +34,17 @@ class FrontPage extends Component {
         <Features/>
         <CityAnimation/>
         <QuotesContainer>
-          <Quotes/>
+        <Quotes/>
         </QuotesContainer>
-
         <PainterLadder/>
-
-          <EmployeeFeatures/>
-          <ClientFeatures/>
-
-          <CalendarFeatures/>
-
-
-          <FinancialFeatures/>
-
-
+        <EmployeeFeatures/>
+        <ClientFeatures/>
+        <CalendarFeatures/>
+        <FinancialFeatures/>
         <AnalyticsFeatures/>
-
-
-          <About/>
-
-
-          <SubscriptionForm/>
-
-
-          <Footer/>
-
+        <About/>
+        <SubscriptionForm/>
+        <Footer/>
       </div>
     );
   }

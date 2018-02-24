@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const Div = styled.div`
+  margin-top: 10vh;
   height: 35vh;
 `;
 const Text = styled.div`
@@ -9,7 +10,6 @@ const Text = styled.div`
   line-height: 1.4em;
   text-align: center;
   width: 95%;
-  margin: 2.5%;
   max-width: 1200px;
   @media (min-width: ${props => props.theme.tabletscreen}) {
   font-size: 1.5em;

@@ -8,8 +8,8 @@ const Svg = styled.svg`
   position: absolute;
   transform: translateX(-29.4%);
   z-index: 1;
-  @media (min-width: ${props => props.theme.desktopscreen}) {
-  max-width: 1500px; // To keep the layers from getting too big
+  @media (min-width: ${props => props.theme.tabletscreen}) {
+  max-width: 1000px; // To keep the layers from getting too big
   }
  `;
 

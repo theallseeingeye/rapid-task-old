@@ -5,10 +5,11 @@ import InvoiceSvg from "./InvoiceSvg";
 import theme from "../../../global-styles/DefaultTheme";
 
 const Div = styled.div`
-  overflow: hidden;
+  font-family: ${props => props.theme.Robotofont};
   margin: auto;
   height: 1400vw;
   position: relative;
+  max-width: 1200px;
   @media (min-width: ${props => props.theme.tabletscreen}) {
   height: 660vh;
   }
@@ -20,14 +21,13 @@ const Svg = styled.svg`
   position: absolute;
   transform: translateX(-29.4%);
   z-index: -3;
-  @media (min-width: ${props => props.theme.desktopscreen}) {
-  max-width: 1500px; // To keep the layers from getting too big
+  @media (min-width: ${props => props.theme.tabletscreen}) {
+  max-width: 1200px; // To keep the layers from getting too big
+  transform: translate(-20%, -20%);
   }
 `;
 
 const FinanceTitle = styled.p`
-  font-family: ${props => props.theme.Robotofont};
-  //font-weight: 900;
   font-size: 2.5em;
   text-align: right;
   width: 99%;
@@ -35,9 +35,6 @@ const FinanceTitle = styled.p`
   z-index: 2;
   @media (min-width: ${props => props.theme.tabletscreen}) {
   font-weight: 900;
-  }
-  @media (min-width: ${props => props.theme.giantscreen}) {
-  width: 79%;
   }
 `;
 
@@ -53,9 +50,6 @@ const RightColumn = styled.div`
   width: 65vw;
   flex: 1; // width of flexbox compared to others
   margin-top: 50vh;
-      @media (min-width: ${props => props.theme.giantscreen}) {
-   width: 80vw;
-  }
 `;
 
 const LeftColumn = styled.div`
@@ -63,9 +57,6 @@ const LeftColumn = styled.div`
   z-index: -2;
   position: relative;
   max-width: 350px;
-      @media (min-width: ${props => props.theme.giantscreen}) {
-   width: 20vw;
-  }
 `;
 
 const FlexContainerLeft = styled.div`
@@ -85,21 +76,17 @@ const FlexContainerRight = styled.div`
   height: 1300vw;
   @media (min-width: ${props => props.theme.tabletscreen}) {
   height: 600vh;
-  font-size: 1.5em;
+
   }
 `;
 
 const Columns = styled.div`
   display: flex;
-  @media (min-width: ${props => props.theme.giantscreen}) {
-  margin: 0 15% 0 15%;
-  }
 `;
 
 
 const Title1 = styled.div`
   margin-top: 2em;
-  font-family: ${props => props.theme.Robotofont};
   font-weight: 900;
   padding-left: 10px;
   padding-right: 10px;
@@ -117,21 +104,10 @@ const Context1 = styled.div`
 
 const MainContent = styled.p`
   height: 50vh;
-  font-family: ${props => props.theme.Robotofont};
   float: right;
   text-align: right;
-  margin: 35vh 2% 5vh 0;
   z-index: 1;
-  @media (min-width: ${props => props.theme.tabletscreen}) {
-    margin-top: 51vh;
-    margin-left: 10vh;
-  }
-  @media (min-width: ${props => props.theme.desktopscreen}) {
-    margin-top: 75vh; 
-  }
-  @media (min-width: ${props => props.theme.giantscreen}) {
-    margin-top: 60vh; 
-  }
+
 `;
 
 // This div is required to close the animation of the invoice.
@@ -160,8 +136,8 @@ class FinancialFeatures extends Component {
 
         <ManFinance/>
         <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 884.84 1122.59">
-          <rect x="203.03" y="339.48" width="33.41" height="795.04" rx="16.7" ry="16.7" transform="translate(117.58 1391.58) rotate(-135)" fill={this.color}/>
-          <rect x="122.49" y="491.29" width="72.46" height="752.88" rx="36.23" ry="36.23" transform="translate(-79.02 1571.6) rotate(-135)" fill={this.color2}/>
+          <rect x="122.49" y="510.29" width="72.46" height="575" rx="36.23" ry="36.23" transform="translate(-79.02 1571.6) rotate(-135)" fill={this.color2}/>
+          <rect x="200.03" y="245.48" width="33.41" height="650" rx="16.7" ry="16.7" transform="translate(117.58 1391.58) rotate(-135)" fill={this.color}/>
         </Svg>
         <Columns>
 

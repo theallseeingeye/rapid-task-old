@@ -34,7 +34,7 @@ class EmployeeFeatures extends Component {
         {/*This id is the end trigger for parking lot layers*/}
         <TextArea>
 
-            You can empower your employees by making them feel responsibile and important. Rapid Task can provide employees
+            You can empower your employees by making them feel responsible and important. Rapid Task can provide employees
             transparent work schedule with job details in advanced. Employees can be informed each job details that were
             carried from the build of the quotes. Your employees will feel more better prepared. Happier employees creates
             a better business.

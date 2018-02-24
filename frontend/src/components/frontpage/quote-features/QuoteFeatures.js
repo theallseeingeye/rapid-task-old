@@ -4,101 +4,98 @@ import ParkingLotAnimation from './ParkingLotLayers/ParkingLotAnimation';
 import ManQuoting from "./ParkingLotLayers/ManQuoting";
 
 const Div = styled.div`
-  height: 400vh;
-  //max-height: 4200px;
-
-  display: block;
+  // Main Font
+  font-family: ${props => props.theme.Robotofont};
   
+  height: auto;
   overflow: hidden;
-  margin: auto;
   position: relative; // Required to help arrange the divs- especially the trigger div, as we need it to the bottom.
- 
+  
+  @media (min-width: ${props => props.theme.tabletscreen}) {
+    height: auto;
+  }
 `;
 
 const QuoteTitle = styled.p`
-  margin: 0 auto;
-  font-family: ${props => props.theme.Robotofont};
   font-size: 2.5em;
   text-align: center;
   position: absolute;
   margin-top: 15vh;
   background-color: rgba(255, 255, 255, 0.8);
   width: 100%;
-  
-  @media (min-width: ${props => props.theme.tabletscreen}) {
- 
-  }
-  
-  @media (min-width: ${props => props.theme.desktopscreen}) {
-    margin-left: 25vw;
-    text-align: left;
-    margin-top: 20vh;
-  }
-  
-  
 `;
 
 const MainContext = styled.p`
-  width: 50%;
-  margin: auto;
-  text-align: left;
-  margin-left: 5px;
-  font-size: 1.2em;
+  margin-top: 80vh;
+  width: 55%;
+  text-align: justify;
+  margin-left: 10px;
+  font-size: 1.1em;
   font-family: ${props => props.theme.RobotoCondensedfont};
+  
+  @media (min-width: ${props => props.theme.tabletscreen}) {
+    font-size: 1.3em;
+    margin-top: 90vh;
+  }
+  @media (min-width: ${props => props.theme.desktopscreen}) {
+    margin-left: 15vw;
+    width: 30%;
+    margin-top: 70vh;
+  }
 `;
 
 const Example = styled.p`
-  font-family: ${props => props.theme.Robotofont};
   float: right;
   text-align: center;
-  margin: auto;
   margin-top: 15vh;
 `;
 
 const Title1 = styled.p`
-  flex-grow: 0.1;
-  margin: auto;
-  font-family: ${props => props.theme.Robotofont};
   text-align: center;
   width: 100%;
 `;
 
 const Context1 = styled.p`
-  flex-grow: 1;
-  margin: auto;
   font-family: ${props => props.theme.RobotoCondensedfont};
   padding: 10px;
   text-align: justify;
-  font-size: 0.9em;
+  
+  // These help space the texts apart.
+  @media (min-width: ${props => props.theme.tabletscreen}) {
+    margin-bottom: 20vh;
+  }
+  @media (min-width: ${props => props.theme.desktopscreen}) {
+    margin-bottom: 20vh;
+  }
 `;
 
 const Columns = styled.div`
   display: flex;
-  //justify-content: center;
-  //border: solid red;
   width: 100%;
 `;
 
 const RightColumn = styled.div`
-  //flex: 1; // width of flexbox compared to others
   Width: 45vw;
   margin-top: 80vh;
+  
+  @media (min-width: ${props => props.theme.desktopscreen}) {
+    margin-right: 25%;
+  }
+  
 `;
 
 const LeftColumn = styled.div`
-  //flex: 1;
   width: 54vw;
-  margin-top: 80vh;
-
+  
+  @media (min-width: ${props => props.theme.desktopscreen}) {
+    margin-left: 15vw;
+  }
 `;
 
 const FlexContainer = styled.div`
-   //Flex box container options
+  //Flex box container options
   display: flex;
   flex-direction: column;
-  
-  // Alignment 
-  height: 530vh;
 `;
 
 // This div is required for the scrollMagic to trigger the tween animation of the Parking Lot Layers off.
@@ -118,17 +115,6 @@ const WhiteDiv = styled.div`
   z-index: -5;
 `;
 
-const WhiteBar = styled.div`
-  background-color: rgba(255, 255, 255, 0.8);
-  position: absolute;
-  width: 100%;
-  height: 28vh;
-  margin-top: 60vh;
-`;
-
-
-
-
 class Quotes extends Component {
   render() {
     return (
@@ -136,12 +122,10 @@ class Quotes extends Component {
         <WhiteDiv/>
         <QuoteTitle>Automate Quotes</QuoteTitle>
         <ManQuoting/>
-        <WhiteBar>
-          <MainContext>
-            Providing accurate quotes can be tedious and time consuming. Rapid Task removes the tedious steps, allowing
-            you to build your quotes quckly. We allow easy custom estimating processes that works for your business.
-          </MainContext>
-        </WhiteBar>
+        <MainContext>
+          Providing accurate quotes can be tedious and time consuming. Rapid Task removes the tedious steps, allowing
+          you to build your quotes quckly. We allow easy custom estimating processes that works for your business.
+        </MainContext>
         <Columns >
           <LeftColumn>
             {/*Elements tagged with id's for identifying triggers*/}
@@ -154,7 +138,7 @@ class Quotes extends Component {
                 Quoting a Parking Lot
               </Title1>
               <Context1>
-                Rapid Task will automatically propagate data from existing Customers or assist in creating a new profile
+                Rapid Task will automatically propagate data from existing customers or assist in creating a new profile
                 for your customer. We want to make sure that you don't have to enter information more than once. Let us
                 handle your contacts with efficiency. After you select your customer you want to provide a quote for,
                 we help you follow steps that way information is never missed from your quotes. Lets start with the

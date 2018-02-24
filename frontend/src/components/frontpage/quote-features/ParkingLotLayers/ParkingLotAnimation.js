@@ -21,21 +21,18 @@ const Div = styled.div`
   width: 45vw;
   position: absolute;
   display: flex;
-  justify-content: right; // To keep it close to text on large screen
 `;
 
 const Svg = styled.svg`
   position: fixed; // This is required to make the svg stick to scroll.
   max-width: 45vw; // This is for small mobile screens
-  padding-left: 10px; // Keep svg from left border
   z-index: -6; // This makes sure that the svg layers hide below the next div for effect.
   top: 25vh; // center the svg on the page vertically.
     
-    
   @media (min-width: ${props => props.theme.desktopscreen}) {
-   max-width: 400px; // To keep the layers from getting too big
+   max-width: 35vw; // To keep the layers from getting too big
    top: 10vh; // Adjust the layers to the middle vertical height
-   margin-left: 10%;
+   margin-left: 2.5vw;
   }
 `;
 

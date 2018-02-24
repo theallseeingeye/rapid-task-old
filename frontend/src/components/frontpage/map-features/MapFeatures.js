@@ -1,19 +1,25 @@
 import React, { Component } from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import MapAnimation from './MapLayers/MapAnimation';
 
 
 const MainDiv = styled.div`
-  background: white;
+  background: white; // To mask the animation layers
   z-index: -4; // Required to let the parking lot layers in above div to hide behind.
   overflow: hidden; // Required for svg when it zooms
   position: relative;
-  width: 100%;
   display: table;
+  
+   @media (min-width: ${props => props.theme.tabletscreen}) {
+     height: 90vh;
+   }
+   @media (min-width: ${props => props.theme.desktopscreen}) {
+     height: 70vh;
+   }
 `;
 
 const Div = styled.div`
-  position: relative;
+  position: relative; // To push the main context after
   width: 100%;
   height: 80vh;
   
@@ -53,29 +59,21 @@ const MainContext = styled.h1`
 `;
 
 const MapDetails = styled.p`
-  background-color: white;
-  position: relative;
+  background-color: white; // To hide the animation behind
   text-align: justify;
   z-index: 5;
-  margin-left: 5px;
-  margin-right: 5px;
-  margin-top: 0;
+  margin-left: 10px;
+  margin-right: 10px;
   font-family: ${props => props.theme.Robotofont};
-  display: flex;
   
-  @media (min-width: ${props => props.theme.tabletscreen}) {
-    width: 80%;
-    margin-left: 10%;
-    
-  }
-  @media (min-width: ${props => props.theme.desktopscreen}) {
-    width: 50%;
-    margin-left: 25%;
-  }
-  @media (min-width: ${props => props.theme.giantscreen}) {
-
-  }
-  
+   @media (min-width: ${props => props.theme.tabletscreen}) {
+     width: 80%;
+     margin-left: 10%;
+   }
+   @media (min-width: ${props => props.theme.desktopscreen}) {
+     width: 50%;
+     margin-left: 25%;
+   }
 `;
 
 class CityAnimation extends Component {
@@ -92,15 +90,16 @@ class CityAnimation extends Component {
           <MapAnimation/>
         </Div>
         <MapDetails>
-          Integrating the use of maps is a smart choice for keeping your business organized. You can use the high detailed
-          satellite imagery to help illustrate the job details for your employees. Save on equipment expenses by directing
-          your employees the most efficient route to work sites. Rapid Task can monitor the gps locations
-          of the employees to the scheduled work locations, to ensure schedule is being kept, if not notifications if there are any discrepancy. The use of
+          Integrating the use of maps is a smart choice for keeping your business organized. You can use the high resolution
+          satellite imagery to help illustrate job details for your employees. Also save on equipment expenses by directing
+          your employees the most efficient route on their travels. Rapid Task can monitor the gps locations
+          of the employees to the scheduled work locations, to ensure schedule is being kept, if not, notifications can alert
+          discrepancies. The use of
           maps are not only for your employees, but also your clients. As you build your quotes, you can use the maps to
-          mark and measure for your quotes. With that you can choose to show the details of the markings with the clients
-          to ensure that you both are on the same terms of agreement. All of your markings and notes made from each
-          job will be stored for your convenience and to calculate analytics to help further perfect your business. This
-          is an excellent way keep a very detailed record of your business automatically for any legal matters.
+          mark and measure your quotes. With that you can show the details of the markings with clients
+          to ensure that you both are on the page of agreement. All of your markings and notes made from each
+          job will be stored for your convenience and calculate analytics to help further perfect your business. This
+          is an excellent automated way keep a very detailed record of your business for any legal matters.
         </MapDetails>
       </MainDiv>
     );

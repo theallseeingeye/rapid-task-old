@@ -4,37 +4,24 @@ import DevicesSVG from './Svg/DeviceSvg';
 import CloudsSvg from "./Svg/CloudsSvg";
 
 const FeatureDiv = styled.div`
-  height: 145vh;
+  // Main Fonts
+  font-family: ${props => props.theme.Robotofont};
+  
+  
+  height: 160vh;
   position: relative;
-  width: 100%;
   background: linear-gradient(white 20%, ${props => props.theme.logoblue} 27%, ${props => props.theme.logoblue} 27%);
   
-  
-  
-  
   @media (min-width: ${props => props.theme.tabletscreen}) {
-
+    height: 125vh;
   }
   @media (min-width: ${props => props.theme.desktopscreen}) {
-    max-height: 1500px;
+    height: 120vh;
   }
-  @media (min-width: ${props => props.theme.giantscreen}) {
-
-  }
-  
-  
-  
-  
-
-  
-  
-  
 `;
 
 const TextTitle = styled.p`
-  font-family: ${props => props.theme.Robotofont};
   text-align: center;
-  margin: auto;
   padding: 4px;
   font-size: 1.2em;
 `;
@@ -43,18 +30,14 @@ const TextFooter = styled.p`
   font-family: ${props => props.theme.RobotoCondensedfont};
   font-size: 1.3em;
   height: 5vh;
-  margin: auto;
   text-align: center;
-  position: relative;
   z-index: 5;
   margin-top: 5vh;
 `;
 
 const DeviceContainer = styled.div`
   height: 35vh;
-  margin: auto;
   display: flex;
-  justify-content: center;
   align-self: center;
 `;
 
@@ -62,26 +45,18 @@ const List = styled.div`
   padding: 5px;
   list-style: none;
   text-align: center;
-  margin: auto;
   height: 70vh;
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
-
   margin-top: 5vh;
   
-  
-  
   @media (min-width: ${props => props.theme.tabletscreen}) {
-
+    height: 50vh;
   }
   @media (min-width: ${props => props.theme.desktopscreen}) {
-      max-height: 500px;
+    height: 40vh;
   }
-  @media (min-width: ${props => props.theme.giantscreen}) {
-
-  }
-  
 `;
 
 const ListItem = styled.p`
@@ -91,7 +66,6 @@ const ListItem = styled.p`
 `;
 
 const ListText = styled.a`
-  font-family: ${props => props.theme.Robotofont};
   margin: auto;
   font-size: 1.0em;
   color: white;

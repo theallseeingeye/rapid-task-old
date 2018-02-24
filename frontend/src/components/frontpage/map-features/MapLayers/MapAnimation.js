@@ -225,7 +225,7 @@ class MapAnimation extends Component {
       FifthPosition(this.svg);
 
       MapAnimate.to(this.truck, 2, {x: 300, y: 572}, '-=2')
-      .set(this.truck, {autoAlpha: 0})
+      .set(this.truck, {autoAlpha: 0, delay: 1.5})
       .set(this.truckText, {autoAlpha: 0});
 
     // Polygon Animate -------------------------------------------------------------------------------------------------

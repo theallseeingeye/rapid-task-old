@@ -4,7 +4,6 @@ import theme from "../../../../global-styles/DefaultTheme";
 
 const Svg = styled.svg`
   width: 140vw;
-  margin: auto;
   position: absolute;
   transform: translateX(2%);
   z-index: -3;
@@ -17,7 +16,7 @@ const Svg = styled.svg`
   
   @media (min-width: ${props => props.theme.desktopscreen}) {
    max-width: 1000px; // To keep the layers from getting too big
-   transform: translateX(50%); // Shift the svg more to the right side
+   transform: translateX(30%); // Shift the svg more to the right side
   }
 `;
 

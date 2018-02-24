@@ -4,7 +4,7 @@ import theme from '../../../../global-styles/DefaultTheme.js';
 
 const Svg = styled.svg`
   max-width: 90%;
-  margin: auto;
+  margin: auto; // To help center
   height: 90%;
 `;
 

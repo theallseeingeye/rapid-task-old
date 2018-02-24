@@ -43,7 +43,6 @@ const PainterArm = styled.g`
 const PaintedWall = styled.svg`
   // Protected aspect ratio is off from the header. preserveAspectRatio="none"
   height: 92vh;
-  
   width: 100vw;
   
   // To center
@@ -56,25 +55,11 @@ const PaintStroke = styled.g`
   fill: ${props => props.theme.logoblue};
 `;
 
-
-// Testing the responsive text.
-const Text1 = styled.text`
-  font-size: 0.8em;
-  transform: translate(0px, 100px);
-`;
-
-const Text2 = styled.text`
-  font-size: 1.2em;
-`;
-
-const Text3 = styled.text`
-  font-size: 0.5em;
-`;
-
 const Text4 = styled.text`
   font-size: 0.4em;
   transform: translate(90px, 100px);
   font-family: ${props => props.theme.Robotofont};
+  word-wrap: normal;
 `;
 
 const Title = styled.text`
@@ -100,7 +85,6 @@ class PainterLadder extends Component {
         <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 145 270">
           <title>PaintingLady</title>
           <PainterLady id="PainterLadder">
-
             <Title x="0" y="0" dy="0">
               <tspan x="0" dy="1.5em">BE</tspan>
               <tspan x="0" dy="1.5em">THE</tspan>
@@ -108,26 +92,12 @@ class PainterLadder extends Component {
               <tspan x="0" dy="1.5em">EFFICIENT</tspan>
               <tspan x="0" dy="1.5em">EMPLOYER</tspan>
             </Title>
-
-            <Text4 x="0" y="0" dy="0">
-              <tspan x="-4" dy=".6em">Once your quote</tspan>
-              <tspan x="-7.5" dy="1.5em">has been accepted,</tspan>
-              <tspan x="-11" dy="1.5em">Rapid Task keeps</tspan>
-              <tspan x="-14.5" dy="1.5em">track of equipment</tspan>
-              <tspan x="-17" dy="1.5em">usage, employee</tspan>
-              <tspan x="-20.5" dy="1.5em">performance, and job</tspan>
-              <tspan x="-24" dy="1.5em">progress. This ensures</tspan>
-              <tspan x="-27.5" dy="1.5em">that you get the most out</tspan>
-              <tspan x="-31" dy="1.5em">of your equipment and have</tspan>
-              <tspan x="-34.5" dy="1.5em">the right people onsite</tspan>
-              <tspan x="-38" dy="1.5em">getting the job completed</tspan>
-              <tspan x="-41.5" dy="1.5em">quicker than ever before.</tspan>
+            <Text4 x="0" y="0" dy="0" text-align="justified" line-height="125%" wrap-margin="25">
+              <tspan x="-13" dy="4em">Boost Employee Morals</tspan>
+              <tspan x="-22" dy="4em">Easy Employee Scheduling</tspan>
+              <tspan x="-31" dy="4em">Establish Trust Of Employees</tspan>
+              <tspan x="-40" dy="4em">Measure Employee Performance</tspan>
             </Text4>
-
-
-
-
-
             <g id="Left_Arm">
               <path d="M542.63,398.9l12.42-9.22a1.75,1.75,0,1,1,2.09,2.81l-12.42,9.22Z" transform="translate(-480.87 -340.25)" fill="#e28f84"/>
               <path d="M540.81,398.62l-1.37,1a.59.59,0,0,0-.12.83l2.59,3.48a4.2,4.2,0,0,1-5.17-4.69L539.29,382a2.19,2.19,0,1,1,4.33.64l-2.31,15.61Z" transform="translate(-480.87 -340.25)" fill="#71536a"/>

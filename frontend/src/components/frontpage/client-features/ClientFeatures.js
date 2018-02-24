@@ -3,15 +3,13 @@ import styled from 'styled-components';
 import ClientTablet from './svg-layers/ClientTablet';
 
 const Div = styled.div`
-  height: 160vh;
+  height: auto;
+  //height: 160vh;
   margin: 0 5px 0 5px;
   font-family: ${props => props.theme.Robotofont};
-  @media (min-width: ${props => props.theme.tabletscreen}) {
-  height: 90vh;
-  }
+  max-width: 1200px;
   @media (min-width: ${props => props.theme.giantscreen}) {
-  margin: 0 20vw 0 20vw;
-  height: 90vh;
+  margin: auto;
   }
 `;
 
@@ -22,20 +20,20 @@ const FlexContainer = styled.div`
 `;
 
 const ColumnL = styled.div`
-  height: 0vh;
+  height: auto;
   width: 100%;
   @media (min-width: ${props => props.theme.tabletscreen}) {
-  width: 43%;
+  width: 50%;
   }  
 `;
 
 const ColumnR = styled.div`
   width: 100%;
-  height: 60vh;
+  height: auto;
   margin-bottom: 5vh;
+  min-width: 360px;
   @media (min-width: ${props => props.theme.tabletscreen}) {
-  width: 56%;
-  max-width: 590px;
+  width: 50%;
   }  
 `;
 
@@ -48,15 +46,13 @@ const Title = styled.p`
 `;
 
 const SubTitle = styled.p`
-  font-size: 2em;
+  font-size: 1.5em;
   margin: -0.5em 0 0.25em 0;
   text-align: center;
 `;
 
 const Text = styled.p`
-  @media (min-width: ${props => props.theme.tabletscreen}) {
-  font-size: 1.5em;
-  }
+  margin: 10px;
 `;
 
 class ClientFeatures extends Component {
@@ -71,14 +67,18 @@ class ClientFeatures extends Component {
 
         <FlexContainer>
           <ColumnL>
-            <Text>
-              Keep organized profile of your clients <br/><br/>
-              Lead tracker of your potential clients <br/><br/>
-              Can allow Rapid Task to provide automatic updates of the job progress<br/><br/>
-              Clients have easy platform to see their quotes and easily accept them<br/><br/>
-              Tools to easily communicate the details of the quote<br/><br/>
-              Clients know the outstanding bills
-            </Text>
+            <p>
+              Rapid Task has a modular client interface that is fully customizeable to perfectly fit the needs of your
+              business. You decide what information is most important, and what gets shared with your clients. Rapid Task
+              will help you:<br/><br/>
+            </p>
+            <Text>Keep organized profiles for each of your clients and their history</Text>
+            <Text>Track leads for new work and potential clients</Text>
+            <Text>Automatic notifications when new quote requests come in</Text>
+            <Text>Easily share and communicate quoting details to your clients</Text>
+            <Text>Clients have easy platform to see their quotes and easily accept them so your team can get to work faster</Text>
+            <Text>If you would like, Rapid Task can send updates to your clients based on job progress so that they are kept in the loop throughout the process</Text>
+            <Text>Your clients will have an interactive platform to check up on outstanding bills and complete payments faster</Text>
           </ColumnL>
           <ColumnR>
             <ClientTablet/>

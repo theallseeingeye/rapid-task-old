@@ -16,15 +16,14 @@ import MainPage from "./main-page/MainPage";
 import CityAnimation from "./map-features/MapFeatures";
 
 
-const Div = styled.div`
-  //width: 100%;
-  //height: 100%;
+const MapsContainer = styled.div`
+  height: 110vh;
 `;
 
 class FrontPage extends Component {
   render() {
     return (
-      <Div>
+      <div>
         <MainPage/>
         <Features/>
         <CityAnimation/>
@@ -34,11 +33,11 @@ class FrontPage extends Component {
         <ClientFeatures/>
         <CalendarFeatures/>
         <FinancialFeatures/>
-        {/*<AnalyticsFeatures/>*/}
+        <AnalyticsFeatures/>
         <About/>
         <SubscriptionForm/>
         <Footer/>
-      </Div>
+      </div>
     );
   }
 }

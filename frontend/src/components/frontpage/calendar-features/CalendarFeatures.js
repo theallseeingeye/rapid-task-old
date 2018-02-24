@@ -7,13 +7,11 @@ const MainDiv = styled.div`
   position: relative;
   height: 170vh;
   margin: 0 5px 0 5px;
+  max-width: 1200px;
+  margin: auto;
   font-family: ${props => props.theme.Robotofont};
   @media (min-width: ${props => props.theme.tabletscreen}) {
   height: 145vh;
-  }
-  @media (min-width: ${props => props.theme.giantscreen}) {
-  width: 60%;
-  margin-left: 20%;
   }
 `;
 
@@ -26,10 +24,7 @@ const Header = styled.p`
   @media (min-width: ${props => props.theme.tabletscreen}) {
   font-weight: 900;
   }
-  @media (min-width: ${props => props.theme.giantscreen}) {
-    width: 60%;
-    margin-left: 20%;
-  }
+  
 `;
 
 const FlexContainter = styled.div`
@@ -50,14 +45,13 @@ const Text = styled.div`
   height: 20vh;
   //max-width: 500px;
   flex-grow: 1;
-  @media (min-width: ${props => props.theme.tabletscreen}) {
-  font-size: 1.5em;
-  }
 `;
 
 const Subhead = styled.p`
-  font-size: 2em;
+  width: 100%;
+  font-size: 1.5em;
   margin-top: -0.5em;
+  
 `;
 
 class CalendarFeatures extends Component {

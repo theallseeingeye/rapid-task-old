@@ -5,7 +5,7 @@ import theme from "../../../global-styles/DefaultTheme";
 
 const Svg = styled.svg`
   width: 100%;
-  margin-top: 20vh;
+  margin-top: 15vh;
 `;
 
 const Polyline = styled.polygon`

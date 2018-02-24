@@ -10,7 +10,6 @@ const FindOutMore = styled.div`
   position: absolute;
   width: 95%;
   height: 40vh;
-
  
   a:link {
     color: black;

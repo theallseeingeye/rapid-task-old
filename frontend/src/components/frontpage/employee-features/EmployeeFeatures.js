@@ -2,52 +2,44 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import PainterThumbsUp from "./PainterThumbsUp";
 import PainterWalking from "./PainterWalking";
-import PainterLadder from "./PainterLadder";
-import PaintingBorder from "./PaintingBorder"
-
 
 const Div = styled.div`
+  height: 225vh;
   width: 100%;
-  overflow: hidden;
+  max-width: 1200px;
+  max-height: 1350px;
+  margin: auto;
+  @media (min-width: ${props => props.theme.tabletscreen}) {
+  height: 100vh;
+  }
 `;
 
-const SubTitle = styled.h3`
-  //border: solid orange;
+const SubTitle = styled.p`
+  font-size: 1.5em;
 `;
 
 const TextArea = styled.div`
   font-family: ${props => props.theme.Robotofont};
-  //padding-top: 15vh; // adjusts the element from the top under the title
-  //margin-top: 20vh;
-  //border: solid pink;
-  position: absolute;
-`;
-
-const Subheader = styled.div`
-  text-align: justify;
-  padding: 10px;
-  position: absolute;
+  margin: 0 5px 0 5px;
 `;
 
 const TextSection = styled.div`
-  margin-top: 25vh;
+  margin-top: 5vh;
 `;
-
 
 class EmployeeFeatures extends Component {
   render() {
     return (
       <Div id="parkingLotEnd">
         {/*This id is the end trigger for parking lot layers*/}
-        <PainterLadder/>
         <TextArea>
-          <Subheader>
+
             You can empower your employees by making them feel responsibile and important. Rapid Task can provide employees
             transparent work schedule with job details in advanced. Employees can be informed each job details that were
             carried from the build of the quotes. Your employees will feel more better prepared. Happier employees creates
             a better business.
 
-          </Subheader>
+
           <TextSection>
             <SubTitle>
               Time Tracking

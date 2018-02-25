@@ -10,7 +10,6 @@ const Div = styled.div`
   height: auto;
   position: relative;
   max-width: 1200px;
-  background-color: white; //this is to hide the fixed position animations to prevent them from showing up on slower devices
 `;
 
 const Svg = styled.svg`

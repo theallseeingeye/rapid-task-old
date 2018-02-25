@@ -7,6 +7,9 @@ const MainDiv = styled.div`
   background: white; // To mask the animation layers
   z-index: -4; // Required to let the parking lot layers in above div to hide behind.
   overflow: hidden; // Required for svg when it zooms
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
   position: relative;
   display: table;
   
@@ -65,15 +68,6 @@ const MapDetails = styled.p`
   margin-left: 10px;
   margin-right: 10px;
   font-family: ${props => props.theme.Robotofont};
-  
-   @media (min-width: ${props => props.theme.tabletscreen}) {
-     width: 80%;
-     margin-left: 10%;
-   }
-   @media (min-width: ${props => props.theme.desktopscreen}) {
-     width: 50%;
-     margin-left: 25%;
-   }
 `;
 
 class CityAnimation extends Component {

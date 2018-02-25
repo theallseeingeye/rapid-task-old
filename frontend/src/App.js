@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import FrontPage from './components/frontpage/FrontPage';
-import Unsubscribe from './components/unsubscribe-page/Unsubscribe';
+import Unsubscribe from './components/unsubscribepage/Unsubscribe';
 import CareersPage from './components/careerspage/CareersPage';
 import MediaRelations from './components/media-relations/MediaRelations';
 import InvestorRelations from './components/investor-relations/InvestorRelations';

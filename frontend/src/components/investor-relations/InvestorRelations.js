@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 
-
 class InvestorRelations extends Component {
   render() {
     return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import About from '../contact/ContactMask';
+import About from './about/';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');

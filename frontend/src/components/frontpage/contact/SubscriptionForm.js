@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import axios from "axios/index";
 import validator from 'validator';
 import { Link } from 'react-router-dom';
-import Unsubscribe from "../../unsubscribe-page/Unsubscribe";
 
 const FormElements = styled.form`
   background-color: white; //this is to hide the fixed position animations to prevent them from showing up on slower devices

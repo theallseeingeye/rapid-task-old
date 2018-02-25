@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-
-
 class CareersPage extends Component {
   render() {
     return (

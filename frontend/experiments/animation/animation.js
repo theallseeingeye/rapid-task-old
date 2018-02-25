@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 import ScrollMagic from '../ScrollMagic/ScrollMagic';
-// import {BounceInDown} from './../../src/components/frontpage/quote-features/BounceAnimation';
-// import TreesLayer from "./../../src/components/frontpage/quote-features/ParkingLotLayers/TreesLayer";
+
+
 
 
 // I have to remember to delete the iscroll-lite after.

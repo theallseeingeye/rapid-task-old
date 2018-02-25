@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import OfficeBeach from './OfficeBeach';
+import OfficeBeach from './svg/OfficeBeach';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components'
 
@@ -35,21 +35,20 @@ const BackgroundContainer = styled.div`
   opacity: 1;
   // To place behind all divs
   z-index: -1;
-  // To hid the sides that are stretching beyond the div
+  // To hide the sides that are stretching beyond the div
   overflow: hidden;
-   @media (min-width: ${props => props.theme.tabletscreen}) {
+  @media (min-width: ${props => props.theme.tabletscreen}) {
    height: 112vh;
    font-size: 1.2em;
-   }
-   @media (min-width: ${props => props.theme.desktopscreen}) {
+  }
+  @media (min-width: ${props => props.theme.desktopscreen}) {
    height: 125vh;
    font-size: 1.4em;
-   
-   }
-   @media (min-width: ${props => props.theme.giantscreen}) {
+  }
+  @media (min-width: ${props => props.theme.giantscreen}) {
    height: 110vw;
    font-size: 1.6em;
-   }
+  }
 `;
 
 class Footer extends Component {

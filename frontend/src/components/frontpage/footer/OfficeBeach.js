@@ -352,7 +352,7 @@ class OfficeBeach extends Component {
       <path d="M503.18,386.59l18.54,6.54a1.39,1.39,0,0,1,.86,1.59c-.34,1.57-.65,3.15-.91,4.73a37.63,37.63,0,0,1-1.93,7.21l-.16.41c-3.1,8.18-6,15.9-12.23,20.27-6.92,4.87.38,10.9-13.54,5.63" transform="translate(0.4 701.33)" fill="#68a4be"/>
       <path d="M619,666h-254a8.54,8.54,0,0,1,0-17.09H619A8.54,8.54,0,0,1,619,666Z" transform="translate(0.4 701.33)" fill="#4d2e4d" opacity="0.1"/>
       <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 115 2000 490">
-        <title>Rapid Task Logo</title>
+        <title>Rapid Task Small Logo</title>
         <circle cx="384.5" cy="1650" r="234.5" fill="#fff"/>
         <path d="M479.36,553.72,450.88,511l-71.21,42.72L355.8,591.46c-17.09,28.48-18.63,26.35-26,26.35H217.64l-36.9,57H333.86c41.79,0,67.51,0,96-43.44" transform="translate(37 1000)" fill="#3fa9f5"/>
         <path d="M547.72,616l-28.48-42.72L448,616l-23.87,37.74c-17.09,28.48-18.63,26.35-26,26.35L177.48,680,141,737H402.21c41.79,0,67.51,0,96-43.44" transform="translate(37 1000)" fill="#3fa9f5"/>

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
 
 import Features from "./features/Features";
 import Quotes from "./quote-features/QuoteFeatures";

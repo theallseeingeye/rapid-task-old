@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
 
 import Features from "./features/Features";
 import Quotes from "./quote-features/QuoteFeatures";
@@ -14,11 +13,6 @@ import SubscriptionForm from './contact/SubscriptionForm';
 import Footer from "./footer/Footer";
 import MainPage from "./main-page/MainPage";
 import CityAnimation from "./map-features/MapFeatures";
-
-
-const MapsContainer = styled.div`
-  height: 110vh;
-`;
 
 class FrontPage extends Component {
   render() {

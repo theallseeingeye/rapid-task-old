@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Contact from './Contact';
+import Unsubscribe from './Unsubscribe.js';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<Contact/>, div);
+  ReactDOM.render(<Unsubscribe />, div);
 });

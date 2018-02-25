@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import OfficeBeach from './OfficeBeach';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components'
 
 const FindOutMore = styled.div`
@@ -21,7 +22,6 @@ const FindOutMore = styled.div`
     color: slategray;
   }
 `;
-
 
 const AboutHeader = styled.p`
   font-weight: bold;
@@ -71,15 +71,15 @@ class Footer extends Component {
           <AboutHeader>Find Out More</AboutHeader>
           <a href='About'>About</a>
           <br />
-          <a href='Careers'>Careers</a>
+          <Link to="/careers"> Careers </Link>
           <br />
-          <a href='MediaKit'>Media Kit</a>
+          <Link to="/media-relations"> Media Relations </Link>
           <br />
-          <a href='Investors'>Investor Relations</a>
+          <Link to="/investor-relations"> Investor Relations </Link>
           <br />
           <br />
           <div className='dateValue'>
-            © {this.state.dateYear}, RapidTask
+            © {this.state.dateYear} Rapid Task
           </div>
         </FindOutMore>
        </BackgroundContainer>

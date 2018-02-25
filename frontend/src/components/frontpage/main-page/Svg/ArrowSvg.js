@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled, {keyframes} from 'styled-components';
 
 const Div = styled.div`
+  background-color: white; //this is to hide the fixed position animations to prevent them from showing up on slower devices
   position: absolute;
   height: 17vh;
   bottom: 4vh;

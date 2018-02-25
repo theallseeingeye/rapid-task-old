@@ -5,6 +5,7 @@ import theme from './../../../global-styles/DefaultTheme.js';
 const Div = styled.div`
   margin: auto;
   height: 100vh;
+  overflow: hidden;
 `;
 
 const Svg = styled.svg`
@@ -93,7 +94,7 @@ class PainterLadder extends Component {
               <tspan x="0" dy="1.5em">EMPLOYER</tspan>
             </Title>
             <Text4 x="0" y="0" dy="0" text-align="justified" line-height="125%" wrap-margin="25">
-              <tspan x="-13" dy="4em">Boost Employee Morals</tspan>
+              <tspan x="-13" dy="4em">Boost Employee Morale</tspan>
               <tspan x="-22" dy="4em">Easy Employee Scheduling</tspan>
               <tspan x="-31" dy="4em">Establish Trust Of Employees</tspan>
               <tspan x="-40" dy="4em">Measure Employee Performance</tspan>

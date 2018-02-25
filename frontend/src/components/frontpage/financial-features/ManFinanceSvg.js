@@ -3,7 +3,7 @@ import styled from "styled-components";
 import theme from "../../../global-styles/DefaultTheme";
 
 const Svg = styled.svg`
-  width: 140vw;
+  width: 135vw;
   margin: auto;
   position: absolute;
   transform: translateX(-29.4%);

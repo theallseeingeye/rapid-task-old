@@ -9,8 +9,8 @@ const Svg = styled.svg`
   width: 60%;
   min-width: 120px;
   @media (min-width: ${props => props.theme.desktopscreen}) {
-  height: 1200px;
-  } 
+  height: 800px;
+  }
 `;
 
 

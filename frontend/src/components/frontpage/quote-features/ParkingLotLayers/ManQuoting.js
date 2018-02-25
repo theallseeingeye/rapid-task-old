@@ -4,19 +4,18 @@ import theme from "../../../../global-styles/DefaultTheme";
 
 const Svg = styled.svg`
   width: 140vw;
-  position: absolute;
-  transform: translateX(2%);
+  transform: translate(2% -7%);
   z-index: -3;
-  margin-top: 5vh;
-  
+  max-width: 1000px;
+  margin-top: -12vh;
   // @media (min-width: {props => props.theme.tabletscreen}) {
   //  max-width: 1500px; // To keep the layers from getting too big
   //  transform: translateX(-20%); // Shift the svg more to the right side
   // }
-  
+
   @media (min-width: ${props => props.theme.desktopscreen}) {
-   max-width: 1000px; // To keep the layers from getting too big
-   transform: translateX(30%); // Shift the svg more to the right side
+    // To keep the layers from getting too big
+   transform: translateX(17%); // Shift the svg more to the right side
   }
 `;
 

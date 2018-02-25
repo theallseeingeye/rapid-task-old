@@ -6,9 +6,8 @@ const Svg = styled.svg`
   width: 35vw;
   position: fixed;
   top: 25vh; //Makes the invoice appear to the middle in fixed position
-  max-width: 350px;
-
-  
+  max-width: 390px; 
+  margin-left 5px; 
 `;
 
 const CreditCard = styled.g`

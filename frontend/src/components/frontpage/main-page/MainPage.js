@@ -7,6 +7,7 @@ import OfficeBackground from './Svg/OfficeBackgroundSvg';
 import Arrow from './Svg/ArrowSvg';
 
 const Div = styled.div`
+  background-color: white; //this is to hide the fixed position animations to prevent them from showing up on slower devices
   height: 100vh;
 `;
 

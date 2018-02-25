@@ -6,6 +6,8 @@ import theme from "../../../global-styles/DefaultTheme";
 const Svg = styled.svg`
   width: 100%;
   margin-top: 15vh;
+  max-width: 800px;
+  
 `;
 
 const Polyline = styled.polygon`
@@ -23,9 +25,9 @@ class GraphAnimation extends Component {
 
   componentDidMount() {
     const barWidth = 5;
-    const range = 300;
+    const range = 150;
     const maxPosition = 20;
-    const dataCount = 20;
+    const dataCount = 21;
 
     // Animate Speed
     const barSpeed = 0.05;
@@ -176,6 +178,9 @@ class GraphAnimation extends Component {
       const PolyNumber = polyArray.map(x => PolyId(x));
 
       const p = [
+        {x: 0, y: range, x2: 0, y2: range},
+        {x: 0, y: range, x2: 0, y2: random[0]},
+
         {x: 0, y: random[0], x2: 0, y2: random[0]}, // 0 First position
         {x: 0, y: random[0], x2: 20, y2: random[0]}, // 1 Change to from first
         ///////// vertical movement
@@ -314,128 +319,131 @@ class GraphAnimation extends Component {
 
 
         .to(PolyNumber[3], lineSpeed, {attr: pointPosition(4)})   //segment 3
-        .to(PolyNumber[3], lineSpeed, {autoAlpha:1, stroke: colorizer(random[0], random[1]), attr: pointPosition(5)})
+        .to(PolyNumber[3], lineSpeed, {autoAlpha:1, attr: pointPosition(5)})
 
         .to(PolyNumber[4], lineSpeed, {attr: pointPosition(6)})   //segment 4
-        .to(PolyNumber[4], lineSpeed, {autoAlpha:1, attr: pointPosition(7)})
+        .to(PolyNumber[4], lineSpeed, {autoAlpha:1, stroke: colorizer(random[0], random[1]), attr: pointPosition(7)})
 
 
         .to(PolyNumber[5], lineSpeed, {attr: pointPosition(8)})   //segment 5
-        .to(PolyNumber[5], lineSpeed, {autoAlpha:1, stroke: colorizer(random[1], random[2]), attr: pointPosition(9)})
+        .to(PolyNumber[5], lineSpeed, {autoAlpha:1, attr: pointPosition(9)})
 
 
         .to(PolyNumber[6], lineSpeed, {attr: pointPosition(10)})   //segment 6
-        .to(PolyNumber[6], lineSpeed, {autoAlpha:1, attr: pointPosition(11)})
+        .to(PolyNumber[6], lineSpeed, {autoAlpha:1, stroke: colorizer(random[1], random[2]), attr: pointPosition(11)})
 
 
         .to(PolyNumber[7], lineSpeed, {attr: pointPosition(12)})   //segment 7
-        .to(PolyNumber[7], lineSpeed, {autoAlpha:1, stroke: colorizer(random[2], random[3]), attr: pointPosition(13)})
+        .to(PolyNumber[7], lineSpeed, {autoAlpha:1, attr: pointPosition(13)})
 
 
         .to(PolyNumber[8], lineSpeed, {attr: pointPosition(14)})   //segment 8
-        .to(PolyNumber[8], lineSpeed, {autoAlpha:1, attr: pointPosition(15)})
+        .to(PolyNumber[8], lineSpeed, {autoAlpha:1, stroke: colorizer(random[2], random[3]), attr: pointPosition(15)})
 
 
         .to(PolyNumber[9], lineSpeed, {attr: pointPosition(16)})   //segment 9
-        .to(PolyNumber[9], lineSpeed, {autoAlpha:1, stroke: colorizer(random[3], random[4]), attr: pointPosition(17)})
+        .to(PolyNumber[9], lineSpeed, {autoAlpha:1, attr: pointPosition(17)})
 
 
         .to(PolyNumber[10], lineSpeed, {attr: pointPosition(18)})   //segment 10
-        .to(PolyNumber[10], lineSpeed, {autoAlpha:1, attr: pointPosition(19)})
+        .to(PolyNumber[10], lineSpeed, {autoAlpha:1, stroke: colorizer(random[3], random[4]), attr: pointPosition(19)})
 
 
         .to(PolyNumber[11], lineSpeed, {attr: pointPosition(20)})   //segment 11
-        .to(PolyNumber[11], lineSpeed, {autoAlpha:1, stroke: colorizer(random[4], random[5]), attr: pointPosition(21)})
+        .to(PolyNumber[11], lineSpeed, {autoAlpha:1, attr: pointPosition(21)})
 
 
         .to(PolyNumber[12], lineSpeed, {attr: pointPosition(22)})   //segment 12
-        .to(PolyNumber[12], lineSpeed, {autoAlpha:1, attr: pointPosition(23)})
+        .to(PolyNumber[12], lineSpeed, {autoAlpha:1, stroke: colorizer(random[4], random[5]), attr: pointPosition(23)})
 
 
         .to(PolyNumber[13], lineSpeed, {attr: pointPosition(24)})   //segment 13
-        .to(PolyNumber[13], lineSpeed, {autoAlpha:1, stroke: colorizer(random[5], random[6]), attr: pointPosition(25)})
+        .to(PolyNumber[13], lineSpeed, {autoAlpha:1, attr: pointPosition(25)})
 
 
         .to(PolyNumber[14], lineSpeed, {attr: pointPosition(26)})   //segment 14
-        .to(PolyNumber[14], lineSpeed, {autoAlpha:1, attr: pointPosition(27)})
+        .to(PolyNumber[14], lineSpeed, {autoAlpha:1, stroke: colorizer(random[5], random[6]), attr: pointPosition(27)})
 
         .to(PolyNumber[15], lineSpeed, {attr: pointPosition(28)})   //segment 15
-        .to(PolyNumber[15], lineSpeed, {autoAlpha:1, stroke: colorizer(random[6], random[7]), attr: pointPosition(29)})
+        .to(PolyNumber[15], lineSpeed, {autoAlpha:1, attr: pointPosition(29)})
 
         .to(PolyNumber[16], lineSpeed, {attr: pointPosition(30)})   //segment 16
-        .to(PolyNumber[16], lineSpeed, {autoAlpha:1, attr: pointPosition(31)})
+        .to(PolyNumber[16], lineSpeed, {autoAlpha:1, stroke: colorizer(random[6], random[7]), attr: pointPosition(31)})
 
         .to(PolyNumber[17], lineSpeed, {attr: pointPosition(32)})   //segment 17
-        .to(PolyNumber[17], lineSpeed, {autoAlpha:1, stroke: colorizer(random[7], random[8]), attr: pointPosition(33)})
+        .to(PolyNumber[17], lineSpeed, {autoAlpha:1, attr: pointPosition(33)})
 
         .to(PolyNumber[18], lineSpeed, {attr: pointPosition(34)})   //segment 18
-        .to(PolyNumber[18], lineSpeed, {autoAlpha:1, attr: pointPosition(35)})
+        .to(PolyNumber[18], lineSpeed, {autoAlpha:1, stroke: colorizer(random[7], random[8]), attr: pointPosition(35)})
 
         .to(PolyNumber[19], lineSpeed, {attr: pointPosition(36)})   //segment 19
-        .to(PolyNumber[19], lineSpeed, {autoAlpha:1, stroke: colorizer(random[8], random[9]), attr: pointPosition(37)})
+        .to(PolyNumber[19], lineSpeed, {autoAlpha:1, attr: pointPosition(37)})
 
         .to(PolyNumber[20], lineSpeed, {attr: pointPosition(38)})   //segment 20
-        .to(PolyNumber[20], lineSpeed, {autoAlpha:1, attr: pointPosition(39)})
+        .to(PolyNumber[20], lineSpeed, {autoAlpha:1, stroke: colorizer(random[8], random[9]), attr: pointPosition(39)})
 
         .to(PolyNumber[21], lineSpeed, {attr: pointPosition(40)})   //segment 21
-        .to(PolyNumber[21], lineSpeed, {autoAlpha:1, stroke: colorizer(random[9], random[10]), attr: pointPosition(41)})
+        .to(PolyNumber[21], lineSpeed, {autoAlpha:1, attr: pointPosition(41)})
 
         .to(PolyNumber[22], lineSpeed, {attr: pointPosition(42)})   //segment 22
-        .to(PolyNumber[22], lineSpeed, {autoAlpha:1, attr: pointPosition(43)})
+        .to(PolyNumber[22], lineSpeed, {autoAlpha:1, stroke: colorizer(random[9], random[10]), attr: pointPosition(43)})
 
         .to(PolyNumber[23], lineSpeed, {attr: pointPosition(44)})   //segment 23
-        .to(PolyNumber[23], lineSpeed, {autoAlpha:1, stroke: colorizer(random[10], random[11]), attr: pointPosition(45)})
+        .to(PolyNumber[23], lineSpeed, {autoAlpha:1, attr: pointPosition(45)})
 
         .to(PolyNumber[24], lineSpeed, {attr: pointPosition(46)})   //segment 24
-        .to(PolyNumber[24], lineSpeed, {autoAlpha:1, attr: pointPosition(47)})
+        .to(PolyNumber[24], lineSpeed, {autoAlpha:1, stroke: colorizer(random[10], random[11]), attr: pointPosition(47)})
 
         .to(PolyNumber[25], lineSpeed, {attr: pointPosition(48)})   //segment 25
-        .to(PolyNumber[25], lineSpeed, {autoAlpha:1, stroke: colorizer(random[11], random[12]), attr: pointPosition(49)})
+        .to(PolyNumber[25], lineSpeed, {autoAlpha:1, attr: pointPosition(49)})
 
         .to(PolyNumber[26], lineSpeed, {attr: pointPosition(50)})   //segment 26
-        .to(PolyNumber[26], lineSpeed, {autoAlpha:1, attr: pointPosition(51)})
+        .to(PolyNumber[26], lineSpeed, {autoAlpha:1, stroke: colorizer(random[11], random[12]), attr: pointPosition(51)})
 
         .to(PolyNumber[27], lineSpeed, {attr: pointPosition(52)})   //segment 27
-        .to(PolyNumber[27], lineSpeed, {autoAlpha:1, stroke: colorizer(random[12], random[13]), attr: pointPosition(53)})
+        .to(PolyNumber[27], lineSpeed, {autoAlpha:1, attr: pointPosition(53)})
 
         .to(PolyNumber[28], lineSpeed, {attr: pointPosition(54)})   //segment 28
-        .to(PolyNumber[28], lineSpeed, {autoAlpha:1, attr: pointPosition(55)})
+        .to(PolyNumber[28], lineSpeed, {autoAlpha:1, stroke: colorizer(random[12], random[13]), attr: pointPosition(55)})
 
         .to(PolyNumber[29], lineSpeed, {attr: pointPosition(56)})   //segment 29
-        .to(PolyNumber[29], lineSpeed, {autoAlpha:1, stroke: colorizer(random[13], random[14]), attr: pointPosition(57)})
+        .to(PolyNumber[29], lineSpeed, {autoAlpha:1, attr: pointPosition(57)})
 
         .to(PolyNumber[30], lineSpeed, {attr: pointPosition(58)})   //segment 30
-        .to(PolyNumber[30], lineSpeed, {autoAlpha:1, attr: pointPosition(59)})
+        .to(PolyNumber[30], lineSpeed, {autoAlpha:1, stroke: colorizer(random[13], random[14]), attr: pointPosition(59)})
 
         .to(PolyNumber[31], lineSpeed, {attr: pointPosition(60)})   //segment 31
-        .to(PolyNumber[31], lineSpeed, {autoAlpha:1, stroke: colorizer(random[14], random[15]), attr: pointPosition(61)})
+        .to(PolyNumber[31], lineSpeed, {autoAlpha:1, attr: pointPosition(61)})
 
         .to(PolyNumber[32], lineSpeed, {attr: pointPosition(62)})   //segment 32
-        .to(PolyNumber[32], lineSpeed, {autoAlpha:1, attr: pointPosition(63)})
+        .to(PolyNumber[32], lineSpeed, {autoAlpha:1, stroke: colorizer(random[14], random[15]), attr: pointPosition(63)})
 
         .to(PolyNumber[33], lineSpeed, {attr: pointPosition(64)})   //segment 33
-        .to(PolyNumber[33], lineSpeed, {autoAlpha:1, stroke: colorizer(random[15], random[16]), attr: pointPosition(65)})
+        .to(PolyNumber[33], lineSpeed, {autoAlpha:1, attr: pointPosition(65)})
 
         .to(PolyNumber[34], lineSpeed, {attr: pointPosition(66)})   //segment 34
-        .to(PolyNumber[34], lineSpeed, {autoAlpha:1, attr: pointPosition(67)})
+        .to(PolyNumber[34], lineSpeed, {autoAlpha:1, stroke: colorizer(random[15], random[16]), attr: pointPosition(67)})
 
         .to(PolyNumber[35], lineSpeed, {attr: pointPosition(68)})   //segment 35
-        .to(PolyNumber[35], lineSpeed, {autoAlpha:1, stroke: colorizer(random[16], random[17]), attr: pointPosition(69)})
+        .to(PolyNumber[35], lineSpeed, {autoAlpha:1, attr: pointPosition(69)})
 
         .to(PolyNumber[36], lineSpeed, {attr: pointPosition(70)})   //segment 36
-        .to(PolyNumber[36], lineSpeed, {autoAlpha:1, attr: pointPosition(71)})
+        .to(PolyNumber[36], lineSpeed, {autoAlpha:1, stroke: colorizer(random[16], random[17]), attr: pointPosition(71)})
 
         .to(PolyNumber[37], lineSpeed, {attr: pointPosition(72)})   //segment 37
-        .to(PolyNumber[37], lineSpeed, {autoAlpha:1, stroke: colorizer(random[17], random[18]), attr: pointPosition(73)})
+        .to(PolyNumber[37], lineSpeed, {autoAlpha:1, attr: pointPosition(73)})
 
         .to(PolyNumber[38], lineSpeed, {attr: pointPosition(74)})   //segment 38
-        .to(PolyNumber[38], lineSpeed, {autoAlpha:1, attr: pointPosition(75)})
+        .to(PolyNumber[38], lineSpeed, {autoAlpha:1, stroke: colorizer(random[17], random[18]), attr: pointPosition(75)})
 
         .to(PolyNumber[39], lineSpeed, {attr: pointPosition(76)})   //segment 39
-        .to(PolyNumber[39], lineSpeed, {autoAlpha:1, stroke: colorizer(random[18], random[19]), attr: pointPosition(77)})
+        .to(PolyNumber[39], lineSpeed, {autoAlpha:1, attr: pointPosition(77)})
 
         .to(PolyNumber[40], lineSpeed, {attr: pointPosition(78)})   //segment 40
-        .to(PolyNumber[40], lineSpeed, {autoAlpha:1, attr: pointPosition(79)});
+        .to(PolyNumber[40], lineSpeed, {autoAlpha:1, stroke: colorizer(random[18], random[19]), attr: pointPosition(79)})
+
+        .to(PolyNumber[41], lineSpeed, {attr: pointPosition(80)})   //segment 41
+        .to(PolyNumber[41], lineSpeed, {autoAlpha:1, attr: pointPosition(81)});
 
         // Fills in the bars and erases the vertical lines.
 
@@ -454,46 +462,47 @@ class GraphAnimation extends Component {
         // console.log(BarsFillIn());
         // console.log(PolyNumber);
 
-        chartDraw.to(PolyNumber[1], barSpeed, {strokeWidth: (300 - random[0]), y: ((300 - random[0]) / 2)})
-        .to(PolyNumber[2], barSpeed, {autoAlpha: 0})
-        .to(PolyNumber[3], barSpeed, {strokeWidth: (300 - random[1]), y: ((300 - random[1]) / 2)})
-        .to(PolyNumber[4], barSpeed, {autoAlpha: 0})
-        .to(PolyNumber[5], barSpeed, {strokeWidth: (300 - random[2]), y: ((300 - random[2]) / 2)})
-        .to(PolyNumber[6], barSpeed, {autoAlpha: 0})
-        .to(PolyNumber[7], barSpeed, {strokeWidth: (300 - random[3]), y: ((300 - random[3]) / 2)})
-        .to(PolyNumber[8], barSpeed, {autoAlpha: 0})
-        .to(PolyNumber[9], barSpeed, {strokeWidth: (300 - random[4]), y: ((300 - random[4]) / 2)})
-        .to(PolyNumber[10], barSpeed, {autoAlpha: 0})
-        .to(PolyNumber[11], barSpeed, {strokeWidth: (300 - random[5]), y: ((300 - random[5]) / 2)})
-        .to(PolyNumber[12], barSpeed, {autoAlpha: 0})
-        .to(PolyNumber[13], barSpeed, {strokeWidth: (300 - random[6]), y: ((300 - random[6]) / 2)})
-        .to(PolyNumber[14], barSpeed, {autoAlpha: 0})
-        .to(PolyNumber[15], barSpeed, {strokeWidth: (300 - random[7]), y: ((300 - random[7]) / 2)})
-        .to(PolyNumber[16], barSpeed, {autoAlpha: 0})
-        .to(PolyNumber[17], barSpeed, {strokeWidth: (300 - random[8]), y: ((300 - random[8]) / 2)})
-        .to(PolyNumber[18], barSpeed, {autoAlpha: 0})
-        .to(PolyNumber[19], barSpeed, {strokeWidth: (300 - random[9]), y: ((300 - random[9]) / 2)})
-        .to(PolyNumber[20], barSpeed, {autoAlpha: 0})
-        .to(PolyNumber[21], barSpeed, {strokeWidth: (300 - random[10]), y: ((300 - random[10]) / 2)})
-        .to(PolyNumber[22], barSpeed, {autoAlpha: 0})
-        .to(PolyNumber[23], barSpeed, {strokeWidth: (300 - random[11]), y: ((300 - random[11]) / 2)})
-        .to(PolyNumber[24], barSpeed, {autoAlpha: 0})
-        .to(PolyNumber[25], barSpeed, {strokeWidth: (300 - random[12]), y: ((300 - random[12]) / 2)})
-        .to(PolyNumber[26], barSpeed, {autoAlpha: 0})
-        .to(PolyNumber[27], barSpeed, {strokeWidth: (300 - random[13]), y: ((300 - random[13]) / 2)})
-        .to(PolyNumber[28], barSpeed, {autoAlpha: 0})
-        .to(PolyNumber[29], barSpeed, {strokeWidth: (300 - random[14]), y: ((300 - random[14]) / 2)})
-        .to(PolyNumber[30], barSpeed, {autoAlpha: 0})
-        .to(PolyNumber[31], barSpeed, {strokeWidth: (300 - random[15]), y: ((300 - random[15]) / 2)})
-        .to(PolyNumber[32], barSpeed, {autoAlpha: 0})
-        .to(PolyNumber[33], barSpeed, {strokeWidth: (300 - random[16]), y: ((300 - random[16]) / 2)})
-        .to(PolyNumber[34], barSpeed, {autoAlpha: 0})
-        .to(PolyNumber[35], barSpeed, {strokeWidth: (300 - random[17]), y: ((300 - random[17]) / 2)})
-        .to(PolyNumber[36], barSpeed, {autoAlpha: 0})
-        .to(PolyNumber[37], barSpeed, {strokeWidth: (300 - random[18]), y: ((300 - random[18]) / 2)})
-        .to(PolyNumber[38], barSpeed, {autoAlpha: 0})
-        .to(PolyNumber[39], barSpeed, {strokeWidth: (300 - random[19]), y: ((300 - random[19]) / 2)})
-        .to(PolyNumber[40], barSpeed, {autoAlpha: 0});
+        chartDraw.to(PolyNumber[1], barSpeed, {autoAlpha: 0})
+        .to(PolyNumber[2], barSpeed, {strokeWidth: (150 - random[0]), y: ((150 - random[0]) / 2)})
+        .to(PolyNumber[3], barSpeed, {autoAlpha: 0})
+        .to(PolyNumber[4], barSpeed, {strokeWidth: (150 - random[1]), y: ((150 - random[1]) / 2)})
+        .to(PolyNumber[5], barSpeed, {autoAlpha: 0})
+        .to(PolyNumber[6], barSpeed, {strokeWidth: (150 - random[2]), y: ((150 - random[2]) / 2)})
+        .to(PolyNumber[7], barSpeed, {autoAlpha: 0})
+        .to(PolyNumber[8], barSpeed, {strokeWidth: (150 - random[3]), y: ((150 - random[3]) / 2)})
+        .to(PolyNumber[9], barSpeed, {autoAlpha: 0})
+        .to(PolyNumber[10], barSpeed, {strokeWidth: (150 - random[4]), y: ((150 - random[4]) / 2)})
+        .to(PolyNumber[11], barSpeed, {autoAlpha: 0})
+        .to(PolyNumber[12], barSpeed, {strokeWidth: (150 - random[5]), y: ((150 - random[5]) / 2)})
+        .to(PolyNumber[13], barSpeed, {autoAlpha: 0})
+        .to(PolyNumber[14], barSpeed, {strokeWidth: (150 - random[6]), y: ((150 - random[6]) / 2)})
+        .to(PolyNumber[15], barSpeed, {autoAlpha: 0})
+        .to(PolyNumber[16], barSpeed, {strokeWidth: (150 - random[7]), y: ((150 - random[7]) / 2)})
+        .to(PolyNumber[17], barSpeed, {autoAlpha: 0})
+        .to(PolyNumber[18], barSpeed, {strokeWidth: (150 - random[8]), y: ((150 - random[8]) / 2)})
+        .to(PolyNumber[19], barSpeed, {autoAlpha: 0})
+        .to(PolyNumber[20], barSpeed, {strokeWidth: (150 - random[9]), y: ((150 - random[9]) / 2)})
+        .to(PolyNumber[21], barSpeed, {autoAlpha: 0})
+        .to(PolyNumber[22], barSpeed, {strokeWidth: (150 - random[10]), y: ((150 - random[10]) / 2)})
+        .to(PolyNumber[23], barSpeed, {autoAlpha: 0})
+        .to(PolyNumber[24], barSpeed, {strokeWidth: (150 - random[11]), y: ((150 - random[11]) / 2)})
+        .to(PolyNumber[25], barSpeed, {autoAlpha: 0})
+        .to(PolyNumber[26], barSpeed, {strokeWidth: (150 - random[12]), y: ((150 - random[12]) / 2)})
+        .to(PolyNumber[27], barSpeed, {autoAlpha: 0})
+        .to(PolyNumber[28], barSpeed, {strokeWidth: (150 - random[13]), y: ((150 - random[13]) / 2)})
+        .to(PolyNumber[29], barSpeed, {autoAlpha: 0})
+        .to(PolyNumber[30], barSpeed, {strokeWidth: (150 - random[14]), y: ((150 - random[14]) / 2)})
+        .to(PolyNumber[31], barSpeed, {autoAlpha: 0})
+        .to(PolyNumber[32], barSpeed, {strokeWidth: (150 - random[15]), y: ((150 - random[15]) / 2)})
+        .to(PolyNumber[33], barSpeed, {autoAlpha: 0})
+        .to(PolyNumber[34], barSpeed, {strokeWidth: (150 - random[16]), y: ((150 - random[16]) / 2)})
+        .to(PolyNumber[35], barSpeed, {autoAlpha: 0})
+        .to(PolyNumber[36], barSpeed, {strokeWidth: (150 - random[17]), y: ((150 - random[17]) / 2)})
+        .to(PolyNumber[37], barSpeed, {autoAlpha: 0})
+        .to(PolyNumber[38], barSpeed, {strokeWidth: (150 - random[18]), y: ((150 - random[18]) / 2)})
+        .to(PolyNumber[39], barSpeed, {autoAlpha: 0})
+        .to(PolyNumber[40], barSpeed, {strokeWidth: (150 - random[19]), y: ((150 - random[19]) / 2)})
+        .to(PolyNumber[41], barSpeed, {autoAlpha: 0});
 
         // Erases out all the remainder PolyNumber[s that are still visible.
         function BarsFadeOut() {
@@ -541,7 +550,7 @@ class GraphAnimation extends Component {
 
 
   render() {
-    const dataCount = 20;
+    const dataCount = 21;
     const polyArray = [...new Array(((dataCount) * 2) + 1)].map((value, index) => index);
 
     function PolyList() {
@@ -551,7 +560,7 @@ class GraphAnimation extends Component {
     }
 
     return (
-      <Svg id="ChartSvg" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+      <Svg id="ChartSvg" viewBox="0 0 400 150" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
         <PolyList/>
       </Svg>
     )

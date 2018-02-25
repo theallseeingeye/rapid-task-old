@@ -2,25 +2,25 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const Div = styled.div`
-  margin-top: 10vh;
-  height: 35vh;
+  margin-top: 5vh;
+  height: auto;
 `;
 const Text = styled.div`
   font-family: ${props => props.theme.Robotofont};
-  line-height: 1.4em;
+  line-height: 2em;
+  text-align: justify;
+  width: 95%;
+  max-width: 1200px;
+  margin: auto;
+`;
+
+const Text2 = styled.p`
+  font-family: ${props => props.theme.Robotofont};
+  line-height: 2em;
   text-align: center;
   width: 95%;
   max-width: 1200px;
-  @media (min-width: ${props => props.theme.tabletscreen}) {
-  font-size: 1.5em;
-  }
-  @media (min-width: ${props => props.theme.desktopscreen}) {
-  
-  }
-  @media (min-width: ${props => props.theme.giantscreen}) {
-  line-height: 2em;
   margin: auto;
-  }
 `;
 
 class About extends Component {
@@ -31,23 +31,19 @@ class About extends Component {
 
           Our goal is to help you run and grow your business with more ease than ever!
 
-
-
-          With years of experience of start ups and running small service based businesses, we had our share of working
-          with many other businesses,
-          We saw the frustration of business owners who are nearly overworked, and can't find time to be organized or grow,
-          on a daily basis. We also worked hard to stay ahead and be organized, also found it to be
-          very time consuming. We tried to use some technological solutions hoping to save us some time, but found that
-          they lacked functionality, and are lacking ease of use. We formed together as a team to find a solution
-          and founded Rapid Task, which is the solution that we all have been needing desperately.
-
-
-
-
-          We are currently seeking investment in order to expand our team so we can deliver a first-rate product to you sooner.
-          If you are interested in getting in touch with our team we can be reached at <br/>
-          inquiries@rapidtask.com
+          Over years of experience operating service based businesses of our own we were able to work with many people from
+          different types of businesses and found that the the challenges we faced in growing our businesses were anything
+          but unique. At times, running a business can get a little bit overwhelming which makes it difficult to find the time
+          to stay organized and grow. Desperate for a solution, we began trying various technological solutions hoping to save
+          us some time. We found that many of these tools were difficult to use and none of them were comprehensive enough
+          to manage the complexity of running our businesses. We needed something more. We banded together in search of a
+          solution and founded Rapid Task, the business tool that we all have been needing, desperately.<br/><br/>
         </Text>
+        <Text2>
+          We are currently seeking investment with the goal of expanding our team. This will allow us to deliver a first-rate
+          product to you sooner. If you are interested in getting in touch with our team we can be reached at <br/>
+          <b>inquiries@rapidtask.com</b>
+        </Text2>
       </Div>
     );
   }

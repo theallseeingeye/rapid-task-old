@@ -18,6 +18,9 @@ const FeatureDiv = styled.div`
   @media (min-width: ${props => props.theme.desktopscreen}) {
     height: 120vh;
   }
+    @media (min-width: ${props => props.theme.desktopscreen}) {
+    height: 125vh;
+  }
 `;
 
 const TextTitle = styled.p`

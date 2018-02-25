@@ -6,6 +6,7 @@ const Div = styled.div`
   height: auto;
   //height: 160vh;
   margin: 0 5px 0 5px;
+  background-color: white; //this is to hide the fixed position animations to prevent them from showing up on slower devices
   font-family: ${props => props.theme.Robotofont};
   max-width: 1200px;
   @media (min-width: ${props => props.theme.giantscreen}) {
@@ -23,17 +24,17 @@ const ColumnL = styled.div`
   height: auto;
   width: 100%;
   @media (min-width: ${props => props.theme.tabletscreen}) {
-  width: 50%;
+  width: 52.7%;
   }  
 `;
 
 const ColumnR = styled.div`
   width: 100%;
   height: auto;
-  margin-bottom: 5vh;
-  min-width: 360px;
+  min-width: 350px;
+  max-width: 500px;
   @media (min-width: ${props => props.theme.tabletscreen}) {
-  width: 50%;
+  width: 47.3%;
   }  
 `;
 
@@ -47,12 +48,12 @@ const Title = styled.p`
 
 const SubTitle = styled.p`
   font-size: 1.5em;
-  margin: -0.5em 0 0.25em 0;
-  text-align: center;
 `;
 
 const Text = styled.p`
-  margin: 10px;
+  @media (min-width: ${props => props.theme.desktopscreen}) {
+  margin-top: 2.5em;
+  }  
 `;
 
 class ClientFeatures extends Component {
@@ -69,9 +70,11 @@ class ClientFeatures extends Component {
           <ColumnL>
             <p>
               Rapid Task has a modular client interface that is fully customizeable to perfectly fit the needs of your
-              business. You decide what information is most important, and what gets shared with your clients. Rapid Task
-              will help you:<br/><br/>
+              business. You decide what information is most important, and what gets shared with your clients.
             </p>
+            <SubTitle>
+              Rapid Task will help you:
+            </SubTitle>
             <Text>Keep organized profiles for each of your clients and their history</Text>
             <Text>Track leads for new work and potential clients</Text>
             <Text>Automatic notifications when new quote requests come in</Text>

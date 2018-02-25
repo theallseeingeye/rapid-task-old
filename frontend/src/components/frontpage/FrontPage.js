@@ -15,11 +15,6 @@ import Footer from "./footer/Footer";
 import MainPage from "./main-page/MainPage";
 import CityAnimation from "./map-features/MapFeatures";
 
-
-const MapsContainer = styled.div`
-  height: 110vh;
-`;
-
 class FrontPage extends Component {
   render() {
     return (

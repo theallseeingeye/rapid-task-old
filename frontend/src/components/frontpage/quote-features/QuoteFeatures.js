@@ -5,43 +5,34 @@ import ManQuoting from "./ParkingLotLayers/ManQuoting";
 
 const Div = styled.div`
   // Main Font
+  
   font-family: ${props => props.theme.Robotofont};
-  
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
   height: auto;
-  overflow: hidden;
   position: relative; // Required to help arrange the divs- especially the trigger div, as we need it to the bottom.
-  
-  @media (min-width: ${props => props.theme.tabletscreen}) {
-    height: auto;
-  }
+  overflow: hidden;
 `;
 
 const QuoteTitle = styled.p`
   font-size: 2.5em;
-  text-align: center;
-  position: absolute;
-  margin-top: 15vh;
-  background-color: rgba(255, 255, 255, 0.8);
   width: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  @media (min-width: ${props => props.theme.tabletscreen}) {
+  font-weight: 900;
+  }
 `;
 
 const MainContext = styled.p`
-  margin-top: 80vh;
-  width: 55%;
+  width: 54%;
   text-align: justify;
   margin-left: 10px;
   font-size: 1.1em;
+  margin-top: -30vh;
   font-family: ${props => props.theme.RobotoCondensedfont};
-  
-  @media (min-width: ${props => props.theme.tabletscreen}) {
-    font-size: 1.3em;
-    margin-top: 90vh;
-  }
-  @media (min-width: ${props => props.theme.desktopscreen}) {
-    margin-left: 15vw;
-    width: 30%;
-    margin-top: 70vh;
-  }
 `;
 
 const Example = styled.p`
@@ -64,9 +55,6 @@ const Context1 = styled.p`
   @media (min-width: ${props => props.theme.tabletscreen}) {
     margin-bottom: 20vh;
   }
-  @media (min-width: ${props => props.theme.desktopscreen}) {
-    margin-bottom: 20vh;
-  }
 `;
 
 const Columns = styled.div`
@@ -76,20 +64,10 @@ const Columns = styled.div`
 
 const RightColumn = styled.div`
   Width: 45vw;
-  margin-top: 80vh;
-  
-  @media (min-width: ${props => props.theme.desktopscreen}) {
-    margin-right: 25%;
-  }
-  
 `;
 
 const LeftColumn = styled.div`
   width: 54vw;
-  
-  @media (min-width: ${props => props.theme.desktopscreen}) {
-    margin-left: 15vw;
-  }
 `;
 
 const FlexContainer = styled.div`

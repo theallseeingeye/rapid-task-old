@@ -4,10 +4,12 @@ import axios from "axios/index";
 import validator from 'validator';
 
 const FormElements = styled.form`
+  background-color: white; //this is to hide the fixed position animations to prevent them from showing up on slower devices
   width: 100%;
   text-align: center;
   font-family: ${props => props.theme.Robotofont};
-  height: 48vh;
+  margin: 5vh 0 5vh 0;
+  height: auto;
 `;
 
 const Title = styled.p`

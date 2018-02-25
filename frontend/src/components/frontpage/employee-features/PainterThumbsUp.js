@@ -7,6 +7,7 @@ const Svg = styled.svg`
   margin: auto;
   //width: 100%;
   margin-right: 2em;
+  padding: 10px;
 `;
 
 class PainterThumbsUp extends Component {

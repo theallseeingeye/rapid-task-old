@@ -4,14 +4,12 @@ import PainterThumbsUp from "./PainterThumbsUp";
 import PainterWalking from "./PainterWalking";
 
 const Div = styled.div`
-  height: 225vh;
+  height: auto;
   width: 100%;
   max-width: 1200px;
-  max-height: 1350px;
   margin: auto;
-  @media (min-width: ${props => props.theme.tabletscreen}) {
-  height: 100vh;
-  }
+  overflow: hidden;
+  background-color: white; //this is to hide the fixed position animations to prevent them from showing up on slower devices
 `;
 
 const SubTitle = styled.p`
@@ -21,10 +19,16 @@ const SubTitle = styled.p`
 const TextArea = styled.div`
   font-family: ${props => props.theme.Robotofont};
   margin: 0 5px 0 5px;
+  text-align: justify;
 `;
 
 const TextSection = styled.div`
   margin-top: 5vh;
+  text-align: justify;
+
+  line-height: 1.4em;
+  
+
 `;
 
 class EmployeeFeatures extends Component {
@@ -35,53 +39,67 @@ class EmployeeFeatures extends Component {
         <TextArea>
 
             You can empower your employees by making them feel responsible and important. Rapid Task can provide employees
-            transparent work schedule with job details in advanced. Employees can be informed each job details that were
-            carried from the build of the quotes. Your employees will feel more better prepared. Happier employees creates
-            a better business.
-
+            with a transparent work schedule with comprehensive job details in advance. Employees feel more a part of the
+            business and are more prepared to complete the work. Happy employees are one of the things that makes your
+            business great!
 
           <TextSection>
             <SubTitle>
               Time Tracking
             </SubTitle>
             <p>
-            Keep track of how long the employees are working on a task <br/>
-            Time Sheets- Employees can enter time and know their hours. Updated in real time <br/>
-            Employee Performance Tracking- track how well they are doing vs. estimated budget <br/>
+              Employees will be able to enter and track their hours in real-time. This helps to minimize confusion when
+              doing payroll later having all of the hours documented in the same place, conveniently connected to your
+              calendar so you can quickly verify the information.<br/><br/>
+              We'll help you keep track of how long it takes your employees to complete specific tasks. Knowing this
+              information ensure that you never quote too low again!<br/><br/>
+              You will be able to track employee performance. You will know which staff are really shining, and those
+              that are underperforming with the click of a button. We want to help you find and keep the best people to
+              be a part of your business.<br/>
             </p>
             <PainterWalking/>
             <SubTitle>
-            Employees Record Data With Ease
+              Employees Record Data With Ease
             </SubTitle>
             <p>
-            Employees can enter company expenses. They can enter materials used.
-            Always keep track of receipts on the spot and for easy accounting
+              Employees can enter company expenses including the materials that are used on the job. Your employees will
+              be able to keep track of receipts on the spot through Rapid Task. Not only does this make accounting easier,
+              it ensures that you don't have to track down missing receipts every month.
             </p>
             <SubTitle>
-            Automatic Scheduling
+              Automatic Scheduling
             </SubTitle>
             <p>
-            The schedule for employees will follow automatically from the job quotes created and awarded.
-            Employees can easily request time off or easily communicate for shift cover
+              Once a quote has been completed, Rapid Task will schedule a team of your employees automatically based on
+              the needs represented in the quote awarded. This automatic scheduling will take approved time-off, total workload,
+              hours of operation and any other considerations into account.
+              Employees can also submit their time-off requests directly into Rapid Task to be reviewed, or to communicate
+              a shift which they need to be covered by another employee.
             </p>
-              <PainterThumbsUp/> <br/>
+            <PainterThumbsUp/>
             <SubTitle>
               Flexible Rapid Task Permissions
             </SubTitle>
             <p>
-              Rapid Task works for any type of employees. Can apply access payroll for staff members who are
-              given permission. Supervisors can have access to more control for updating information.
+              Rapid Task works for any type of employee. You have complete freedom to share access to whatever features
+              you see fit with your staff. Payroll staff can be given permissions to timesheets, and supervisors can be
+              granted greater access when updating information or reviewing data.
             </p>
             <p>
-              Easily distribute notices, updates and training information across your employees.
+              You will be able to easily distribute notices, updates, and training information to all of your employees.
+              in one place. You will also be able to review which of your employees has reviewed the information that
+              you have shared.
             </p>
             <p>
-              Easily set up incentive programs for your employees. You can decide to pay by piece work or bonuses
+              Being able to effectively track your employees will make it easier to reward the people who are producing
+              great results! You can easily set-up incentive programs for your employees, whether that is by piece work
+              or by the distribution of bonuses and awards.
             </p>
             <p>
               Employees can receive a list of tasks that are required for the day. Provide incentives for them to work
-              efficiently and completing the job. An example would be paying them for the full shift if they complete
-              the job sooner than their shift, while meeting quality work.
+              efficiently and competently on the job. One example of how this could work for your business could be using
+              the method of paying them for the full shift if they are able complete a job before the end of their shift
+              and under budget, while maintaining an exceptional quality standard in their work.
             </p>
           </TextSection>
         </TextArea>

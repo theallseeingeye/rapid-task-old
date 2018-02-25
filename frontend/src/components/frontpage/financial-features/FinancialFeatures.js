@@ -7,30 +7,31 @@ import theme from "../../../global-styles/DefaultTheme";
 const Div = styled.div`
   font-family: ${props => props.theme.Robotofont};
   margin: auto;
-  height: 1400vw;
+  height: auto;
   position: relative;
   max-width: 1200px;
-  @media (min-width: ${props => props.theme.tabletscreen}) {
-  height: 660vh;
-  }
+  background-color: white; //this is to hide the fixed position animations to prevent them from showing up on slower devices
 `;
 
 const Svg = styled.svg`
-  width: 140vw;
-  margin: auto;
   position: absolute;
   transform: translateX(-29.4%);
   z-index: -3;
-  @media (min-width: ${props => props.theme.tabletscreen}) {
+
   max-width: 1200px; // To keep the layers from getting too big
   transform: translate(-20%, -20%);
+`;
+
+const ManGraphic = styled.div`
+  @media (min-width: 1200px) {
+  margin-left: 15vw;
   }
 `;
 
 const FinanceTitle = styled.p`
   font-size: 2.5em;
-  text-align: right;
-  width: 99%;
+  text-align: center;
+  width: 100%;
   position: absolute;
   z-index: 2;
   @media (min-width: ${props => props.theme.tabletscreen}) {
@@ -43,28 +44,29 @@ const WhiteDiv = styled.div` // This div box is to help hide the invoice scroll.
   z-index: -1;
   background-color: white;
   width: 100%;
-  height: 30vh;
+  height: 52vh;
 `;
 
 const RightColumn = styled.div`
   width: 65vw;
-  flex: 1; // width of flexbox compared to others
-  margin-top: 50vh;
+  margin-top: 50vh; 
+  flex: 1;
 `;
 
 const LeftColumn = styled.div`
   width: 35vw;
   z-index: -2;
   position: relative;
-  max-width: 350px;
+  //max-width: 500px;
+  height: auto;
+  @media (min-width: ${props => props.theme.desktopscreen}) {
+  flex: 1;
+  }
 `;
 
 const FlexContainerLeft = styled.div`
-  //display: flex;
-
-  float: right;
-  //display: block;
-  margin-right: 98%;
+  display: flex;
+  justify-content: right;
 `;
 
 const FlexContainerRight = styled.div`
@@ -73,15 +75,12 @@ const FlexContainerRight = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   // Alignment 
-  height: 1300vw;
-  @media (min-width: ${props => props.theme.tabletscreen}) {
-  height: 600vh;
-
-  }
 `;
 
 const Columns = styled.div`
   display: flex;
+  max-width: 800px;
+  margin: auto;
 `;
 
 
@@ -100,14 +99,25 @@ const Context1 = styled.div`
   font-weight: 400;
   text-align: justify;
   flex-grow: 1;
+  max-width: 500px;
 `;
 
-const MainContent = styled.p`
-  height: 50vh;
-  float: right;
-  text-align: right;
-  z-index: 1;
-
+const MainContent = styled.div`
+  font-family: ${props => props.theme.RobotoCondensedfont};
+  padding-left: 10px;
+  padding-right: 10px;
+  font-weight: 400;
+  font-size: 1.1em;
+  text-align: justify;
+  flex-grow: 1;
+  max-width: 500px;
+  margin-top: 20vh;
+  @media (min-width: ${props => props.theme.tabletscreen}) {
+  margin-top: 30vh;
+  }
+  @media (min-width: ${props => props.theme.desktopscreen}) {
+  margin-top: 45vh;
+  }
 `;
 
 // This div is required to close the animation of the invoice.
@@ -133,12 +143,13 @@ class FinancialFeatures extends Component {
       <Div>
         <WhiteDiv/>
         <FinanceTitle id="InvoiceActivateTrigger">Automated Accounting</FinanceTitle>
-
+        <ManGraphic>
         <ManFinance/>
         <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 884.84 1122.59">
           <rect x="122.49" y="510.29" width="72.46" height="575" rx="36.23" ry="36.23" transform="translate(-79.02 1571.6) rotate(-135)" fill={this.color2}/>
           <rect x="200.03" y="245.48" width="33.41" height="650" rx="16.7" ry="16.7" transform="translate(117.58 1391.58) rotate(-135)" fill={this.color}/>
         </Svg>
+        </ManGraphic>
         <Columns>
 
           <LeftColumn>

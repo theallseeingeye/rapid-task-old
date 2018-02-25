@@ -5,6 +5,7 @@ const Svg = styled.svg`
   height: 50vh;
   float: left;
   margin: auto;
+  padding: 5px;
 `;
 
 class PainterWalking extends Component {

@@ -8,7 +8,7 @@ const Svg = styled.svg`
   width: 100%;
   margin: auto;
   display: block;
-  min-width: 360px;
+  min-width: 350px;
 `;
 
 const HandPoint = styled.g`

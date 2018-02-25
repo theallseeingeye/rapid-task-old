@@ -19,6 +19,7 @@ import EquipmentLayer from "./EquipmentLayer";
 
 const Div = styled.div`
   width: 45vw;
+  max-width: 500px;
   position: absolute;
   display: flex;
 `;
@@ -30,7 +31,7 @@ const Svg = styled.svg`
   top: 25vh; // center the svg on the page vertically.
     
   @media (min-width: ${props => props.theme.desktopscreen}) {
-   max-width: 35vw; // To keep the layers from getting too big
+   max-width: 400px; // To keep the layers from getting too big
    top: 10vh; // Adjust the layers to the middle vertical height
    margin-left: 2.5vw;
   }

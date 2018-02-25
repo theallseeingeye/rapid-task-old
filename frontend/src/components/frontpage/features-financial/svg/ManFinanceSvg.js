@@ -9,7 +9,7 @@ const Svg = styled.svg`
   transform: translateX(-29.4%);
   z-index: 1;
   @media (min-width: ${props => props.theme.tabletscreen}) {
-  max-width: 1000px; // To keep the layers from getting too big
+    max-width: 1000px; // To keep the layers from getting too big
   }
  `;
 

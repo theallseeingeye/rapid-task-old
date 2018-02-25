@@ -10,15 +10,6 @@ const Svg = styled.svg`
   margin-left: 5px; 
 `;
 
-const CreditCard = styled.g`
-  visibility: hidden;
-`;
-
-const DollarBill = styled.g`
-  visibility: hidden;
-`;
-
-
 class InvoiceSvg extends Component {
 
   componentDidMount() {

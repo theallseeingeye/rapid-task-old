@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import axios from "axios/index";
 import validator from 'validator';
+import { Link } from 'react-router-dom';
 
 const FormElements = styled.form`
   background-color: white; //this is to hide the fixed position animations to prevent them from showing up on slower devices
@@ -46,6 +47,11 @@ const Subscribe = styled.input`
   border-width: 4px;
 `;
 
+const NoSpam = styled.p`
+  font-size: 0.5em;
+  font-style: italic;
+`;
+
 
 class SubscriptionForm extends Component {
   constructor(props) {
@@ -53,8 +59,9 @@ class SubscriptionForm extends Component {
     this.state = {
       name: {value: '', isValid: true, message: ''},
       email: {value: '', isValid: true, message: ''},
-      existingEmail: 'no change',
-      subscribed: '',
+      // existingEmail: 'no change',
+      // subscribed: '',
+      isSubmitted: false,
     };
   };
 
@@ -70,22 +77,22 @@ class SubscriptionForm extends Component {
     const emailInput = this.state.email;
     const emailNormalizer = validator.normalizeEmail(emailInput);
 
-    if (this.checkEmailExisting()) {
 
-      if (this.formIsValid()) {
-        const subscriber = {
-          name: this.state.name,
-          email: emailNormalizer,
-        };
+    if (this.formIsValid()) {
+      const subscriber = {
+        name: this.state.name,
+        email: emailNormalizer,
+      };
 
-        // Sends the data to the backend.
-        axios.post('http://127.0.0.1:8000/subscriber/create/', subscriber)
-          .then(response => {
-            console.log('You are now subscribed. Thank you!');
-          })
-      }
-
+      // Sends the data to the backend.
+      axios.post('http://127.0.0.1:8000/subscriber/create/', subscriber)
+        .then(response => {
+          console.log('You are now subscribed. Thank you!');
+          return this.setState.isSubmitted = true;
+        });
     }
+
+
   };
 
   formIsValid = () => {
@@ -98,7 +105,7 @@ class SubscriptionForm extends Component {
 
       this.setState(state);
       return false;
-      // Else if they already subscribed
+
     }
     return true;
   };
@@ -127,6 +134,9 @@ class SubscriptionForm extends Component {
   };
 
   render() {
+
+    const submitted = this.state.isSubmitted;
+
     return (
       <FormElements onSubmit={this.handleSubmit}>
         <Title>
@@ -158,7 +168,11 @@ class SubscriptionForm extends Component {
         <br />
         <br />
         <Subscribe type="submit" value="Subscribe"/>
-    </FormElements>
+        <NoSpam>
+          No spam ever and easy to <Link to="/unsubscribe"> unsubscribe </Link>
+        </NoSpam>
+        {/*{submitted = true && }*/}
+      </FormElements>
     );
   }
 }

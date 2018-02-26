@@ -28,9 +28,7 @@ class About extends Component {
     return (
       <Div>
         <Text>
-
           Our goal is to help you run and grow your business with more ease than ever!
-
           Over years of experience operating service based businesses of our own we were able to work with many people from
           different types of businesses and found that the the challenges we faced in growing our businesses were anything
           but unique. At times, running a business can get a little bit overwhelming which makes it difficult to find the time
@@ -48,8 +46,6 @@ class About extends Component {
     );
   }
 }
-
-
 
 export default About;
 

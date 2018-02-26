@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import OfficeBeach from './OfficeBeach';
+import OfficeBeach from './svg/OfficeBeach';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components'
 
 const FindOutMore = styled.div`
@@ -22,7 +23,6 @@ const FindOutMore = styled.div`
   }
 `;
 
-
 const AboutHeader = styled.p`
   font-weight: bold;
   font-size: 1.3em;
@@ -35,21 +35,20 @@ const BackgroundContainer = styled.div`
   opacity: 1;
   // To place behind all divs
   z-index: -1;
-  // To hid the sides that are stretching beyond the div
+  // To hide the sides that are stretching beyond the div
   overflow: hidden;
-   @media (min-width: ${props => props.theme.tabletscreen}) {
+  @media (min-width: ${props => props.theme.tabletscreen}) {
    height: 112vh;
    font-size: 1.2em;
-   }
-   @media (min-width: ${props => props.theme.desktopscreen}) {
+  }
+  @media (min-width: ${props => props.theme.desktopscreen}) {
    height: 125vh;
    font-size: 1.4em;
-   
-   }
-   @media (min-width: ${props => props.theme.giantscreen}) {
+  }
+  @media (min-width: ${props => props.theme.giantscreen}) {
    height: 110vw;
    font-size: 1.6em;
-   }
+  }
 `;
 
 class Footer extends Component {
@@ -71,15 +70,15 @@ class Footer extends Component {
           <AboutHeader>Find Out More</AboutHeader>
           <a href='About'>About</a>
           <br />
-          <a href='Careers'>Careers</a>
+          <Link to="/careers"> Careers </Link>
           <br />
-          <a href='MediaKit'>Media Kit</a>
+          <Link to="/media-relations"> Media Relations </Link>
           <br />
-          <a href='Investors'>Investor Relations</a>
+          <Link to="/investor-relations"> Investor Relations </Link>
           <br />
           <br />
           <div className='dateValue'>
-            © {this.state.dateYear}, RapidTask
+            © {this.state.dateYear} Rapid Task
           </div>
         </FindOutMore>
        </BackgroundContainer>

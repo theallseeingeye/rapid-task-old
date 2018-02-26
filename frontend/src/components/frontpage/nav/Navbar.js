@@ -46,15 +46,14 @@ const FlexItem = styled.button`
 
   // Border styling
   border-radius: 10px 10px 0 0;
-
   @media (min-width: ${props => props.theme.tabletscreen}) {
-      transform: skewX(-32deg);
-        border-radius: 10px 10px 10px 10px;
+    transform: skewX(-32deg);
+    border-radius: 10px 10px 10px 10px;
   };
   
   // z-index tells css the position order it has over the objects.
   z-index: 1;
-  
+ 
   // Formatting
   align-self: auto;
   flex-grow: ${props => props.flexgrow};

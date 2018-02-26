@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SubscriptionForm from './SubscriptionForm';
+import FinancialFeatures from './svg/ManFinanceSvg';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<SubscriptionForm/>, div);
+  ReactDOM.render(<FinancialFeatures/>, div);
 });
-

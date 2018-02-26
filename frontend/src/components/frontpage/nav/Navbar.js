@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { TweenLite } from 'gsap';
+import 'gsap/src/uncompressed/plugins/ScrollToPlugin';
 
 const Nav = styled.nav`
   bottom: 0;
@@ -65,14 +67,25 @@ const FlexItem = styled.button`
 `;
 
 class NavBar extends Component {
+
+
+  handleClick = (e, location) => {
+    e.preventDefault();
+    console.log("it clicked");
+    TweenLite.to(window, 1, {scrollTo:location, autoKill:false});
+  };
+
+
+  
+
   render() {
     return (
       <Nav>
         <FlexContainer>
-          <FlexItem flexgrow="1">Features</FlexItem>
-          <FlexItem flexgrow="1">Contact</FlexItem>
-          <FlexItem flexgrow="1">About</FlexItem>
-          <FlexItem flexgrow="1">Development</FlexItem>
+          <FlexItem flexgrow="1" onClick={ (e) => this.handleClick(e, "#featuresScrollTarget")}>Features</FlexItem>
+          <FlexItem flexgrow="1" onClick={ (e) => this.handleClick(e, "#aboutScrollTarget")}>Contact</FlexItem>
+          <FlexItem flexgrow="1" onClick={ (e) => this.handleClick(e, "#aboutScrollTarget")}>About</FlexItem>
+          <FlexItem flexgrow="1" innerRef={x => this.investors = x}>Investors</FlexItem>
         </FlexContainer>
       </Nav>
     );

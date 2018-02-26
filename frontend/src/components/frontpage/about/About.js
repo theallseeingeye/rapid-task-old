@@ -26,7 +26,7 @@ const Text2 = styled.p`
 class About extends Component {
   render() {
     return (
-      <Div>
+      <Div  id="aboutScrollTarget">
         <Text>
           Our goal is to help you run and grow your business with more ease than ever!
           Over years of experience operating service based businesses of our own we were able to work with many people from

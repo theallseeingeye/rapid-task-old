@@ -74,7 +74,7 @@ const ListText = styled.a`
 class Features extends Component {
   render() {
     return (
-      <FeatureDiv>
+      <FeatureDiv id="featuresScrollTarget">
         <TextTitle>
           Rapid Task manages your daily business tasks quickly with ease across all platforms <br/>
         </TextTitle>

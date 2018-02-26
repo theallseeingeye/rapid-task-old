@@ -10,8 +10,9 @@ module.exports = merge(common, {
   plugins: [
     // Shrinks down the spaces and file size
     new UglifyJSPlugin({
-      sourceMap: true
+
     }),
+
     // This will turn off the additional logging and testing of the included libraries. Very good at reducing bundle size
     // especially using react.
     new webpack.DefinePlugin({

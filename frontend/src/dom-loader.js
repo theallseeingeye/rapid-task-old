@@ -66,11 +66,10 @@ injectGlobal`
   }
   a {
     background-color: transparent;
-    -webkit-text-decoration-skip: objects;
+
   }
   abbr[title] {
     border-bottom: none;
-    text-decoration: underline;
     text-decoration: underline dotted;
   }
   b,

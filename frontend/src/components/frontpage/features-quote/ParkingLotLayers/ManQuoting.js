@@ -14,6 +14,20 @@ const Svg = styled.svg`
   }
 `;
 
+//This Rect is for the bottom section. A different position is required on larger screen sizes.
+
+const Rect = styled.rect`
+  @media (min-width: ${props => props.theme.desktopscreen}) {
+    transform: translate(-650px, 420px) rotateZ(-45deg);
+  }
+`;
+
+const Rect2 = styled.rect`
+  @media (min-width: ${props => props.theme.desktopscreen}) {
+    transform: translate(-530px, 390px) rotateZ(-45deg);
+  }
+`;
+
 class ManQuoting extends Component {
   constructor(props) {
     super(props);
@@ -28,11 +42,11 @@ class ManQuoting extends Component {
         <title>QuoteManExciting</title>
         <g id="Background">
           <rect id="DarkLarge" x="305.36" y="78.53" width="196.39" height="974.1" rx="98.2" ry="98.2" transform="translate(-312.12 429.08) rotate(-45)" fill={this.color2}/>
-          <rect id="MediumSmall" x="415.19" y="339.48" width="33.41" height="795.04" rx="16.7" ry="16.7" transform="translate(-425.03 499.33) rotate(-45)" fill={this.color}/>
+          <Rect2 id="MediumSmall" x="415.19" y="339.48" width="33.41" height="795.04" rx="16.7" ry="16.7" transform="translate(-425.03 499.33) rotate(-45)" fill={this.color}/>
           <rect id="MediumLarge" x="366.17" y="45.54" width="342.91" height="907.21" rx="171.45" ry="171.45" transform="translate(-225.87 504.42) rotate(-45)" fill={this.color}/>
           <rect id="MediumMedium" x="610.94" y="-63.31" width="33.41" height="633.7" rx="16.7" ry="16.7" transform="translate(-25.85 496.14) rotate(-45)" fill={this.color}/>
           <rect id="DarkMedium" x="523.99" y="-110.11" width="72.46" height="974.1" rx="36.23" ry="36.23" transform="translate(-132.85 484.61) rotate(-45)" fill={this.color2}/>
-          <rect id="DarkMedium-2" data-name="DarkMedium" x="456.68" y="491.29" width="72.46" height="752.88" rx="36.23" ry="36.23" transform="translate(-499.6 580.76) rotate(-45)" fill={this.color2}/>
+          <Rect id="DarkMedium-2" data-name="DarkMedium" x="456.68" y="491.29" width="72.46" height="752.88" rx="36.23" ry="36.23" transform="translate(-499.6 580.76) rotate(-45)" fill={this.color2}/>
           <g id="Protractor">
             <rect id="trail" x="734.92" y="432.34" width="20.37" height="441.73" rx="10.18" ry="10.18" transform="translate(-274.04 696.26) rotate(-45)" fill="#fff" opacity="0.29"/>
             <g>
@@ -128,7 +142,7 @@ class ManQuoting extends Component {
             <rect x="312.81" y="329.59" width="12.97" height="441.73" rx="6.48" ry="6.48" transform="translate(-326.11 365.07) rotate(-45)" fill="#fff" opacity="0.29"/>
           </g>
           <g id="Triangle">
-            <rect id="trail-4" data-name="trail" x="519.84" y="116.89" width="19.53" height="441.73" transform="translate(-114.11 451.48) rotate(-45)" fill="#fff" opacity="0.29"/>
+            <rect id="trail-4" data-name="trail" x="519.84" y="116.89" rx="10" ry="10" width="19.53" height="441.73" transform="translate(-116.11 449.48) rotate(-45)" fill="#fff" opacity="0.29"/>
             <g>
               <path d="M360,154.51a.25.25,0,0,0-.41.23L367,189.25a.35.35,0,0,0,.59.17l13.32-13.5a.51.51,0,0,0,0-.72Zm6.59,12.31,8.78,8.67a.16.16,0,0,1,0,.23l-5.65,5.72a.09.09,0,0,1-.16,0l-3.13-14.48a.09.09,0,0,1,.16-.09Z" transform="translate(-30.39 -21.93)" fill="#f8bb3d"/>
               <g>
@@ -185,7 +199,7 @@ class ManQuoting extends Component {
             </g>
           </g>
           <g id="Pencil">
-            <rect id="trail-8" data-name="trail" x="557.37" y="724.91" width="1.9" height="404.84" rx="0.95" ry="0.95" transform="translate(-522.59 644.47) rotate(-45)" fill="#fff" opacity="0.29"/>
+            <rect id="trail-8" data-name="trail" x="557.37" y="724.91" width="1.9" height="270.84" rx="0.95" ry="0.95" transform="translate(-522.59 644.47) rotate(-45)" fill="#fff" opacity="0.29"/>
             <g>
               <path d="M399.82,767.29a.18.18,0,0,1-.22,0l-.12-.07a.12.12,0,0,0-.1,0l21,21.46.41-.4-21.11-21.61.21.35A.19.19,0,0,1,399.82,767.29Z" transform="translate(-30.39 -21.93)" fill="#df9127"/>
               <path d="M398.68,767.88a.12.12,0,0,0,0,.11l.12.3a.12.12,0,0,1-.18.15l-.45-.29,21.11,21.61.41-.4Z" transform="translate(-30.39 -21.93)" fill="#df9127"/>

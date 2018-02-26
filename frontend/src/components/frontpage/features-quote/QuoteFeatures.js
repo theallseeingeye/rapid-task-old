@@ -30,28 +30,25 @@ const MainContext = styled.p`
   margin-left: 10px;
   font-size: 1.1em;
   margin-top: -30vh;
+`;
+
+const Title1 = styled.div`
+  margin-top: 2em;
+  font-size: 1.2em;
+  padding-left: 10px;
+  padding-right: 10px;
+  flex-grow: 0.001;
+`;
+
+const Context1 = styled.div`
   font-family: ${props => props.theme.RobotoCondensedfont};
-`;
-
-const Example = styled.p`
-  float: right;
-  text-align: center;
-  margin-top: 15vh;
-`;
-
-const Title1 = styled.p`
-  text-align: center;
-  width: 100%;
-`;
-
-const Context1 = styled.p`
-  font-family: ${props => props.theme.RobotoCondensedfont};
-  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-weight: 400;
   text-align: justify;
-  
-  // These help space the texts apart.
+  flex-grow: 1;
   @media (min-width: ${props => props.theme.tabletscreen}) {
-    margin-bottom: 20vh;
+  margin-bottom: 3em;
   }
 `;
 
@@ -106,9 +103,6 @@ class Quotes extends Component {
           <LeftColumn>
             {/*Elements tagged with id's for identifying triggers*/}
             <FlexContainer>
-              <Example>
-                EXAMPLE
-              </Example>
               <Title1 id="bottomTrigger">
                 Quoting a Parking Lot
               </Title1>
@@ -198,23 +192,27 @@ class Quotes extends Component {
                 Paint Traffic Lines
               </Title1>
               <Context1>
-                You have the flexibility of how you want to put your quotes together. Rapid Task can provide options
-                of how to calculate the jobs, such as counting number of parking lines, or specific details such as
-                how many mils to apply, line width, linear length and traffic marking product. You can decide your
-                quoting processes, but keep in mind Rapid Task can help you more if you provide further details.
-                You can assign the quoting platform to your staff members and go through a checklist of important
-                steps to calculate the quotes. Easily set up a perfect system for yourself and your staff.
+                You have the flexibility of how you want to put your quotes together. Rapid Task provides options
+                for how to properly calculate information for the jobs. This includes tabulating quanitities related to
+                the needs of your project, in this case, parking lot lines. Other specific details may be important and
+                Rapid Task gives you the flexibility to choose what elements you require. In our example, the line width,
+                linear length, thickness of the paint, and traffic marking product come into play. We want to leave it up
+                to you to decide what is important for your business. Rapid Task is more helpful when you set the details.
+                You can assign the quoting platform to your staff members and go through a checklist of important steps
+                to calculate the quotes. Easily set up a perfect system for yourself and your staff.
               </Context1>
 
               <Title1 id="pylonsTrigger">
                 Employee Instructions
               </Title1>
               <Context1>
-                Finally you will have the time to consider other factors of the job that needs to be taken in consideration.
-                Safety meetings, extra training can be factored in. Specific site environment that would add more time to the
-                project. The more details implemented in the quotes, the more self driven your business will be. You can specify
-                your employees to place traffic cones to protect the traffic markings while the paint dries. Rapid Task
-                wants to make sure your business is successful and help make all of your jobs profitable.
+                Finally you will have the time to think about other factors of the job that need to be taken in consideration.
+                For example, safety meetings, or extra training can be factored in. Some specific site environments would
+                add more time to the project and we want to make sure that you aren't caught off-guard on site. Planning ahead
+                ensures that you and your employees are prepared for every scenario. In our example with the parking lot
+                we had specified that the employees placed pylons to keep traffic from interfering with the paint drying.
+                The more details implemented in the quotes, the more self driven your business will be. Rapid Task wants
+                to make sure your business is successful and help make all of your jobs profitable.
               </Context1>
             </FlexContainer>
           </LeftColumn>

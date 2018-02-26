@@ -3,21 +3,23 @@ import validator from "validator";
 import axios from "axios/index";
 import styled from "styled-components";
 
-
-const FormElements = styled.form`
+const FormElements = styled.div`
+  border-top: solid ${props => props.theme.logoblue};
+  background-color: ${props => props.theme.logoblue};
   width: 100%;
   text-align: center;
   font-family: ${props => props.theme.Robotofont};
-  height: 48vh;
 `;
 
 const Title = styled.p`
+  color: white;
   font-weight: bold;
   font-size: 2em;
-  opacity: 1;
+  margin: 25% 5% 0 0;
 `;
 
 const Subtitle = styled.p`
+  color: white;
   @media (min-width: ${props => props.theme.tabletscreen}) {
   font-size: 1.5em;
   }
@@ -27,14 +29,14 @@ const Subtitle = styled.p`
 const Email = styled.input`
   border-radius: 6px;
   font-size: 1.6em;
-  border-color: ${props => props.theme.logoblue};
+  border-color: rgba(45,140,245,1);
   border-width: 4px;
 `;
 
 const Subscribe = styled.input`
   border-radius: 20px;
-  background-color: transparent;
-  border-color: ${props => props.theme.logoblue};
+  background-color: white;
+  border-color: rgba(45,140,245,1);
   font-size: 1.6em;
   border-width: 4px;
 `;
@@ -85,13 +87,14 @@ class Unsubscribe extends Component {
 
   render() {
     return (
-      <div>
+
         <FormElements onSubmit={this.handleSubmit}>
+
           <Title>
-            We are sorry to hear you go.
+            We are sorry to have you go.
           </Title>
           <Subtitle>
-            Please enter the email you want to unsubscribe
+            Please enter the email you would like to unsubscribe
           </Subtitle>
           <Email
             placeholder='Email'
@@ -106,7 +109,7 @@ class Unsubscribe extends Component {
           <br />
           <Subscribe type="submit" value="Unsubscribe"/>
         </FormElements>
-      </div>
+
     );
   }
 }

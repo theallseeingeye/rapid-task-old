@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components'
 
 const FindOutMore = styled.div`
+  font-family: ${props => props.theme.Robotofont};
   text-align: right;
   line-height: 1.4em;
   font-size: 1.2em;
@@ -70,11 +71,11 @@ class Footer extends Component {
           <AboutHeader>Find Out More</AboutHeader>
           <a href='About'>About</a>
           <br />
-          <Link to="/careers"> Careers </Link>
+          <Link to="/careers">Careers</Link>
           <br />
-          <Link to="/media-relations"> Media Relations </Link>
+          <Link to="/media-relations">Media Relations</Link>
           <br />
-          <Link to="/investor-relations"> Investor Relations </Link>
+          <Link to="/investor-relations">Investor Relations</Link>
           <br />
           <br />
           <div className='dateValue'>

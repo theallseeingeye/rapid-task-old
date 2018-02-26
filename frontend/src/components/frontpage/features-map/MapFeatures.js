@@ -4,6 +4,7 @@ import MapAnimation from './MapLayers/MapAnimation';
 
 
 const MainDiv = styled.div`
+  font-family: ${props => props.theme.Robotofont};
   background: white; // To mask the animation layers
   z-index: -4; // Required to let the parking lot layers in above div to hide behind.
   overflow: hidden; // Required for svg when it zooms
@@ -37,37 +38,41 @@ const Div = styled.div`
   }
 `;
 
-const Title = styled.div`
+const Title = styled.p`
   // Title Styling
-  font-family: ${props => props.theme.Robotofont};
-  font-weight: 900;
-  font-size: 2em;
+  margin-top: -.3vh;
+  font-size: 2.5em;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.65);
-  height: 4vh;
   width: 100%;
   position: absolute;
   z-index: 2;
+  @media (min-width: ${props => props.theme.tabletscreen}) { 
+    font-weight: 900;
+  }
 `;
 
-const MainContext = styled.h1`
+const MainContext = styled.p`
   width: 100%;
   text-align: center;
-  font-family: ${props => props.theme.RobotoCondensedfont};
-  font-size: 1.2em;
-  margin-top: 10vh;
+  font-size: 1.5em;
+  margin-top: 18vh;
   position: absolute;
   z-index: 2;
   background-color: rgba(255, 255, 255, 0.65);
+  @media (min-width: ${props => props.theme.tabletscreen}) {
+    margin-top: 8vh;
+  }
 `;
 
 const MapDetails = styled.p`
   background-color: white; // To hide the animation behind
   text-align: justify;
   z-index: 5;
+  line-height: 1.4em;
   margin-left: 10px;
   margin-right: 10px;
-  font-family: ${props => props.theme.Robotofont};
+  font-family: ${props => props.theme.RobotoCondensedfont};
 `;
 
 class CityAnimation extends Component {

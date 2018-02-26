@@ -153,10 +153,10 @@ class MainPage extends Component {
               STREAMLINING
             </TextStyle1>
             <TextStyle2>
-            YOUR BUSINESS PROCESS
+              YOUR BUSINESS PROCESS
             </TextStyle2>
             <TextStyle3>
-            SO YOU CAN FOCUS ON WHAT'S IMPORTANT
+              SO YOU CAN FOCUS ON WHAT'S IMPORTANT
             </TextStyle3>
           </SloganBox>
         </SloganContainer>

@@ -46,7 +46,7 @@ const WhiteDiv = styled.div` // This div box is to help hide the invoice scroll.
 
 const RightColumn = styled.div`
   width: 65vw;
-  margin-top: 50vh; 
+  margin: 50vh 0 25vh 0; 
   flex: 1;
 `;
 
@@ -83,7 +83,7 @@ const Columns = styled.div`
 
 const Title1 = styled.div`
   margin-top: 2em;
-  font-weight: 900;
+  font-size: 1.2em;
   padding-left: 10px;
   padding-right: 10px;
   flex-grow: 0.001;
@@ -100,7 +100,7 @@ const Context1 = styled.div`
 `;
 
 const MainContent = styled.div`
-  font-family: ${props => props.theme.RobotoCondensedfont};
+  font-family: ${props => props.theme.Robotofont};
   padding-left: 10px;
   padding-right: 10px;
   font-weight: 400;
@@ -163,12 +163,12 @@ class FinancialFeatures extends Component {
                 Manage Your Invoices Anywhere
               </Title1>
               <Context1>
-                With access on all of your devices, you always can be up to date on invoicing. Rapid Task will monitor
+                With access on all of your devices, you will always be up to date on invoicing. Rapid Task will monitor
                 and notify you as soon as the project is completed and ready to invoice. This helps your business send
                 invoices sooner for payments. This equates to a healthy business that can pay their bills on time.
               </Context1>
               <Title1 id="InvoiceHeaderTrigger">
-                Make the Invoice Match to Your Business
+                Create an Invoice that Matches your Branding
               </Title1>
               <Context1>
                 Our interface allows you with ultimate freedom to stylize the invoice with branding that suits your business.
@@ -178,15 +178,16 @@ class FinancialFeatures extends Component {
                 You Never Have to Enter Information Twice
               </Title1>
               <Context1>
-                Writing and keeping track of client information can be time consuming. Rapid Task will auto generate your
-                invoice with customer's information.
+                Writing and keeping track of client information can be time consuming. Rapid Task will automatically
+                generate your invoice with customer's information.
               </Context1>
               <Title1 id="InvoiceLine4ATrigger">
-                Rapid Task Enters The Completed Tasks
+                Rapid Task Enters Information on Work Completed
               </Title1>
               <Context1>
-                We are happy to do the heavy lifting. Rapid Task enters data from the job automatically using information
-                from your quote and compares the actual work that was done.
+                We are happy to do the heavy lifting. Rapid Task pulls data from the job automatically and compares the
+                quote with the actual work completed. If there are any differences, Rapid Task will alert you of the
+                discrepancies before you complete the invoice.
               </Context1>
               <Title1 id="InvoiceLine4BTrigger">
                 Automatically Calculates Job Costs
@@ -200,10 +201,10 @@ class FinancialFeatures extends Component {
               </Title1>
               <Context1>
                 With an easy platform for your employees to enter expenses, You will be able to quickly review and verify
-                the expenses.
+                these costs.
               </Context1>
               <Title1 id="InvoiceLine5BTrigger">
-                Subcontracted margins
+                Subcontracted Work
               </Title1>
               <Context1>
                 Any additional margins added to subcontracted work are applied here. You can simply click the number and
@@ -214,7 +215,7 @@ class FinancialFeatures extends Component {
               </Title1>
               <Context1>
                 Your business can even handle large jobs with Rapid Task. You can easily set up progress payments and
-                break them up in your invoices. Your billing will always be up to date and tracked where you will never
+                break them up in your invoices. Your billing will always be up to date and tracked so that you will never
                 miss billing a task of your project.
               </Context1>
               <Title1 id="InvoiceLine6BTrigger">
@@ -226,24 +227,24 @@ class FinancialFeatures extends Component {
                 charge.
               </Context1>
               <Title1 id="InvoiceLine6CTrigger">
-                ????
+                Automatically Organize Information for Accounting
               </Title1>
               <Context1>
-                Rapid Task tracks your progress payments automatically so you can have some peace of mind
+                Whether you do it on your own, or you have a team accountants, it is easy to read the organized financial
+                information to complete taxes and payroll.
               </Context1>
               <Title1 id="InvoiceLine7ATrigger">
                 Customize the Details of the Work
               </Title1>
               <Context1>
-                For any of the information presented in your invoice you will maintain complete control of what is visible
-                on the client's end. Easy selection of options to show or type your own words.
+                For any of the information presented in your invoice you will maintain complete control of what is visible.
               </Context1>
               <Title1 id="InvoiceLine7BTrigger">
                 Display of Units
               </Title1>
               <Context1>
                 As mentioned, you will have final say in all information shared with the client. This allows you to show
-                any relevant equipment or material cost you wish to share. You can display quantity, cost per item and
+                any relevant equipment or material cost you wish to share. You can display quantity, cost per item, and
                 margins as desired. Rapid Task will assist with conversion calculations based on units you wish to show.
               </Context1>
               <Title1 id="InvoiceLine8ATrigger">
@@ -258,26 +259,19 @@ class FinancialFeatures extends Component {
                 Easy Built In References
               </Title1>
               <Context1>
-                The invoice will be interactive with lookup links to each task. When you click it will present you all
-                the details that was collected and calculated of the job task. No more complicated menu systems to find
+                The invoice will be interactive with lookup links to each task. When you select a field, you will be presented
+                with all the details that were collected and calculated for the job task. No more complicated menu systems to find
                 the information you want. You can allow certain details for your clients to see, such as dates of
                 completion or product details.
               </Context1>
               <Title1 id="InvoiceLine9ATrigger">
-                Smart GST Handling
+                Smart Sales Tax Handling
               </Title1>
               <Context1>
-                Based on your state or province, Rapid Task applies any relevant taxes. If the project was taken place
+                Based on your state or province, Rapid Task applies any relevant taxes. If the project was completed
                 in a different state or province, tax laws will be automatically applied according to region.
               </Context1>
               <Title1 id="InvoiceLine9BTrigger">
-                Clear Total Due
-              </Title1>
-              <Context1>
-                After compiling all of the job information, Rapid Task produces an accurate and clear price which will be
-                sent off to the client once approved
-              </Context1>
-              <Title1 id="InvoiceLine10Trigger">
                 Payment Due-Date
               </Title1>
               <Context1>
@@ -285,12 +279,19 @@ class FinancialFeatures extends Component {
                 payment processing so we can make sure you get your money faster than ever. If we don't catch them on the
                 first go around we'll take care of sending reminders before the due date comes.
               </Context1>
+              <Title1 id="InvoiceLine10Trigger">
+                Penalties for Late Payment
+              </Title1>
+              <Context1>
+                You have the option to apply and communicate late penalty payments through Rapid Task. These will be automatically
+                applied when payment is not received on time.
+              </Context1>
              <Title1 id="InvoiceFooter1Trigger">
-                Important Accounting Information
+                Validate your Business
               </Title1>
               <Context1>
                 You can automatically have important relevant information placed, such as sales tax number,
-                business license, insurance details and more. This helps keep your business organized.
+                business license, insurance details and more. This communicates professionalism to all of your clients.
               </Context1>
              <Title1 id="InvoiceFooter2Trigger">
                 Create a Signature
@@ -299,20 +300,18 @@ class FinancialFeatures extends Component {
                 Rapid Task can apply a signature and name of the person who has approved the invoice.
               </Context1>
              <Title1 id="InvoiceStampTrigger">
-                Applies Warranty, Terms and Conditions
+                Apply Warranty, Terms and Conditions
               </Title1>
               <Context1>
                 Conditions and warranty referenced in your estimate will be applied and communicated here. They can be
-                originated from the selection of tasks in your quotes. You can use this opportunity to
-                solidify your relationship with your clients and seek further sales from them.
+                originated from the selection of tasks in your quotes.
               </Context1>
              <Title1 id="InvoicePaidTrigger">
                 Never Miss a Payment
               </Title1>
               <Context1>
-                With Rapid Task's integrated payment system it is easier for your clients to make payments. The sent
-                invoice will have an email link for your clients to see the invoice and make payment. The email system
-                will keep track of when your clients has seen the invoices and made payments.
+                With Rapid Task's integrated payment system it is easier for your clients to make payments. The email system
+                will keep track of when your client has seen the invoices and made payments.
               </Context1>
             </FlexContainerRight>
           </RightColumn>

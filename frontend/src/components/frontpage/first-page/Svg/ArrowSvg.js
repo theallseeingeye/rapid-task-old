@@ -14,7 +14,10 @@ const Text = styled.p`
   font-family: ${props => props.theme.Robotofont};
   font-size: 1.2em;
   text-align: center;
-  margin: auto;
+  @media (min-width: ${props => props.theme.tabletscreen}) {
+    margin-bottom: 5vh;
+  }
+
 `;
 
 const ArrowSvg = styled.svg`

@@ -19,7 +19,7 @@ class GraphAnimation extends Component {
 
   componentDidMount() {
     const barWidth = 5;
-    const range = 150;
+    const range = 200;
     const maxPosition = 20;
     const dataCount = 21;
 
@@ -441,45 +441,45 @@ class GraphAnimation extends Component {
 
         // Fills in the bars and erases the vertical lines.
         chartDraw.to(PolyNumber[1], barSpeed, {autoAlpha: 0})
-        .to(PolyNumber[2], barSpeed, {strokeWidth: (150 - random[0]), y: ((150 - random[0]) / 2)})
+        .to(PolyNumber[2], barSpeed, {strokeWidth: (200 - random[0]), y: ((range - random[0]) / 2)})
         .to(PolyNumber[3], barSpeed, {autoAlpha: 0})
-        .to(PolyNumber[4], barSpeed, {strokeWidth: (150 - random[1]), y: ((150 - random[1]) / 2)})
+        .to(PolyNumber[4], barSpeed, {strokeWidth: (range - random[1]), y: ((range - random[1]) / 2)})
         .to(PolyNumber[5], barSpeed, {autoAlpha: 0})
-        .to(PolyNumber[6], barSpeed, {strokeWidth: (150 - random[2]), y: ((150 - random[2]) / 2)})
+        .to(PolyNumber[6], barSpeed, {strokeWidth: (range - random[2]), y: ((range - random[2]) / 2)})
         .to(PolyNumber[7], barSpeed, {autoAlpha: 0})
-        .to(PolyNumber[8], barSpeed, {strokeWidth: (150 - random[3]), y: ((150 - random[3]) / 2)})
+        .to(PolyNumber[8], barSpeed, {strokeWidth: (range - random[3]), y: ((range - random[3]) / 2)})
         .to(PolyNumber[9], barSpeed, {autoAlpha: 0})
-        .to(PolyNumber[10], barSpeed, {strokeWidth: (150 - random[4]), y: ((150 - random[4]) / 2)})
+        .to(PolyNumber[10], barSpeed, {strokeWidth: (range - random[4]), y: ((range - random[4]) / 2)})
         .to(PolyNumber[11], barSpeed, {autoAlpha: 0})
-        .to(PolyNumber[12], barSpeed, {strokeWidth: (150 - random[5]), y: ((150 - random[5]) / 2)})
+        .to(PolyNumber[12], barSpeed, {strokeWidth: (range - random[5]), y: ((range - random[5]) / 2)})
         .to(PolyNumber[13], barSpeed, {autoAlpha: 0})
-        .to(PolyNumber[14], barSpeed, {strokeWidth: (150 - random[6]), y: ((150 - random[6]) / 2)})
+        .to(PolyNumber[14], barSpeed, {strokeWidth: (range - random[6]), y: ((range - random[6]) / 2)})
         .to(PolyNumber[15], barSpeed, {autoAlpha: 0})
-        .to(PolyNumber[16], barSpeed, {strokeWidth: (150 - random[7]), y: ((150 - random[7]) / 2)})
+        .to(PolyNumber[16], barSpeed, {strokeWidth: (range - random[7]), y: ((range - random[7]) / 2)})
         .to(PolyNumber[17], barSpeed, {autoAlpha: 0})
-        .to(PolyNumber[18], barSpeed, {strokeWidth: (150 - random[8]), y: ((150 - random[8]) / 2)})
+        .to(PolyNumber[18], barSpeed, {strokeWidth: (range - random[8]), y: ((range - random[8]) / 2)})
         .to(PolyNumber[19], barSpeed, {autoAlpha: 0})
-        .to(PolyNumber[20], barSpeed, {strokeWidth: (150 - random[9]), y: ((150 - random[9]) / 2)})
+        .to(PolyNumber[20], barSpeed, {strokeWidth: (range - random[9]), y: ((range - random[9]) / 2)})
         .to(PolyNumber[21], barSpeed, {autoAlpha: 0})
-        .to(PolyNumber[22], barSpeed, {strokeWidth: (150 - random[10]), y: ((150 - random[10]) / 2)})
+        .to(PolyNumber[22], barSpeed, {strokeWidth: (range - random[10]), y: ((range - random[10]) / 2)})
         .to(PolyNumber[23], barSpeed, {autoAlpha: 0})
-        .to(PolyNumber[24], barSpeed, {strokeWidth: (150 - random[11]), y: ((150 - random[11]) / 2)})
+        .to(PolyNumber[24], barSpeed, {strokeWidth: (range - random[11]), y: ((range - random[11]) / 2)})
         .to(PolyNumber[25], barSpeed, {autoAlpha: 0})
-        .to(PolyNumber[26], barSpeed, {strokeWidth: (150 - random[12]), y: ((150 - random[12]) / 2)})
+        .to(PolyNumber[26], barSpeed, {strokeWidth: (range - random[12]), y: ((range - random[12]) / 2)})
         .to(PolyNumber[27], barSpeed, {autoAlpha: 0})
-        .to(PolyNumber[28], barSpeed, {strokeWidth: (150 - random[13]), y: ((150 - random[13]) / 2)})
+        .to(PolyNumber[28], barSpeed, {strokeWidth: (range - random[13]), y: ((range - random[13]) / 2)})
         .to(PolyNumber[29], barSpeed, {autoAlpha: 0})
-        .to(PolyNumber[30], barSpeed, {strokeWidth: (150 - random[14]), y: ((150 - random[14]) / 2)})
+        .to(PolyNumber[30], barSpeed, {strokeWidth: (range - random[14]), y: ((range - random[14]) / 2)})
         .to(PolyNumber[31], barSpeed, {autoAlpha: 0})
-        .to(PolyNumber[32], barSpeed, {strokeWidth: (150 - random[15]), y: ((150 - random[15]) / 2)})
+        .to(PolyNumber[32], barSpeed, {strokeWidth: (range - random[15]), y: ((range - random[15]) / 2)})
         .to(PolyNumber[33], barSpeed, {autoAlpha: 0})
-        .to(PolyNumber[34], barSpeed, {strokeWidth: (150 - random[16]), y: ((150 - random[16]) / 2)})
+        .to(PolyNumber[34], barSpeed, {strokeWidth: (range - random[16]), y: ((range - random[16]) / 2)})
         .to(PolyNumber[35], barSpeed, {autoAlpha: 0})
-        .to(PolyNumber[36], barSpeed, {strokeWidth: (150 - random[17]), y: ((150 - random[17]) / 2)})
+        .to(PolyNumber[36], barSpeed, {strokeWidth: (range - random[17]), y: ((range - random[17]) / 2)})
         .to(PolyNumber[37], barSpeed, {autoAlpha: 0})
-        .to(PolyNumber[38], barSpeed, {strokeWidth: (150 - random[18]), y: ((150 - random[18]) / 2)})
+        .to(PolyNumber[38], barSpeed, {strokeWidth: (range - random[18]), y: ((range - random[18]) / 2)})
         .to(PolyNumber[39], barSpeed, {autoAlpha: 0})
-        .to(PolyNumber[40], barSpeed, {strokeWidth: (150 - random[19]), y: ((150 - random[19]) / 2)})
+        .to(PolyNumber[40], barSpeed, {strokeWidth: (range - random[19]), y: ((range - random[19]) / 2)})
         .to(PolyNumber[41], barSpeed, {autoAlpha: 0});
 
         // Erases out all the remainder PolyNumber[s that are still visible.
@@ -518,7 +518,7 @@ class GraphAnimation extends Component {
     }
 
     return (
-      <Svg id="ChartSvg" viewBox="0 0 400 150" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <Svg id="ChartSvg" viewBox="0 0 400 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
         <PolyList/>
       </Svg>
     )

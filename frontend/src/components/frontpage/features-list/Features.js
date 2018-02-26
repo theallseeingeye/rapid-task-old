@@ -92,7 +92,7 @@ class Features extends Component {
           </ListItem>
           <ListItem>
             <ListText>
-              Improves Your Business Organization
+              Improved Business Organization
             </ListText>
           </ListItem>
           <ListItem>
@@ -102,12 +102,12 @@ class Features extends Component {
           </ListItem>
           <ListItem>
             <ListText>
-              Automates Invoicing and Billing
+              Automated Invoicing and Billing
             </ListText>
           </ListItem>
           <ListItem>
             <ListText>
-              Provides Statistical Performance Reports of Employees
+              Statistical Performance Reports For Your Employees
             </ListText>
           </ListItem>
           <ListItem>
@@ -117,7 +117,7 @@ class Features extends Component {
           </ListItem>
           <ListItem>
             <ListText>
-              Equipment Tracking For Usage and Maintenance
+              Equipment Tracking For Maintenance Schedules and Usage
             </ListText>
           </ListItem>
           <ListItem>
@@ -127,7 +127,7 @@ class Features extends Component {
           </ListItem>
           <ListItem>
             <ListText>
-              Understand Your Business's Health With Powerful Analytics
+              Analytics At Your Fingertips to Better Understand Your Business
             </ListText>
           </ListItem>
         </List>

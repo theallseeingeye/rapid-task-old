@@ -66,6 +66,13 @@ const Title = styled.text`
   fill: white;
 `;
 
+const WhiteDiv = styled.div` // This div is placed to hide the delayed animations that shows up on older devices.
+  background-color: white;
+  height: 50vh;
+  width: 100%;
+  bottom: 0;
+`;
+
 class PainterLadder extends Component {
       constructor(props) {
     super(props);
@@ -239,6 +246,7 @@ class PainterLadder extends Component {
             <polygon points="250 224 0 224 0 226 250 226 250 224" fill="#f7f9fc"/>
           /*Baseboard*/
         </PaintedWall>
+        <WhiteDiv/>
       </Div>
     );
   }

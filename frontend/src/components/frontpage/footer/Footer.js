@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import OfficeBeach from './svg/OfficeBeach';
-import { Link } from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import styled from 'styled-components'
+import {TweenLite} from "gsap";
 
 const FindOutMore = styled.div`
   font-family: ${props => props.theme.Robotofont};
@@ -13,15 +14,30 @@ const FindOutMore = styled.div`
   width: 95%;
   height: 40vh;
  
-  a:link {
+  //a:link {
+  //  color: black;
+  //}
+  //a:hover {
+  //  color: slategray;
+  //}
+`;
+
+
+const ButtonLinks = styled.a` // Need this to match the styled of the other buttons from "Links" 
+  color: black;
+  cursor: pointer;
+  
+   
+  &:link {
     color: black;
   }
-  a:visited {
-    color: dimgray;
-  }
-  a:hover {
+  
+  &:hover {
     color: slategray;
   }
+`;
+
+const Links = ButtonLinks.withComponent(NavLink).extend` // Required for the react-router to carry the style
 `;
 
 const AboutHeader = styled.p`
@@ -63,19 +79,25 @@ class Footer extends Component {
     };
   }
 
+  handleClick = (e, location) => {
+    e.preventDefault();
+    console.log("it clicked");
+    TweenLite.to(window, 1, {scrollTo:{y:location, autoKill:false}});
+  };
+
   render() {
     return (
       <BackgroundContainer>
         <OfficeBeach/>
         <FindOutMore>
           <AboutHeader>Find Out More</AboutHeader>
-          <a href='About'>About</a>
+          <ButtonLinks onClick={ (e) => this.handleClick(e, "#aboutScrollTarget")}><u>About</u></ButtonLinks>
           <br />
-          <Link to="/careers">Careers</Link>
+          <Links to="/careers">Careers</Links>
           <br />
-          <Link to="/media-relations">Media Relations</Link>
+          <Links to="/media-relations">Media Relations</Links>
           <br />
-          <Link to="/investor-relations">Investor Relations</Link>
+          <Links to="/investor-relations">Investor Relations</Links>
           <br />
           <br />
           <div className='dateValue'>

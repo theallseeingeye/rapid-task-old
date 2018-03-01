@@ -10,6 +10,7 @@ class Subscriber(TimeStampedModel):
     email = models.EmailField(max_length=200, primary_key=True)
     name = models.CharField(max_length=100)
     subscribed = models.BooleanField(default=True)
+    notes = models.TextField(max_length=2000)
 
     def __str__(self):
         return self.email

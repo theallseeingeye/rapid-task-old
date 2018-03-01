@@ -389,3 +389,8 @@ yarn-error.log*
 .coverage
 /backend/.idea/
 !/frontend/src/App.js
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

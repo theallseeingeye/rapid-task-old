@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import {TweenMax} from 'gsap';
 
 // ScrollMagic and GSAP is used here!
 import ScrollMagic from "../../../../../utils/jsfunctions/ScrollMagicGsapAdapter"; //Custom adapter that lets us use GSAP and ScrollMagic in React
@@ -163,7 +164,7 @@ class ParkingLotAnimation extends Component {
     // This ends all of the tween by changing alpha to 0. Uses the bottom div trigger on the main div of this.
     const sceneEnd = new ScrollMagic.Scene({
       triggerElement: triggerEnd,
-      offset: 300
+      offset: 375
     })
       .setTween(endTween)
       .setPin(mainSVG)

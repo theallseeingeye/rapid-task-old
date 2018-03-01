@@ -5,13 +5,14 @@ import {TweenMax} from 'gsap';
 
 const Svg = styled.svg`
   width: 100%;
-  margin-top: 15vh;
+  margin-top: 5vh;
   max-width: 800px;
+  height: 100%; // Required for chrome or height will be too short.
   
 `;
 
 const Polyline = styled.polygon`
-  stroke: rgba(255, 255, 255, 0.8);
+  stroke: rgba(255, 255, 255, 0.9);
   stroke-width: 1px;
 `;
 
@@ -26,15 +27,15 @@ class GraphAnimation extends Component {
     // Animate Speed
     const barSpeed = 0.05;
     const lineSpeed = 0.05;
-    const barFadeSpeed = 0.1;
-    const barFadeStagger = 0.05;
+    const barFadeSpeed = 0.05;
+    const barFadeStagger = 0.025;
 
     // Selects the color of the line based on previous bar value
     function colorizer(polyline, polyline1) {
       if (polyline >= polyline1) {
-        return "rgba(255, 255, 255, 0.8)";
+        return "rgba(255, 255, 255, 0.9)";
       } else {
-        return "rgba(255, 0, 0, 0.8)";
+        return "rgba(255, 0, 0, 0.9)";
       }
     }
     // ------------- this is a working progress to array everything ---------------------------------

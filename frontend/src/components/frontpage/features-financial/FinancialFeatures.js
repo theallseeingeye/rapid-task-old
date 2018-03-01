@@ -15,13 +15,15 @@ const Div = styled.div`
 const Svg = styled.svg`
   position: absolute;
   z-index: -3;
-  max-width: 1200px; // To keep the layers from getting too big
   transform: translate(-20%, -20%);
+  @media (min-width: ${props => props.theme.giantscreen}) {
+    max-width: 1200px; // To keep the layers from getting too big
+  }
 `;
 
 const ManGraphic = styled.div`
   @media (min-width: 1200px) {
-   margin-left: 15vw;
+    margin-left: 15vw;
   }
 `;
 
@@ -40,21 +42,51 @@ const WhiteDiv = styled.div` // This div box is to help hide the invoice scroll.
   position: absolute;
   z-index: -1;
   background-color: white;
+  width: 50%;
+
+  // Required to keep the box from growing down too much on screen resize.
+  max-height: 40vw;
+  @media (min-width: ${props => props.theme.tabletscreen}) {
+    max-height: 60vw;
+  }
+  @media (min-width: ${props => props.theme.desktopscreen}) {
+    max-height: 39vw;
+  }
+  @media (min-width: ${props => props.theme.giantscreen}) {
+    max-height: 30vw;
+    width: 51%;
+  }
+`;
+
+const DivSpacer = styled.div` // Controls the spacing of the right column for the text.
   width: 100%;
-  height: 52vh;
+  position: relative;
+
+  // To control the boundaries along the svg
+  height: 100vw;
+  max-height: 69vw;
+  @media (min-width: ${props => props.theme.tabletscreen}) {
+    max-height: 70vw;
+  }
+  @media (min-width: ${props => props.theme.desktopscreen}) {
+    max-height: 60vw;
+  }
+  @media (min-width: ${props => props.theme.giantscreen}) {
+    max-height: 950px;
+  }
 `;
 
 const RightColumn = styled.div`
   width: 65vw;
-  margin: 50vh 0 25vh 0; 
   flex: 1;
+  position: relative;
 `;
 
 const LeftColumn = styled.div`
   width: 35vw;
   z-index: -2;
   position: relative;
-  //max-width: 500px;
+  margin-left: 5px;
   height: auto;
   @media (min-width: ${props => props.theme.desktopscreen}) {
     flex: 1;
@@ -71,13 +103,12 @@ const FlexContainerRight = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  // Alignment 
 `;
 
 const Columns = styled.div`
   display: flex;
   max-width: 800px;
-  margin: auto;
+  margin: 0 0 20vh 0;
 `;
 
 
@@ -97,6 +128,7 @@ const Context1 = styled.div`
   text-align: justify;
   flex-grow: 1;
   max-width: 500px;
+  margin-bottom: 5vh;
 `;
 
 const MainContent = styled.div`
@@ -108,13 +140,6 @@ const MainContent = styled.div`
   text-align: justify;
   flex-grow: 1;
   max-width: 500px;
-  margin-top: 20vh;
-  @media (min-width: ${props => props.theme.tabletscreen}) {
-   margin-top: 30vh;
-  }
-  @media (min-width: ${props => props.theme.desktopscreen}) {
-   margin-top: 45vh;
-  }
 `;
 
 // This div is required to close the animation of the invoice.
@@ -152,6 +177,7 @@ class FinancialFeatures extends Component {
             </FlexContainerLeft>
           </LeftColumn>
           <RightColumn>
+            <DivSpacer/>
             <FlexContainerRight>
               <MainContent>
                 What used to take hours in administrative work becomes simple with Rapid Task. In order to save

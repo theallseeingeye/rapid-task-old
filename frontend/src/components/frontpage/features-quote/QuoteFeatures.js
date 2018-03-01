@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import ParkingLotAnimation from './ParkingLotLayers/ParkingLotAnimation';
-import ManQuoting from "./ParkingLotLayers/ManQuoting";
+import ParkingLotAnimation from './svg/ParkingLotAnimation';
+import ManQuoting from "./svg/ManQuoting";
 
 const Div = styled.div`
   font-family: ${props => props.theme.Robotofont};
@@ -17,10 +17,10 @@ const QuoteTitle = styled.p`
   font-size: 2.5em;
   width: 100%;
   text-align: center;
-  position: relative;
+  position: absolute;
   z-index: 2;
   @media (min-width: ${props => props.theme.tabletscreen}) {
-  font-weight: 900;
+    font-weight: 900;
   }
 `;
 
@@ -30,6 +30,11 @@ const MainContext = styled.p`
   margin-left: 10px;
   font-size: 1.1em;
   margin-top: -30vh;
+  margin-bottom: 10vh;
+  @media (min-width: ${props => props.theme.desktopscreen}) {
+    width: 43%;
+  }
+  
 `;
 
 const Title1 = styled.div`
@@ -48,7 +53,7 @@ const Context1 = styled.div`
   text-align: justify;
   flex-grow: 1;
   @media (min-width: ${props => props.theme.tabletscreen}) {
-  margin-bottom: 3em;
+    margin-bottom: 10em;
   }
 `;
 
@@ -185,7 +190,7 @@ class Quotes extends Component {
                 with your employees and clients. Clearly show the details of which type of tree
                 and where to plant them as you plan your quotes. Your clients can see and approve the details and your
                 employees can easily view the platform and gain accurate details to do
-                their jobs correctly. Less mistakes, more profit. Simple as that.
+                their jobs correctly. Less mistakes. More profit. Simple as that.
               </Context1>
 
               <Title1 id="linesTrigger">

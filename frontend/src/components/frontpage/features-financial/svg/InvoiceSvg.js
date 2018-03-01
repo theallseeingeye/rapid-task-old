@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import ScrollMagic from "../../../../../utils/jsfunctions/ScrollMagicGsapAdapter"; //Custom adapter that lets us use GSAP and ScrollMagic in React
+import {TweenMax} from 'gsap';
 
 const Svg = styled.svg`
   width: 35vw;
@@ -8,6 +9,7 @@ const Svg = styled.svg`
   top: 25vh; //Makes the invoice appear to the middle in fixed position
   max-width: 390px; 
   margin-left: 5px; 
+  z-index: -5;
 `;
 
 class InvoiceSvg extends Component {
@@ -78,7 +80,7 @@ class InvoiceSvg extends Component {
     // ScrollMagic Scenes.
     const sceneMain = new ScrollMagic.Scene({
       triggerElement: mainDiv,
-      offset: 200
+      offset: 300
       })
       .setTween(tweenInvoicePage)
       .setPin(mainSVG)
@@ -236,7 +238,7 @@ class InvoiceSvg extends Component {
       })
       .setTween(tweenEnd)
       .setPin(mainSVG)
-      .offset(300)
+      .offset(700)
       .addTo(controller);
   }
 

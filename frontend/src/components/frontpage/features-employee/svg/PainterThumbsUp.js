@@ -4,8 +4,7 @@ import styled from 'styled-components';
 const Svg = styled.svg`
   height: 50vh;
   float: right;
-  margin: auto;
-  margin-right: 2em;
+  margin: 0 2em 0 0;
   padding: 10px;
 `;
 

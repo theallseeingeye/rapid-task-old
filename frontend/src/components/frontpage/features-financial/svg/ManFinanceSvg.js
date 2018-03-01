@@ -3,14 +3,13 @@ import styled from "styled-components";
 import theme from "../../../../global-styles/DefaultTheme";
 
 const Svg = styled.svg`
-  width: 135vw;
+  width: 100vw;
   margin: auto;
   position: absolute;
   transform: translateX(-29.4%);
   z-index: 1;
-  @media (min-width: ${props => props.theme.tabletscreen}) {
-    max-width: 1000px; // To keep the layers from getting too big
-  }
+  max-width: 1000px;
+
  `;
 
 class ManFinance extends Component {

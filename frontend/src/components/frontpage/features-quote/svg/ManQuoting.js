@@ -7,7 +7,6 @@ const Svg = styled.svg`
   transform: translate(2% -7%);
   z-index: -3;
   max-width: 1000px;
-  margin-top: -12vh;
   @media (min-width: ${props => props.theme.desktopscreen}) {
    // To keep the layers from getting too big
    transform: translateX(17%); // Shift the svg more to the right side
@@ -17,13 +16,13 @@ const Svg = styled.svg`
 //This Rect is for the bottom section. A different position is required on larger screen sizes.
 
 const Rect = styled.rect`
-  @media (min-width: ${props => props.theme.desktopscreen}) {
+  @media (min-width: ${props => props.theme.tabletscreen}) {
     transform: translate(-650px, 420px) rotateZ(-45deg);
   }
 `;
 
 const Rect2 = styled.rect`
-  @media (min-width: ${props => props.theme.desktopscreen}) {
+  @media (min-width: ${props => props.theme.tabletscreen}) {
     transform: translate(-530px, 390px) rotateZ(-45deg);
   }
 `;

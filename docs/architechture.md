@@ -97,6 +97,8 @@ The installed packages must be written here with explanation for it's use. You m
 * django-cors-headers 2.1.0
     This allows the CORS headers to the frontend. Easy implementation of cross-domain requests for REST.
     * License: Free and open
+* awsebcli
+    This is Amazon's command line interface. Required to host the backend.
     
 **FRONTEND**  
 

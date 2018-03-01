@@ -1,21 +1,3 @@
-"""
-These are the settings we use for production servers
-
-
-We should consider these following settings before launching into production:
-    DEBUG_PROPAGATE_EXCEPTIONS = FALSE
-    Email SSL
-        -EMAIL_USE_TLS
-        -EMAIL_USE_SSL
-        -EMAIL_SSL_CERTFILE
-        -EMAIL_SSL_KEYFILE
-        For further documentation: https://docs.djangoproject.com/en/1.11/ref/settings/#email-use-tls
-    MIDDLEWARE_CLASSES - Add them
-    SECURE_CONTENT_TYPE_NOSNIFF = TRUE
-    SECURE_PROXY_SSL_HEADER
-    SECURE_SSL_HOST = TRUE
-    SESSION_SERIALIZER
-"""
 
 from .base import *
 
@@ -50,12 +32,36 @@ ADMIN_HONEYPOT_EMAIL_ADMIN = True
 # Note: This will need to be changed for production setting using a different email service.
 # Google is not a transactional email service and not made for web applications.
 EMAIL_BACKEND = 'django.cor.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'pass'
-EMAIL_PORT = 555
-EMAIL_HOST_USER = 'email@email.com'
+EMAIL_HOST = 'sikstrom@rapidtask.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'sikstrom@rapidtask.com'
 EMAIL_HOST_PASSWORD = get_secret('EMAIL_PASSWORD')
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = True
 EMAIL_SSL_CERTFILE = None
 EMAIL_SSL_KEYFILE = None
 EMAIL_TIMEOUT = None
+
+# HTTP Strict Transport Security - Forces browsers to use HTTPS
+# The time is telling the browser how long to remember the forced redirect to HTTPS
+SECURE_HSTS_SECONDS = 3600 # This is 1 hour- change to one year after testing is done. Google wants to see 63072000 after all the testings are done.
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+
+SECURE_CONTENT_TYPE_NOSNIFF = True # Ensures that browsers to identify content types correctly.
+SECURE_BROWSER_XSS_FILTER = True # Helps prevents XSS attacks
+SECURE_SSL_REDIRECT = True
+
+X_FRAME_OPTIONS = 'DENY' # Change to SAMEORIGIN if we choose to use iframes with google maps.
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.environ['RDS_DB_NAME'],
+        'USER': os.environ['RDS_USERNAME'],
+        'PASSWORD': os.environ['RDS_PASSWORD'],
+        'HOST': os.environ['RDS_HOSTNAME'],
+        'PORT': os.environ['RDS_PORT'],
+    },
+}

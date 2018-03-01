@@ -11,6 +11,7 @@ const MainDiv = styled.div`
   font-family: ${props => props.theme.Robotofont};
   @media (min-width: ${props => props.theme.desktopscreen}) {
     margin:auto;
+    padding: 5px;
   }
 `;
 
@@ -25,12 +26,13 @@ const Header = styled.p`
   }
 `;
 
-const FlexContainter = styled.div`
+const FlexContainer = styled.div`
   display: flex;
   flex-flow: row wrap;
   flex-direction: row;
   justify-content: flex-start;
   width: 100%;
+  margin-bottom: 5vh;
 `;
 
 const Text = styled.div`
@@ -39,14 +41,12 @@ const Text = styled.div`
   flex-grow: 1;
   line-height: 1.4em;
   font-family: ${props => props.theme.RobotoCondensedfont};
-  
 `;
 
 const Subhead = styled.p`
   width: 100%;
   font-size: 1.5em;
   margin-top: -0.5em;
-  
 `;
 
 class CalendarFeatures extends Component {
@@ -54,7 +54,7 @@ class CalendarFeatures extends Component {
     return (
       <MainDiv>
         <Header>No More Dealing With Complicated Schedules</Header>
-        <FlexContainter>
+        <FlexContainer>
           <Subhead>Let Us Handle the Scheduling for You</Subhead>
           <Text>
             Once you have engaged with a client, Rapid Task will use the information from your quote to automatically
@@ -74,7 +74,7 @@ class CalendarFeatures extends Component {
             or traffic conditions which might result in potential delays we will do our best to keep you informed with
             notifications of changes.
           </Text>
-        </FlexContainter>
+        </FlexContainer>
       </MainDiv>
     );
   }

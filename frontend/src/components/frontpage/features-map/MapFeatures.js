@@ -12,14 +12,7 @@ const MainDiv = styled.div`
   max-width: 1200px;
   margin: auto;
   position: relative;
-  display: table;
-  
-   @media (min-width: ${props => props.theme.tabletscreen}) {
-     height: 90vh;
-   }
-   @media (min-width: ${props => props.theme.desktopscreen}) {
-     height: 70vh;
-   }
+  height: auto;
 `;
 
 const Div = styled.div`

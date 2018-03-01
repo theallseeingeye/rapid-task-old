@@ -5,6 +5,21 @@ const Div = styled.div`
   margin-top: 5vh;
   height: auto;
 `;
+
+const Title = styled.p`
+  // Title Styling
+  font-family: ${props => props.theme.Robotofont};
+  margin-top: 1vh;
+  font-size: 2.5em;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  @media (min-width: ${props => props.theme.tabletscreen}) { 
+    font-weight: 900;
+  }
+`;
+
+
 const Text = styled.div`
   font-family: ${props => props.theme.RobotoCondensedfont};
   line-height: 2em;
@@ -36,6 +51,9 @@ class About extends Component {
   render() {
     return (
       <Div  id="aboutScrollTarget">
+        <Title>
+          About Rapid Task
+        </Title>
         <Text>
           Our goal is to help you run and grow your business with more ease than ever!
           Over years of experience operating service based businesses of our own we were able to work with many people from
@@ -46,7 +64,7 @@ class About extends Component {
           to manage the complexity of running our businesses. We needed something more. We banded together in search of a
           solution and founded Rapid Task, the business tool that we all have been needing, desperately.<br/><br/>
         </Text>
-        <Text2>
+        <Text2 id="contactScrollTarget">
           We are currently seeking investment with the goal of expanding our team. This will allow us to deliver a first-rate
           product to you sooner. If you are interested in getting in touch with our team we can be reached at <br/>
           <a href="mailto:inquiries@rapidtask.com?Subject=%20" target="_top"><b>inquiries@rapidtask.com</b></a>

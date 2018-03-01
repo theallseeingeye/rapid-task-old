@@ -15,6 +15,7 @@ const Div = styled.div`
 
 const SubTitle = styled.p`
   font-size: 1.5em;
+  text-align: left;
   font-family: ${props => props.theme.Robotofont};
 `;
 

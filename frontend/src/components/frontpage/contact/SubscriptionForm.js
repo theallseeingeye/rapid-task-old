@@ -59,11 +59,32 @@ class SubscriptionForm extends Component {
     this.state = {
       name: {value: '', isValid: true, message: ''},
       email: {value: '', isValid: true, message: ''},
-      // existingEmail: 'no change',
-      // subscribed: '',
+      existingEmail: '',
+      subscribed: '',
       isSubmitted: false,
     };
   };
+
+  // componentDidMount(){
+  //
+  //   // Loads the database list of subscribers
+  //   axios.get('http://127.0.0.1:8000/subscriber/list')
+  //     .then(response => {
+  //       console.log(response);
+  //
+  //       this.setState(() => {
+  //         return {
+  //           existingSubscribers: response.data[0].email,
+  //         }
+  //       });
+  //
+  //   })
+  //   .catch(function (error) {
+  //     console.log(error);
+  //   });
+  //     console.log("data downloaded " + this.state.existingSubscribers);
+  // }
+
 
 
   handleChange = (event) => {
@@ -79,20 +100,29 @@ class SubscriptionForm extends Component {
 
 
     if (this.formIsValid()) {
-      const subscriber = {
-        name: this.state.name,
-        email: emailNormalizer,
-      };
 
-      // Sends the data to the backend.
-      axios.post('http://127.0.0.1:8000/subscriber/create/', subscriber)
-        .then(response => {
-          console.log('You are now subscribed. Thank you!');
-          return this.setState.isSubmitted = true;
-        });
+      this.checkEmailExisting();
+      console.log("It recorded on time " + this.state.existingEmail);
+    } else {
+      console.log("it did not work");
     }
 
 
+    //   if (emailCompare()){
+    //
+    //   }
+    //
+  // //      const subscriber = {
+  //           name: this.state.name,
+  //           email: emailNormalizer,
+  //         };
+    //   // Sends the data to the backend.
+    //   axios.post('http://127.0.0.1:8000/subscriber/create/', subscriber)
+    //     .then(response => {
+    //       console.log('You are now subscribed. Thank you!');
+    //       return this.setState.isSubmitted = true;
+    //     });
+    // }
   };
 
   formIsValid = () => {
@@ -110,32 +140,48 @@ class SubscriptionForm extends Component {
     return true;
   };
 
-  // emailCompare = () => {
-  //   if (this.state.email === this.state.existingEmail) {
-  //     console.log("The Email Already Exists");
-  //     return false;
-  //   } else {
-  //     console.log("This email is new!");
-  //     console.log(DatabaseEmail);
-  //     return true;
-  //   }
-  // };
+  emailCompare = () => {
+    if (this.state.email === this.state.existingEmail) {
+      console.log("The Email Already Exists");
+      return false;
+    } else {
+      console.log("This email is new!");
+
+      return true;
+    }
+  };
 
   checkEmailExisting = () => {
     const input = this.state.email;
 
     axios.get('http://127.0.0.1:8000/subscriber/list/?email=' + input)
     .then(response =>
-         // console.log(response.data[0].email)
+         // console.log(response.data[0].email),
       this.setState({
-        existingEmail: response.data[0].email,
-        subscribed: response.data[0].subscribed
-      }));
+        existingEmail:response.data[0].email,
+        // subscribed: response.data[0].subscribed
+
+      })
+
+
+      //
+      // if (this.state.existingEmail = input) {
+      //   if (this.state.subscribed = false) {
+      //     console.log("we need to re-subscribe them");
+      //   } else {
+      //     console.log("We don't do any updates here as they are already subscribed");
+      //   }
+      // } else {
+      //   console.log("They haven't subscribed");
+      //   return true;
+      // }
+
+    )
   };
 
   render() {
 
-    const submitted = this.state.isSubmitted;
+    // const submitted = this.state.isSubmitted;
 
     return (
       <FormElements onSubmit={this.handleSubmit}>
@@ -153,7 +199,6 @@ class SubscriptionForm extends Component {
           required
         />
         <span>{this.state.name.message}</span>
-
         <br />
         <br />
         <Email
@@ -171,7 +216,9 @@ class SubscriptionForm extends Component {
         <NoSpam>
           No spam ever and easy to <Link to="/unsubscribe"> unsubscribe </Link>
         </NoSpam>
+
         {/*{submitted = true && }*/}
+
       </FormElements>
     );
   }

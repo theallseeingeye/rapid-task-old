@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import {TweenMax} from 'gsap';
 
 import ScrollMagic from '../ScrollMagic/ScrollMagic';
 

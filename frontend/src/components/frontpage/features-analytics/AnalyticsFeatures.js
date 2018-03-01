@@ -17,16 +17,17 @@ const Div = styled.div`
   margin:auto;
 `;
 
+
 const GraphContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: -10vh;
 `;
 
 const Flex = styled.div`
-  margin-top: 5vh;
   display: flex;
   flex-direction: row;
+  margin: auto;
+  max-width: 800px;
 `;
 
 const Title = styled.p`
@@ -60,13 +61,27 @@ const Text2 = styled.p`
 
 const Text3 = styled.p`
   font-size: 1.5em; 
-  margin-top: -1vh;
+  margin: 5px;  
 `;
 
-
+const Text4 = styled.div`
+  text-align: center;
+  width: 100%;
+  height: 9vh;
+`;
 
 const RightColumn = styled.div`
   text-align: justify;
+  margin: 5vh 0 0 0;
+  max-width: 300px;
+  @media (min-width: ${props => props.theme.tabletscreen}) {
+    max-width: 800px;
+  }
+  
+  @media (min-width: ${props => props.theme.desktopscreen}) {
+    margin-top: 2vh;
+    max-width: 1000px;
+  }
 `;
 
 
@@ -119,10 +134,10 @@ class AnalyticsFeatures extends Component {
                 The darker sections indicate the areas where you may need to hire more employees. If you see
                 increasing trends with busier days, the workload of your employees might be stretched
                 and you might benefit from recruiting proactively and hiring before the busy times.<br/><br/>
-                The right data helps you make the right decisions. Rapid Task is here to help!
               </Text2>
             </RightColumn>
           </Flex>
+          <Text4>The right data helps you make the right decisions. Rapid Task is here to help!</Text4>
         </Div>
       </MainDiv>
     );

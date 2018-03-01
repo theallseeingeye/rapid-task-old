@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 import { TweenLite } from 'gsap';
 import 'gsap/src/uncompressed/plugins/ScrollToPlugin';
 
@@ -47,6 +48,7 @@ const FlexItem = styled.button`
   text-align: center;
 
   // Border styling
+  border: 1px solid white;
   border-radius: 10px 10px 0 0;
   @media (min-width: ${props => props.theme.tabletscreen}) {
     transform: skewX(-32deg);
@@ -58,34 +60,33 @@ const FlexItem = styled.button`
  
   // Formatting
   align-self: auto;
-  flex-grow: ${props => props.flexgrow};
-  flex-shrink: ${props => props.flexshrink};
+  flex-grow: 1;
 
   :hover {
     background: rgba(63, 169, 245, 0.3);
   };
 `;
 
-class NavBar extends Component {
+const NavLinks = FlexItem.withComponent(NavLink).extend` // To override the properties of react-router and apply styling
+  text-decoration: none;
+`;
 
+class NavBar extends Component {
 
   handleClick = (e, location) => {
     e.preventDefault();
     console.log("it clicked");
-    TweenLite.to(window, 1, {scrollTo:location, autoKill:false});
+    TweenLite.to(window, 1, {scrollTo:{y:location, autoKill:false}});
   };
-
-
-  
 
   render() {
     return (
       <Nav>
         <FlexContainer>
-          <FlexItem flexgrow="1" onClick={ (e) => this.handleClick(e, "#featuresScrollTarget")}>Features</FlexItem>
-          <FlexItem flexgrow="1" onClick={ (e) => this.handleClick(e, "#aboutScrollTarget")}>Contact</FlexItem>
-          <FlexItem flexgrow="1" onClick={ (e) => this.handleClick(e, "#aboutScrollTarget")}>About</FlexItem>
-          <FlexItem flexgrow="1" innerRef={x => this.investors = x}>Investors</FlexItem>
+          <FlexItem onClick={ (e) => this.handleClick(e, "#featuresScrollTarget")}>Features</FlexItem>
+          <FlexItem onClick={ (e) => this.handleClick(e, "#contactScrollTarget")}>Contact</FlexItem>
+          <FlexItem onClick={ (e) => this.handleClick(e, "#aboutScrollTarget")}>About</FlexItem>
+          <NavLinks to="/investor-relations">Investors</NavLinks>
         </FlexContainer>
       </Nav>
     );

@@ -5,7 +5,7 @@ from .base import *
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = false
+DEBUG = False
 
 # If this is not correctly set, it can spit back 500 errors. Keep this restrictive for security measures.
 ALLOWED_HOSTS = [

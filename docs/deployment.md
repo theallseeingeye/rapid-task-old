@@ -18,9 +18,9 @@ Simply in the environment type: `eb deploy`
 ### New Deployment Steps
 * Now we need to use the EB Command Line Interface  
 Requirement: awsebcli 
-awsebcli should already be in the requirements.txt. Verify by ```eb --version``` if not, ```pip install awsebcli```    
+awsebcli should be installed globally, NOT in the virtual environment. Verify by ```eb --version``` if not, ```pip install awsebcli```    
 * Setting up the Elastic Beanstalk Environment 
-    Use the command ```eb init```    
+    Use the command ```eb init``` (Make sure you are deactivated from the environment)   
     Then follow the steps:
     * Select a default region: `3`  
     * Enter your aws IAM user credentials - If you do not have one- see Jay 
@@ -39,7 +39,18 @@ awsebcli should already be in the requirements.txt. Verify by ```eb --version```
             * Open ```Manage Optional Features``` - Can run in search from `Start Menu` search.
             * Click `Add a feature` then add the `OpenSSH Server(Beta)` and `OpenSSH Client(Beta)` and restart pc
             * After install and restart- Enter in the command line ```ssh``` and it should show results.
-    * Could not figure our how to work around the ssh- simply skip it with `n`
+            
+            * For windows, install PuTTY from https://www.ssh.com/ssh/putty/download 
+            (for more information: https://www.ssh.com/ssh/putty/windows/puttygen)
+            * Follow Through PuTTY installation
+            * Follow AWS steps: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html
+            * The steps above should show you how to create a key and your should be able to fined that 
+    * Now you have built an virtual environment instance for AWS
+    * Next you need to create a webserver in the environment
+    * Type `eb create`, and give a name for each
+    * All done! You have created it!
+    * run `eb open` to make sure django is working.
+    * If you need to make changes or update the django- type `eb deploy` to apply them.
     
  
   

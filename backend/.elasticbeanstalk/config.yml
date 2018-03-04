@@ -1,12 +1,14 @@
 branch-defaults:
   default:
-    environment: rapid-task-backend-env
+    environment: backend-test-env
     group_suffix: null
 global:
-  application_name: rapid_task_backend
+  application_name: backend-rapid-task-env-test
   branch: null
+  default_ec2_keyname: django-aws
   default_platform: Python 3.6
   default_region: us-west-2
+  include_git_submodules: true
   instance_profile: null
   platform_name: null
   platform_version: null

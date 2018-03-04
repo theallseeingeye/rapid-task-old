@@ -3,7 +3,7 @@ import os
 import sys
 
 if __name__ == "__main__":
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings.production")
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings.default")
 
     # This is for production settings
     # os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings.production")

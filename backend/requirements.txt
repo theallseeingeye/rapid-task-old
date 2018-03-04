@@ -1,5 +1,4 @@
 arrow==0.10.0
-awsebcli==3.12.3
 Babel==2.5.1
 binaryornot==0.4.4
 botocore==1.9.2

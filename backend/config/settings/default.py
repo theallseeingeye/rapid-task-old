@@ -18,27 +18,53 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
-
+SECRET_KEY = 'asdfasdfasdfklsajclasdfkajsflasdjkfalksdjfas'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['backend-test-env.us-west-2.elasticbeanstalk.com', 'localhost']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    # 'django.contrib.admin',
+    # 'django.contrib.auth',
+    # 'django.contrib.contenttypes',
+    # 'django.contrib.sessions',
+    # 'django.contrib.messages',
+    # 'django.contrib.staticfiles',
+    # 'rapid_task.apps.RapidTaskConfig',
+
+    # Django Defaults
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rapid_task.apps.RapidTaskConfig',
+
+    # Local Apps
+    # 'rapid_task.polls.apps.PollsConfig',
+    # 'rapid_task.profiles.apps.ProfilesConfig',
+    # 'rapid_task.authentication.apps.AuthenticationConfig',
+    'rapid_task.core.apps.CoreConfig',
+    'rapid_task.subscribers.apps.SubscribersConfig',
+
+    # Third Party Apps
+    'admin_honeypot',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'djoser',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    # Third Party:
+    # This middleware needs to be placed the highest.
+    'corsheaders.middleware.CorsMiddleware',
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',

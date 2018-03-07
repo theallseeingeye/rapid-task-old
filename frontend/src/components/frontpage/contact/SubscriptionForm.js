@@ -166,33 +166,33 @@ class SubscriptionForm extends Component {
     }
   };
 
-  checkEmailExisting = () => {
-    const input = this.state.email;
-
-    axios.get('http://127.0.0.1:8000/subscriber/list/?email=' + input)
-    .then(response =>
-         // console.log(response.data[0].email),
-      this.setState({
-        existingEmail:response.data[0].email,
-        // subscribed: response.data[0].subscribed
-
-      })
-
-
-      //
-      // if (this.state.existingEmail = input) {
-      //   if (this.state.subscribed = false) {
-      //     console.log("we need to re-subscribe them");
-      //   } else {
-      //     console.log("We don't do any updates here as they are already subscribed");
-      //   }
-      // } else {
-      //   console.log("They haven't subscribed");
-      //   return true;
-      // }
-
-    )
-  };
+  // checkEmailExisting = () => {
+  //   const input = this.state.email;
+  //
+  //   axios.get('http://127.0.0.1:8000/subscriber/list/?email=' + input)
+  //   .then(response =>
+  //        // console.log(response.data[0].email),
+  //     this.setState({
+  //       existingEmail:response.data[0].email,
+  //       // subscribed: response.data[0].subscribed
+  //
+  //     })
+  //
+  //
+  //     //
+  //     // if (this.state.existingEmail = input) {
+  //     //   if (this.state.subscribed = false) {
+  //     //     console.log("we need to re-subscribe them");
+  //     //   } else {
+  //     //     console.log("We don't do any updates here as they are already subscribed");
+  //     //   }
+  //     // } else {
+  //     //   console.log("They haven't subscribed");
+  //     //   return true;
+  //     // }
+  //
+  //   )
+  // };
 
   render() {
 

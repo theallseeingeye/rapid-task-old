@@ -29,7 +29,7 @@ class InvestorRelations extends Component {
       <Div>
         <Text>
           We are still getting up and running! In the meantime, if you require further information regarding Rapid Task
-          and investment opportunities please contact us at <br/>
+          and our investment opportunities please contact us at <br/>
           <a href="mailto:inquiries@rapidtask.com?Subject=%20" target="_top"><b>inquiries@rapidtask.com</b></a>
         </Text>
       </Div>

@@ -4,7 +4,7 @@ import {NavLink} from 'react-router-dom';
 import styled from 'styled-components'
 import {TweenLite} from "gsap";
 
-const FindOutMore = styled.div`
+const FindOutMore = styled.p`
   font-family: ${props => props.theme.Robotofont};
   text-align: right;
   line-height: 1.4em;
@@ -12,7 +12,6 @@ const FindOutMore = styled.div`
   bottom: 10vh;
   position: absolute;
   width: 95%;
-  height: 40vh;
  
   //a:link {
   //  color: black;
@@ -48,6 +47,7 @@ const BackgroundContainer = styled.div`
   width: 100%;
   position: absolute;
   height: 100vh;
+  min-height: 520px;
   // To fade the background
   opacity: 1;
   // To place behind all divs
@@ -57,10 +57,7 @@ const BackgroundContainer = styled.div`
   @media (min-width: ${props => props.theme.tabletscreen}) {
    height: 112vh;
    font-size: 1.2em;
-  }
-  @media (min-width: ${props => props.theme.desktopscreen}) {
-   height: 125vh;
-   font-size: 1.4em;
+   min-height: 1200px;
   }
   @media (min-width: ${props => props.theme.giantscreen}) {
    height: 110vw;

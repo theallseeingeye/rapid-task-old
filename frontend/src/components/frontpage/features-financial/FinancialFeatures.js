@@ -64,7 +64,7 @@ const DivSpacer = styled.div` // Controls the spacing of the right column for th
 
   // To control the boundaries along the svg
   height: 100vw;
-  max-height: 69vw;
+  max-height: 69vw; 
   @media (min-width: ${props => props.theme.tabletscreen}) {
     max-height: 70vw;
   }
@@ -108,7 +108,7 @@ const FlexContainerRight = styled.div`
 const Columns = styled.div`
   display: flex;
   max-width: 800px;
-  margin: 0 0 20vh 0;
+  margin: auto;
 `;
 
 

@@ -101,10 +101,25 @@ class SubscriptionForm extends Component {
 
     if (this.formIsValid()) {
 
-      this.checkEmailExisting();
-      console.log("It recorded on time " + this.state.existingEmail);
+      // this.checkEmailExisting();
+      // console.log("It sent the data " + this.state.existingEmail);
+       //   }
+    //
+     const subscriber = {
+          name: this.state.name,
+          email: emailNormalizer,
+        };
+      axios.post('https://api.rapidtask.com/v0.1/subscriber/create/', subscriber)
+        .then(response => {
+          console.log('You are now subscribed. Thank you!');
+          return this.setState.isSubmitted = true;
+        });
+
+
+
+
     } else {
-      console.log("it did not work");
+      console.log("Form is not valid");
     }
 
 

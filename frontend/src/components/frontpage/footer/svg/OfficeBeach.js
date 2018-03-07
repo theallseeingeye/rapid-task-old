@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class OfficeBeach extends Component {
   render() {
     return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 715 997.95 1775">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 715 997.95 3847.64">
       <title>RapidTask contact background</title>
       <polygon points="997.95 701.33 566.48 705 418.95 1401.34 997.95 1402.17 997.95 701.33" fill="#bbf5ff"/>
       <path d="M997.54,497.53c-307.68-6.84-567.95-6.77-878.23.06V622.42H997.54Z" transform="translate(0.4 701.33)" fill="#8fd4f2"/>
@@ -187,8 +187,8 @@ class OfficeBeach extends Component {
       <path d="M544.37,436.31a1.2,1.2,0,0,1,.56,1.61l-7.42,15.34a1.2,1.2,0,0,1-1.61.56l-2.67-1.29L541.7,435Z" transform="translate(0.4 701.33)" fill="#4f8baf"/>
       <polygon points="439.29 1402.17 0.43 1402.17 0.4 701.33 581.86 701.33 439.29 1402.17" fill="#58af94"/>
       /*Footer Area*/
-      <polygon points="230.11 2500 997.95 2500 997.95 1500 400.86 1500" fill="#f8e6c1"/>
-      <polygon points="230.11 2500 0 2500 0 1286 462.86 1286.11" fill="#3fa9f5"/>
+      <polygon points="0 3847.64 997.95 3847.64 997.95 1500 400.86 1500" fill="#f8e6c1"/>
+      <polygon points="0 3847.64 0 1286 462.86 1286.11" fill="#3fa9f5"/>
       /*Footer Area*/
       <path d="M0,355.79V57L188.89,57a1.53,1.53,0,0,1,1.52,1.52l-.2,297.33Z" transform="translate(0.4 701.33)" fill="#bbf5ff"/>
       <path d="M198,236.95c-1.65-13.06-10.67-23.84-23.83-23.84a23.85,23.85,0,0,0-4.29.39,8.52,8.52,0,0,1-7.49-2.3A36,36,0,0,0,116,207.74a8.51,8.51,0,0,1-8,1.1,30,30,0,0,0-40.34,28.11h0a8.5,8.5,0,0,0,8.5,8.5H189.52S198.77,242.92,198,236.95Z" transform="translate(0.4 701.33)" fill="#fff"/>
@@ -353,9 +353,9 @@ class OfficeBeach extends Component {
       <path d="M619,666h-254a8.54,8.54,0,0,1,0-17.09H619A8.54,8.54,0,0,1,619,666Z" transform="translate(0.4 701.33)" fill="#4d2e4d" opacity="0.1"/>
       <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 115 2000 490">
         <title>Rapid Task Small Logo</title>
-        <circle cx="384.5" cy="1650" r="234.5" fill="#fff"/>
-        <path d="M479.36,553.72,450.88,511l-71.21,42.72L355.8,591.46c-17.09,28.48-18.63,26.35-26,26.35H217.64l-36.9,57H333.86c41.79,0,67.51,0,96-43.44" transform="translate(37 1000)" fill="#3fa9f5"/>
-        <path d="M547.72,616l-28.48-42.72L448,616l-23.87,37.74c-17.09,28.48-18.63,26.35-26,26.35L177.48,680,141,737H402.21c41.79,0,67.51,0,96-43.44" transform="translate(37 1000)" fill="#3fa9f5"/>
+        <circle cx="384.5" cy="-200" r="234.5" fill="#fff"/>
+        <path d="M479.36,553.72,450.88,511l-71.21,42.72L355.8,591.46c-17.09,28.48-18.63,26.35-26,26.35H217.64l-36.9,57H333.86c41.79,0,67.51,0,96-43.44" transform="translate(37 -850)" fill="#3fa9f5"/>
+        <path d="M547.72,616l-28.48-42.72L448,616l-23.87,37.74c-17.09,28.48-18.63,26.35-26,26.35L177.48,680,141,737H402.21c41.79,0,67.51,0,96-43.44" transform="translate(37 -850)" fill="#3fa9f5"/>
       </svg>
     </svg>
     )

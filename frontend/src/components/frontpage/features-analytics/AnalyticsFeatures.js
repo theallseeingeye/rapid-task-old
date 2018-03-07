@@ -61,10 +61,10 @@ const Text2 = styled.p`
 
 const Text3 = styled.p`
   font-size: 1.5em; 
-  margin: 5px;  
+  margin: 5px; 
 `;
 
-const Text4 = styled.div`
+const Text4 = styled.p`
   text-align: center;
   width: 100%;
   height: 9vh;
@@ -73,7 +73,6 @@ const Text4 = styled.div`
 const RightColumn = styled.div`
   text-align: justify;
   margin: 5vh 0 0 0;
-  max-width: 300px;
   @media (min-width: ${props => props.theme.tabletscreen}) {
     max-width: 800px;
   }

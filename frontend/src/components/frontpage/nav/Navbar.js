@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import { TweenLite } from 'gsap';
-import 'gsap/src/uncompressed/plugins/ScrollToPlugin';
 
 const Nav = styled.nav`
   bottom: 0;
@@ -54,6 +52,7 @@ const FlexItem = styled.button`
     transform: skewX(-32deg);
     border-radius: 10px 10px 10px 10px;
   };
+  outline: none;
   
   // z-index tells css the position order it has over the objects.
   z-index: 1;

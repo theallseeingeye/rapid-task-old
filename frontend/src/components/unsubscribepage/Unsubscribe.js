@@ -15,7 +15,8 @@ const Title = styled.p`
   color: white;
   font-weight: bold;
   font-size: 2em;
-  margin: 25% 5% 0 0;
+  margin: auto;
+  padding-top: 10vh;
 `;
 
 const Subtitle = styled.p`
@@ -31,6 +32,7 @@ const Email = styled.input`
   font-size: 1.6em;
   border-color: rgba(45,140,245,1);
   border-width: 4px;
+  outline: none;
 `;
 
 const Subscribe = styled.input`
@@ -39,14 +41,16 @@ const Subscribe = styled.input`
   border-color: rgba(45,140,245,1);
   font-size: 1.6em;
   border-width: 4px;
+  outline: none;
 `;
 
 class Unsubscribe extends Component {
     constructor(props) {
     super(props);
     this.state = {
-      name: {value: '', isValid: true, message: ''},
-      email: {value: '', isValid: true, message: ''},
+      name: {value: '', isValid: false, message: ''},
+      email: {value: '', isValid: false, message: ''},
+
       // existingEmail: 'no change',
       // subscribed: '',
     };
@@ -75,11 +79,11 @@ class Unsubscribe extends Component {
 
 
 
-        // Sends the data to the backend.
-        axios.post('http://127.0.0.1:8000/subscriber/create/', subscriber)
-          .then(response => {
-            console.log('You are now subscribed. Thank you!');
-          })
+      //   // Sends the data to the backend.
+      //   axios.post('http://127.0.0.1:8000/subscriber/create/', subscriber)
+      //     .then(response => {
+      //       console.log('You are now subscribed. Thank you!');
+      //     })
       }
 
     }
@@ -102,7 +106,7 @@ class Unsubscribe extends Component {
             value={this.state.email.value}
             onChange={this.handleChange}
             type="email"
-            required
+            // required
           />
           <span>{this.state.email.message}</span>
           <br />

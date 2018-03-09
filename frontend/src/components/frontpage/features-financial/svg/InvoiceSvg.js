@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import ScrollMagic from "../../../../../utils/jsfunctions/ScrollMagicGsapAdapter"; //Custom adapter that lets us use GSAP and ScrollMagic in React
-import {TweenMax} from 'gsap';
 
 const Svg = styled.svg`
   width: 35vw;
@@ -47,34 +46,34 @@ class InvoiceSvg extends Component {
     const controller = new ScrollMagic.Controller();
 
     // To set each layer invisible before doing anything.
-    TweenMax.set([layerId], {autoAlpha: 0});
+    TweenLite.set([layerId], {autoAlpha: 0});
 
     // Gsap's animations
-    const tweenInvoicePage = TweenMax.to(InvoicePage, 0.01, {autoAlpha: 1});
-    const tweenInvoiceTitle = TweenMax.to(InvoiceTitle, 0.01, {autoAlpha: 1});
-    const tweenInvoiceHeader = TweenMax.to(InvoiceHeader, 0.01, {autoAlpha: 1});
-    const tweenInvoiceBox = TweenMax.to(InvoiceBox, 0.01, {autoAlpha: 1});
-    const tweenInvoiceLine4A = TweenMax.to(InvoiceLine4A, 0.01, {autoAlpha: 1});
-    const tweenInvoiceLine4B = TweenMax.to(InvoiceLine4B, 0.01, {autoAlpha: 1});
-    const tweenInvoiceLine5A = TweenMax.to(InvoiceLine5A, 0.01, {autoAlpha: 1});
-    const tweenInvoiceLine5B = TweenMax.to(InvoiceLine5B, 0.01, {autoAlpha: 1});
-    const tweenInvoiceLine6A = TweenMax.to(InvoiceLine6A, 0.01, {autoAlpha: 1});
-    const tweenInvoiceLine6B = TweenMax.to(InvoiceLine6B, 0.01, {autoAlpha: 1});
-    const tweenInvoiceLine6C = TweenMax.to(InvoiceLine6C, 0.01, {autoAlpha: 1});
-    const tweenInvoiceLine7A = TweenMax.to(InvoiceLine7A, 0.01, {autoAlpha: 1});
-    const tweenInvoiceLine7B = TweenMax.to(InvoiceLine7B, 0.01, {autoAlpha: 1});
-    const tweenInvoiceLine8A = TweenMax.to(InvoiceLine8A, 0.01, {autoAlpha: 1});
-    const tweenInvoiceLine8B = TweenMax.to(InvoiceLine8B, 0.01, {autoAlpha: 1});
-    const tweenInvoiceLine9A = TweenMax.to(InvoiceLine9A, 0.01, {autoAlpha: 1});
-    const tweenInvoiceLine9B = TweenMax.to(InvoiceLine9B, 0.01, {autoAlpha: 1});
-    const tweenInvoiceLine10 = TweenMax.to(InvoiceLine10, 0.01, {autoAlpha: 1});
-    const tweenInvoiceFooter1 = TweenMax.to(InvoiceFooter1, 0.01, {autoAlpha: 1});
-    const tweenInvoiceFooter2 = TweenMax.to(InvoiceFooter2, 0.01, {autoAlpha: 1});
-    const tweenInvoiceStamp = TweenMax.to(InvoiceStamp, 0.01, {autoAlpha: 1});
-    const tweenInvoicePaid = TweenMax.to(InvoicePaid, 0.01, {autoAlpha: 1});
+    const tweenInvoicePage = TweenLite.to(InvoicePage, 0.01, {autoAlpha: 1});
+    const tweenInvoiceTitle = TweenLite.to(InvoiceTitle, 0.01, {autoAlpha: 1});
+    const tweenInvoiceHeader = TweenLite.to(InvoiceHeader, 0.01, {autoAlpha: 1});
+    const tweenInvoiceBox = TweenLite.to(InvoiceBox, 0.01, {autoAlpha: 1});
+    const tweenInvoiceLine4A = TweenLite.to(InvoiceLine4A, 0.01, {autoAlpha: 1});
+    const tweenInvoiceLine4B = TweenLite.to(InvoiceLine4B, 0.01, {autoAlpha: 1});
+    const tweenInvoiceLine5A = TweenLite.to(InvoiceLine5A, 0.01, {autoAlpha: 1});
+    const tweenInvoiceLine5B = TweenLite.to(InvoiceLine5B, 0.01, {autoAlpha: 1});
+    const tweenInvoiceLine6A = TweenLite.to(InvoiceLine6A, 0.01, {autoAlpha: 1});
+    const tweenInvoiceLine6B = TweenLite.to(InvoiceLine6B, 0.01, {autoAlpha: 1});
+    const tweenInvoiceLine6C = TweenLite.to(InvoiceLine6C, 0.01, {autoAlpha: 1});
+    const tweenInvoiceLine7A = TweenLite.to(InvoiceLine7A, 0.01, {autoAlpha: 1});
+    const tweenInvoiceLine7B = TweenLite.to(InvoiceLine7B, 0.01, {autoAlpha: 1});
+    const tweenInvoiceLine8A = TweenLite.to(InvoiceLine8A, 0.01, {autoAlpha: 1});
+    const tweenInvoiceLine8B = TweenLite.to(InvoiceLine8B, 0.01, {autoAlpha: 1});
+    const tweenInvoiceLine9A = TweenLite.to(InvoiceLine9A, 0.01, {autoAlpha: 1});
+    const tweenInvoiceLine9B = TweenLite.to(InvoiceLine9B, 0.01, {autoAlpha: 1});
+    const tweenInvoiceLine10 = TweenLite.to(InvoiceLine10, 0.01, {autoAlpha: 1});
+    const tweenInvoiceFooter1 = TweenLite.to(InvoiceFooter1, 0.01, {autoAlpha: 1});
+    const tweenInvoiceFooter2 = TweenLite.to(InvoiceFooter2, 0.01, {autoAlpha: 1});
+    const tweenInvoiceStamp = TweenLite.to(InvoiceStamp, 0.01, {autoAlpha: 1});
+    const tweenInvoicePaid = TweenLite.to(InvoicePaid, 0.01, {autoAlpha: 1});
 
     // This is to hide all the svg layers.
-    const tweenEnd = TweenMax.to(mainSVG, 0.01, {autoAlpha:0}); // Require this to fade out super fast to stop flashing below.
+    const tweenEnd = TweenLite.to(mainSVG, 0.01, {autoAlpha:0}); // Require this to fade out super fast to stop flashing below.
 
 
     // ScrollMagic Scenes.

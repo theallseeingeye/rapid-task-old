@@ -5,9 +5,6 @@
   "main": "webpack.config.js",
   "dependencies": {
     "axios": "^0.17.1",
-    "gsap": "^1.20.3",
-    "jest-cli": "^21.2.1",
-    "lodash": "^4.17.4",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.2.2",
@@ -27,12 +24,13 @@
     "css-loader": "^0.28.7",
     "file-loader": "^1.1.5",
     "html-webpack-plugin": "^2.30.1",
-    "jest": "^21.2.1",
+    "jest": "^22.4.2",
     "jest-styled-components": "^4.9.0",
     "react-test-renderer": "^16.2.0",
     "style-loader": "^0.19.0",
     "uglifyjs-webpack-plugin": "^1.1.2",
     "webpack": "^3.10.0",
+    "webpack-bundle-analyzer": "^2.11.1",
     "webpack-dev-server": "^2.9.7",
     "webpack-merge": "^4.1.1"
   },
@@ -40,7 +38,9 @@
     "test": "yarn jest",
     "build": "yarn webpack --config webpack.prod.js",
     "start": "yarn webpack-dev-server --open --config webpack.dev.js",
-    "watch": "webpack --watch"
+    "watch": "webpack --watch",
+    "staging": "yarn webpack --config webpack.staging.js",
+    "bundle-analyzer": "yarn webpack --config webpack.bundle.analyzer.js"
   },
   "keywords": [],
   "author": "Jay Sikstrom",

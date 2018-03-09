@@ -4,6 +4,7 @@ import axios from "axios/index";
 import validator from 'validator';
 import { Link } from 'react-router-dom';
 
+
 const FormElements = styled.form`
   background-color: white; //this is to hide the fixed position animations to prevent them from showing up on slower devices
   width: 100%;
@@ -30,6 +31,7 @@ const Name = styled.input`
   font-size: 1.6em;
   border-color: ${props => props.theme.logoblue};
   border-width: 4px;
+  outline: none;
 `;
 
 const Email = styled.input`
@@ -37,6 +39,7 @@ const Email = styled.input`
   font-size: 1.6em;
   border-color: ${props => props.theme.logoblue};
   border-width: 4px;
+  outline: none;
 `;
 
 const Subscribe = styled.input`
@@ -45,6 +48,7 @@ const Subscribe = styled.input`
   border-color: ${props => props.theme.logoblue};
   font-size: 1.6em;
   border-width: 4px;
+  outline: none;
 `;
 
 const NoSpam = styled.p`
@@ -100,71 +104,56 @@ class SubscriptionForm extends Component {
 
 
     if (this.formIsValid()) {
-
-      // this.checkEmailExisting();
-      // console.log("It sent the data " + this.state.existingEmail);
-       //   }
-    //
-     const subscriber = {
+      const apiUrl = process.env.API_URL; // Created the API_URL in webpack.
+      console.log(apiUrl);
+      const subscriber = {
           name: this.state.name,
           email: emailNormalizer,
         };
-      axios.post('https://api.rapidtask.com/v0.1/subscriber/create/', subscriber)
+      axios.post(apiUrl +'v0.1/subscriber/create/', subscriber)
         .then(response => {
           console.log('You are now subscribed. Thank you!');
-          return this.setState.isSubmitted = true;
+          return this.setState({
+            name: "",
+            email: "",
+            isSubmitted: true
+          })
         });
-
-
-
-
-    } else {
-      console.log("Form is not valid");
+      } else {
+        console.log("Form is not valid");
     }
-
-
-    //   if (emailCompare()){
-    //
-    //   }
-    //
-  // //      const subscriber = {
-  //           name: this.state.name,
-  //           email: emailNormalizer,
-  //         };
-    //   // Sends the data to the backend.
-    //   axios.post('http://127.0.0.1:8000/subscriber/create/', subscriber)
-    //     .then(response => {
-    //       console.log('You are now subscribed. Thank you!');
-    //       return this.setState.isSubmitted = true;
-    //     });
-    // }
   };
 
   formIsValid = () => {
-    const input = this.state.email;
+    const email = this.state.email;
+    const name = this.state.name;
+    const fields = this.state;
 
-    if (!validator.isEmail(input)){
-      this.state.email.isValid = false; // Triggers the error
-      this.state.email.message = 'Not a valid email address';
-      // this.state.email.isSubscribed = false; // Checks to see if they have already subscribed
-
+    if (!validator.isEmail(email)) {
+      fields.email.isValid = false; // Triggers the error
+      fields.email.message = 'Not a valid email address';
       this.setState(state);
       return false;
-
+    } else if (!validator.isAlpha(name)) {
+      fields.state.name.isValid = false;
+      fields.email.message = 'Please enter your name correctly';
+      this.setState(state);
+      return false;
     }
     return true;
   };
 
-  emailCompare = () => {
-    if (this.state.email === this.state.existingEmail) {
-      console.log("The Email Already Exists");
-      return false;
-    } else {
-      console.log("This email is new!");
 
-      return true;
-    }
-  };
+  // emailCompare = () => {
+  //   if (this.state.email === this.state.existingEmail) {
+  //     console.log("The Email Already Exists");
+  //     return false;
+  //   } else {
+  //     console.log("This email is new!");
+  //
+  //     return true;
+  //   }
+  // };
 
   // checkEmailExisting = () => {
   //   const input = this.state.email;

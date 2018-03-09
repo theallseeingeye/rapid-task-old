@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import theme from "../../../../global-styles/DefaultTheme";
-import {TweenMax} from 'gsap';
 
 const Svg = styled.svg`
   width: 100%;
@@ -34,7 +33,7 @@ class ProgressBars extends Component {
     const buttonHoldTime = 3;
     const randomStart = Math.random()*20;
 
-    const t1 = new TimelineMax({repeat:-1, delay: randomStart});
+    const t1 = new TimelineLite({onComplete:function(){this.restart()}, delay: randomStart});
 
     // Preset the following before playing animation
     t1.set(this.blueBar, {attr:{width: 0}})

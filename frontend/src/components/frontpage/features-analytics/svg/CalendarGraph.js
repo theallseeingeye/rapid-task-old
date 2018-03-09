@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import {TweenMax} from 'gsap';
 
 
 const Svg = styled.svg`
@@ -28,7 +27,7 @@ class CalendarGraph extends Component {
     const BoxNumber = polyArray.map(x => BoxId(x));
 
     function AnimateCalendar() {
-      const CalendarAnimate = new TimelineMax({onComplete: AnimateCalendar}); // Call itself once animation completes.
+      const CalendarAnimate = new TimelineLite({onComplete: AnimateCalendar}); // Call itself once animation completes.
         for (let i = 0; i < dataCount; i++) {
         const random = Math.random();
           CalendarAnimate.to(BoxNumber[i], 0.05, {fill: ("rgba(255, 255, 255," + random + ")")});

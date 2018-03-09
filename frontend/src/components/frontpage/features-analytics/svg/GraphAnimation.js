@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import {TweenMax} from 'gsap';
 
 
 const Svg = styled.svg`
@@ -299,7 +298,7 @@ class GraphAnimation extends Component {
 
 
       // Initialize the Animation
-      const chartDraw = new TimelineMax({onComplete: AnimateChart}); // Call itself once animation completes.
+      const chartDraw = new TimelineLite({onComplete: AnimateChart}); // Call itself once animation completes.
 
       function pointPosition(index) {
         return {points: p[index].x + ", " + p[index].y + " " + p[index].x2 + ", " + p[index].y2}

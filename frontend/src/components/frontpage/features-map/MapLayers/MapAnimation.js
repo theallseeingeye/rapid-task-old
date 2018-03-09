@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import {TweenMax} from 'gsap';
 
 import BlueTruck from "./TruckSvg";
 import MapPin from "./MapPin";
@@ -140,14 +139,14 @@ class MapAnimation extends Component {
 
   componentDidMount() {
     // Pin Bounce Animation--------------------------------------------------------------------------------------------
-    const PinBounce = new TimelineMax({repeat: -1, delay: 2});
+    const PinBounce = new TimelineLite({onComplete:function(){this.restart();}, delay: 2});
 
     PinBounce.set(this.pin, {transform: 'translate(254px, 561px) scale(0.1)'})
     .to(this.pin, 0.8, {transform: 'translate(254px, 550px) scale(0.1)'})
     .to(this.pin, 0.8, {transform: 'translate(254px, 561px) scale(0.1)'});
 
     // MAP ANIMATION ///////////////////////////////////////////////////////////////////////////////////////////////////
-    const MapAnimate = new TimelineMax({repeat: -1});
+    const MapAnimate = new TimelineLite({onComplete:function(){this.restart()}});
     const DesktopMinWidth = "(min-width: 1024px)";
 
     // hide pointer-----------------------------------------------------------------------------------------------------

@@ -367,6 +367,8 @@ pip-selfcheck.json
 
 # production
 /build
+/staging
+/bundle_analyzer
 
 # misc
 .DS_Store
@@ -389,8 +391,13 @@ yarn-error.log*
 .coverage
 /backend/.idea/
 !/frontend/src/App.js
-
-# Elastic Beanstalk Files
-.elasticbeanstalk/*
-!.elasticbeanstalk/*.cfg.yml
-!.elasticbeanstalk/*.global.yml
+
+
+# Elastic Beanstalk Files
+
+.elasticbeanstalk/*
+
+!.elasticbeanstalk/*.cfg.yml
+
+!.elasticbeanstalk/*.global.yml
+

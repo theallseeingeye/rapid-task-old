@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import OfficeBeach from './svg/OfficeBeach';
 import {NavLink} from 'react-router-dom';
 import styled from 'styled-components'
-import {TweenLite} from "gsap";
 
 const FindOutMore = styled.p`
   font-family: ${props => props.theme.Robotofont};

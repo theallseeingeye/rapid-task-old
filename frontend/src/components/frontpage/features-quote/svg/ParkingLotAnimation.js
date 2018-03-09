@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import {TweenMax} from 'gsap';
 
 // ScrollMagic and GSAP is used here!
 import ScrollMagic from "../../../../../utils/jsfunctions/ScrollMagicGsapAdapter"; //Custom adapter that lets us use GSAP and ScrollMagic in React
@@ -62,26 +61,26 @@ class ParkingLotAnimation extends Component {
     const controller = new ScrollMagic.Controller();
 
     // To set each layer invisible before doing anything.
-    TweenMax.set([layerId], {autoAlpha:0});
+    TweenLite.set([layerId], {autoAlpha:0});
 
     // There is a slight start delay on mobile- This sets the trigger sooner before the visible trigger. This allows
     // the scrollMagic to trigger on time for the first layer to trigger.
-    const preload = TweenMax.to(bottomLayer, 0.001, {autoAlpha:0});
+    const preload = TweenLite.to(bottomLayer, 0.001, {autoAlpha:0});
 
     // Gsap's animations
-    const tweenBottom = TweenMax.to(bottomLayer, 0.3, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
-    const tweenGravel = TweenMax.to(gravelLayer, 0.3, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
-    const tweenEquipment = TweenMax.to(equipmentLayer, 0.3, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
-    const tweenAsphalt = TweenMax.to(asphaltLayer, 0.4, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
-    const tweenCurbs = TweenMax.to(curbsLayer, 0.4, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
-    const tweenGrass = TweenMax.to(grassLayer, 0.4, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
-    const tweenLamps = TweenMax.to(lampsLayer, 0.4, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
-    const tweenTrees = TweenMax.to(treesLayer, 0.4, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
-    const tweenLines = TweenMax.to(linesLayer, 0.4, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
-    const tweenPylons = TweenMax.to(pylonsLayer, 0.4, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
+    const tweenBottom = TweenLite.to(bottomLayer, 0.3, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
+    const tweenGravel = TweenLite.to(gravelLayer, 0.3, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
+    const tweenEquipment = TweenLite.to(equipmentLayer, 0.3, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
+    const tweenAsphalt = TweenLite.to(asphaltLayer, 0.4, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
+    const tweenCurbs = TweenLite.to(curbsLayer, 0.4, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
+    const tweenGrass = TweenLite.to(grassLayer, 0.4, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
+    const tweenLamps = TweenLite.to(lampsLayer, 0.4, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
+    const tweenTrees = TweenLite.to(treesLayer, 0.4, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
+    const tweenLines = TweenLite.to(linesLayer, 0.4, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
+    const tweenPylons = TweenLite.to(pylonsLayer, 0.4, {autoAlpha: 1, ease: Bounce.easeOut, y:200});
 
     // This is to hide all the svg layers.
-    const endTween = TweenMax.to(mainSVG, 0.01, {autoAlpha:0}); // Require this to fade out super fast to stop flashing below.
+    const endTween = TweenLite.to(mainSVG, 0.01, {autoAlpha:0}); // Require this to fade out super fast to stop flashing below.
 
     // ScrollMagic Scenes.
     const sceneMain = new ScrollMagic.Scene({

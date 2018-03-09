@@ -1,5 +1,6 @@
 import ScrollMagic from 'scrollmagic/scrollmagic/minified/ScrollMagic.min';
-import {TweenMax as Tween,TimelineMax as Timeline} from 'gsap';
+// import {TweenLite as Tween, TimelineLite as Timeline} from 'gsap';
+
 
 
 /*
@@ -122,12 +123,12 @@ ScrollMagic.Scene.extend(function () {
           params = duration;
           duration = 1;
         }
-        TweenObject = Tween.to(TweenObject, duration, params);
+        TweenObject = TweenLite.to(TweenObject, duration, params);
       }
       try {
         // wrap Tween into a Timeline Object if available to include delay and repeats in the duration and standardize methods.
-        if (Timeline) {
-          newTween = new Timeline({
+        if (TimelineLite) {
+          newTween = new TimelineLite({
             smoothChildTiming: true
           }).add(TweenObject);
         } else {
@@ -156,7 +157,7 @@ ScrollMagic.Scene.extend(function () {
       // check if there are position tweens defined for the trigger and warn about it :)
       if (_tween && Scene.controller() && Scene.triggerElement() && Scene.loglevel() >= 2) { // controller is needed to know scroll direction.
         const
-        triggerTweens = Tween.getTweensOf(Scene.triggerElement()),
+        triggerTweens = TweenLite.getTweensOf(Scene.triggerElement()),
           vertical = Scene.controller().info("vertical");
         triggerTweens.forEach(function (value, index) {
           const

@@ -74,7 +74,6 @@ class NavBar extends Component {
 
   handleClick = (e, location) => {
     e.preventDefault();
-    console.log("it clicked");
     TweenLite.to(window, 1, {scrollTo:{y:location, autoKill:false}});
   };
 

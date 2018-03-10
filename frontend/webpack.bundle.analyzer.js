@@ -24,8 +24,5 @@ module.exports = merge(common, {
   plugins: [
     new BundleAnalyzerPlugin,
     new CleanWebpackPlugin(['bundle_analyzer']),
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production')
-    })
   ]
 });

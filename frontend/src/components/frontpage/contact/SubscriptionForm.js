@@ -108,7 +108,7 @@ class SubscriptionForm extends Component {
           name: this.state.name,
           email: emailNormalizer,
         };
-      axios.post(apiUrl +'v0.1/subscriber/create/', subscriber)
+      axios.post(apiUrl + 'v0.1/subscriber/create/', subscriber)
         .then(response => {
           console.log('You are now subscribed. Thank you!');
           return this.setState({

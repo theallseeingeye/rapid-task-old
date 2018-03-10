@@ -9,6 +9,8 @@ const FindOutMore = styled.div`
   line-height: 1.4em;
   font-size: 1.2em;
   bottom: 10vh;
+  height: 40vh;
+  min-height: 300px;
   position: absolute;
   width: 95%;
  

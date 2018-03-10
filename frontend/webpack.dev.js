@@ -8,7 +8,7 @@ module.exports = merge(common, {
     contentBase: './dist',
     port: 3000,
     hot: true,
-    host: '192.168.0.15',
+    host: '192.168.0.21',
   },
   plugins: [
     new webpack.NamedModulesPlugin(),

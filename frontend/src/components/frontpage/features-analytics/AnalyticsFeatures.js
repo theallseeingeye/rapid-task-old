@@ -83,7 +83,6 @@ const RightColumn = styled.div`
   }
 `;
 
-
 class AnalyticsFeatures extends Component {
   render() {
     return (

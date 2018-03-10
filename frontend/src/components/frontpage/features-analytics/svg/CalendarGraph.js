@@ -29,7 +29,7 @@ class CalendarGraph extends Component {
     function AnimateCalendar() {
       const CalendarAnimate = new TimelineLite({onComplete: AnimateCalendar}); // Call itself once animation completes.
         for (let i = 0; i < dataCount; i++) {
-        const random = Math.random();
+        const random = Math.random(Math.random());
           CalendarAnimate.to(BoxNumber[i], 0.05, {fill: ("rgba(255, 255, 255," + random + ")")});
         }
         CalendarAnimate.to(BoxNumber, 2, {fill: "white"});

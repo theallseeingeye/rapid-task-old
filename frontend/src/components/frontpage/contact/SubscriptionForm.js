@@ -102,10 +102,8 @@ class SubscriptionForm extends Component {
     const emailInput = this.state.email;
     const emailNormalizer = validator.normalizeEmail(emailInput);
 
-
     if (this.formIsValid()) {
       const apiUrl = process.env.API_URL; // Created the API_URL in webpack.
-      console.log(apiUrl);
       const subscriber = {
           name: this.state.name,
           email: emailNormalizer,
@@ -133,11 +131,13 @@ class SubscriptionForm extends Component {
       fields.email.isValid = false; // Triggers the error
       fields.email.message = 'Not a valid email address';
       this.setState(state);
+      console.log(email.message);
       return false;
     } else if (!validator.isAlpha(name)) {
       fields.state.name.isValid = false;
       fields.email.message = 'Please enter your name correctly';
       this.setState(state);
+      console.log(name.message);
       return false;
     }
     return true;

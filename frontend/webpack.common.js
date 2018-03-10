@@ -2,6 +2,7 @@ const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require ('html-webpack-plugin');
 
+
 // Constant with out paths
 const paths = {
   PUBLIC: path.resolve(__dirname, 'public'),
@@ -18,11 +19,11 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      title: 'Rapid Task',
       template: path.join(paths.PUBLIC, 'index.html'),
       favicon: path.join(paths.PUBLIC, 'favicon.ico'),
       filename: 'index.html',
-    }),
+      title: 'Progressive Web Application',
+    })
   ],
   module: {
     rules: [

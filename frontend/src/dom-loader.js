@@ -6,6 +6,16 @@ import theme from './global-styles/DefaultTheme';
 
 // import registerServiceWorker from './registerServiceWorker';
 
+if ('serviceWorker' in navigator) {
+ window.addEventListener('load', () => {
+   navigator.serviceWorker.register('/sw.js').then(registration => {
+     console.log('SW registered: ', registration);
+   }).catch(registrationError => {
+     console.log('SW registration failed: ', registrationError);
+   });
+ });
+}
+
 // ThemeProvider is added to theme the whole app. The 'sizes' relates to screen sizes.
 ReactDOM.render(
   <ThemeProvider theme={theme}>

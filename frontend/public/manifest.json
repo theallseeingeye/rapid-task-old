@@ -1,5 +1,7 @@
 {
-    "name": "",
+    "name": "Rapid Task",
+    "short_name": "Rapid Task",
+    "start_url": "/?utm_source=homescreen",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -12,7 +14,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
+    "theme_color": "#white",
+    "background_color": "#white",
     "display": "standalone"
 }

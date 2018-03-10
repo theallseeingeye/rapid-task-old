@@ -4,12 +4,14 @@ import {NavLink} from 'react-router-dom';
 import styled from 'styled-components'
 import {TweenLite} from "gsap";
 
-const FindOutMore = styled.p`
+const FindOutMore = styled.div`
   font-family: ${props => props.theme.Robotofont};
   text-align: right;
   line-height: 1.4em;
   font-size: 1.2em;
   bottom: 10vh;
+  height: 40vh;
+  min-height: 300px;
   position: absolute;
   width: 95%;
  

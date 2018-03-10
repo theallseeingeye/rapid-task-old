@@ -2,6 +2,7 @@ const merge = require('webpack-merge');
 const webpack = require('webpack');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const common = require('./webpack.common.js');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = merge(common, {
   // devtool: source-map is good for benchmarking the websites. It adds considerable size to the build. Turn off for full prod.
@@ -17,6 +18,12 @@ module.exports = merge(common, {
     // especially using react.
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
+    }),
+    new WorkboxPlugin({
+     // these options encourage the ServiceWorkers to get in there fast
+     // and not allow any straggling "old" SWs to hang around
+    clientsClaim: true,
+    skipWaiting: true
     })
   ]
 });

@@ -3,7 +3,7 @@ import OfficeBeach from './svg/OfficeBeach';
 import {NavLink} from 'react-router-dom';
 import styled from 'styled-components'
 
-const FindOutMore = styled.p`
+const FindOutMore = styled.div`
   font-family: ${props => props.theme.Robotofont};
   text-align: right;
   line-height: 1.4em;

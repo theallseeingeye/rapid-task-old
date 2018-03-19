@@ -56,6 +56,10 @@ const NoSpam = styled.p`
   font-style: italic;
 `;
 
+const Error = styled.span`
+  color: red;
+`;
+
 
 class SubscriptionForm extends Component {
   constructor(props) {
@@ -108,7 +112,7 @@ class SubscriptionForm extends Component {
           name: this.state.name,
           email: emailNormalizer,
         };
-      axios.post(apiUrl + 'v0.1/subscriber/create/', subscriber)
+      axios.post((apiUrl + 'v0.1/subscriber/create/'), subscriber)
         .then(response => {
           console.log('You are now subscribed. Thank you!');
           return this.setState({
@@ -128,14 +132,14 @@ class SubscriptionForm extends Component {
     const fields = this.state;
 
     if (!validator.isEmail(email)) {
-      fields.email.isValid = false; // Triggers the error
-      fields.email.message = 'Not a valid email address';
+      email.isValid = false; // Triggers the error
+      email.message = 'Not a valid email address';
       this.setState(state);
       console.log(email.message);
       return false;
     } else if (!validator.isAlpha(name)) {
-      fields.state.name.isValid = false;
-      fields.email.message = 'Please enter your name correctly';
+      state.name.isValid = false;
+      email.message = 'Please enter your name correctly';
       this.setState(state);
       console.log(name.message);
       return false;
@@ -202,7 +206,7 @@ class SubscriptionForm extends Component {
           onChange={this.handleChange}
           required
         />
-        <span>{this.state.name.message}</span>
+        <Error>{this.state.name.message}</Error>
         <br />
         <br />
         <Email
@@ -213,7 +217,7 @@ class SubscriptionForm extends Component {
           type="email"
           required
         />
-        <span>{this.state.email.message}</span>
+        <Error>{this.state.email.message}</Error>
         <br />
         <br />
         <Subscribe type="submit" value="Subscribe"/>

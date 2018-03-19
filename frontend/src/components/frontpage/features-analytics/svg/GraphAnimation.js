@@ -518,7 +518,7 @@ class GraphAnimation extends Component {
     }
 
     return (
-      <Svg id="ChartSvg" viewBox="0 0 400 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <Svg id="ChartSvg" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
         <PolyList/>
       </Svg>
     )

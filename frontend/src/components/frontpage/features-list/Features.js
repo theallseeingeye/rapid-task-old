@@ -5,17 +5,14 @@ import CloudsSvg from "./Svg/CloudsSvg";
 
 const FeatureDiv = styled.div`
   font-family: ${props => props.theme.Robotofont};
-  height: 160vh;
+  height: 975px;
   position: relative;
   background: linear-gradient(white 20%, ${props => props.theme.logoblue} 27%, ${props => props.theme.logoblue} 27%);
   @media (min-width: ${props => props.theme.tabletscreen}) {
-    height: 125vh;
+  height: 1100px;
   }
   @media (min-width: ${props => props.theme.desktopscreen}) {
-    height: 120vh;
-  }
-    @media (min-width: ${props => props.theme.desktopscreen}) {
-    height: 125vh;
+   height: 1200px;
   }
 `;
 
@@ -28,34 +25,30 @@ const TextTitle = styled.p`
 const TextFooter = styled.p`
   font-family: ${props => props.theme.RobotoCondensedfont};
   font-size: 1.3em;
-  height: 5vh;
   text-align: center;
   z-index: 5;
-  margin-top: 5vh;
 `;
 
 const DeviceContainer = styled.div`
   height: 35vh;
+  min-height: 200px;
   display: flex;
   align-self: center;
+    min-height: 300px;
+  }
 `;
 
 const List = styled.div`
   padding: 5px;
   list-style: none;
   text-align: center;
-  height: 70vh;
+
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
-  margin-top: 5vh;
   
-  @media (min-width: ${props => props.theme.tabletscreen}) {
-    height: 50vh;
-  }
-  @media (min-width: ${props => props.theme.desktopscreen}) {
-    height: 40vh;
-  }
+    height: 350px;
+
 `;
 
 const ListItem = styled.p`
@@ -76,7 +69,7 @@ class Features extends Component {
     return (
       <FeatureDiv id="featuresScrollTarget">
         <TextTitle>
-          Rapid Task manages your daily business tasks quickly with ease across all platforms <br/>
+          Rapid Task helps you manage your business tasks with ease across all platforms <br/>
         </TextTitle>
         <DeviceContainer>
           <DevicesSVG/>
@@ -87,52 +80,52 @@ class Features extends Component {
         <List>
           <ListItem>
             <ListText>
-              Simple Steps for Producing Faster and Accurate Quotes
+              Simple steps for producing accurate quotes faster
             </ListText>
           </ListItem>
           <ListItem>
             <ListText>
-              Improved Business Organization
+              Improved business organization
             </ListText>
           </ListItem>
           <ListItem>
             <ListText>
-              Know the Exact Status and Progress of All Your Jobs
+              Status and progress tracking for all of your jobs
             </ListText>
           </ListItem>
           <ListItem>
             <ListText>
-              Automated Invoicing and Billing
+              Automated invoicing and billing
             </ListText>
           </ListItem>
           <ListItem>
             <ListText>
-              Statistical Performance Reports For Your Employees
+              Statistical performance reporting for your employees
             </ListText>
           </ListItem>
           <ListItem>
             <ListText>
-              Efficient Steps For Updating Inventory and Expenses
+              Efficient steps for updating inventory and expenses
             </ListText>
           </ListItem>
           <ListItem>
             <ListText>
-              Equipment Tracking For Maintenance Schedules and Usage
+              Equipment tracking for maintenance schedules and usage
             </ListText>
           </ListItem>
           <ListItem>
             <ListText>
-              Full Accounting Support
+              Full accounting support
             </ListText>
           </ListItem>
           <ListItem>
             <ListText>
-              Analytics At Your Fingertips to Better Understand Your Business
+              Analytics at your fingertips to better understand your business
             </ListText>
           </ListItem>
         </List>
         <TextFooter>
-          Flexible For All Service Based Businesses
+          Flexible for all Service Based Businesses
         </TextFooter>
         <CloudsSvg/>
       </FeatureDiv>

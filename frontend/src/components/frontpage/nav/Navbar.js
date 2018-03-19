@@ -6,7 +6,7 @@ const Nav = styled.nav`
   bottom: 0;
   position: fixed;
   width: 100%;
-  z-index: 2;
+  z-index: 3;
   overflow: hidden;
   
   // To set bounds of placing nav-bar on top.
@@ -51,6 +51,9 @@ const FlexItem = styled.button`
   @media (min-width: ${props => props.theme.tabletscreen}) {
     transform: skewX(-32deg);
     border-radius: 10px 10px 10px 10px;
+      :hover {
+    background: rgba(63, 169, 245, 0.3);
+    };
   };
   outline: none;
   
@@ -60,10 +63,6 @@ const FlexItem = styled.button`
   // Formatting
   align-self: auto;
   flex-grow: 1;
-
-  :hover {
-    background: rgba(63, 169, 245, 0.3);
-  };
 `;
 
 const NavLinks = FlexItem.withComponent(NavLink).extend` // To override the properties of react-router and apply styling

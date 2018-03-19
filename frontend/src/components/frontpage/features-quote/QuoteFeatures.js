@@ -102,7 +102,7 @@ class Quotes extends Component {
         <ManQuoting/>
         <MainContext>
           Providing accurate quotes can be tedious and time consuming. Rapid Task removes the tedious steps, allowing
-          you to build your quotes quckly. We allow easy custom estimating processes that works for your business.
+          you to build your quotes quickly. We allow easy custom estimating processes that works for your business.
         </MainContext>
         <Columns >
           <LeftColumn>

@@ -276,7 +276,8 @@ class OfficeBeach extends Component {
       <rect x="312.12" y="128.66" width="1.81" height="7.1" transform="translate(42.39 1038.49) rotate(-59.99)" fill="#c8cad0"/>
       <rect x="374.28" y="113.94" width="7.1" height="1.81" transform="translate(89.9 1086.01) rotate(-60.01)" fill="#c8cad0"/>
       <rect x="326.84" y="196.12" width="7.1" height="1.81" transform="translate(-4.95 1086.11) rotate(-60.02)" fill="#c8cad0"/>
-      <rect x="338.39" y="144.33" width="52.49" height="1.79" transform="translate(5.88 1004.84) rotate(-45.5)" fill="#c8cad0"/>
+      /*minute/hour/second hands*/
+      <rect x="0" y="0" width="52.49" height="1.79" transform="translate(349 845) rotate(60)" fill="#c8cad0"/>
       <rect x="345.65" y="128" width="1.79" height="42.59" transform="translate(6.17 1012.66) rotate(-48.74)" fill="#c8cad0"/>
       <circle cx="354.51" cy="857.27" r="2.82" fill="#c8cad0"/>
       <path d="M338.77,118l21.9,55.33a1,1,0,0,1-.27,1.16,2.82,2.82,0,1,0,1.81-.72,1,1,0,0,1-1-.66l-21.89-55.33a.29.29,0,0,0-.54.21Z" transform="translate(0.4 701.33)" fill="#a30000"/>

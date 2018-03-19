@@ -18,17 +18,7 @@ const MainDiv = styled.div`
 const Div = styled.div`
   position: relative; // To push the main context after
   width: 100%;
-  height: 80vh;
-  
-  @media (min-width: ${props => props.theme.tabletscreen}) {
-    height: 66vh;
-  }
-  @media (min-width: ${props => props.theme.desktopscreen}) {
-    height: 51vh;
-  }
-  @media (min-width: ${props => props.theme.giantscreen}) {
-    height: 51vh;
-  }
+  height: 500px;
 `;
 
 const Title = styled.p`
@@ -54,7 +44,7 @@ const MainContext = styled.p`
   z-index: 2;
   background-color: rgba(255, 255, 255, 0.65);
   @media (min-width: ${props => props.theme.tabletscreen}) {
-    margin-top: 8vh;
+    margin-top: 50px;
   }
 `;
 

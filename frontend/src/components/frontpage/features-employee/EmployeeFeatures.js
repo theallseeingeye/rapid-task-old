@@ -84,7 +84,7 @@ class EmployeeFeatures extends Component {
               Employee Performance
             </SubTitle>
             <p>
-              You will be able to track employee performance. You will know which staff are really shining, and those
+              You will know which staff are really shining, and those
               that are underperforming with the click of a button. We want to help you find and keep the best people to
               be a part of your business.
             </p>

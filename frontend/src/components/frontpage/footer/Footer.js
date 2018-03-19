@@ -13,6 +13,9 @@ const FindOutMore = styled.div`
   min-height: 300px;
   position: absolute;
   width: 95%;
+  @media (min-width: ${props => props.theme.giantscreen}) {
+   height: 450px;
+  }
  
   //a:link {
   //  color: black;

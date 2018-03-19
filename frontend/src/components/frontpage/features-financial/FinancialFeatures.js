@@ -131,6 +131,10 @@ const Context1 = styled.div`
   margin-bottom: 5vh;
 `;
 
+const ContextEnd = Context1.extend`
+  margin-bottom: 25vh;
+`;
+
 const MainContent = styled.div`
   font-family: ${props => props.theme.Robotofont};
   padding-left: 10px;
@@ -335,10 +339,10 @@ class FinancialFeatures extends Component {
              <Title1 id="InvoicePaidTrigger">
                 Never Miss a Payment
               </Title1>
-              <Context1>
+              <ContextEnd>
                 With Rapid Task's integrated payment system it is easier for your clients to make payments. The email system
                 will keep track of when your client has seen the invoices and made payments.
-              </Context1>
+              </ContextEnd>
             </FlexContainerRight>
           </RightColumn>
         </Columns>

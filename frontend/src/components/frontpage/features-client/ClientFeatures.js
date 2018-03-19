@@ -55,15 +55,6 @@ const SubTitle = styled.p`
   font-size: 1.5em;
 `;
 
-const SubTitle2 = SubTitle.extend`
-  text-align: center;
-  @media (min-width: ${props => props.theme.desktopscreen}) {
-    text-align: left;
-    width: 80%;
-    margin: 0 0 3vh 0;
-  }  
-`;
-
 const TextList = styled.p`
   font-family: ${props => props.theme.RobotoCondensedfont};
   text-align: justify;
@@ -97,9 +88,9 @@ class ClientFeatures extends Component {
             <ClientTablet/>
           </ColumnR>
           <ColumnL>
-            <SubTitle2>
+            <SubTitle>
               Rapid Task Will Help You
-            </SubTitle2>
+            </SubTitle>
             <TextList>Keep organized profiles for each of your clients and their history</TextList>
             <TextList>Track leads for new work and potential clients</TextList>
             <TextList>Automatic notifications when new quote requests come in</TextList>

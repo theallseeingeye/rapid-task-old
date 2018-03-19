@@ -13,17 +13,7 @@ const Div = styled.div`
   position: absolute;
   width: 100%;
   overflow: hidden;
-  height: 80vh;
-  
-  @media (min-width: ${props => props.theme.tabletscreen}) {
-   height: 65vh;
-  }
-  @media (min-width: ${props => props.theme.desktopscreen}) {
-   height: 50vh;
-  }
-  @media (min-width: ${props => props.theme.giantscreen}) {
-   height: 50vh;
-  }
+  height: 500px;
 `;
 
 const Svg = styled.svg`
@@ -43,13 +33,7 @@ const Svg = styled.svg`
     margin-left: auto;
     margin-right: auto;
     transform: translate(0px, 50px);
-  }
-  @media (min-width: ${props => props.theme.giantscreen}) {
-    width: 500px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    transform: translate(0px, 50px);
+    max-width: 500px;
   }
 `;
 

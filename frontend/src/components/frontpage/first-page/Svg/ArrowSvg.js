@@ -5,9 +5,12 @@ const Div = styled.div`
   background-color: white; //this is to hide the fixed position animations to prevent them from showing up on slower devices
   position: absolute;
   height: 17vh;
-  bottom: 4vh;
+  bottom: 7vh;
   width: 100%;
   align-content: center;
+  @media (min-width: ${props => props.theme.tabletscreen}) {
+    bottom: 4vh;
+  }
 `;
 
 const Text = styled.p`
@@ -21,9 +24,12 @@ const Text = styled.p`
 `;
 
 const ArrowSvg = styled.svg`
-  height: 10vh;
+  height: 6vh;
   margin: auto;
   display: block;
+  @media (min-width: ${props => props.theme.tabletscreen}) {
+    height: 10vh;
+  }
 `;
 
 const ArrowBounce = keyframes`

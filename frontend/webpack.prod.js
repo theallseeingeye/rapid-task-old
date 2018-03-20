@@ -18,17 +18,16 @@ module.exports = merge(common, {
     // This will turn off the additional logging and testing of the included libraries. Very good at reducing bundle size
     // especially using react.
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production')
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production'),
+        'API_URL' : JSON.stringify('https://api.rapidtask.com/')
+      }
     }),
     new WorkboxPlugin({
      // these options encourage the ServiceWorkers to get in there fast
      // and not allow any straggling "old" SWs to hang around
     clientsClaim: true,
     skipWaiting: true,
-      'process.env': {
-        'NODE_ENV': JSON.stringify('production'),
-        'API_URL' : JSON.stringify('https://api.rapidtask.com/')
-      }
     })
   ]
 });

@@ -59,11 +59,9 @@ class Unsubscribe extends Component {
     constructor(props) {
     super(props);
     this.state = {
-      name: {value: '', isValid: false, message: ''},
-      email: {value: '', isValid: false, message: ''},
-
-      // existingEmail: 'no change',
-      // subscribed: '',
+      // name: {value: '', isValid: false, message: ''},
+      email: '',
+      isSubmitted: ''
     };
   };
 
@@ -76,29 +74,49 @@ class Unsubscribe extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const emailInput = this.state.email;
-    const emailNormalizer = validator.normalizeEmail(emailInput);
+    const emailNormalized = validator.normalizeEmail(this.state.email);
 
-    if (this.checkEmailExisting()) {
-
-      if (this.formIsValid()) {
-        const subscriber = {
-          // name: this.state.name,
-          email: emailNormalizer,
+    if (this.formIsValid()) {
+      const existingSubscriber = {
+          email: emailNormalized,
+          // name: this.state.name, // Is this escaped? Need to double check.
+          subscribed: false
         };
 
-
-
-
-      //   // Sends the data to the backend.
-      //   axios.post('http://127.0.0.1:8000/subscriber/create/', subscriber)
-      //     .then(response => {
-      //       console.log('You are now subscribed. Thank you!');
-      //     })
-      }
+        console.log(existingSubscriber);
+      axios.put((apiUrl + 'v0.1/subscriber/update/' + emailNormalized + '/'), existingSubscriber)
+        .then(response => {
+          console.log('You are now subscribed. Thank you!');
+          this.setState({
+            isSubmitted: true
+          });
+        });
 
     }
   };
+
+  formIsValid = () => {
+    const email = this.state.email;
+
+    if (this.state.email.length <= 5) {
+      this.setState({
+        emailErrorMessage: "Please enter your correct email"
+      });
+      return false;
+    } else if (!validator.isEmail(email)) {
+      this.setState({
+        emailErrorMessage: "This email is not valid, please correct your email"
+      });
+      return false;
+    } else {
+      this.setState({
+        nameErrorMessage: '',
+        emailErrorMessage: ''
+      });
+      return true;
+    }
+  };
+
 
   render() {
     return (

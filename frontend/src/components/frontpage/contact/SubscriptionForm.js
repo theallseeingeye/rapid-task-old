@@ -32,6 +32,7 @@ const Name = styled.input`
   border-color: ${props => props.theme.logoblue};
   border-width: 4px;
   outline: none;
+  box-shadow: none;
 `;
 
 const Email = styled.input`
@@ -40,6 +41,7 @@ const Email = styled.input`
   border-color: ${props => props.theme.logoblue};
   border-width: 4px;
   outline: none;
+  box-shadow: none;
 `;
 
 const Subscribe = styled.input`
@@ -64,6 +66,7 @@ const Error = styled.span`
 class SubscriptionForm extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       name: {value: '', isValid: true, message: ''},
       email: {value: '', isValid: true, message: ''},
@@ -125,7 +128,6 @@ class SubscriptionForm extends Component {
         console.log("Form is not valid");
     }
   };
-
   formIsValid = () => {
     const email = this.state.email;
     const name = this.state.name;
@@ -199,6 +201,7 @@ class SubscriptionForm extends Component {
         <Subtitle>
           Don't miss any of the exciting new developments and contests as we get closer to release!
         </Subtitle>
+        <label>Name
         <Name
           placeholder='Name'
           name='name'
@@ -207,8 +210,11 @@ class SubscriptionForm extends Component {
           required
         />
         <Error>{this.state.name.message}</Error>
+        </label>
+        <span>{this.state.name.message}</span>
         <br />
         <br />
+        <label>Email
         <Email
           placeholder='Email'
           name='email'
@@ -217,6 +223,8 @@ class SubscriptionForm extends Component {
           type="email"
           required
         />
+        </label>
+        <span>{this.state.email.message}</span>
         <Error>{this.state.email.message}</Error>
         <br />
         <br />

@@ -51,7 +51,7 @@ const FlexItem = styled.button`
   @media (min-width: ${props => props.theme.tabletscreen}) {
     transform: skewX(-32deg);
     border-radius: 10px 10px 10px 10px;
-      :hover {
+      a :hover {
     background: rgba(63, 169, 245, 0.3);
     };
   };

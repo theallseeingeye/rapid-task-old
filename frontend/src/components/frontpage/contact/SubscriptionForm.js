@@ -6,15 +6,15 @@ import { Link } from 'react-router-dom';
 
 const Div = styled.div`
   margin: auto;
-  height: 50vh;
+  height: 35vh;
+  min-height: 30vw;
   text-align: center;
-  border: solid red;
+  font-family: ${props => props.theme.Robotofont};
 `;
 
 const FormElements = styled.form`
   background-color: white; //this is to hide the fixed position animations to prevent them from showing up on slower devices
   width: 100%;
-  font-family: ${props => props.theme.Robotofont};
 `;
 
 const Title = styled.p`
@@ -71,6 +71,7 @@ const Label = styled.label`
 
 const SubmittedText = styled.p`
   font-size: 1.2em;
+  margin-top: 7vh;
 `;
 
 class SubscriptionForm extends Component {
@@ -84,7 +85,7 @@ class SubscriptionForm extends Component {
       nameValid: false,
       isSubmitted: false,
       emailErrorMessage: '',
-      nameErrorMessage: ''
+      nameErrorMessage: '',
     };
   };
 
@@ -98,7 +99,6 @@ class SubscriptionForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault(); // Prevents the browser's default action on form
-    // this.formIsValid();
 
     if (this.formIsValid()) {
       const emailNormalized = validator.normalizeEmail(this.state.email);
@@ -116,7 +116,6 @@ class SubscriptionForm extends Component {
             });
         })
         .catch(error => {
-
           // If server throws 400 error, this retries the email by a PUT method to make updates to existing.
           if (error.response.status = 400) {
             const existingSubscriber = {
@@ -140,14 +139,13 @@ class SubscriptionForm extends Component {
         });
     } else {
       console.log("Form is not valid");
-
     }
   };
 
 
   formIsValid = () => {
     const email = this.state.email;
-    const name = this.state.name;
+    // const name = this.state.name;
 
     if (this.state.name.length <= 0 && this.state.email.length <= 5) {
       this.setState({
@@ -199,7 +197,6 @@ class SubscriptionForm extends Component {
         </Label>
         <Error>{this.state.nameErrorMessage}</Error>
         <br />
-        <br />
         <Label>Email<br/>
           <Email
             placeholder='Email'
@@ -210,9 +207,7 @@ class SubscriptionForm extends Component {
         </Label>
         <Error>{this.state.emailErrorMessage}</Error>
         <br />
-        <br />
         <Subscribe type="submit" value="Subscribe"/>
-
       </FormElements>
     );
 

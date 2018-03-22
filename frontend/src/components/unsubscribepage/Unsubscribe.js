@@ -124,7 +124,7 @@ class Unsubscribe extends Component {
           }
         });
     } else {
-      console.log("The entry is not valid");
+      console.log("The form field is not valid");
     }
 
   };
@@ -153,7 +153,6 @@ class Unsubscribe extends Component {
     }
   };
 
-
   render() {
     const submittedForm = this.state.isSubmitted;
 
@@ -162,7 +161,7 @@ class Unsubscribe extends Component {
       ) : (
       <Form>
         <Subtitle>
-            Please enter your email you would like to unsubscribe
+            Please enter the email you would like to unsubscribe
         </Subtitle>
         {/*<Label>Email<br/>*/}
           <Email

@@ -51,7 +51,6 @@ class OfficeBeach extends Component {
         this.restart();
       }
     });
-    console.log(this.state.timeMinute);
     SecondHand.set(this.SecondHand, {transformOrigin: '15.5 38.4'})
       .to(this.SecondHand, 60, {rotation: "+=360", ease:Linear.easeNone});
     MinuteHand.set(this.MinuteHand, {transformOrigin: '40 1', rotation: (this.state.timeMinute*6+90)})

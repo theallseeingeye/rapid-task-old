@@ -98,7 +98,7 @@ class SubscriptionForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault(); // Prevents the browser's default action on form
-    this.formIsValid();
+    // this.formIsValid();
 
     if (this.formIsValid()) {
       const emailNormalized = validator.normalizeEmail(this.state.email);
@@ -133,7 +133,7 @@ class SubscriptionForm extends Component {
                   isSubmitted: true
                 });
               });
-            console.log("Resolving the 400 Error...");
+              console.log("Resolving the 400 Error...");
           } else {
             console.log("Uh oh! Something went wrong with the submission of the form.")
           }

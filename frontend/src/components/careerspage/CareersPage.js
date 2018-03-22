@@ -5,12 +5,7 @@ const Div = styled.div`
   font-family: ${props => props.theme.Robotofont};
 `;
 
-const div1 = styled.div`
-  border: solid white;
-`;
-
 const Svg = styled.svg`
-  position: absolute;
   bottom: 25vh;
   @media (min-width: ${props => props.theme.giantscreen}) {
   bottom: 5vh;
@@ -18,9 +13,10 @@ const Svg = styled.svg`
 `;
 
 const Text = styled.p`
-  position: absolute;
+  position: relative;
   font-size: 1.5em;
   width: 100%;
+  min-height: 30vh;
   text-align: center;
   top: 15vh;
   a:link {
@@ -37,8 +33,6 @@ class CareersPage extends Component {
   render() {
     return (
       <Div>
-        <div1>
-        </div1>
         <Text>
           We are in the early stages of business development. For the time being, if you are interested in being a
           part of our team please send us your resumé at <br/>

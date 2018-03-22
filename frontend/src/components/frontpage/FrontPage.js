@@ -27,7 +27,7 @@ class FrontPage extends Component {
         <ClientFeatures/>
         <CalendarFeatures/>
         <FinancialFeatures/>
-        <AnalyticsFeatures/>
+        {/*<AnalyticsFeatures/>*/}
         <About/>
         <SubscriptionForm/>
         <Footer/>

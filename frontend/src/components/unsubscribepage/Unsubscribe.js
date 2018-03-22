@@ -132,9 +132,9 @@ class Unsubscribe extends Component {
   formIsValid = () => {
     const email = this.state.email;
 
-    if (this.state.email.length <= 5) {
+    if (this.state.email.length <= 0) {
       this.setState({
-        emailErrorMessage: "Please enter your correct email"
+        emailErrorMessage: "Please enter your email"
       });
       console.log('This email is not long enough');
       return false;
@@ -162,7 +162,7 @@ class Unsubscribe extends Component {
       ) : (
       <Form>
         <Subtitle>
-            Please enter the email you would like to unsubscribe
+            Please enter your email you would like to unsubscribe
         </Subtitle>
         {/*<Label>Email<br/>*/}
           <Email

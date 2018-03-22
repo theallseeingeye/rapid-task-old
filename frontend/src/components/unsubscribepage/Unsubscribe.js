@@ -105,7 +105,7 @@ class Unsubscribe extends Component {
       console.log(existingSubscriber);
       axios.patch((apiUrl + 'v0.1/subscriber/update/' + emailNormalized + '/'), existingSubscriber)
         .then(response => {
-          console.log('You are now subscribed. Thank you!');
+          console.log('You are now unsubscribed.');
           this.setState({
             isSubmitted: true
           });
@@ -132,8 +132,6 @@ class Unsubscribe extends Component {
   formIsValid = () => {
     const email = this.state.email;
 
-    console.log('This state email' + email);
-
     if (this.state.email.length <= 5) {
       this.setState({
         emailErrorMessage: "Please enter your correct email"
@@ -142,7 +140,7 @@ class Unsubscribe extends Component {
       return false;
     } else if (!validator.isEmail(email)) {
       this.setState({
-        emailErrorMessage: "This email is not valid, please correct your email"
+        emailErrorMessage: "This email is not valid. Please correct your email"
       });
       console.log('This email is not valid');
       return false;

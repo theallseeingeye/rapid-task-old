@@ -198,26 +198,28 @@ class SubscriptionForm extends Component {
           Don't miss any of the exciting new developments and contests as we get closer to release!
         </Subtitle>
         <label>Name
-        <Name
-          placeholder='Name'
-          name='name'
-          value={this.state.name.value}
-          onChange={this.handleChange}
-          required
-        />
+          <Name
+            placeholder='Name'
+            ref='name'
+            name='name'
+            value={this.state.name.value}
+            onChange={this.handleChange}
+            required
+          />
         </label>
         <span>{this.state.name.message}</span>
         <br />
         <br />
         <label>Email
-        <Email
-          placeholder='Email'
-          name='email'
-          value={this.state.email.value}
-          onChange={this.handleChange}
-          type="email"
-          required
-        />
+          <Email
+            placeholder='Email'
+            name='email'
+            ref='email'
+            value={this.state.email.value}
+            onChange={this.handleChange}
+            type="email"
+            required
+          />
         </label>
         <span>{this.state.email.message}</span>
         <br />

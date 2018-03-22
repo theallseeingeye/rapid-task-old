@@ -1,6 +1,66 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
+
+const MinuteHand = styled.rect`
+
+`;
+
+const HourHand = styled.rect`
+
+`;
+
+const SecondHand = styled.g`
+
+`;
 
 class OfficeBeach extends Component {
+
+
+
+  // This collects the current time in minutes and hours and may be used in future to animate real time on clocks.
+
+  constructor() {
+    super();
+
+    const time = new Date(),
+      hourValue = time.getHours(),
+      minuteValue = time.getMinutes(),
+      secondValue = time.getSeconds();
+    this.state = {
+      timeHour: hourValue,
+      timeMinute: minuteValue,
+      timeSecond: secondValue
+    };
+  }
+
+
+  componentDidMount() {
+    const SecondHand = new TimelineLite({
+      onComplete: function () {
+        this.restart();
+      }
+    });
+    const MinuteHand = new TimelineLite({
+      onComplete: function () {
+        this.restart();
+
+      }
+    });
+    const HourHand = new TimelineLite({
+      onComplete: function () {
+        this.restart();
+      }
+    });
+    console.log(this.state.timeMinute);
+    SecondHand.set(this.SecondHand, {transformOrigin: '15.5 38.4'})
+      .to(this.SecondHand, 60, {rotation: "+=360", ease:Linear.easeNone});
+    MinuteHand.set(this.MinuteHand, {transformOrigin: '40 1', rotation: (this.state.timeMinute*6+90)})
+      .to(this.MinuteHand, 3600, {rotation: "+=360", ease:Linear.easeNone});
+    HourHand.set(this.HourHand, {transformOrigin: '1 31.4', rotation: (this.state.timeHour*30+this.state.timeMinute*0.5)})
+      .to(this.HourHand, 43200, {rotation: "+=360", ease:Linear.easeNone})
+  }
+
+
   render() {
     return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 715 997.95 3847.64">
@@ -277,11 +337,13 @@ class OfficeBeach extends Component {
       <rect x="374.28" y="113.94" width="7.1" height="1.81" transform="translate(89.9 1086.01) rotate(-60.01)" fill="#c8cad0"/>
       <rect x="326.84" y="196.12" width="7.1" height="1.81" transform="translate(-4.95 1086.11) rotate(-60.02)" fill="#c8cad0"/>
       /*minute/hour/second hands*/
-      <rect x="0" y="0" width="52.49" height="1.79" transform="translate(349 845) rotate(60)" fill="#c8cad0"/>
-      <rect x="345.65" y="128" width="1.79" height="42.59" transform="translate(6.17 1012.66) rotate(-48.74)" fill="#c8cad0"/>
-      <circle cx="354.51" cy="857.27" r="2.82" fill="#c8cad0"/>
-      <path d="M338.77,118l21.9,55.33a1,1,0,0,1-.27,1.16,2.82,2.82,0,1,0,1.81-.72,1,1,0,0,1-1-.66l-21.89-55.33a.29.29,0,0,0-.54.21Z" transform="translate(0.4 701.33)" fill="#a30000"/>
-      <circle cx="354.51" cy="857.27" r="1.87" fill="#ba646c"/>
+      <MinuteHand innerRef={x => this.MinuteHand = x} x="0" y="0" width="52.49" height="1.79" transform="translate(355.4 817) rotate(90)" fill="#c8cad0"/>
+      <HourHand innerRef={x => this.HourHand = x} x="345.65" y="128" width="1.79" height="42.59" transform="translate(8 698) rotate(0)" fill="#c8cad0"/>
+      <SecondHand innerRef={x => this.SecondHand = x} transform="translate(342 -70.2) rotate(21.7)">
+        <circle cx="354.51" cy="857.27" r="2.82" fill="#c8cad0"/>
+        <path d="M338.77,118l21.9,55.33a1,1,0,0,1-.27,1.16,2.82,2.82,0,1,0,1.81-.72,1,1,0,0,1-1-.66l-21.89-55.33a.29.29,0,0,0-.54.21Z" transform="translate(0.4 701.33)" fill="#a30000"/>
+        <circle cx="354.51" cy="857.27" r="1.87" fill="#ba646c"/>
+      </SecondHand>
       /*Clock*/
       <circle cx="529.64" cy="282" r="8.33" transform="translate(115.68 1417.32) rotate(-74.36)" fill="#f3978e"/>
       <path d="M525.71,300a10.93,10.93,0,0,0,11.19-6.79l15-37.31a10.92,10.92,0,1,0-20.26-8.17l-15,37.31a10.93,10.93,0,0,0,9.07,15Z" transform="translate(0.4 701.33)" fill="#f3978e"/>

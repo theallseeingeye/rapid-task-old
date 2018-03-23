@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const Div = styled.div`
   margin: auto;
   height: 35vh;
-  min-height: 30vw;
+  min-height: 400px;
   text-align: center;
   font-family: ${props => props.theme.Robotofont};
 `;

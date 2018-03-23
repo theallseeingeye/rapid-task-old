@@ -2,7 +2,7 @@
     "manifest_version": 2.0,
     "name": "Rapid Task",
     "short_name": "Rapid Task",
-    "start_url": "rapidtask.com",
+    "start_url": "index.html",
     "icons": [
         {
             "src": "android-chrome-192x192.png",

@@ -35,7 +35,8 @@ const FlexContainer = styled.div`
 
 const FlexItem = styled.button`
   // Styling
-  background: rgba(63, 169, 245, 0.8);
+  background: linear-gradient(${props => props.theme.logoblue} 100%, ${props => props.theme.logoblue} 100%);
+  opacity: 0.8;
   color: white;
   font-family: ${props => props.theme.Robotofont};
   font-size: 1em;
@@ -51,8 +52,9 @@ const FlexItem = styled.button`
   @media (min-width: ${props => props.theme.tabletscreen}) {
     transform: skewX(-32deg);
     border-radius: 10px 10px 10px 10px;
-      a :hover {
-    background: rgba(63, 169, 245, 0.3);
+      :hover {
+    background-color: ${props => props.theme.logoblue};
+    opacity: 0.5;
     };
   };
   outline: none;

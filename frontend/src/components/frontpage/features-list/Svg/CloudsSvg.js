@@ -39,7 +39,7 @@ const LowerSmall = styled.path`
 class CloudsSvg extends Component {
   render() {
     return (
-      <Svg id="clouds" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 120">
+      <Svg data-name="clouds" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 120">
         <title>Rapid Task Clouds</title>
           <LowerSmall d="M342.46,89.81c.51-7.85,5.9-14.35,13-16,8.92-2.07,15.66,4.65,16,5a12.22,12.22,0,0,1,22-2c6.86-5.48,16.12-6.22,23-2,7.88,4.84,8.9,13.91,9,15Z" fill="#fff"/>
           <LowerMedium d="M217.46,89.81c-.1-1-.8-9.75,6-16a19.29,19.29,0,0,1,19-4,19,19,0,0,1,32-15,27.73,27.73,0,0,1,49,23,12.14,12.14,0,0,1,14-4c5.64,2.38,8.65,9.54,6,16Z" fill="#fff"/>

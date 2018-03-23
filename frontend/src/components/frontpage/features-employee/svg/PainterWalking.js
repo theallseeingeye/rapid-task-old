@@ -13,7 +13,7 @@ class PainterWalking extends Component {
     return (
       <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 222.75 321.27">
         <title>PaintingLady</title>
-        <g id="PainterWalking">
+        <g data-name="PainterWalking">
           <g>
             <path d="M296.94,239a4,4,0,1,1,5.7,5.55l-24.52,25.17-5.7-5.55Z" transform="translate(-120.45 -151)" fill="#ffa898"/>
             <g>

@@ -183,7 +183,7 @@ class Unsubscribe extends Component {
         </Title>
         {form}
         <br />
-        <Logo id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 344.33 344.33" width="400" height="400">
+        <Logo data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 344.33 344.33" width="400" height="400">
           <circle cx="172.16" cy="172.16" r="172.16" fill="#fff"/>
           <g>
             <path d="M269,100.38,248.06,69l-52.28,31.37-17.53,27.71c-12.55,20.91-13.68,19.34-19.07,19.34H76.82L49.73,189.25H162.15c30.68,0,49.57,0,70.48-31.89" fill="#3FA9F5"/>

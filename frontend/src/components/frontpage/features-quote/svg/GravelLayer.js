@@ -4,7 +4,7 @@ class GravelLayer extends Component {
   render() {
     return (
       <g id="gravelLayer">
-        <g id="Middle_Layer_Shadow" opacity="0.29">
+        <g data-name="Middle_Layer_Shadow" opacity="0.29">
           <polygon points="295.21 525.74 546.24 379.9 293.33 233.96 42.4 379.78 295.21 525.74" fill="#563f2c"/>
         </g>
         <polygon points="587.98 280.31 587.98 316.08 295.21 486.12 295.21 450.36 587.98 280.31" fill="#82612b"/>

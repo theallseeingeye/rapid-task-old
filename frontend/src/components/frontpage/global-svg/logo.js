@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class RapidTaskLogo extends Component {
   render() {
     return (
-      <svg id="Logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 584.15 40.01">
+      <svg data-name="Logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 584.15 40.01">
         <title>RapidTaskLogo</title>
           <polygon points="402.73 17.45 401.9 18.7 430.68 18.7 431.51 17.45 402.73 17.45" fill="none"/>
           <polygon points="246.18 29.99 274.41 30 282.22 17.51 253.47 17.51 246.18 29.99" fill="none"/>

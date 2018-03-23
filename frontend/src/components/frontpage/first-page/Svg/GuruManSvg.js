@@ -390,7 +390,7 @@ class Guru extends Component {
             <rect x="402.67" y="313.19" width="6.26" height="19.22" rx="2.01" ry="2.01" transform="translate(-51.3 386.43) rotate(-73.05)" fill="#f0ecef"/>
             <rect x="418" y="323.2" width="6.26" height="8.54" rx="2.01" ry="2.01" transform="translate(-44.91 404.4) rotate(-73.05)" fill="#f0ecef"/>
         </Calculator>
-        <g id="Table">
+        <g data-name="Table">
           <path d="M371.06,784.39a1.3,1.3,0,0,1-1.3,1.36h-2.6a1.49,1.49,0,0,1-1.48-1.35L349.89,611.32h13.17Z" transform="translate(-30 -230.41)" fill="#a18fa3"/>
           <polygon points="322.92 414.13 319.89 380.91 333.06 380.91 334.6 414.13 322.92 414.13" fill="#ded4db"/>
           <path d="M502.91,784.28a1.31,1.31,0,0,1-1.29,1.48H499a1.49,1.49,0,0,1-1.47-1.23L466.7,611.32H480Z" transform="translate(-30 -230.41)" fill="#a18fa3"/>

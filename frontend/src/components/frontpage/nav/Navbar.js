@@ -1,28 +1,26 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-
+import { NavLink } from 'react-router-dom';
 
 const Nav = styled.nav`
   bottom: 0;
   position: fixed;
   width: 100%;
-  z-index: 1;
+  z-index: 3;
+  overflow: hidden;
   
   // To set bounds of placing nav-bar on top.
   @media (min-width: ${props => props.theme.tabletscreen}) {
     bottom: initial;
     position: absolute;
-    top: 10px;
+    top: 10px; // Brings the nav bar from the top
   }
 `;
 
 const FlexContainer = styled.div`
   align-content: flex-end;
   display: flex;
-  flex-wrap: nowrap;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  margin: 0 auto;
 
   // Adjusts the size of the nav-bar according to screen sizes.
    @media (min-width: ${props => props.theme.tabletscreen}) {
@@ -37,45 +35,57 @@ const FlexContainer = styled.div`
 
 const FlexItem = styled.button`
   // Styling
-  background: rgba(63, 169, 245, 0.8);
+  background: linear-gradient(${props => props.theme.logoblue} 100%, ${props => props.theme.logoblue} 100%);
+  opacity: 0.8;
   color: white;
-  display: inline-block;
   font-family: ${props => props.theme.Robotofont};
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: bold;
-  height: 100%;
   margin: auto; 
   padding: 10px 5px;
   position: relative;
   text-align: center;
-  transition: all 0.5s;
-  width: 100%;
-  border-radius: 10px 0px 10px 0px;
+
+  // Border styling
+  border: 1px solid white;
+  border-radius: 10px 10px 0 0;
+  @media (min-width: ${props => props.theme.tabletscreen}) {
+    transform: skewX(-32deg);
+    border-radius: 10px 10px 10px 10px;
+      :hover {
+    background-color: ${props => props.theme.logoblue};
+    opacity: 0.5;
+    };
+  };
+  outline: none;
+  
   // z-index tells css the position order it has over the objects.
   z-index: 1;
-  
+ 
   // Formatting
   align-self: auto;
-  flex-grow: ${props => props.flexgrow};
-  flex-shrink: ${props => props.flexshrink};
-  flex-basis: ${props => props.flexbasis};
+  flex-grow: 1;
+`;
 
-  :hover {
-    background: rgba(63, 169, 245, 0.3);
-  };
+const NavLinks = FlexItem.withComponent(NavLink).extend` // To override the properties of react-router and apply styling
+  text-decoration: none;
 `;
 
 class NavBar extends Component {
+
+  handleClick = (e, location) => {
+    e.preventDefault();
+    TweenLite.to(window, 1, {scrollTo:{y:location, autoKill:false}});
+  };
+
   render() {
-
-
     return (
       <Nav>
         <FlexContainer>
-          <FlexItem flexgrow="1">Features</FlexItem>
-          <FlexItem flexgrow="1">Contact</FlexItem>
-          <FlexItem flexgrow="1">About</FlexItem>
-          <FlexItem flexgrow="1">TEST4</FlexItem>
+          <FlexItem onClick={ (e) => this.handleClick(e, "#featuresScrollTarget")}>Features</FlexItem>
+          <FlexItem onClick={ (e) => this.handleClick(e, "#contactScrollTarget")}>Contact</FlexItem>
+          <FlexItem onClick={ (e) => this.handleClick(e, "#aboutScrollTarget")}>About</FlexItem>
+          <NavLinks to="/investor-relations">Investors</NavLinks>
         </FlexContainer>
       </Nav>
     );

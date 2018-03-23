@@ -189,6 +189,7 @@ typings/
 .idea/**/workspace.xml
 .idea/**/tasks.xml
 .idea/dictionaries
+.idea
 
 # Sensitive or high-churn files:
 .idea/**/dataSources/
@@ -366,6 +367,8 @@ pip-selfcheck.json
 
 # production
 /build
+/staging
+/bundle_analyzer
 
 # misc
 .DS_Store
@@ -388,3 +391,13 @@ yarn-error.log*
 .coverage
 /backend/.idea/
 !/frontend/src/App.js
+
+
+# Elastic Beanstalk Files
+
+.elasticbeanstalk/*
+
+!.elasticbeanstalk/*.cfg.yml
+
+!.elasticbeanstalk/*.global.yml
+

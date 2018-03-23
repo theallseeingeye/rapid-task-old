@@ -69,32 +69,6 @@ Installed Packages Explanation
 The installed packages must be written here with explanation for it's use. You must state the license use.
         *Before adding any packages, they must have a license and is approved by our Management*  
         
-**BACKEND**
-
-* Django REST Framework 3.7.1   
-    This framework sets up the Django project nicely for building web APIs. Required for React.js and third parties.
-    Documentation: http://www.django-rest-framework.org/
-    * License: BSD 2 or "Simplified BSD License"   
-* markdown-2.6.9  
-    Markdown support for the browsable REST API.  
-    * License: BSD 
-* django-filter-1.1.0  
-    Filtering support for REST API. Allows users to declaratively add dynamic QuerySet Filtering from URL patterns.  
-    * License: BSD
-* psycopg2 2.7.3.2
-    This is a PostgreSQL adapter for the python. Connects the database, postgres.
-    * License: GPL
-* django-rest-framework-jwt 1.11.0   
-    This attaches the JWT tokens throught the REST Framework. This includes the pyJWT. http://getblimp.github.io/django-rest-framework-jwt/
-    * License: MIT
-* djoser  
-    This is a package that handles the basic registration and user authentication info in REST format.
-    https://github.com/sunscrapers/djoser  
-    * License: MIT
-* django-admin-honeypot  
-    This is to hide the default admin link for the django. This will log anyone who tries to access  /admin/ site  
-    * License: MIT
-    
 **FRONTEND**  
 
 * Webpack  
@@ -140,5 +114,10 @@ The installed packages must be written here with explanation for it's use. You m
    Testing/coverage JavaScript Testing  
    * react-test-renderer  
         * Takes a snapshot of the DOM tree rendered by React DOM    
-        
-   License: MIT - Facebook      
+   License: MIT - Facebook     
+* Axios
+    Promise based HTTP client for the browser and node.js. Allows us to communicate with the backend api
+    License: MIT 
+* Validators
+    A package that handles validators and sanitation of forms
+    License: MIT

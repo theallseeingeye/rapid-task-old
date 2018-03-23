@@ -65,44 +65,16 @@ Frontend
 
 
 # Running Tests <a id="running-tests"></a>
+Please view the [How to run Tests](/docs/how_to_run_tests.md) documentation.
 
-Backend
--------
-If you haven't yet installed coverage.py: ```pip install coverage```  
-
-For a list of commands:  ```coverage help```  
-        
-Start and run a test at the command-line in the project root directory:   
-   * ```coverage run manage.py test --settings=config.settings.test``` 
-     
-For test results without admin:  
-   * ```coverage html --omit="admin.py"```  
-        * Then this will create a directory with html that has the coverage report.
-   
-To look at the generated html report (after using html) go to website/htmlcov/index.html. it shows the coverage report.
-
-Frontend
---------
-
-The tests and coverage uses Jest: https://facebook.github.io/jest/   
-For tests, type in the terminal: ```npm test```   
-For coverage, type in the terminal: ```npm test -- --coverage```  
-
-Snapshots will take a copy of a js styling. When you run the test again it will look at the taken snap shot and compare
-to the one just run. You can verify if it was intentional or not. If wanting a change: jest -u to overwrite the existing
-snapshot.
-      
-
-## Deployment <a id="deployment"></a>
-
-Before running migrations on production server, always test the migrations on the staging server to have an idea how
-long it will take. Backup the data before doing any kind of migrations.
+# Deployment <a id="deployment"></a>
+Please view the [Deployment](/docs/deployment.md) documentation.
 
 ---
 
 # Appendix
 
-#### Editing these documents?
+#### Editing these documents? <a id="editingthesedocuments"></a>
 
 These documents MUST follow these simple syntax rules to retain it's formatting for users to easily read. It uses the
 "Markdown" or ".md" formats, or more specifically, "GitHub Flavored Markdown". Markdown provides us a simple syntax 

@@ -13,6 +13,12 @@ module.exports = merge(common, {
   plugins: [
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'API_URL' : JSON.stringify('http://127.0.0.1:8000/')
+      }
+    })
+
   ],
   module: {
     loaders: [

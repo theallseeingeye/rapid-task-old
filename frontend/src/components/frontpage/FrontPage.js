@@ -1,103 +1,36 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
 
-import Introduction from "./introduction/Introduction";
-import Features from "./features/Features";
-import Quotes from "./quote-features/QuoteFeatures";
-import EmployeeFeatures from "./employee-features/EmployeeFeatures";
-import ClientFeatures from "./client-features/ClientFeatures";
-import CalendarFeatures from "./calendar-features/CalendarFeatures";
-import InventoryFeatures from "./inventory-features/InventoryFeatures";
-import FinancialFeatures from "./financial-features/FinancialFeatures";
-import AnalyticsFeatures from "./analytics-features/AnalyticsFeatures";
+import Features from "./features-list/Features";
+import Quotes from "./features-quote/QuoteFeatures";
+import PainterLadder from "./features-employee/svg/PainterLadder";
+import EmployeeFeatures from "./features-employee/EmployeeFeatures";
+import ClientFeatures from "./features-client/ClientFeatures";
+import CalendarFeatures from "./features-calendar/CalendarFeatures";
+import FinancialFeatures from "./features-financial/FinancialFeatures";
+import AnalyticsFeatures from "./features-analytics/AnalyticsFeatures";
 import About from "./about/About";
-import Contact from "./contact/Contact";
+import SubscriptionForm from './contact/SubscriptionForm';
 import Footer from "./footer/Footer";
-import MainPage from "./main-page/MainPage";
-
-import CityAnimation from "./map-features/MapFeatures";
-
-const Arrow = styled.div`
-  height: 30vh;
-`;
-
-const FeaturesContainer = styled.div`
-  height: 130vh;
-  background-color: ${props => props.theme.logoblue};
-  clip-path: polygon(0 0, 100% 0, 100% 93%, 0 100%);// Order of polygon- (x,y) (TL, TR, BR, BL) 
-`;
-
-const QuotesContainer = styled.div`
-  height: 200vh;
-`;
-
-const JobCostsContainer = styled.div`
-  //margin: auto;
-  height: 200vh;
-  background-color: greenyellow;
-  //position: relative;
-`;
-
-const MapsContainer = styled.div`
-  height: 90vh;
-  //border: 40px double aqua;
-`;
-
-const EmployeeContainer = styled.div`
-  height: 300vh;
-`;
-
-const ClientContainer = styled.div`
-  //height: 200vh;
-  //border: 8px solid gold;
-`;
-
+import MainPage from "./first-page/MainPage";
+import CityAnimation from "./features-map/MapFeatures";
 
 class FrontPage extends Component {
   render() {
     return (
       <div>
         <MainPage/>
-        <Arrow>
-          <Introduction/>
-        </Arrow>
-        <FeaturesContainer>
-          <Features/>
-        </FeaturesContainer>
-        <QuotesContainer>
-          <Quotes/>
-        </QuotesContainer>
-        <MapsContainer>
-          <CityAnimation/>
-        </MapsContainer>
-        <EmployeeContainer>
-          <EmployeeFeatures/>
-        </EmployeeContainer>
-        <ClientContainer>
-          <ClientFeatures/>
-        </ClientContainer>
-        <div>
-          Calendar/Scheduling- Talk about calendar features and how it is seamlessly integrated with everything
-          <CalendarFeatures/>
-        </div>
-        <div>
-          <InventoryFeatures/>
-        </div>
-        <div>
-          <FinancialFeatures/>
-        </div>
-        <div>
-          <AnalyticsFeatures/>
-        </div>
-        <div>
-          <About/>
-        </div>
-        <div>
-          <Contact/>
-        </div>
-        <div>
-          <Footer/>
-        </div>
+        <Features/>
+        <CityAnimation/>
+        <Quotes/>
+        <PainterLadder/>
+        <EmployeeFeatures/>
+        <ClientFeatures/>
+        <CalendarFeatures/>
+        <FinancialFeatures/>
+        <AnalyticsFeatures/>
+        <About/>
+        <SubscriptionForm/>
+        <Footer/>
       </div>
     );
   }

@@ -9,6 +9,6 @@ const Button = styled.button`
 
 // A good template to check the styles and that they rendered correctly.
 test('it works', () => {
-  const tree = renderer.create(<Button />).toJSON()
+  const tree = renderer.create(<Button />).toJSON();
   expect(tree).toMatchSnapshot()
-})
+});

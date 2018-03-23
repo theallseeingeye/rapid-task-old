@@ -1,5 +1,4 @@
 const path = require('path');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require ('html-webpack-plugin');
 
 // Constant with out paths
@@ -8,6 +7,8 @@ const paths = {
   DIST: path.resolve(__dirname, 'dist'),
   SRC: path.resolve(__dirname, 'src'),
 };
+// const json = require('./file.json');
+
 
 module.exports = {
   entry: path.join(paths.SRC, 'dom-loader.js'),
@@ -16,13 +17,14 @@ module.exports = {
     path: paths.DIST,
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
+
     new HtmlWebpackPlugin({
-      title: 'Rapid Task',
       template: path.join(paths.PUBLIC, 'index.html'),
       favicon: path.join(paths.PUBLIC, 'favicon.ico'),
       filename: 'index.html',
-    }),
+      manifest: path.join(paths.PUBLIC, 'manifest.json'),
+      title: 'Progressive Web Application',
+    })
   ],
   module: {
     rules: [

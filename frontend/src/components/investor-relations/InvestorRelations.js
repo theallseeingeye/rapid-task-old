@@ -5,10 +5,6 @@ const Div = styled.div`
   font-family: ${props => props.theme.Robotofont};
 `;
 
-const div1 = styled.div`
-  border: solid white;
-`;
-
 const Svg = styled.svg`
   position: absolute;
   max-height: 500px;
@@ -39,7 +35,6 @@ class InvestorRelations extends Component {
   render() {
     return (
       <Div>
-        <div1>
         <Text>
           We are still getting up and running! In the meantime, if you require further information regarding Rapid Task
           and our investment opportunities please contact us at <br/>
@@ -207,7 +202,6 @@ class InvestorRelations extends Component {
           <path d="M784.5,250l-2.43-3.65L776,250l-2,3.22c-1.46,2.43-1.59,2.25-2.22,2.25h-9.58L759,260.29h13.07c3.57,0,5.76,0,8.2-3.71" transform="translate(-88.28 -92.52)" fill="#3fa9f5"/>
           <path d="M790.33,255.26l-2.43-3.65-6.08,3.65-2,3.22c-1.46,2.43-1.59,2.25-2.22,2.25H758.72l-3.12,4.87h22.3c3.57,0,5.76,0,8.2-3.71" transform="translate(-88.28 -92.52)" fill="#3fa9f5"/>
         </Svg>
-        </div1>
       </Div>
     );
   }

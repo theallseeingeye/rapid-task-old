@@ -119,14 +119,8 @@ class ProgressBars extends Component {
   render() {
     return (
       <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 12">
-        <defs>
-          <clipPath id="maskPath">
-             <rect width="100" height="5" rx="2" ry="2" fill={this.color}/>
-          </clipPath>
-        </defs>
-
         <rect data-name="grayBar" width="100" height="5" rx="2" ry="2" fill="gray"/>
-        <rect ref={x => {this.blueBar = x}} width="100" height="5" fill={this.color} clipPath="url(#maskPath)"/>
+        <rect ref={x => {this.blueBar = x}} width="100" height="5" rx="2" ry="2" fill={this.color}/>
         <rect ref={x => {this.buttonProgress = x}} x="67" y="6" width="36" height="7" fill={this.color}/>
         <rect ref={x => {this.buttonProgress2 = x}} x="64" y="6" width="40" height="7" fill={this.color}/>
 

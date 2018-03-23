@@ -3,8 +3,12 @@ import validator from "validator";
 import axios from "axios/index";
 import styled from "styled-components";
 
-const FormElements = styled.form`
+const Div = styled.div`
   background-color: ${props => props.theme.logoblue};
+  overflow: hidden;
+`;
+
+const FormElements = styled.form`
   width: 100%;
   height: 100%;
   text-align: center;
@@ -177,20 +181,22 @@ class Unsubscribe extends Component {
     );
 
     return (
-      <FormElements onSubmit={this.handleSubmit}>
-        <Title>
-          We are sorry to have you go.
-        </Title>
-        {form}
-        <br />
-        <Logo data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 344.33 344.33" width="400" height="400">
-          <circle cx="172.16" cy="172.16" r="172.16" fill="#fff"/>
-          <g>
-            <path d="M269,100.38,248.06,69l-52.28,31.37-17.53,27.71c-12.55,20.91-13.68,19.34-19.07,19.34H76.82L49.73,189.25H162.15c30.68,0,49.57,0,70.48-31.89" fill="#3FA9F5"/>
-            <path d="M319.16,146.06,298.25,114.7,246,146.06l-17.53,27.71c-12.55,20.91-13.68,19.34-19.07,19.34l-162-.06L20.56,234.94H212.33c30.68,0,49.57,0,70.48-31.89" fill="#3FA9F5"/>
-          </g>
-        </Logo>
-      </FormElements>
+      <Div>
+        <FormElements onSubmit={this.handleSubmit}>
+          <Title>
+            We are sorry to have you go.
+          </Title>
+          {form}
+          <br />
+          <Logo data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 344.33 344.33" width="400" height="400">
+            <circle cx="172.16" cy="172.16" r="172.16" fill="#fff"/>
+            <g>
+              <path d="M269,100.38,248.06,69l-52.28,31.37-17.53,27.71c-12.55,20.91-13.68,19.34-19.07,19.34H76.82L49.73,189.25H162.15c30.68,0,49.57,0,70.48-31.89" fill="#3FA9F5"/>
+              <path d="M319.16,146.06,298.25,114.7,246,146.06l-17.53,27.71c-12.55,20.91-13.68,19.34-19.07,19.34l-162-.06L20.56,234.94H212.33c30.68,0,49.57,0,70.48-31.89" fill="#3FA9F5"/>
+            </g>
+          </Logo>
+        </FormElements>
+      </Div>
     );
   }
 }

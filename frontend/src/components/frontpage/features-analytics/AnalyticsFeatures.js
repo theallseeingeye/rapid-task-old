@@ -7,7 +7,8 @@ const MainDiv = styled.div`
   font-family: ${props => props.theme.Robotofont};
   width: 100%;
   height: auto;
-  background-color: ${props => props.theme.bluebackground};
+  // This background color must be a linear gradient to pass accessibility contrast ratio on lighthouse.
+  background: linear-gradient(${props => props.theme.logoblue} 100%, ${props => props.theme.logoblue} 100%);
 `;
 
 const Div = styled.div`

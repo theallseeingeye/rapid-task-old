@@ -1,6 +1,7 @@
 {
     "manifest_version": 2.0,
     "name": "Rapid Task",
+    "orientation": "portrait",
     "short_name": "Rapid Task",
     "icons": [
         {

@@ -9,6 +9,7 @@ module.exports = merge(common, {
     port: 3000,
     hot: true,
     host: '192.168.0.12',
+    historyApiFallback: { index: '/' },
   },
   plugins: [
     new webpack.NamedModulesPlugin(),

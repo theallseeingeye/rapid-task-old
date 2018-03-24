@@ -28,38 +28,17 @@ First time setup will need to follow the installation documentation:
 
 Backend
 -------
-During development the local, testing, staging and production settings will be different. This is due ease of developing
-on localhosts and requires different setup from production servers. You will need to make sure you are working in the
-right settings at the appropriate stage of the development. Here are the **command lines** to set the right settings 
-when you are running server:
-* Local: ```python manage.py runserver --settings=config.settings.local```  
-* Test: ```python manage.py runserver --settings=config.settings.test```  
-* Staging: ```python manage.py runserver --settings=config.settings.staging ``` 
-* Production: ```python manage.py runserver --settings=config.settings.production```  
-    *Note: Look at the notes after you run server to ensure you are using the right settings path.*   
-     
-Downloading requirements files:
-* When you modify or adjust dependencies for the project, we use the following **command lines**:  
-  * Local: ```pip install -r requirements/local.txt```
-  * Test: ```pip install -r requirements/test.txt```
-  * Staging: ```pip install -r requirements/staging.txt```
-  * Production: ```pip install -r requirements/production.txt```
-  
-Updating to the requirement files:
-* Ensure they are requirements that are used- not cluttered with junk
-   * In command line in your virtual environment: pip freeze > requirements/local.txt
-      * Can replace local.txt with other versions such as test, staging and production.
+These instructions applies to those who needs to work with a database during development:  
 
-#### Running Backend Server
-* Make sure you are in the backend project folder. The root is /backend.
-    * Terminal command: ```python manage.py runserver```  
+You will need to go to the `Backend` Repository and follow the installation/setup instruction.  
 
 Frontend 
 --------
-
 #### Running Frontend Server
-* Make sure you are not in an virtual environment. If you are, type ```deactivate``` in the terminal.
+* Make sure you are not in an virtual environment. If you are, type ```deactivate``` in the terminal. (This applies to
+those who are using the python backend server).  
 * Check that you are in the frontend project folder directory. The root is /frontend.
+* Check the `webpack.dev.js` folder and that the `host:` setting is the same as your local ip.  
 * Then use this command to start the server:
     * Terminal command: ```npm run start``` or ```yarn start```
 

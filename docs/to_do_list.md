@@ -1,33 +1,34 @@
 THINGS TO DO
 ============
 
-* Setup django as REST, using django REST framework
 
 Monitoring
 ----------
 * Find and install some monitoring tools. Check server access and log errors regularly.
 
+
+Tests
+-----
+* We need to set up the tests and make sure there are no errors. There are some errors that needs configuration to work
+with babel and so on.  
+
+* We need to write tests for the connection of the databases.
+
+
 Security
 --------
-* On domain/server options redirect all http links to https services for deployment
-* Obtain a SSL certificate- Try www.letsencrypt.org
-* Configure web server to use HSTS- Strict Transport Security
-* Set the ALLOWED_HOSTS in settings to the right limited host addresses
-* Find a third party that can handle credit card data. We are not to store them. Look at stripe, braintree, adyen...
-* Install Pyup https://pyup.io/ - Automatic security updates and dependencies.
-* Setup Clickjacking prevention: https://docs.djangoproject.com/en/1.11/ref/clickjacking/
-* Publish a section where users can report security vulnerabilities to us. Provide reward to users who reports.
-* Write an emergency procedure.
-    * Security Failure
-        * Shut everything down or put it in read-only mode
-        * Put up a static HTML page.
-        * Back everything up
-        * After reading docs.djangoproject.com/en/dev/internals/security/, email security@djangoproject.com about your
-            security-related problem, even if it's your fault
-        * start looking into the problem
-* Setup the admin honey pot. It is already installed, just need to set it up
-    * also change the default site.com/admin path to something that is long and difficult to guess
-    * change the admin docs to something other than site.com/admin/doc/
+* We need to update the dependencies- There is one with vulnerability risks. Github points to a dependency that needs
+updating.  
 
 
+Deployment
+----------
+* Deployment is tedious and we should find a better way to setup github with master and staging to work with auto deploy
+to the buckets.  
 
+* The webpack doesn't package everything into the dist folder on `yarn build`.  
+
+
+Production
+----------
+* The Service Worker manifest is not loading up the url. See google lighthouse audit for further info.

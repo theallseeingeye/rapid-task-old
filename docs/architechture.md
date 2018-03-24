@@ -9,12 +9,6 @@ RULES
 
 Styling
 -------
-
-####Backend Styling
-* This project must adhere and follow the **PEP 8** style guide.
-        For more info see http://legacy.python.org/dev/peps/pep-0008/  
-* Every time we add code, we must make sure our test coverage is improving, not decreasing.  
-
 ####Frontend Styling
 * We will be using Styled-Components with react to implement css in the JavaScript. This decision will help keep the 
 data contained by each React Components. The css names will have unique id's, which avoids naming conflicts. The Theme
@@ -30,32 +24,6 @@ styling```. The Styled-Components can become powerful by using JavaScript functi
      edits.
 * Use Google's Styling guide: https://google.github.io/styleguide/htmlcssguide.html
 
-
-Database
---------
-* Do not record logs into the database. This slows it down. There are third party resources that can help handle this.
-* No Ephemeral data. This means any data that needs constant rewrites, which is not ideal for relational databases.
-    Move the data to applications such as memcached or redis.
-* Every incoming data must be validated!
-* Any external/public sharing of data must be identified with an UUID. Hide the primary keys. Important for scalability of the database. Keep the original 
-    sequential primary keys that the database creates then add a new table with UUID's.
-
-Security
---------
-* Never use eval(), exec() and execfile() built-ins, using these will leave our system open to attack
-* Avoid the use of Meta.exclude when using the ModelForms. This leaves the mass assignment vulnerable. Only list the
-    fields of the model we want to use.
-* Do not use ModelForms.Meta.fields="__all__"
-* Never store credit card data. Use a third party to handle the data. MUST follow PCI Security Standards Council
-    link: https://www.kencochrane.net/blog/2012/01/developers-guide-to-pci-compliant-web-applications/
-* Complex passwords does not equate to better security. Length vs complexity: https://xkcd.com/936/
-* Never display database sequential primary keys. It informs rivals or hackers of our volume. Use models.UUIDField for
-    public lookups.
-* Never publicly display the database id's. This can lead to information leak of our company growth.
-    We want to add UUID's to our databases and only use those when the data is shared
-    publicly. 
-    https://blog.lightrail.com/prevent-business-intelligence-leaks-by-using-uuids-instead-of-database-ids-on-urls-and-in-apis-17f15669fd2e
-* JSON JWT Tokens will be used for both server and client side servers.  
 
 Features to Consider for the Future
 -----------------------------------

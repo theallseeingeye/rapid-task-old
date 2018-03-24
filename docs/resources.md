@@ -11,24 +11,6 @@ Table of Contents
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### CSS/SASS/SCSS
 
 [CSS Guide W3Schools](https://www.w3schools.com/cssref/default.asp)

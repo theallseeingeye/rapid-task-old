@@ -17,7 +17,7 @@ import CityAnimation from "./features-map/MapFeatures";
 class FrontPage extends Component {
   render() {
     return (
-      <div>
+      <div role="main">
         <MainPage/>
         <Features/>
         <CityAnimation/>

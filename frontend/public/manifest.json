@@ -1,8 +1,8 @@
 {
     "manifest_version": 2.0,
     "name": "Rapid Task",
+    "orientation": "portrait",
     "short_name": "Rapid Task",
-    "start_url": "index.html",
     "icons": [
         {
             "src": "android-chrome-192x192.png",
@@ -15,6 +15,7 @@
             "type": "image/png"
         }
     ],
+    "start_url": "./",
     "theme_color": "white",
     "background_color": "white",
     "display": "standalone"

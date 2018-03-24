@@ -3,7 +3,6 @@
     "name": "Rapid Task",
     "orientation": "portrait",
     "short_name": "Rapid Task",
-
     "icons": [
         {
             "src": "android-chrome-192x192.png",

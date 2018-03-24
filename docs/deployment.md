@@ -46,15 +46,15 @@ hosting of react.js.
 ## Here are the configured CloudFront Settings:  
 
 General:  
-![CloudFront General Settings](docs/images/CloudFront-General-Settings.png)
+![CloudFront General Settings](/docs/images/CloudFront-General-Settings.png)
 Origins:  
 No changes  
 Behaviors:  
-![CloudFront General Settings](docs/images/CloudFront-Default-Cache-Behavior-Settings.png)  
+![CloudFront General Settings](/docs/images/CloudFront-Default-Cache-Behavior-Settings.png)  
 Error Pages:  
 This is required to help React Router find the extended urls. It Redirects the server to look at the index.html to find
 the paths required. Therefore we created a new custom error response.  
-![CloudFront General Settings](docs/images/CloudFront-Custom-Error-Response-Settings.png)  
+![CloudFront General Settings](/docs/images/CloudFront-Custom-Error-Response-Settings.png)  
 
 AWS Uploading Files  
 -------------------

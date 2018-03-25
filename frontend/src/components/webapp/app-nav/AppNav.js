@@ -8,13 +8,6 @@ const Nav = styled.nav`
   width: 100%;
   z-index: 3;
   overflow: hidden;
-  
-  // To set bounds of placing nav-bar on top.
-  @media (min-width: ${props => props.theme.tabletscreen}) {
-    bottom: initial;
-    position: absolute;
-    top: 10px; // Brings the nav bar from the top
-  }
 `;
 
 const NavOption = styled.button`
@@ -30,14 +23,9 @@ const NavOption = styled.button`
   
   // Border styling
   border: 1px solid ${props => props.theme.logoblue};
-  border-radius: 5px 5px 0px 0px;
+  border-radius: 5px 5px 0 0;
   @media (min-width: ${props => props.theme.tabletscreen}) {
-    transform: skewX(-32deg);
-    border-radius: 10px 10px 10px 10px;
-      :hover {
-    background-color: ${props => props.theme.logoblue};
-    opacity: 0.5;
-    };
+    border-radius: 10px 10px 0 0;
   };
   outline: none;
   

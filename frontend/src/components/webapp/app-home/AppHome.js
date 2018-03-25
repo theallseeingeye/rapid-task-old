@@ -6,17 +6,15 @@ import AppNav from "../app-nav/AppNav";
 const MainDiv = styled.div`
   font-family: ${props => props.theme.Robotofont};
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   text-align: center;
   overflow: hidden;
-
 `;
 
 const LinkDiv = styled.div`
   bottom: 0;
   height: 315px;
   background: ${props => props.theme.logoblue};
-
   position: absolute;
   width: 100%;
 `;
@@ -31,25 +29,29 @@ const LogoSmall = styled.svg`
   }
 `;
 
-const Button = styled.p`
-
+const Button = styled.button`
+  background: ${props => props.theme.logoblue};
   color: white;
-  height: 35px;
-  border-top: 2px solid white;
+  border: transparent;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
   margin: auto;
-  padding: 15px;
+  padding: 20px;
   font-size: 1.5em;
   bottom: 0;
   position: relative;
-
+  width: 100%;
  
-  a:link {
+  :link {
+    background: ${props => props.theme.logoblue};
+    
     color: white;
     text-decoration: none;
   }
   
-  a:hover {
-    color: #6cf5ff;
+  :hover {
+    background-color: #1695f4;
+    opacity: 0.5;
   }
 `;
 

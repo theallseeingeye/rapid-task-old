@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import styled from "styled-components";
+import AppNav from "./../app-nav/AppNav";
 
-const Div = styled.div`
+const MainDiv = styled.div`
   background-color: ${props => props.theme.logoblue};
   font-family: ${props => props.theme.Robotofont};
   width: 100%;
@@ -34,14 +35,13 @@ const Text = styled.p`
   }
 `;
 
-class Error404 extends Component {
+class AppHome extends Component {
   render() {
     return (
-      <Div>
+      <MainDiv>
         <Text>
-          Sorry, the page you are looking for doesn't exist. If you believe that you have come to this page as a result
-          of an error please let us know at
-          <br/>
+          If you require further information regarding Rapid Task or are interested in using our publication materials
+          please contact us at <br/>
           <a href="mailto:inquiries@rapidtask.com?Subject=%20" target="_top"><b>inquiries@rapidtask.com</b></a>
         </Text>
         <Logo data-name="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 344.33 344.33" width="400" height="400">
@@ -51,9 +51,10 @@ class Error404 extends Component {
               <path d="M319.16,146.06,298.25,114.7,246,146.06l-17.53,27.71c-12.55,20.91-13.68,19.34-19.07,19.34l-162-.06L20.56,234.94H212.33c30.68,0,49.57,0,70.48-31.89" fill="#3FA9F5"/>
             </g>
           </Logo>
-      </Div>
+        <AppNav/>
+      </MainDiv>
     );
   }
 }
 
-export default Error404;
+export default AppHome;

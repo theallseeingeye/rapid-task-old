@@ -19,18 +19,17 @@ const Nav = styled.nav`
 
 const NavOption = styled.button`
   // Styling
-  background: #353535;
+  background: white;
   width: 20%;
-  opacity: 0.8;
-  color: white;
+  color: ${props => props.theme.logoblue};
   font-family: ${props => props.theme.Robotofont};
-  font-size: 0.9em;
+  font-size: 0.8em;
   font-weight: bold;
   margin: auto; 
   padding: 15px 5px;
   
   // Border styling
-  border: 1px solid white;
+  border: 1px solid ${props => props.theme.logoblue};
   border-radius: 5px 5px 0px 0px;
   @media (min-width: ${props => props.theme.tabletscreen}) {
     transform: skewX(-32deg);

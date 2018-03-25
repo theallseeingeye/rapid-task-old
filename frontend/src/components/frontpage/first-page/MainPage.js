@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled, {keyframes} from 'styled-components';
 import NavBar from "./../nav/Navbar";
-import Logo from "../global-svg/logo"
+import Logo from "../../global-svg/logo"
 import Guru from './Svg/GuruManSvg';
 import OfficeBackground from './Svg/OfficeBackgroundSvg';
 import Arrow from './Svg/ArrowSvg';

@@ -32,3 +32,5 @@ Production
 ----------
 * The Service Worker manifest is not loading up the url. See google lighthouse audit for further info.
 * Must extend the cache time on production and the backend.
+
+* We need to adjust and fix the svg's in Microsoft EDGE. Doesn't accept css transform or something along the lines.

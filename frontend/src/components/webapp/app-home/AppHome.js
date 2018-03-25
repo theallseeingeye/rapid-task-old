@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from "styled-components";
-import AppNav from "./../app-nav/AppNav";
+import AppNav from "../app-nav/AppNav";
 
 const MainDiv = styled.div`
   background-color: ${props => props.theme.logoblue};

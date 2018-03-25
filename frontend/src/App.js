@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import FrontPage from './components/frontpage/FrontPage';
+import AppHome from './components/frontpage/webapp/app-home/AppHome';
 import Unsubscribe from './components/unsubscribepage/Unsubscribe';
 import CareersPage from './components/careerspage/CareersPage';
 import MediaRelations from './components/media-relations/MediaRelations';
@@ -38,6 +39,7 @@ class App extends Component {
       <Router>
         <Switch>
           <Route exact path="/" component={FrontPage}/>
+          <Route path="/webapp" component={AppHome}/>
           <Route path='/careers' component={CareersPage}/>
           <Route path='/media-relations' component={MediaRelations}/>
           <Route path='/investor-relations' component={InvestorRelations}/>

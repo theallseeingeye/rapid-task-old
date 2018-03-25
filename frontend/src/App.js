@@ -5,7 +5,7 @@ import CareersPage from './components/careerspage/CareersPage';
 import MediaRelations from './components/media-relations/MediaRelations';
 import InvestorRelations from './components/investor-relations/InvestorRelations';
 import { BrowserRouter as Router, Route, Switch, brow } from 'react-router-dom';
-
+import Error404 from './components/error-pages/Error404';
 
 /*
 This page helps handles all the routes
@@ -27,9 +27,7 @@ const Status = ({ code, children }) => (
 
 const NotFound = () => (
   <Status code={404}>
-    <div>
-      <h1> Sorry, can't find that. </h1>
-    </div>
+    <Error404/>
   </Status>
 );
 

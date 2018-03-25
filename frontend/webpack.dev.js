@@ -9,13 +9,14 @@ module.exports = merge(common, {
     port: 3000,
     hot: true,
     host: '192.168.0.10',
-    historyApiFallback: { index: '/' },
+    historyApiFallback: { index: '/' }, //Helps the route refresh on the same page.
   },
   plugins: [
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
+        'NODE_ENV': JSON.stringify('development'),
         'API_URL' : JSON.stringify('http://127.0.0.1:8000/')
       }
     })

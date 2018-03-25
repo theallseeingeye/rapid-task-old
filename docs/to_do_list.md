@@ -32,4 +32,4 @@ to the buckets.
 Production
 ----------
 * The Service Worker manifest is not loading up the url. See google lighthouse audit for further info.
-* Must extend the cache time on production and the backend.
+* Must extend the cache time on production and the backend. 

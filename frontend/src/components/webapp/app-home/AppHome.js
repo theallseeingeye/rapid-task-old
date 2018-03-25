@@ -6,6 +6,8 @@ import AppNav from "../app-nav/AppNav";
 const MainDiv = styled.div`
   font-family: ${props => props.theme.Robotofont};
   width: 100%;
+  // Setting the height to 90vh rather than the typical 100vh fixes a bug on some mobile devices which kept the text 
+  // from being bound to the screen size
   height: 90vh;
   text-align: center;
   overflow: hidden;
@@ -55,6 +57,10 @@ const Button = styled.button`
   }
 `;
 
+const BottomButton = Button.extend`
+  border-bottom: none;
+`;
+
 class AppHome extends Component {
   render() {
     return (
@@ -70,7 +76,7 @@ class AppHome extends Component {
           <Button><a to="/createjob">New Job</a></Button>
           <Button><a to="/existingjobs">Existing Jobs</a></Button>
           <Button><a to="/jobstobill">Jobs to Bill</a></Button>
-          <Button><a to="/clients">Clients</a></Button>
+          <BottomButton><a to="/clients">Clients</a></BottomButton>
         </LinkDiv>
         <AppNav/>
       </MainDiv>

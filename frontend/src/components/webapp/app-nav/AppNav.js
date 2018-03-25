@@ -13,8 +13,8 @@ const Nav = styled.nav`
 const NavOption = styled.button`
   // Styling
   background: white;
-  width: 20%;
   color: ${props => props.theme.logoblue};
+  width: 20%;
   font-family: ${props => props.theme.Robotofont};
   font-size: 0.8em;
   font-weight: bold;
@@ -24,6 +24,19 @@ const NavOption = styled.button`
   // Border styling
   border: 1px solid ${props => props.theme.logoblue};
   border-radius: 5px 5px 0 0;
+  :link {
+    background: ${props => props.theme.logoblue};
+    
+    color: white;
+    text-decoration: none;
+  }
+  
+  :hover {
+    background-color: white;
+    opacity: 0.8;
+  }
+  
+  
   @media (min-width: ${props => props.theme.tabletscreen}) {
     border-radius: 10px 10px 0 0;
   };

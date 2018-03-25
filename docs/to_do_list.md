@@ -17,8 +17,7 @@ with babel and so on.
 
 Security
 --------
-* We need to update the dependencies- There is one with vulnerability risks. Github points to a dependency that needs
-updating.  
+* We need to check if the form inputs are exactly sanitized
 
 
 Deployment

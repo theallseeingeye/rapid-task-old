@@ -7,7 +7,6 @@ const common = require('./webpack.prod.js');
 // This file extends the production settings
 // Adjusted for Heroku for rapid deployment staging test on:
 
-
 const paths = merge(common, {
   STAGE: path.resolve(__dirname, 'staging'),
 });
@@ -20,6 +19,7 @@ module.exports = merge(common, {
   },
 
   plugins: [
+    // Removes staging folder.
     new CleanWebpackPlugin(['staging']),
     // This will turn off the additional logging and testing of the included libraries. Very good at reducing bundle size
     // especially using react.

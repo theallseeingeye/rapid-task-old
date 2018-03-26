@@ -27,6 +27,8 @@ to the buckets.
 
 * The webpack doesn't package everything into the dist folder on `yarn build`.  
 
+* Need to keep the script for fullstory analytics from appearing in development. Work on webpack setting to prevent.
+
 
 Production
 ----------

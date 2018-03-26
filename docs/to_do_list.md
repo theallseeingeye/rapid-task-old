@@ -38,3 +38,11 @@ Production
 * Need to create a site map. Hopefully responsive. React-router-sitemap only works for router v3 or lower. We have v4, so 
     in the mean time we may need to hardcode or create our own. After we do we need to tell google and bing about the 
     sitemap for them to crawl.
+    
+* Create a structured data script for google search engine
+
+The following is best practices for google SEO https://support.google.com/webmasters/answer/7451184?hl=en&ref_topic=3309469
+
+* Need to create a robots.txt for google's bots. We will want to block sensitive parts of the website.
+
+* Place unique title on each page we create for google SEO. This goes along with the description meta tag also.

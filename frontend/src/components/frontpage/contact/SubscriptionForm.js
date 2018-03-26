@@ -145,7 +145,6 @@ class SubscriptionForm extends Component {
 
   formIsValid = () => {
     const email = this.state.email;
-    // const name = this.state.name;
 
     if (this.state.name.length <= 0 && this.state.email.length <= 0) {
       this.setState({

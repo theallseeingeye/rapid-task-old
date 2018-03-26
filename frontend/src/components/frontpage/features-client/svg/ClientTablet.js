@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import ProgressBar from './Progressbars';
-import RapidTaskLogo from './../../global-svg/logo'
+import RapidTaskLogo from '../../../global-svg/logo'
 
 const Svg = styled.svg`
   width: 100%;

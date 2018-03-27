@@ -4,7 +4,7 @@ THINGS TO DO
 
 Monitoring
 ----------
-* Find and install some monitoring tools. Check server access and log errors regularly.
+* Review monitoring tools- Google Analytics and Fullstory. Check server access and log errors regularly (Heroku and AWS).
 
 
 Tests
@@ -33,14 +33,25 @@ Production
 
 * We need to adjust and fix the svg's in Microsoft EDGE. Doesn't accept css transform or something along the lines.
 
-* Need to create a site map. Hopefully responsive. React-router-sitemap only works for router v3 or lower. We have v4, so 
-    in the mean time we may need to hardcode or create our own. After we do we need to tell google and bing about the 
-    sitemap for them to crawl.
+* Need to create a dynamic sitemap generator. React-router-sitemap only works for router v3 or lower. We have v4, so 
+    in the mean time we may need to hardcode or create our own. 
     
-* Create a structured data script for google search engine
+* Bing: add sitemap for them to crawl. *Update- Submitted, will need to check back on status.
+    
 
 The following is best practices for google SEO https://support.google.com/webmasters/answer/7451184?hl=en&ref_topic=3309469
-
+* Create a structured data script for google search engine
 * Need to create a robots.txt for google's bots. We will want to block sensitive parts of the website.
-
 * Place unique title on each page we create for google SEO. This goes along with the description meta tag also.
+
+
+
+
+
+
+If Rapid Task Moves
+-------------------
+
+* Update new ip address to block at Google Analytics 
+* Add address to Google's ld+json structured data
+ 

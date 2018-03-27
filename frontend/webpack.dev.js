@@ -1,6 +1,12 @@
 const merge = require('webpack-merge');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const common = require('./webpack.common.js');
+const path = require('path');
+
+const paths = {
+  PUBLIC: path.resolve(__dirname, 'public'),
+};
 
 module.exports = merge(common, {
   devtool: 'inline-source-map',
@@ -19,8 +25,15 @@ module.exports = merge(common, {
       'process.env': {
         'API_URL' : JSON.stringify('http://127.0.0.1:8000/')
       }
-    })
+    }),
+    new HtmlWebpackPlugin({
+      // Tell what folder we are templating for injection of code on build.
+      template: path.join(paths.PUBLIC, 'index.html'),
 
+      // Injects the following into the index.html
+      // Google map api script
+      GoogleMapsApi: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyARSQ8iW164toKMcCXzROmKAR5qXNxXpok&callback=initMap'
+    }),
   ],
   module: {
     loaders: [

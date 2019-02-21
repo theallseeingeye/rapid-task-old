@@ -4,12 +4,12 @@ import theme from "../../../../global-styles/DefaultTheme";
 
 const Svg = styled.svg`
   width: 140vw;
-	margin-top: 3em;
+  transform: translate(2% -7%);
   z-index: -3;
-  max-width: 800px;
+  max-width: 1000px;
   @media (min-width: ${props => props.theme.desktopscreen}) {
    // To keep the layers from getting too big
-   transform: translateX(50%); // Shift the svg more to the right side
+   transform: translateX(17%); // Shift the svg more to the right side
   }
 `;
 

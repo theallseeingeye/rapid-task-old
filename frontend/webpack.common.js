@@ -1,14 +1,12 @@
-const path = require('path');
 const HtmlWebpackPlugin = require ('html-webpack-plugin');
+const path = require('path');
 
-// Constant with out paths
 const paths = {
   PUBLIC: path.resolve(__dirname, 'public'),
   DIST: path.resolve(__dirname, 'dist'),
   SRC: path.resolve(__dirname, 'src'),
+  ADD: path.resolve(__dirname, 'public/webpack-add'),
 };
-// const json = require('./file.json');
-
 
 module.exports = {
   entry: path.join(paths.SRC, 'dom-loader.js'),
@@ -17,14 +15,10 @@ module.exports = {
     path: paths.DIST,
   },
   plugins: [
-
-    new HtmlWebpackPlugin({
-      template: path.join(paths.PUBLIC, 'index.html'),
-      favicon: path.join(paths.PUBLIC, 'favicon.ico'),
-      filename: 'index.html',
-      manifest: path.join(paths.PUBLIC, 'manifest.json'),
-      title: 'Progressive Web Application',
-    })
+      new HtmlWebpackPlugin({
+        // Tell what folder we are templating for injection of code on build.
+        template: path.join(paths.PUBLIC, 'index.html')
+      })
   ],
   module: {
     rules: [

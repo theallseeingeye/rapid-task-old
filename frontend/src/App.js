@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import FrontPage from './components/frontpage/FrontPage';
+import AppHome from './components/webapp/app-home/AppHome';
 import Unsubscribe from './components/unsubscribepage/Unsubscribe';
 import CareersPage from './components/careerspage/CareersPage';
 import MediaRelations from './components/media-relations/MediaRelations';
 import InvestorRelations from './components/investor-relations/InvestorRelations';
+import MapApp from './components/webapp/app-maps/AppMap';
 import { BrowserRouter as Router, Route, Switch, brow } from 'react-router-dom';
-
+import Error404 from './components/error-pages/Error404';
 
 /*
 This page helps handles all the routes
@@ -27,9 +29,7 @@ const Status = ({ code, children }) => (
 
 const NotFound = () => (
   <Status code={404}>
-    <div>
-      <h1> Sorry, can't find that. </h1>
-    </div>
+    <Error404/>
   </Status>
 );
 
@@ -40,10 +40,12 @@ class App extends Component {
       <Router>
         <Switch>
           <Route exact path="/" component={FrontPage}/>
+          <Route path="/webapp" component={AppHome}/>
           <Route path='/careers' component={CareersPage}/>
           <Route path='/media-relations' component={MediaRelations}/>
           <Route path='/investor-relations' component={InvestorRelations}/>
           <Route path="/unsubscribe" component={Unsubscribe}/>
+          <Route path="/map" component={MapApp}/>
           <Route component={NotFound}/>
         </Switch>
       </Router>

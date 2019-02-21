@@ -20,17 +20,17 @@ class FrontPage extends Component {
       <div role="main">
         <MainPage/>
         <Features/>
-        <CityAnimation/>
         <Quotes/>
-        <PainterLadder/>
-        <EmployeeFeatures/>
-        <ClientFeatures/>
-        <CalendarFeatures/>
-        <FinancialFeatures/>
+        {/*<FinancialFeatures/>*/}
+        {/*<PainterLadder/>*/}
+        {/*/!*<EmployeeFeatures/>*!/*/}
+        {/*/!*<ClientFeatures/>*!/*/}
+        {/*/!*<CalendarFeatures/>*!/*/}
+        {/*<CityAnimation/>*/}
         <AnalyticsFeatures/>
-        <About/>
-        <SubscriptionForm/>
-        <Footer/>
+        {/*<About/>*/}
+        {/*<SubscriptionForm/>*/}
+        {/*<Footer/>*/}
       </div>
     );
   }

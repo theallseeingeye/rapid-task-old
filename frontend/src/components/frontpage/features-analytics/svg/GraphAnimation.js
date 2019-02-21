@@ -14,8 +14,7 @@ class GraphAnimation extends Component {
   componentDidMount() {
 
     // Animate Speed
-    const barSpeed = 1;
-
+    const barSpeed = 1.5;
     const BarCount = 10;
     const BarArray = [...new Array((BarCount) + 1)].map((value, index) => index);
 
@@ -25,13 +24,10 @@ class GraphAnimation extends Component {
     }
 
     // Selects the color of the Bar
-    // let oldValue = 0;
     function colorizer(x) {
       if (0.5 <= x) {
-        // oldValue = x;
         return "rgba(255, 255, 255, 0.9)"; // White
       } else {
-        // oldValue = x;
         return "rgba(255, 0, 0, 0.9)"; //Red
       }
     }
@@ -44,13 +40,15 @@ class GraphAnimation extends Component {
       const random2 = Math.random();
       const randomBar = Math.round(random2 * (BarCount-1));
 
+      // Initializes animation
       const BarChart = new TimelineLite({onComplete: BarAnimate}); // Call itself once animation completes.
+
       BarChart.to(BarList[randomBar], barSpeed, {
-        transformOrigin:"50% bottom",
+        transformOrigin:"0% bottom",
         ease: Elastic.easeOut.config(1, 0.3),
         fill: colorizer(random),
         scaleY:random,
-        delay: random
+        delay: random*0.1
       })
     }
     BarAnimate();
@@ -72,7 +70,7 @@ class GraphAnimation extends Component {
           y="20"
           width={BarWidth}
           height="180"
-          fill='white'
+          fill='rgba(255, 255, 255, 0.9)' // Set the visibility to 'zero' from start so it looks like popping up from bottom.
         />
       );
     }

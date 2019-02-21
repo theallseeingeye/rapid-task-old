@@ -145,32 +145,37 @@ class SubscriptionForm extends Component {
 
   formIsValid = () => {
     const email = this.state.email;
-    // const name = this.state.name;
 
-    if (this.state.name.length <= 0 && this.state.email.length <= 5) {
+    if (this.state.name.length <= 0 && this.state.email.length <= 0) {
       this.setState({
         nameErrorMessage: "Please enter your name",
-        emailErrorMessage: "Please enter your correct email"
+        emailErrorMessage: "Please enter your email"
       });
       return false;
-    // } else if (!validator.isEmail(email) && !validator.isAlpha(name)) {
-    //   this.setState({
-    //     nameErrorMessage: "Please only use letters",
-    //     emailErrorMessage: "This email is not valid, please correct your email"
-    //   });
-    //   return false;
-    } else if (!validator.isEmail(email)) {
+    } else if (this.state.name.length >= 0 && this.state.email.length <= 0) {
+      this.setState({
+        nameErrorMessage: "",
+        emailErrorMessage: "Please enter your email"
+      });
+      return false;
+    } else if (this.state.name.length <= 0 && !validator.isEmail(email)) {
+      this.setState({
+        nameErrorMessage: "Please enter your name",
+        emailErrorMessage: "This email is not valid, please correct your email"
+      });
+      return false;
+    } else if (this.state.name.length >= 0 && !validator.isEmail(email)) {
       this.setState({
         nameErrorMessage: "",
         emailErrorMessage: "This email is not valid, please correct your email"
       });
       return false;
-    // } else if ((validator.isEmail(email) && !validator.isAlpha(name))) {
-    //   this.setState({
-    //     nameErrorMessage: "Please only use letters",
-    //     emailErrorMessage: ''
-    //   });
-    //   return false;
+    } else if (this.state.name.length <= 0 && validator.isEmail(email)) {
+      this.setState({
+        nameErrorMessage: "Please enter your name",
+        emailErrorMessage: ""
+      });
+      return false;
     } else {
       this.setState({
         nameErrorMessage: '',

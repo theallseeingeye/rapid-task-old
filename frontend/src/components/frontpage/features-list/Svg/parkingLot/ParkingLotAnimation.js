@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 // ScrollMagic and GSAP is used here!
-import ScrollMagic from "../../../../../utils/jsfunctions/ScrollMagicGsapAdapter"; //Custom adapter that lets us use GSAP and ScrollMagic in React
+import ScrollMagic from "../../../../../../utils/jsfunctions/ScrollMagicGsapAdapter"; //Custom adapter that lets us use GSAP and ScrollMagic in React
 
 // SVG Layers
 import BottomLayer from "./BottomLayer";
@@ -20,8 +20,9 @@ import EquipmentLayer from "./EquipmentLayer";
 const Div = styled.div`
   width: 45vw;
   max-width: 500px;
-  position: absolute;
+  //position: absolute;
   display: flex;
+  //border: solid black;
 `;
 
 const Svg = styled.svg`
@@ -29,6 +30,7 @@ const Svg = styled.svg`
   max-width: 45vw; // This is for small mobile screens
   z-index: -6; // This makes sure that the svg layers hide below the next div for effect.
   top: 25vh; // center the svg on the page vertically.
+  border: solid red;
     
   @media (min-width: ${props => props.theme.desktopscreen}) {
     max-width: 400px; // To keep the layers from getting too big

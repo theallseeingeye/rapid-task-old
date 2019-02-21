@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import theme from '../../../../global-styles/DefaultTheme.js';
 
 const Svg = styled.svg`
-  max-width: 90%;
+  max-width: 900px;
+  
   //margin: auto; // To help center
   //height: 50%;
   //position: absolute;

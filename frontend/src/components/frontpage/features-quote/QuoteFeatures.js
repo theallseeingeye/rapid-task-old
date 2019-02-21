@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import ParkingLotAnimation from './svg/ParkingLotAnimation';
 import ManQuoting from "./svg/ManQuoting";
 
 const Div = styled.div`
@@ -10,6 +9,7 @@ const Div = styled.div`
   margin: auto;
   height: auto;
   position: relative; // Required to help arrange the divs- especially the trigger div, as we need it to the bottom.
+	background: white;
   overflow: hidden;
 `;
 
@@ -45,68 +45,16 @@ const Title1 = styled.div`
   flex-grow: 0.001;
 `;
 
-const Context1 = styled.div`
-  font-family: ${props => props.theme.RobotoCondensedfont};
-  padding-left: 10px;
-  padding-right: 10px;
-  font-weight: 400;
-  text-align: justify;
-  flex-grow: 1;
-  @media (min-width: ${props => props.theme.tabletscreen}) {
-    margin-bottom: 10em;
-  }
-`;
-
-const Columns = styled.div`
-  display: flex;
-  width: 100%;
-`;
-
-const RightColumn = styled.div`
-  Width: 45vw;
-`;
-
-const LeftColumn = styled.div`
-  width: 54vw;
-`;
-
-const FlexContainer = styled.div`
-  //Flex box container options
-  display: flex;
-  flex-direction: column;
-`;
-
-// This div is required for the scrollMagic to trigger the tween animation of the Parking Lot Layers off.
-const EndTrigger = styled.div`
-  bottom: 0;
-  position: absolute;
-  height: 1px; // Need this to give something to trigger on.
-  width: 100%;
-`;
-
-const WhiteDiv = styled.div`
-  // This div is to block the animation from appearing near the top above the estimating man.
-  width: 100%;
-  height: 70vh;
-  position: absolute;
-  background: white;
-  z-index: -5;
-`;
-
 class Quotes extends Component {
   render() {
     return (
-      <Div id="parentDiv">
-        <WhiteDiv/>
+      <Div>
         <QuoteTitle>Automate Quotes</QuoteTitle>
         <ManQuoting/>
         <MainContext>
           Providing accurate quotes can be tedious and time consuming. Rapid Task removes the tedious steps, allowing
           you to build your quotes quickly. We allow easy custom estimating processes that works for your business.
         </MainContext>
-
-
-        <EndTrigger id="endTrigger"/>
       </Div>
     );
   }

@@ -20,7 +20,7 @@ class FrontPage extends Component {
       <div role="main">
         <MainPage/>
         <Features/>
-        {/*<Quotes/>*/}
+        <Quotes/>
         {/*<FinancialFeatures/>*/}
         {/*<PainterLadder/>*/}
         {/*/!*<EmployeeFeatures/>*!/*/}

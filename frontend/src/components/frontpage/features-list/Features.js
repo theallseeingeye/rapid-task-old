@@ -13,8 +13,7 @@ const FeatureDiv = styled.div`
 	position: relative;
 	// z-index: -7;
 	color: white;
-	
-	 border: solid red;
+	border: solid red;
 `;
 
 const GradientDiv = styled.div`
@@ -110,7 +109,13 @@ const EndTrigger = styled.div`
   width: 100%;
 `;
 
-
+const Shift = styled.div`
+	overflow: hidden;
+  @media (min-width: ${props => props.theme.giantscreen}) {
+   // To keep the layers from getting too big
+		transform: translateX(1350px);
+  }
+`;
 
 class Features extends Component {
 	render() {
@@ -204,6 +209,9 @@ class Features extends Component {
 				</div>
 				<EndTrigger id="endTrigger"/>
 				<CloudsSvg/>
+				<Shift>
+					<CloudsSvg/>
+				</Shift>
 			</FeatureDiv>
 		);
 	}

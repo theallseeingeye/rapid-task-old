@@ -8,6 +8,7 @@ import Arrow from './Svg/ArrowSvg';
 
 const Div = styled.div`
   height: 100vh;
+  background: white;
 `;
 
 const BackgroundContainer = styled.div`
@@ -17,7 +18,7 @@ const BackgroundContainer = styled.div`
   display: flex;
   justify-content: center;
   opacity: 0.4;   // To fade the background
-  z-index: -1;  // To place behind all divs
+  z-index: 1;  // To place behind all divs
   overflow: hidden;  // To hide the sides that are stretching beyond the div
 `;
 
@@ -30,7 +31,7 @@ const LogoContainer = styled.div`
 `;
 
 const LogoBox = styled.div`
-  z-index: 1;
+  z-index: 2;
   align-self: flex-start;
   width: 100%;
   margin-top: 0.5em;

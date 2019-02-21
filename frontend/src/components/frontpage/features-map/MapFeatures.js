@@ -13,12 +13,13 @@ const MainDiv = styled.div`
   margin: auto;
   position: relative;
   height: auto;
+  border: solid green;
 `;
 
 const Div = styled.div`
   position: relative; // To push the main context after
   width: 100%;
-  height: 500px;
+  height: 120vh;
 `;
 
 const Title = styled.p`
@@ -60,11 +61,16 @@ const MapDetails = styled.p`
 
 class CityAnimation extends Component {
   render() {
+
+
+
+
+
     return (
       <MainDiv>
         <Div>
           <Title>
-            Geospatial Advantage
+            Always on top of your Business
           </Title>
           <MainContext>
             Gain competitive advantage with use of high resolution satellite imagery.
@@ -83,6 +89,7 @@ class CityAnimation extends Component {
           job will be stored for your convenience and calculate analytics to help further perfect your business. This
           is an excellent automated way keep a very detailed record of your business for any legal matters.
         </MapDetails>
+        <button>More</button>
       </MainDiv>
     );
   }

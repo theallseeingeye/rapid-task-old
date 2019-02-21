@@ -39,7 +39,7 @@ Frontend
 those who are using the python backend server).  
 * Check that you are in the frontend project folder directory. The root is /frontend.
 * Check the `webpack.dev.js` folder and that the `host:` setting is the same as your local ip. 
-* Install the dependencies with terminal command: `npm install` or `yarn install`. 
+* Install the dependencies with terminal command: `npm install` or `yarn install`. y
 * Then use this command to start the server:
     * Terminal command: ```npm run start``` or ```yarn start```
 

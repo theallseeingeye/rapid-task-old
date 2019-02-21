@@ -12,6 +12,7 @@ import CityTop from './cityTallBuildings.gif';
 const Div = styled.div`
   position: absolute;
   width: 100%;
+  margin-top: 15vh;
   overflow: hidden;
   height: 500px;
 `;
@@ -76,7 +77,6 @@ const TextBox = styled.div`
   background: linear-gradient(to bottom,  rgba(63,169,245,0.8), rgba(63,169,245,1));
   height: 8vh;
   z-index: 2;
-
 `;
 
 const FlexContainer = styled.div`

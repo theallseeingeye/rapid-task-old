@@ -16,7 +16,8 @@ const Div = styled.div`
 const Text = styled.p`
   font-family: ${props => props.theme.Robotofont};
   font-size: 1.2em;
-  text-align: center;
+  text-align: center;  
+  margin-top: 2em;
   @media (min-width: ${props => props.theme.tabletscreen}) {
     margin-bottom: 5vh;
   }

@@ -139,7 +139,7 @@ class Unsubscribe extends Component {
       this.setState({
         successMessage: "You have been unsubscribed. Redirecting..."
       });
-      
+
       // Redirects user to homepage when completing unsubscribe successfully
       setTimeout(
           function() {

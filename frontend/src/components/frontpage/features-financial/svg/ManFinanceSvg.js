@@ -3,12 +3,17 @@ import styled from "styled-components";
 import theme from "../../../../global-styles/DefaultTheme";
 
 const Svg = styled.svg`
-  width: 100vw;
-  margin: auto;
-  position: absolute;
-  transform: translateX(-29.4%);
-  z-index: 1;
-  max-width: 1000px;
+
+  transform: translateX(-25%);
+  width: 140vw;
+  z-index: -3;
+  max-width: 800px;
+  border: solid red;
+  margin-top: 3em;
+  @media (min-width: ${props => props.theme.tabletscreen}) {
+    // To keep the layers from getting too big
+    transform: none;
+  }
 
  `;
 
@@ -21,7 +26,7 @@ class ManFinance extends Component {
   }
   render() {
     return (
-      <Svg data-name="Background" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 884.84 1122.59">
+      <Svg data-name="Background" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 884.84 1000">
         <rect data-name="DarkLarge" x="130.45" y="70.49" width="196.39" height="1029.04" rx="98.2" ry="98.2" transform="translate(240.27 1138.42) rotate(-135)" fill={this.color2}/>
 
         <rect data-name="MediumLarge" x="-57.45" y="45.54" width="342.91" height="907.21" rx="171.45" ry="171.45" transform="translate(105.28 910.77) rotate(-135)" fill={this.color}/>

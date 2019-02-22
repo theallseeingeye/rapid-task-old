@@ -10,6 +10,9 @@ const Div = styled.div`
   height: auto;
   position: relative;
   max-width: 1200px;
+  border: solid blue;
+  overflow: hidden;
+  background: white;
 `;
 
 const Svg = styled.svg`
@@ -25,6 +28,8 @@ const ManGraphic = styled.div`
   @media (min-width: 1200px) {
     margin-left: 15vw;
   }
+  overflow: hidden;
+  border: solid black;
 `;
 
 const FinanceTitle = styled.p`
@@ -167,13 +172,7 @@ class FinancialFeatures extends Component {
 
         <WhiteDiv/>
         <FinanceTitle id="InvoiceActivateTrigger">Automated Accounting</FinanceTitle>
-        <ManGraphic>
         <ManFinance/>
-        <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 884.84 1122.59">
-          <rect x="122.49" y="510.29" width="72.46" height="575" rx="36.23" ry="36.23" transform="translate(-79.02 1571.6) rotate(-135)" fill={this.color2}/>
-          <rect x="200.03" y="245.48" width="33.41" height="650" rx="16.7" ry="16.7" transform="translate(117.58 1391.58) rotate(-135)" fill={this.color}/>
-        </Svg>
-        </ManGraphic>
         {/*<Columns>*/}
           {/*<LeftColumn>*/}
             {/*<FlexContainerLeft>*/}

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import validator from "validator";
 import axios from "axios/index";
 import styled from "styled-components";
+import {withRouter} from 'react-router-dom';
 
 const Div = styled.div`
   background-color: ${props => props.theme.logoblue};
@@ -62,6 +63,10 @@ const Error = styled.p`
   color: red;
 `;
 
+const Unsubscribed = styled.p`
+  color: white;
+`;
+
 const SubmittedText = styled.p`
   font-size: 1.5em;
   color: white;
@@ -81,6 +86,7 @@ class Unsubscribe extends Component {
       email: '',
       isSubmitted: '',
       emailErrorMessage: '',
+      successMessage: '',
     };
   };
 
@@ -92,6 +98,8 @@ class Unsubscribe extends Component {
 
     console.log(fields);
   };
+
+
 
   handleSubmit = (event) => {
     event.preventDefault();
@@ -127,11 +135,28 @@ class Unsubscribe extends Component {
               "inquiries@rapidtask.com");
           }
         });
+
+      this.setState({
+        successMessage: "You have been unsubscribed. Redirecting..."
+      });
+      
+      // Redirects user to homepage when completing unsubscribe successfully
+      setTimeout(
+          function() {
+              this.props.history.push('/')
+          }
+          .bind(this),
+          2000
+      );
+
+
     } else {
       console.log("The form field is not valid");
     }
 
   };
+
+
 
   formIsValid = () => {
     const email = this.state.email;
@@ -176,6 +201,7 @@ class Unsubscribe extends Component {
           />
         {/*</Label>*/}
         <Error>{this.state.emailErrorMessage}</Error>
+        <Unsubscribed>{this.state.successMessage}</Unsubscribed>
         <UnsubscribeButton type="submit" value="Unsubscribe"/>
       </Form>
     );
@@ -201,4 +227,4 @@ class Unsubscribe extends Component {
   }
 }
 
-export default Unsubscribe;
+export default withRouter(Unsubscribe);

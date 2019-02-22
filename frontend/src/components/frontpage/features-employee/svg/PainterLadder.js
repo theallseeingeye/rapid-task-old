@@ -243,7 +243,7 @@ class PainterLadder extends Component {
             <path d="M221.72,329.31h0l2.11.36-2.08-.36Z" transform="translate(0 -322.85)" fill="#39f"/>
           </g>
           /*Baseboard*/
-            <polygon points="640 193 0 193 0 200 640 200 640 193" fill="#e7e3e9"/>
+            <polygon points="640 193 0 193 0 250 640 250 640 193" fill="#e7e3e9"/>
             <polygon points="640 192 0 192 0 194 640 194 640 192" fill="#f7f9fc"/>
           /*Baseboard*/
           </PaintedWall>

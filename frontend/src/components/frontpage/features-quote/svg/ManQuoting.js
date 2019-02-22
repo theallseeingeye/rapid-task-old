@@ -4,7 +4,6 @@ import theme from "../../../../global-styles/DefaultTheme";
 
 const Svg = styled.svg`
   width: 140vw;
-	margin-top: 3em;
   z-index: -3;
   max-width: 800px;
   @media (min-width: ${props => props.theme.desktopscreen}) {

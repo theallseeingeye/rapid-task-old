@@ -11,6 +11,7 @@ const Div = styled.div`
   position: relative; // Required to help arrange the divs- especially the trigger div, as we need it to the bottom.
 	background: white;
   overflow: hidden;
+  border: solid red;
 `;
 
 const QuoteTitle = styled.p`
@@ -51,10 +52,6 @@ class Quotes extends Component {
       <Div>
         <QuoteTitle>Automate Quotes</QuoteTitle>
         <ManQuoting/>
-        <MainContext>
-          Providing accurate quotes can be tedious and time consuming. Rapid Task removes the tedious steps, allowing
-          you to build your quotes quickly. We allow easy custom estimating processes that works for your business.
-        </MainContext>
       </Div>
     );
   }

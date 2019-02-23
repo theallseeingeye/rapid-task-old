@@ -6,24 +6,26 @@ const Svg = styled.svg`
   width: 140vw;
   z-index: -3;
   max-width: 800px;
-  @media (min-width: ${props => props.theme.desktopscreen}) {
-   // To keep the layers from getting too big
-   transform: translateX(50%); // Shift the svg more to the right side
-  }
+  transform: translateX(25%);
+  float: right;
+   @media (min-width: ${props => props.theme.desktopscreen}) {
+    // To keep the layers from getting too big
+    transform: translateX(0%); // Shift the svg more to the right side
+   }
 `;
 
 //This Rect is for the bottom section. A different position is required on larger screen sizes.
-const Rect = styled.rect`
-  @media (min-width: ${props => props.theme.tabletscreen}) {
-    transform: translate(-650px, 420px) rotateZ(-45deg);
-  }
-`;
-
-const Rect2 = styled.rect`
-  @media (min-width: ${props => props.theme.tabletscreen}) {
-    transform: translate(-530px, 390px) rotateZ(-45deg);
-  }
-`;
+// const Rect = styled.rect`
+//   @media (min-width: ${props => props.theme.tabletscreen}) {
+//     transform: translate(-650px, 420px) rotateZ(-45deg);
+//   }
+// `;
+//
+// const Rect2 = styled.rect`
+//   @media (min-width: ${props => props.theme.tabletscreen}) {
+//     transform: translate(-530px, 390px) rotateZ(-45deg);
+//   }
+// `;
 
 class ManQuoting extends Component {
   constructor(props) {
@@ -39,11 +41,11 @@ class ManQuoting extends Component {
         <title>QuoteManExciting</title>
         <g data-name="Background">
           <rect data-name="DarkLarge" x="305.36" y="78.53" width="196.39" height="974.1" rx="98.2" ry="98.2" transform="translate(-312.12 429.08) rotate(-45)" fill={this.color2}/>
-          <Rect2 data-name="MediumSmall" x="415.19" y="339.48" width="33.41" height="795.04" rx="16.7" ry="16.7" transform="translate(-425.03 499.33) rotate(-45)" fill={this.color}/>
+          {/*<rect data-name="MediumSmall" x="415.19" y="339.48" width="33.41" height="795.04" rx="16.7" ry="16.7" transform="translate(-425.03 499.33) rotate(-45)" fill={this.color}/>*/}
           <rect data-name="MediumLarge" x="366.17" y="45.54" width="342.91" height="907.21" rx="171.45" ry="171.45" transform="translate(-225.87 504.42) rotate(-45)" fill={this.color}/>
           <rect data-name="MediumMedium" x="610.94" y="-63.31" width="33.41" height="633.7" rx="16.7" ry="16.7" transform="translate(-25.85 496.14) rotate(-45)" fill={this.color}/>
           <rect data-name="DarkMedium" x="523.99" y="-110.11" width="72.46" height="974.1" rx="36.23" ry="36.23" transform="translate(-132.85 484.61) rotate(-45)" fill={this.color2}/>
-          <Rect data-name="DarkMedium-2" x="456.68" y="491.29" width="72.46" height="752.88" rx="36.23" ry="36.23" transform="translate(-499.6 580.76) rotate(-45)" fill={this.color2}/>
+          {/*<rect data-name="DarkMedium-2" x="456.68" y="491.29" width="72.46" height="752.88" rx="36.23" ry="36.23" transform="translate(-499.6 580.76) rotate(-45)" fill={this.color2}/>*/}
           <g data-name="Protractor">
             <rect data-name="trail" x="734.92" y="432.34" width="20.37" height="441.73" rx="10.18" ry="10.18" transform="translate(-274.04 696.26) rotate(-45)" fill="#fff" opacity="0.29"/>
             <g>
@@ -195,20 +197,20 @@ class ManQuoting extends Component {
               <path d="M250,87.48h0l-.52.52h0a.71.71,0,0,0,.14.61l.31.38L251,87.92l-.38-.31A.68.68,0,0,0,250,87.48Z" transform="translate(-30.39 -21.93)" fill="#df9127"/>
             </g>
           </g>
-          <g data-name="Pencil">
-            <rect data-name="trail-8" x="557.37" y="724.91" width="1.9" height="270.84" rx="0.95" ry="0.95" transform="translate(-522.59 644.47) rotate(-45)" fill="#fff" opacity="0.29"/>
-            <g>
-              <path d="M399.82,767.29a.18.18,0,0,1-.22,0l-.12-.07a.12.12,0,0,0-.1,0l21,21.46.41-.4-21.11-21.61.21.35A.19.19,0,0,1,399.82,767.29Z" transform="translate(-30.39 -21.93)" fill="#df9127"/>
-              <path d="M398.68,767.88a.12.12,0,0,0,0,.11l.12.3a.12.12,0,0,1-.18.15l-.45-.29,21.11,21.61.41-.4Z" transform="translate(-30.39 -21.93)" fill="#df9127"/>
-              <path d="M399.34,767.26a.12.12,0,0,0,0,.13l.1.41a.12.12,0,0,1,0,.12.12.12,0,0,1-.12,0l-.44-.12a.12.12,0,0,0-.13,0s0,0,0,0l21,21.49.66-.65-21-21.46Z" transform="translate(-30.39 -21.93)" fill="#f8bb3d"/>
-              <path d="M421,788.27a.18.18,0,0,0-.25,0l-.06.06-.41.4-.66.65-.41.4-.06.06a.18.18,0,0,0,0,.25l.14.14,1.85-1.8Z" transform="translate(-30.39 -21.93)" fill="#dfd5dc"/>
-              <path d="M420.78,791.43l.06-.06,1.48-1.44.06-.06a.18.18,0,0,0,0-.25l-.14-.14-1.85,1.8.14.14A.18.18,0,0,0,420.78,791.43Z" transform="translate(-30.39 -21.93)" fill="#dfd5dc"/>
-              <path d="M421.51,792.07a.58.58,0,0,0,.83,0l.64-.63a.58.58,0,0,0,0-.82l-.68-.7-1.48,1.44Z" transform="translate(-30.39 -21.93)" fill="#f2a5ab"/>
-              <rect x="419.5" y="789.1" width="2.58" height="1.49" transform="translate(-462.55 496.98) rotate(-44.33)" fill="#e9e3e8"/>
-              <path d="M398.75,768.43a.12.12,0,0,0,0-.14l-.12-.3a.12.12,0,0,1,0-.11s0,0,0,0a.12.12,0,0,1,.13,0l.44.12a.12.12,0,0,0,.12,0,.12.12,0,0,0,0-.12l-.1-.41a.12.12,0,0,1,0-.13h0a.12.12,0,0,1,.1,0l.12.07a.18.18,0,0,0,.22,0,.19.19,0,0,0,0-.22l-.21-.35-2.1-1.39.06.12a.15.15,0,0,1-.2.21l-.17-.09a.15.15,0,0,0-.21.18l.08.24a.08.08,0,0,1,0,.09.08.08,0,0,1-.09,0l-.21-.13-.81-1.29,2.21,3.51.45.29A.12.12,0,0,0,398.75,768.43Z" transform="translate(-30.39 -21.93)" fill="#e1b887"/>
-              <path d="M397,766.07a.08.08,0,0,0,.09,0,.08.08,0,0,0,0-.09l-.08-.24a.15.15,0,0,1,.21-.18l.17.09a.15.15,0,0,0,.2-.21l-.06-.12h0l-1.35-.9a.16.16,0,0,0-.23.22l.81,1.29Z" transform="translate(-30.39 -21.93)" fill="#412139"/>
-            </g>
-          </g>
+          {/*<g data-name="Pencil">*/}
+            {/*<rect data-name="trail-8" x="557.37" y="724.91" width="1.9" height="270.84" rx="0.95" ry="0.95" transform="translate(-522.59 644.47) rotate(-45)" fill="#fff" opacity="0.29"/>*/}
+            {/*<g>*/}
+              {/*<path d="M399.82,767.29a.18.18,0,0,1-.22,0l-.12-.07a.12.12,0,0,0-.1,0l21,21.46.41-.4-21.11-21.61.21.35A.19.19,0,0,1,399.82,767.29Z" transform="translate(-30.39 -21.93)" fill="#df9127"/>*/}
+              {/*<path d="M398.68,767.88a.12.12,0,0,0,0,.11l.12.3a.12.12,0,0,1-.18.15l-.45-.29,21.11,21.61.41-.4Z" transform="translate(-30.39 -21.93)" fill="#df9127"/>*/}
+              {/*<path d="M399.34,767.26a.12.12,0,0,0,0,.13l.1.41a.12.12,0,0,1,0,.12.12.12,0,0,1-.12,0l-.44-.12a.12.12,0,0,0-.13,0s0,0,0,0l21,21.49.66-.65-21-21.46Z" transform="translate(-30.39 -21.93)" fill="#f8bb3d"/>*/}
+              {/*<path d="M421,788.27a.18.18,0,0,0-.25,0l-.06.06-.41.4-.66.65-.41.4-.06.06a.18.18,0,0,0,0,.25l.14.14,1.85-1.8Z" transform="translate(-30.39 -21.93)" fill="#dfd5dc"/>*/}
+              {/*<path d="M420.78,791.43l.06-.06,1.48-1.44.06-.06a.18.18,0,0,0,0-.25l-.14-.14-1.85,1.8.14.14A.18.18,0,0,0,420.78,791.43Z" transform="translate(-30.39 -21.93)" fill="#dfd5dc"/>*/}
+              {/*<path d="M421.51,792.07a.58.58,0,0,0,.83,0l.64-.63a.58.58,0,0,0,0-.82l-.68-.7-1.48,1.44Z" transform="translate(-30.39 -21.93)" fill="#f2a5ab"/>*/}
+              {/*<rect x="419.5" y="789.1" width="2.58" height="1.49" transform="translate(-462.55 496.98) rotate(-44.33)" fill="#e9e3e8"/>*/}
+              {/*<path d="M398.75,768.43a.12.12,0,0,0,0-.14l-.12-.3a.12.12,0,0,1,0-.11s0,0,0,0a.12.12,0,0,1,.13,0l.44.12a.12.12,0,0,0,.12,0,.12.12,0,0,0,0-.12l-.1-.41a.12.12,0,0,1,0-.13h0a.12.12,0,0,1,.1,0l.12.07a.18.18,0,0,0,.22,0,.19.19,0,0,0,0-.22l-.21-.35-2.1-1.39.06.12a.15.15,0,0,1-.2.21l-.17-.09a.15.15,0,0,0-.21.18l.08.24a.08.08,0,0,1,0,.09.08.08,0,0,1-.09,0l-.21-.13-.81-1.29,2.21,3.51.45.29A.12.12,0,0,0,398.75,768.43Z" transform="translate(-30.39 -21.93)" fill="#e1b887"/>*/}
+              {/*<path d="M397,766.07a.08.08,0,0,0,.09,0,.08.08,0,0,0,0-.09l-.08-.24a.15.15,0,0,1,.21-.18l.17.09a.15.15,0,0,0,.2-.21l-.06-.12h0l-1.35-.9a.16.16,0,0,0-.23.22l.81,1.29Z" transform="translate(-30.39 -21.93)" fill="#412139"/>*/}
+            {/*</g>*/}
+          {/*</g>*/}
         </g>
         <g data-name="Layer 1">
           <g data-name="leftleg">

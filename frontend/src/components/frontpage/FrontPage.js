@@ -23,7 +23,7 @@ class FrontPage extends Component {
         <FinancialFeatures/>
         <Quotes/>
         <PainterLadder/>
-        {/*/!*<EmployeeFeatures/>*!/*/}
+        <EmployeeFeatures/>
         {/*/!*<ClientFeatures/>*!/*/}
         {/*/!*<CalendarFeatures/>*!/*/}
         {/*<CityAnimation/>*/}

@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import PainterThumbsUp from "./svg/PainterThumbsUp";
 import PainterWalking from "./svg/PainterWalking";
+import validator from "validator";
+import axios from "axios";
 
 const Div = styled.div`
   font-family: ${props => props.theme.RobotoCondensedfont};
@@ -9,98 +11,245 @@ const Div = styled.div`
   width: 100%;
   max-width: 1200px;
   margin: auto;
-  overflow: hidden;
+  margin-top: 5vh;
+  //overflow: hidden;
   background-color: white; //this is to hide the fixed position animations to prevent them from showing up on slower devices
+  border: solid blue;
+  display: flex;
+  flex-direction: row;
 `;
 
-const SubTitle = styled.p`
-  font-size: 1.5em;
+const Button = styled.button`
+  width: 100%;
+  height: 7vh;
+  background: ${props => props.theme.logoblue};
+  border: 2px solid white;
+  border-radius: 5px;
   text-align: left;
   font-family: ${props => props.theme.Robotofont};
+  outline: none;
+  color: white;
+  font-size: 0.9em;
 `;
 
-const TextArea = styled.div`
-  margin: 0 5px 0 5px;
-  text-align: justify;
-`;
 
 const TextSection = styled.div`
-  margin-top: 5vh;
-  text-align: justify;
-  line-height: 1.4em;
+  width: 100%;
+
+  border: solid red;
+  display: flex;
+  flex-direction: column;
+  @media (min-width: ${props => props.theme.tabletscreen}) {
+    font-size: 1.5em;
+  }
+  @media (min-width: ${props => props.theme.desktopscreen}) {
+    max-width: 1000px;
+    margin-right: 150px;
+  }
+
+`;
+
+const ContentDiv = styled.div`
+  //width: 100%;
+  background: #f7f9fc;
+  
+`;
+
+const ContentAnimate = keyframes`
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  } 
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+`;
+
+const Content = styled.div`
+  padding: 5px;
+  font-size: 0.8em;
+  animation: ${ContentAnimate} ease-out;
+  //transition: max-height 2s ease-out;
 `;
 
 class EmployeeFeatures extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      timeTracking: false,
+      employeeRecording: false,
+      automaticScheduling: false,
+      flexiblePermissions: false,
+      employeePerformance: false,
+    };
+  };
+
+  accordion = (event) => {
+    if (event === 'timeTracking') {
+      this.setState(prevState => ({
+        employeeRecording: false,
+        automaticScheduling: false,
+        flexiblePermissions: false,
+        employeePerformance: false,
+        timeTracking: !prevState.timeTracking
+      }));
+    } if (event === 'employeeRecording') {
+      this.setState(prevState => ({
+        timeTracking: false,
+        automaticScheduling: false,
+        flexiblePermissions: false,
+        employeePerformance: false,
+        employeeRecording: !prevState.employeeRecording
+      }));
+    } if (event === 'automaticScheduling') {
+      this.setState(prevState => ({
+        timeTracking: false,
+        employeeRecording: false,
+        flexiblePermissions: false,
+        employeePerformance: false,
+        automaticScheduling: !prevState.automaticScheduling
+      }));
+    } if (event === 'flexiblePermissions') {
+      this.setState(prevState => ({
+        timeTracking: false,
+        employeeRecording: false,
+        automaticScheduling: false,
+        employeePerformance: false,
+        flexiblePermissions: !prevState.flexiblePermissions
+      }));
+    } if (event === 'employeePerformance') {
+      this.setState(prevState => ({
+        timeTracking: false,
+        employeeRecording: false,
+        automaticScheduling: false,
+        flexiblePermissions: false,
+        employeePerformance: !prevState.employeePerformance
+      }));
+    }
+  };
+
+
   render() {
+
+    const timeTracking = this.state.timeTracking ? (
+      <ContentDiv>
+        <Content>
+          Employees will be able to enter and track their hours in real-time. This helps to minimize confusion when
+          doing payroll. Having all of the hours documented in the same place, conveniently connected to your
+          calendar allows you to quickly verify the information.<br/>
+          We'll help you keep track of how long it takes your employees to complete specific tasks. Knowing this
+          information ensures that you never quote too low again!<br/>
+        </Content>
+      </ContentDiv>
+      ) : (
+      <div />
+    );
+
+    const employeeRecording = this.state.employeeRecording ? (
+      <ContentDiv>
+        <Content>
+          Employees can enter company expenses including the materials that are used on the job. Your employees will
+          be able to keep track of receipts on the spot through Rapid Task. Not only does this make accounting easier,
+          it ensures that you don't have to track down missing receipts every month.
+        </Content>
+      </ContentDiv>
+      ) : (
+      <div />
+    );
+
+    const automaticScheduling = this.state.automaticScheduling ? (
+      <ContentDiv>
+        <Content>
+          Once a quote has been completed, Rapid Task will schedule a team of your employees automatically based on
+          the needs represented in the quote awarded. This automatic scheduling will take total workload, approved time-off,
+          hours of operation, and any other considerations into account.
+          Employees can also submit their time-off requests directly into Rapid Task to be reviewed, or to communicate
+          a shift which they need to be covered by another employee.
+        </Content>
+      </ContentDiv>
+      ) : (
+      <div />
+    );
+
+    const flexiblePermissions = this.state.flexiblePermissions ? (
+      <ContentDiv>
+        <Content>
+          Rapid Task works for any type of employee. You have complete freedom to share access to whatever features
+          you see fit with your staff. Payroll staff can be given permissions to timesheets, and supervisors can be
+          granted greater access when updating information or reviewing data. <br />
+
+          You will be able to easily distribute notices, updates, and training information to all of your employees
+          in one place. You will also be able to review which of your employees have accessed the information that
+          you have shared.
+        </Content>
+      </ContentDiv>
+      ) : (
+      <div />
+    );
+
+    const employeePerformance = this.state.employeePerformance ? (
+      <ContentDiv>
+        <Content>
+          You will know which staff are really shining, and those
+          that are under performing with the click of a button. We want to help you find and keep the best people to
+          be a part of your business. <br />
+          Employees can receive a list of tasks that are required for the day. Provide incentives for them to work
+          efficiently and competently on the job. This helps you stay under budget, while maintaining an exceptional
+          quality standard in their work. <br />
+        </Content>
+      </ContentDiv>
+      ) : (
+      <div />
+    );
+
+    const animation = (event) => {
+        if (this.state.timeTracking) {
+
+        }
+    };
+
+
     return (
-      <Div id="parkingLotEnd">
+      <Div>
         {/*This id is the end trigger for parking lot layers*/}
-        <TextArea>
+
           <TextSection>
-            <SubTitle>
+
+            <Button onClick={() => this.accordion('timeTracking')}>
               Time Tracking
-            </SubTitle>
-            <p>
-              Employees will be able to enter and track their hours in real-time. This helps to minimize confusion when
-              doing payroll. Having all of the hours documented in the same place, conveniently connected to your
-              calendar allows you to quickly verify the information.<br/>
-              We'll help you keep track of how long it takes your employees to complete specific tasks. Knowing this
-              information ensures that you never quote too low again!<br/>
-            </p>
-            <PainterWalking/>
-            <SubTitle>
-              Employees Can Directly Record Data With Ease
-            </SubTitle>
-            <p>
-              Employees can enter company expenses including the materials that are used on the job. Your employees will
-              be able to keep track of receipts on the spot through Rapid Task. Not only does this make accounting easier,
-              it ensures that you don't have to track down missing receipts every month.
-            </p>
-            <SubTitle>
+            </Button>
+            <ContentDiv ref={}>
+              <Content>
+                Employees will be able to enter and track their hours in real-time. This helps to minimize confusion when
+                doing payroll. Having all of the hours documented in the same place, conveniently connected to your
+                calendar allows you to quickly verify the information.<br/>
+                We'll help you keep track of how long it takes your employees to complete specific tasks. Knowing this
+                information ensures that you never quote too low again!<br/>
+              </Content>
+            </ContentDiv>
+
+            {/*<PainterWalking/>*/}
+            <Button onClick={() => this.accordion('employeeRecording')}>
+              Employees Enter Data
+            </Button>
+            {employeeRecording}
+            <Button onClick={() => this.accordion('automaticScheduling')}>
               Automatic Scheduling
-            </SubTitle>
-            <p>
-              Once a quote has been completed, Rapid Task will schedule a team of your employees automatically based on
-              the needs represented in the quote awarded. This automatic scheduling will take total workload, approved time-off,
-              hours of operation, and any other considerations into account.
-              Employees can also submit their time-off requests directly into Rapid Task to be reviewed, or to communicate
-              a shift which they need to be covered by another employee.
-            </p>
-            <PainterThumbsUp/>
-            <SubTitle>
-              Flexible Rapid Task Permissions
-            </SubTitle>
-            <p>
-              Rapid Task works for any type of employee. You have complete freedom to share access to whatever features
-              you see fit with your staff. Payroll staff can be given permissions to timesheets, and supervisors can be
-              granted greater access when updating information or reviewing data.
-            </p>
-            <p>
-              You will be able to easily distribute notices, updates, and training information to all of your employees
-              in one place. You will also be able to review which of your employees have accessed the information that
-              you have shared.
-            </p>
-            <SubTitle>
+            </Button>
+            {automaticScheduling}
+            <Button onClick={() => this.accordion('flexiblePermissions')}>
+              Flexible Permissions
+            </Button>
+            {flexiblePermissions}
+            <Button onClick={() => this.accordion('employeePerformance')}>
               Employee Performance
-            </SubTitle>
-            <p>
-              You will know which staff are really shining, and those
-              that are underperforming with the click of a button. We want to help you find and keep the best people to
-              be a part of your business.
-            </p>
-            <p>
-              Being able to effectively track your employees will make it easier to reward the people who are producing
-              great results! You can easily set-up incentive programs for your employees, whether that is by piece work
-              or by the distribution of bonuses and awards.
-            </p>
-            <p>
-              Employees can receive a list of tasks that are required for the day. Provide incentives for them to work
-              efficiently and competently on the job. One example of how this could work for your business could be using
-              the method of paying them for the full shift if they are able complete a job before the end of their shift
-              and under budget, while maintaining an exceptional quality standard in their work.
-            </p>
+            </Button>
+            {employeePerformance}
           </TextSection>
-        </TextArea>
+          <PainterThumbsUp/>
       </Div>
     );
   }

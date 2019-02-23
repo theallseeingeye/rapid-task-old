@@ -7,6 +7,7 @@ const Div = styled.div`
   height: 100vh;
   overflow: hidden;
   font-family: ${props => props.theme.Robotofont};
+  width: 100%;
 `;
 
 const Svg = styled.svg`

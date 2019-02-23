@@ -35,6 +35,7 @@ const ArrowSvg = styled.svg`
   height: 6vh;
   margin: auto;
   display: block;
+  cursor: pointer;
   @media (min-width: ${props => props.theme.tabletscreen}) {
     height: 10vh;
   }

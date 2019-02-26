@@ -3,77 +3,81 @@ import styled from 'styled-components';
 import PhoneCalendar from './svg/PhoneCalendar';
 
 const MainDiv = styled.div`
-  background-color: white; //this is to hide the fixed position animations to prevent them from showing up on slower devices
-  position: relative;
-  //height: auto;
-  margin: 0 5px 0 5px;
   max-width: 1200px;
   font-family: ${props => props.theme.Robotofont};
   @media (min-width: ${props => props.theme.desktopscreen}) {
-    margin:auto;
+    margin: 0 auto;
     padding: 5px;
   }
+  //border: solid yellow;
 `;
 
-const Header = styled.p`
-  text-align: center;
-  display: block;
+const Title = styled.p`
   width: 100%;
-  font-size: 2.5em;
-  margin-top: 2em;
-  @media (min-width: ${props => props.theme.tabletscreen}) {
-    font-weight: 900;
-  }
+  text-align: center;
+  font-size: 2em;
+	font-weight: 900;
 `;
 
 const FlexContainer = styled.div`
   display: flex;
-  flex-flow: row wrap;
-  flex-direction: row;
-  justify-content: flex-start;
+  flex-direction: column;
+  margin-top: 4em;
   width: 100%;
-  margin-bottom: 5vh;
+	@media (min-width: ${props => props.theme.tabletscreen}) {
+  	flex-direction: row;
+  }
+  //border: solid purple;
+`;
+
+const Content = styled.div`
+	width: 100%;
+	height: 100%;
+	align-self: center;
+	//border: solid blue;
+`;
+
+const SvgDiv = styled.div`
+	width: 100%;
+	text-align: center;
+	@media (min-width: ${props => props.theme.tabletscreen}) {
+    font-weight: 900;
+    order: 1; // To flip the svg to other side of text.
+  }
+	//border: solid red;
 `;
 
 const Text = styled.div`
-  text-align: justify;
-  height: auto;
-  flex-grow: 1;
-  line-height: 1.4em;
-  font-family: ${props => props.theme.RobotoCondensedfont};
+  font-size: 1.2em;
+  text-align: center;
+  padding: 10px;
+  //border: solid green;
 `;
 
 const Subhead = styled.p`
   width: 100%;
-  font-size: 1.5em;
-  margin-top: -0.5em;
+  text-align: center;
+  font-size: 1em;
+  font-family: ${props => props.theme.RobotoCondensedfont};
 `;
 
 class CalendarFeatures extends Component {
   render() {
     return (
       <MainDiv>
-        <Header>No More Dealing With Complicated Schedules</Header>
         <FlexContainer>
-          <Subhead>Let Us Handle the Scheduling for You</Subhead>
-          <Text>
-            Once you have engaged with a client, Rapid Task will use the information from your quote to automatically
-            assign and schedule a team to make sure the job gets done promptly. Based on your preferences, this accounts
-            for whatever parameters you set such as hours of operation or availability of employees and equipment. You
-            can also set priority weight for clients and jobs that you would like us to schedule sooner. Rapid Task allows you to
-            manage employee time-off requests directly on the calendar, and you might even be able to schedule some time off
-            for yourself for once! Once the schedule is complete you will have the opportunity to make any changes you desire.
-          </Text>
-
-          <PhoneCalendar/>
-          <Subhead>Prefer to Do Your Scheduling Hands On?</Subhead>
-          <Text>
-            Rapid Task's integrated calendar makes setting and adjusting schedules easier than ever before on whatever
-            device you prefer to work on. Once you are done tinkering, we will let your employees know how the changes
-            affect their routes to insure that every task is completed, every day. If there are any changes in the weather
-            or traffic conditions which might result in potential delays we will do our best to keep you informed with
-            notifications of changes.
-          </Text>
+					<SvgDiv>
+          	<PhoneCalendar/>
+					</SvgDiv>
+					<Content>
+						<Title>No More Dealing With Complicated Schedules</Title>
+						<Subhead>Let Us Handle the Scheduling for You</Subhead>
+						<Text>
+							Your business will be more organized than ever. Rapid Task will plan orders, schedule employees,
+							schedule with your clients and check for equipment availability; all within the project due date. Any project
+							delays will be a breeze with auto rescheduling as handles and assigns responsibilities to your employees.
+						</Text>
+					</Content>
         </FlexContainer>
       </MainDiv>
     );

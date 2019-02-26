@@ -45,11 +45,10 @@ const PaintedWall = styled.svg`
   // Protected aspect ratio is off from the header. preserveAspectRatio="none"
   height: 92%;
   max-height: 900px;
+  width: 100%;
   overflow: hidden;
-  
   // To center
-  display: block;
-
+  margin: 0 auto;
 `;
 
 const PaintStroke = styled.g`
@@ -224,7 +223,7 @@ class PainterLadder extends Component {
             <path d="M590.42,352.92" transform="translate(-480.87 -340.25)" fill="#ffa528"/>
           </PainterLady>
         </Svg>
-        <PaintedWall data-name="PainterLadder" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 200">
+        <PaintedWall data-name="PainterLadder" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 200" preserveAspectRatio='none'>
           <title>PaintingDiv</title>
           <g data-name="Painted_Wall">
             <path d="M637.12,339.12" transform="translate(0 -322.85)" fill="#39f"/>

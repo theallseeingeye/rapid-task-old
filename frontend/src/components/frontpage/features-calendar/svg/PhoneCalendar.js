@@ -2,14 +2,6 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const Svg = styled.svg`
-  height: 50vh;
-  margin: auto;
-  min-width: 350px;
-  max-width: 800px;
-  flex-grow: 3;
-  @media (min-width: ${props => props.theme.tabletscreen}) {
-    height: 75vh;
-  }
 `;
 
 class PhoneCalendar extends Component {

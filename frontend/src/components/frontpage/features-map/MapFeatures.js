@@ -9,22 +9,28 @@ const MainDiv = styled.div`
   z-index: -4; // Required to let the parking lot layers in above div to hide behind.
   overflow: hidden; // Required for svg when it zooms
   width: 100%;
-  max-width: 1200px;
   margin: auto;
   position: relative;
   height: auto;
-  border: solid green;
+  display: flex;
+  flex-direction: column;
+  //border: solid green;
 `;
+
 
 const Div = styled.div`
   position: relative; // To push the main context after
   width: 100%;
-  height: 120vh;
+  height: 45vh;
+  min-height: 540px;
+  max-width: 1200px;
+  margin: 0 auto;
+  //border: solid brown;
 `;
 
 const Title = styled.p`
   // Title Styling
-  margin-top: -.3vh;
+  //margin-top: -.3vh;
   font-size: 2.5em;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.65);
@@ -49,32 +55,27 @@ const MainContext = styled.p`
   }
 `;
 
-const MapDetails = styled.p`
+const MapDetails = styled.div`
+  max-width: 1200px;
   background-color: white; // To hide the animation behind
-  text-align: justify;
+  text-align: center;
   z-index: 5;
   line-height: 1.4em;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: 0 auto;
+	padding: 10px;
   font-family: ${props => props.theme.RobotoCondensedfont};
+  //border: solid yellow;
 `;
 
 class CityAnimation extends Component {
   render() {
-
-
-
-
-
     return (
       <MainDiv>
+
         <Div>
           <Title>
             Always on top of your Business
           </Title>
-          <MainContext>
-            Gain competitive advantage with use of high resolution satellite imagery.
-          </MainContext>
           <MapAnimation/>
         </Div>
         <MapDetails>
@@ -89,7 +90,6 @@ class CityAnimation extends Component {
           job will be stored for your convenience and calculate analytics to help further perfect your business. This
           is an excellent automated way keep a very detailed record of your business for any legal matters.
         </MapDetails>
-        <button>More</button>
       </MainDiv>
     );
   }

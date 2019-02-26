@@ -2,19 +2,15 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const Svg = styled.svg`
-  height: 58vh;
-  max-height: 800px;
-  // @media (min-width: {props => props.theme.desktopscreen}) {
-  //   height: 80vh;
-  // }
-  float: right;
-  border: solid pink;
+	width: 100%;
+	//height: 100%;
+  //border: solid pink;
 `;
 
 class PainterThumbsUp extends Component {
   render() {
     return (
-     <Svg data-name="PainterHoldingTablet" xmlns="http://www.w3.org/2000/svg" viewBox="0 50 116.3 170.46">
+     <Svg data-name="PainterHoldingTablet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 116.3 267">
         <title>PaintingLady</title>
         <g data-name="Head">
           <path d="M505.49,76.74a5.3,5.3,0,0,1-4.93-5l-1-19.52a5.3,5.3,0,1,1,10.59-.56l1,19.52a5.3,5.3,0,0,1-5.66,5.57Z" transform="translate(-418.7 -14)" fill="#e28f84"/>

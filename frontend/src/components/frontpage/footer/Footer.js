@@ -49,7 +49,7 @@ const AboutHeader = styled.p`
 `;
 const BackgroundContainer = styled.div`
   width: 100%;
-  position: absolute;
+  position: relative;
   height: 100vh;
   min-height: 520px;
   // To fade the background

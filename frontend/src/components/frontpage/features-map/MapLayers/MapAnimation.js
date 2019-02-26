@@ -12,9 +12,10 @@ import CityTop from './cityTallBuildings.gif';
 const Div = styled.div`
   position: absolute;
   width: 100%;
-  margin-top: 15vh;
+  margin-top: 5vh;
   overflow: hidden;
   height: 500px;
+  //border: solid red;
 `;
 
 const Svg = styled.svg`

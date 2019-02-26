@@ -1,29 +1,23 @@
 import React, { Component } from 'react';
 import styled, { keyframes } from 'styled-components';
 import PainterThumbsUp from "./svg/PainterThumbsUp";
-import PainterWalking from "./svg/PainterWalking";
-import validator from "validator";
-import axios from "axios";
 
 const Div = styled.div`
   font-family: ${props => props.theme.RobotoCondensedfont};
   height: auto;
   width: 100%;
   max-width: 1200px;
-  //max-height: 900px;
   margin: auto;
   margin-top: 5vh;
-  //overflow: hidden;
   background-color: white; //this is to hide the fixed position animations to prevent them from showing up on slower devices
-  border: solid blue;
   display: flex;
   flex-direction: row;
+  //border: solid blue;
 `;
 
 const Button = styled.button`
   width: 100%;
-  height: 6vh;
-  //max-height: 200px;
+  height: 63px;
   background: ${props => props.theme.logoblue};
   border: 2px solid white;
   border-radius: 5px;
@@ -32,14 +26,11 @@ const Button = styled.button`
   outline: none;
   color: white;
   font-size: 0.9em;
-
 `;
 
 
 const TextSection = styled.div`
   width: 100%;
-
-  border: solid red;
   display: flex;
   flex-direction: column;
   @media (min-width: ${props => props.theme.tabletscreen}) {
@@ -50,11 +41,10 @@ const TextSection = styled.div`
     max-width: 1000px;
     margin-right: 150px;
   }
-
+  //border: solid red;
 `;
 
 const ContentDiv = styled.div`
-  //width: 100%;
   background: #f7f9fc;
   
 `;
@@ -75,6 +65,11 @@ const Content = styled.div`
   font-size: 0.8em;
   animation: ${ContentAnimate} ease-out;
   //transition: max-height 2s ease-out;
+`;
+
+const PainterSvg = styled.div`
+	height: 100%;
+	//border: solid pink;
 `;
 
 class EmployeeFeatures extends Component {
@@ -225,17 +220,7 @@ class EmployeeFeatures extends Component {
             <Button onClick={() => this.accordion('timeTracking')}>
               Time Tracking
             </Button>
-            <ContentDiv>
-              <Content>
-                Employees will be able to enter and track their hours in real-time. This helps to minimize confusion when
-                doing payroll. Having all of the hours documented in the same place, conveniently connected to your
-                calendar allows you to quickly verify the information.<br/>
-                We'll help you keep track of how long it takes your employees to complete specific tasks. Knowing this
-                information ensures that you never quote too low again!<br/>
-              </Content>
-            </ContentDiv>
-
-            {/*<PainterWalking/>*/}
+						{timeTracking}
             <Button onClick={() => this.accordion('employeeRecording')}>
               Employees Enter Data
             </Button>
@@ -253,7 +238,9 @@ class EmployeeFeatures extends Component {
             </Button>
             {employeePerformance}
           </TextSection>
-          <PainterThumbsUp/>
+					<PainterSvg>
+          	<PainterThumbsUp/>
+					</PainterSvg>
       </Div>
     );
   }

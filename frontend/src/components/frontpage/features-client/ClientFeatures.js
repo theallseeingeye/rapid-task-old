@@ -1,22 +1,32 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import ClientTablet from './svg/ClientTablet';
+import CloudsSvg from "../features-list/Svg/CloudsSvg";
 
 const Div = styled.div`
-  //height: auto;
-  margin: 0 5px 0 5px;
-  background-color: white; //this is to hide the fixed position animations to prevent them from showing up on slower devices
+  background-color: ${props => props.theme.logoblue};
   font-family: ${props => props.theme.Robotofont};
-  max-width: 1200px;
+	width: 100%;
   @media (min-width: ${props => props.theme.giantscreen}) {
     margin: auto;
   }
+  color: white;
+  //border: solid blue;
+`;
+
+const SvgFloor = styled.svg`
+	height: 40px;
+	width: 100%;
+	//border: solid red;
 `;
 
 const FlexContainer = styled.div`
+	margin: 0 auto;
+	margin-top: 10em;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  max-width: 1200px;
 `;
 
 const ColumnL = styled.div`
@@ -44,74 +54,64 @@ const ColumnR = styled.div`
 `;
 
 const Title = styled.p`
-  font-size: 2.5em;
+  font-size: 2em;
   text-align: center;
-  @media (min-width: ${props => props.theme.tabletscreen}) {
-    font-weight: 900;
-  }  
+	font-weight: 900;
 `;
 
 const SubTitle = styled.p`
-  font-size: 1.5em;
+  text-align: center;
+	font-family: ${props => props.theme.RobotoCondensedfont};
 `;
 
 const TextList = styled.p`
   font-family: ${props => props.theme.RobotoCondensedfont};
-  text-align: justify;
-  margin: 0 0 4vh 0;
-  @media (min-width: ${props => props.theme.tabletscreen}) {
-    margin-bottom: 1.8em;
-    width: 80%;
-  } 
+  text-align: center;
+  font-size: 1.2em;
 `;
 
-const Text1 =styled.p`
-  font-family: ${props => props.theme.RobotoCondensedfont};
-  line-height: 1.4em;
+const Clouds = styled.div`
+	margin-top: 5em;
+	//height: 200px;
+	height: 100%;
+	width: 100%;
+	position: relative;
+	@media (min-width: ${props => props.theme.tabletscreen}) {
+		margin-top: 15em;
+  }
+	//border: solid green;
 `;
+
 
 class ClientFeatures extends Component {
   render() {
     return (
       <Div>
-        <Title>Impress Your Clients </Title>
-        <SubTitle>Never Lose Track Again</SubTitle>
-        <Text1>
-          Rapid Task has a modular client interface that is fully customizable to perfectly fit the needs of your
-          business. You decide what information is most important, and what gets shared with your clients.
-        </Text1>
-        <Text1>
-          Rapid Task will generate a unique, shareable link for each client. No sign-up required!
-        </Text1>
+				 <SvgFloor xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 2" preserveAspectRatio='none'>
+					 <rect x="0" y="0" width="100%" height="100%" fill="#e7e3e9"/>
+				 </SvgFloor>
+
         <FlexContainer>
           <ColumnR>
             <ClientTablet/>
           </ColumnR>
           <ColumnL>
+        		<Title>Impress Your Clients </Title>
             <SubTitle>
               Rapid Task Will Help You
             </SubTitle>
             <TextList>Keep organized profiles for each of your clients and their history</TextList>
             <TextList>Track leads for new work and potential clients</TextList>
-            <TextList>Automatic notifications when new quote requests come in</TextList>
             <TextList>Easily share and communicate quoting details to your clients</TextList>
             <TextList>Clients have easy platform to see their quotes and easily accept them so your team can get to work faster</TextList>
-            <TextList>Clients can easily communicate changes or additional job details throughout the project using photos and drawings through Rapid Task's messaging system</TextList>
-            <TextList>If you would like, Rapid Task can send updates to your clients based on job progress so that they are kept in the loop throughout the process</TextList>
-            <TextList>Your clients will have an interactive platform to check up on outstanding bills and complete payments faster</TextList>
+            <TextList>Clients can easily communicate changes or additional job details throughout the project using photos and drawings</TextList>
+            <TextList>Send updates to your clients based on job progress so that they are kept in the loop throughout the process</TextList>
+            <TextList>Your clients can pay their bills and complete payments faster</TextList>
           </ColumnL>
         </FlexContainer>
-        <SubTitle>
-          Clients Get Back To You Faster
-        </SubTitle>
-        <Text1>
-          Your clients, like you, are busy people and we wanted to make the process easier for them too! Once you have
-          set your preferences, key details can be shared with your clients to keep them updated on the progress of a job.
-          This allows your clients to take a more active role in the project. Rapid Task's
-          easy approval and communication system ensures that your clients are able to communicate quickly and
-          effectively with any changes or additional details. This makes sure you have all of the most up-to-date information throughout the project and
-          ultimately helps you get paid faster.
-        </Text1>
+				<Clouds>
+					<CloudsSvg/>
+				</Clouds>
       </Div>
     );
   }

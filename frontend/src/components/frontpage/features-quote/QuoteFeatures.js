@@ -16,8 +16,8 @@ const Div = styled.div`
 `;
 
 const WidthDiv = styled.div`
-	height: 80%;
-	width: 40%;
+	width: 100%;
+	max-width: 1600px;
 	margin: 0 auto;
 	position: relative;
 	//border: solid yellow;
@@ -31,7 +31,7 @@ const QuoteTitle = styled.p`
   height: auto;
   text-align: left;
   bottom: 5vh;
-  padding-right: 30vh; // Use this to shift the text to the right
+  padding-right: 30vh; // Use this to shift the text
   //border: solid brown;
 `;
 

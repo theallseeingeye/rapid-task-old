@@ -29,15 +29,15 @@ class FrontPage extends Component {
         <Features/>
         <FinancialFeatures/>
         <Quotes/>
-        {/*<PainterLadder/>*/}
-        {/*<EmployeeFeatures/>*/}
-        {/*<ClientFeatures/>*/}
-        {/*<CalendarFeatures/>*/}
-        {/*<CityAnimation/>*/}
-        {/*<AnalyticsFeatures/>*/}
-        {/*<About/>*/}
-        {/*<SubscriptionForm/>*/}
-        {/*<Footer/>*/}
+        <PainterLadder/>
+        <EmployeeFeatures/>
+        <ClientFeatures/>
+        <CityAnimation/>
+        <CalendarFeatures/>
+        <AnalyticsFeatures/>
+        <About/>
+        <SubscriptionForm/>
+        <Footer/>
 			</MainFlexBox>
     );
   }

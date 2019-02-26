@@ -16,8 +16,8 @@ const Div = styled.div`
 `;
 
 const WidthDiv = styled.div`
-	height: 80%;
-	width: 40%;
+	width: 100%;
+	max-width: 1600px;
 	margin: 0 auto;
 	margin-top: 50px;
 	position: relative;
@@ -26,13 +26,14 @@ const WidthDiv = styled.div`
 
 const FinanceTitle = styled.div`
 	margin-left: 50%;
-	transform: translateX(-50%);	font-size: 2em;
+	transform: translateX(-50%);	
+	font-size: 2em;
 	font-weight: 900;
   position: absolute;
   height: auto;
   text-align: right;
   bottom: 5vh;
-  padding-left: 20vh; // Use this to shift the text to the right
+  padding-left: 20vh; // Use this to shift the text
   //border: solid brown;
 `;
 

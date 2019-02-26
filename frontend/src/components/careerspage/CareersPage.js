@@ -3,23 +3,22 @@ import styled from "styled-components";
 
 const Div = styled.div`
   font-family: ${props => props.theme.Robotofont};
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 const Svg = styled.svg`
-  position: absolute;
-  bottom: 18vh;
   max-height: 500px;
-  @media (min-width: ${props => props.theme.desktopscreen}) {
-  bottom: 5vh;
-  }
+	margin-top: 1em;
+  //border: solid red;
 `;
 
 const Text = styled.p`
-  position: absolute;
+  margin: 0 auto;
   font-size: 1.5em;
-  width: 100%;
+  width: 80%;
   text-align: center;
-  top: 10vh;
   a:link {
     color: black;
     text-decoration: none;
@@ -28,6 +27,7 @@ const Text = styled.p`
   a:hover {
     color: ${props => props.theme.logoblue};
   }
+  //border: solid green;
 `;
 
 class CareersPage extends Component {

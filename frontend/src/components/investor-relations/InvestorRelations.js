@@ -3,23 +3,23 @@ import styled from "styled-components";
 
 const Div = styled.div`
   font-family: ${props => props.theme.Robotofont};
+  display: flex;
+  flex-direction: column;
+  margin-top: 10vh;
+  //border: solid blue;
 `;
 
 const Svg = styled.svg`
-  position: absolute;
   max-height: 500px;
-  bottom: 10vh;
-  @media (min-width: ${props => props.theme.desktopscreen}) {
-  bottom: 5vh;
-  }
+
 `;
 
 const Text = styled.p`
-  position: absolute;
   font-size: 1.5em;
-  width: 100%;
+  margin: 0 auto;
+  width: 80%;
   text-align: center;
-  top: 10vh;
+  padding: 10px;
   a:link {
     color: black;
     text-decoration: none;
@@ -28,6 +28,7 @@ const Text = styled.p`
   a:hover {
     color: ${props => props.theme.logoblue};
   }
+  //border: solid yellow
 `;
 
 

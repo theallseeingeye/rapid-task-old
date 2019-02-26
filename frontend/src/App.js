@@ -6,7 +6,7 @@ import CareersPage from './components/careerspage/CareersPage';
 import MediaRelations from './components/media-relations/MediaRelations';
 import InvestorRelations from './components/investor-relations/InvestorRelations';
 import MapApp from './components/webapp/app-maps/AppMap';
-import { BrowserRouter as Router, Route, Switch, brow } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Error404 from './components/error-pages/Error404';
 
 /*
@@ -40,12 +40,12 @@ class App extends Component {
       <Router>
         <Switch>
           <Route exact path="/" component={FrontPage}/>
-          <Route path="/webapp" component={AppHome}/>
+          {/*<Route path="/webapp" component={AppHome}/>*/}
           <Route path='/careers' component={CareersPage}/>
           <Route path='/media-relations' component={MediaRelations}/>
           <Route path='/investor-relations' component={InvestorRelations}/>
           <Route path="/unsubscribe" component={Unsubscribe}/>
-          <Route path="/map" component={MapApp}/>
+          {/*<Route path="/map" component={MapApp}/>*/}
           <Route component={NotFound}/>
         </Switch>
       </Router>

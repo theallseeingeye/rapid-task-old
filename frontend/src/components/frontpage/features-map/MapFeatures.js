@@ -31,7 +31,7 @@ const Div = styled.div`
 const Title = styled.p`
   // Title Styling
   //margin-top: -.3vh;
-  font-size: 2.5em;
+  font-size: 2em;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.65);
   width: 100%;

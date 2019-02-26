@@ -16,21 +16,12 @@ const FindOutMore = styled.div`
   @media (min-width: ${props => props.theme.giantscreen}) {
    height: 450px;
   }
- 
-  //a:link {
-  //  color: black;
-  //}
-  //a:hover {
-  //  color: slategray;
-  //}
 `;
 
 
 const ButtonLinks = styled.a` // Need this to match the styled of the other buttons from "Links" 
   color: black;
-  cursor: pointer;
-  
-   
+  cursor: pointer; 
   &:link {
     color: black;
   }
@@ -47,6 +38,7 @@ const AboutHeader = styled.p`
   font-weight: bold;
   font-size: 1.3em;
 `;
+
 const BackgroundContainer = styled.div`
   width: 100%;
   position: relative;

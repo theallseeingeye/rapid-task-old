@@ -23,6 +23,7 @@ const FlexContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 4em;
+  margin-bottom: 4em;
   width: 100%;
 	@media (min-width: ${props => props.theme.tabletscreen}) {
   	flex-direction: row;

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 const Svg = styled.svg`
   height: 58vh;
+  max-height: 800px;
   // @media (min-width: {props => props.theme.desktopscreen}) {
   //   height: 80vh;
   // }

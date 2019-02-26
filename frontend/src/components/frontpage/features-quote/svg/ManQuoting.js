@@ -3,29 +3,13 @@ import styled from 'styled-components';
 import theme from "../../../../global-styles/DefaultTheme";
 
 const Svg = styled.svg`
-  width: 140vw;
-  z-index: -3;
-  max-width: 800px;
-  transform: translateX(25%);
-  float: right;
-   @media (min-width: ${props => props.theme.desktopscreen}) {
-    // To keep the layers from getting too big
-    transform: translateX(0%); // Shift the svg more to the right side
-   }
+	margin-left: 50%;
+	transform: translateX(-50%);
+	height: 100%;
+	min-height: 500px;
+  //border: solid red;
 `;
 
-//This Rect is for the bottom section. A different position is required on larger screen sizes.
-// const Rect = styled.rect`
-//   @media (min-width: ${props => props.theme.tabletscreen}) {
-//     transform: translate(-650px, 420px) rotateZ(-45deg);
-//   }
-// `;
-//
-// const Rect2 = styled.rect`
-//   @media (min-width: ${props => props.theme.tabletscreen}) {
-//     transform: translate(-530px, 390px) rotateZ(-45deg);
-//   }
-// `;
 
 class ManQuoting extends Component {
   constructor(props) {
@@ -37,7 +21,7 @@ class ManQuoting extends Component {
 
   render() {
     return (
-      <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 884.84 1122.59">
+      <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 884.84 970.59">
         <title>QuoteManExciting</title>
         <g data-name="Background">
           <rect data-name="DarkLarge" x="305.36" y="78.53" width="196.39" height="974.1" rx="98.2" ry="98.2" transform="translate(-312.12 429.08) rotate(-45)" fill={this.color2}/>

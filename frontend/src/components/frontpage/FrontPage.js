@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 
 import Features from "./features-list/Features";
 import Quotes from "./features-quote/QuoteFeatures";
@@ -14,24 +15,30 @@ import Footer from "./footer/Footer";
 import MainPage from "./first-page/MainPage";
 import CityAnimation from "./features-map/MapFeatures";
 
+const MainFlexBox = styled.div`
+	display: flex;
+	flex-direction: column;
+	height: auto;
+`;
+
 class FrontPage extends Component {
   render() {
     return (
-      <div role="main">
+      <MainFlexBox role="main">
         <MainPage/>
         <Features/>
         <FinancialFeatures/>
         <Quotes/>
-        <PainterLadder/>
-        <EmployeeFeatures/>
-        {/*/!*<ClientFeatures/>*!/*/}
-        {/*/!*<CalendarFeatures/>*!/*/}
+        {/*<PainterLadder/>*/}
+        {/*<EmployeeFeatures/>*/}
+        {/*<ClientFeatures/>*/}
+        {/*<CalendarFeatures/>*/}
         {/*<CityAnimation/>*/}
-        <AnalyticsFeatures/>
-        <About/>
-        <SubscriptionForm/>
-        <Footer/>
-      </div>
+        {/*<AnalyticsFeatures/>*/}
+        {/*<About/>*/}
+        {/*<SubscriptionForm/>*/}
+        {/*<Footer/>*/}
+			</MainFlexBox>
     );
   }
 }

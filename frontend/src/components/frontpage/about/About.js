@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Div = styled.div`
   margin-top: 5vh;
-  height: auto;
+  //height: auto;
 `;
 
 const Title = styled.p`

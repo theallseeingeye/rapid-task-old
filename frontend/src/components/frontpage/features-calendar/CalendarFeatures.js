@@ -5,7 +5,7 @@ import PhoneCalendar from './svg/PhoneCalendar';
 const MainDiv = styled.div`
   background-color: white; //this is to hide the fixed position animations to prevent them from showing up on slower devices
   position: relative;
-  height: auto;
+  //height: auto;
   margin: 0 5px 0 5px;
   max-width: 1200px;
   font-family: ${props => props.theme.Robotofont};

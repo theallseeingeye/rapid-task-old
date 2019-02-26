@@ -12,7 +12,7 @@ const Div = styled.div`
 `;
 
 const BackgroundContainer = styled.div`
-  height: 70vh;
+  height: 60vh;
   width: 100%;
   position: absolute;
   display: flex;
@@ -37,40 +37,34 @@ const LogoBox = styled.div`
   margin-top: 0.5em;
   margin-left: 0.1em;
   margin-right: 0.1em;
-  
   @media (min-width: ${props => props.theme.tabletscreen}) {
     margin-top: 4em;
     max-width: 800px;
   }
 `;
 
+const ArrowBox = styled.div`
+	height: 20vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+`;
+
 const GuruContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  height: 70vh;
-  width: 100%;
-`;
-
-const GuruBox = styled.div`
-  height: 80%;
-  align-self: flex-end;
+  height: 65%;
   z-index: 2;
-`;
-
-const SloganContainer = styled.div`
+  width: 100%;
   display: flex;
   justify-content: center;
-  position: absolute;
-  height: 70vh;
-  width: 100%;
+  align-self: flex-end;
+  position: relative;
 `;
 
 const SloganBox = styled.div`
   width: 100%;
-  z-index: 3;
-  align-self: flex-end;
-  margin-bottom: 2em;
+  position: absolute;
+  bottom: 0;
   background-color: ${props => props.theme.logoblue};
   opacity: 0.8;
   text-align: center;
@@ -90,6 +84,12 @@ const TextStyle2 = styled.p`
   color: white;
   font-size: 0.8em;
   margin: auto;
+`;
+
+const Text = styled.p`
+  font-family: ${props => props.theme.Robotofont};
+  font-size: 1.2em;
+  text-align: center;
 `;
 
 const TextStyle3 = styled.p`
@@ -131,6 +131,11 @@ class MainPage extends Component {
     return (
       <Div>
         <NavBar/>
+        <BackgroundContainer>
+          <div>
+            <OfficeBackground/>
+          </div>
+        </BackgroundContainer>
         <LogoContainer>
           <LogoBox>
             <LightSpeedIn>
@@ -138,30 +143,26 @@ class MainPage extends Component {
             </LightSpeedIn>
           </LogoBox>
         </LogoContainer>
-        <BackgroundContainer>
-          <div>
-            <OfficeBackground/>
-          </div>
-        </BackgroundContainer>
-        <GuruContainer>
-          <GuruBox>
-            <Guru/>
-          </GuruBox>
-        </GuruContainer>
-        <SloganContainer>
-          <SloganBox>
-            <TextStyle1>
-              STREAMLINING
-            </TextStyle1>
-            <TextStyle2>
-              YOUR BUSINESS PROCESS
-            </TextStyle2>
-            <TextStyle3>
-              SO YOU CAN FOCUS ON WHAT'S IMPORTANT
-            </TextStyle3>
-          </SloganBox>
-        </SloganContainer>
-        <Arrow/>
+				<GuruContainer>
+					<Guru/>
+						<SloganBox>
+							<TextStyle1>
+								STREAMLINING
+							</TextStyle1>
+							<TextStyle2>
+								YOUR BUSINESS PROCESS
+							</TextStyle2>
+							<TextStyle3>
+								SO YOU CAN FOCUS ON WHAT'S IMPORTANT
+							</TextStyle3>
+						</SloganBox>
+				</GuruContainer>
+        <ArrowBox>
+					<Text>
+						Let us show you how you can perfect your business!
+					</Text>
+					<Arrow/>
+				</ArrowBox>
       </Div>
     );
   }

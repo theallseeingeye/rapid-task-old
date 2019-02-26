@@ -10,6 +10,7 @@ const Div = styled.div`
   height: auto;
   width: 100%;
   max-width: 1200px;
+  //max-height: 900px;
   margin: auto;
   margin-top: 5vh;
   //overflow: hidden;
@@ -21,7 +22,8 @@ const Div = styled.div`
 
 const Button = styled.button`
   width: 100%;
-  height: 7vh;
+  height: 6vh;
+  //max-height: 200px;
   background: ${props => props.theme.logoblue};
   border: 2px solid white;
   border-radius: 5px;
@@ -30,6 +32,7 @@ const Button = styled.button`
   outline: none;
   color: white;
   font-size: 0.9em;
+
 `;
 
 
@@ -41,6 +44,7 @@ const TextSection = styled.div`
   flex-direction: column;
   @media (min-width: ${props => props.theme.tabletscreen}) {
     font-size: 1.5em;
+    margin-left: 50px;
   }
   @media (min-width: ${props => props.theme.desktopscreen}) {
     max-width: 1000px;
@@ -221,7 +225,7 @@ class EmployeeFeatures extends Component {
             <Button onClick={() => this.accordion('timeTracking')}>
               Time Tracking
             </Button>
-            <ContentDiv ref={}>
+            <ContentDiv>
               <Content>
                 Employees will be able to enter and track their hours in real-time. This helps to minimize confusion when
                 doing payroll. Having all of the hours documented in the same place, conveniently connected to your

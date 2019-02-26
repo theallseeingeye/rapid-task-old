@@ -5,6 +5,7 @@ import theme from '../../../../global-styles/DefaultTheme.js';
 const Div = styled.div`
   margin: auto;
   height: 100vh;
+  max-height: 900px;
   overflow: hidden;
   font-family: ${props => props.theme.Robotofont};
   width: 100%;
@@ -12,6 +13,7 @@ const Div = styled.div`
 
 const Svg = styled.svg`
   height: 100vh;
+  max-height: 900px;
   position: absolute; // Won't conflict position of other divs it needs to overlay on.
   margin-left: auto;
   margin-right: auto;
@@ -42,6 +44,7 @@ const PainterArm = styled.g`
 const PaintedWall = styled.svg`
   // Protected aspect ratio is off from the header. preserveAspectRatio="none"
   height: 92%;
+  max-height: 900px;
   overflow: hidden;
   
   // To center
@@ -248,7 +251,7 @@ class PainterLadder extends Component {
             <polygon points="640 192 0 192 0 194 640 194 640 192" fill="#f7f9fc"/>
           /*Baseboard*/
           </PaintedWall>
-        <WhiteDiv/>
+        {/*<WhiteDiv/>*/}
       </Div>
     );
   }

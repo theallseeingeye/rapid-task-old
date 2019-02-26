@@ -20,9 +20,7 @@ import EquipmentLayer from "./EquipmentLayer";
 const Div = styled.div`
   width: 45vw;
   max-width: 500px;
-  //position: absolute;
   display: flex;
-  //border: solid black;
 `;
 
 const Svg = styled.svg`
@@ -30,7 +28,6 @@ const Svg = styled.svg`
   max-width: 45vw; // This is for small mobile screens
   z-index: -6; // This makes sure that the svg layers hide below the next div for effect.
   top: 25vh; // center the svg on the page vertically.
-  border: solid red;
     
   @media (min-width: ${props => props.theme.desktopscreen}) {
     max-width: 400px; // To keep the layers from getting too big
@@ -176,7 +173,7 @@ class ParkingLotAnimation extends Component {
   render() {
     return (
       <Div>
-        <Svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 587.98 900" id="svgMain">
+        <Svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 -100 587.98 900" id="svgMain">
           <title>Rapid Task Layered Lot</title>
           <BottomLayer/>
           <GravelLayer/>

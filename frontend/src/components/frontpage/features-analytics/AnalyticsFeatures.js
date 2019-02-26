@@ -13,7 +13,7 @@ const MainDiv = styled.div`
 
 const Div = styled.div`
   max-width: 1200px;
-  height: auto;
+  //height: auto;
   color: white;
   margin:auto;
 `;

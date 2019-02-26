@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import ClientTablet from './svg/ClientTablet';
 
 const Div = styled.div`
-  height: auto;
+  //height: auto;
   margin: 0 5px 0 5px;
   background-color: white; //this is to hide the fixed position animations to prevent them from showing up on slower devices
   font-family: ${props => props.theme.Robotofont};

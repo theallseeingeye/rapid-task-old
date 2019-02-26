@@ -4,17 +4,11 @@ import theme from '../../../../global-styles/DefaultTheme.js';
 
 const Svg = styled.svg`
   max-width: 900px;
-  
-  //margin: auto; // To help center
-  //height: 50%;
-  //position: absolute;
-  border: solid blue;
 `;
 
 class DevicesSVG extends Component {
     constructor(props) {
     super(props);
-
     this.color = theme.logoblue;
   }
 

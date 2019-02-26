@@ -14,7 +14,7 @@ module.exports = merge(common, {
     contentBase: './dist',
     port: 3000,
     hot: true,
-    host: '192.168.1.74',
+    host: '192.168.0.10',
     // Helps allows refresh page on the React Router
     historyApiFallback: { index: '/' },
   },

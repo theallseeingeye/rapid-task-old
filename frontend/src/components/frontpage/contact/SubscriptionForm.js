@@ -108,35 +108,40 @@ class SubscriptionForm extends Component {
           email: emailNormalized,
         };
 
-      axios.post((apiUrl + 'v0.1/subscriber/create/'), subscriber)
-        .then(response => {
-            console.log('You are now subscribed. Thank you!');
-            this.setState({
-              isSubmitted: true
-            });
-        })
-        .catch(error => {
-          // If server throws 400 error, this retries the email by a PUT method to make updates to existing.
-          if (error.response.status = 400) {
-            const existingSubscriber = {
-              email: emailNormalized,
-              name: this.state.name, // Is this escaped? Need to double check.
-              subscribed: true
-            };
+      // Temp no server, set state anyways.
+      this.setState({
+				isSubmitted: true
+			});
 
-            // console.log(existingSubscriber);
-            axios.put((apiUrl + 'v0.1/subscriber/update/' + emailNormalized + '/'), existingSubscriber)
-              .then(response => {
-                console.log('You are now subscribed. Thank you!');
-                this.setState({
-                  isSubmitted: true
-                });
-              });
-              console.log("Resolving the 400 Error...");
-          } else {
-            console.log("Uh oh! Something went wrong with the submission of the form.")
-          }
-        });
+      // axios.post((apiUrl + 'v0.1/subscriber/create/'), subscriber)
+      //   .then(response => {
+      //       console.log('You are now subscribed. Thank you!');
+      //       this.setState({
+      //         isSubmitted: true
+      //       });
+      //   })
+      //   .catch(error => {
+      //     // If server throws 400 error, this retries the email by a PUT method to make updates to existing.
+      //     if (error.response.status = 400) {
+      //       const existingSubscriber = {
+      //         email: emailNormalized,
+      //         name: this.state.name, // Is this escaped? Need to double check.
+      //         subscribed: true
+      //       };
+			//
+      //       // console.log(existingSubscriber);
+      //       axios.put((apiUrl + 'v0.1/subscriber/update/' + emailNormalized + '/'), existingSubscriber)
+      //         .then(response => {
+      //           console.log('You are now subscribed. Thank you!');
+      //           this.setState({
+      //             isSubmitted: true
+      //           });
+      //         });
+      //         console.log("Resolving the 400 Error...");
+      //     } else {
+      //       console.log("Uh oh! Something went wrong with the submission of the form.")
+      //     }
+      //   });
     } else {
       console.log("Form is not valid");
     }

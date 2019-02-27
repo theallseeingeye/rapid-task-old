@@ -76,7 +76,7 @@ class CalendarFeatures extends Component {
 						<Text>
 							Your business will be more organized than ever. Rapid Task will plan orders, schedule employees,
 							schedule with your clients and check for equipment availability; all within the project due date. Any project
-							delays will be a breeze with auto rescheduling as handles and assigns responsibilities to your employees.
+							delays will be a breeze with auto rescheduling as Rapid Task handles and assigns responsibilities to your employees.
 						</Text>
 					</Content>
         </FlexContainer>

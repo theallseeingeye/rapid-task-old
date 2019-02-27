@@ -32,7 +32,7 @@ module.exports = merge(common, {
 
       // Injects the following into the index.html
       // Google map api script
-      GoogleMapsApi: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyARSQ8iW164toKMcCXzROmKAR5qXNxXpok&callback=initMap'
+      // GoogleMapsApi: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyARSQ8iW164toKMcCXzROmKAR5qXNxXpok&callback=initMap'
     }),
   ],
   module: {

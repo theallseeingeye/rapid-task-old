@@ -3,9 +3,11 @@ import styled from 'styled-components';
 
 const Svg = styled.svg`
   width: 100%;
-  margin-top: 5vh;
+  //margin-top: 5vh;
   max-width: 800px;
   height: 100%; // Required for chrome or height will be too short.
+  //border: solid pink;
+  transform: translateY(10px); // To tuck bottom behind div below
 `;
 
 
@@ -68,6 +70,8 @@ class GraphAnimation extends Component {
           id={"svgBarChart" + number.toString()}
           x={((BarSpacing+BarWidth)*number)}
           y="20"
+					stroke="grey"
+					strokeWidth="0.5"
           width={BarWidth}
           height="180"
           fill='rgba(255, 255, 255, 0.9)' // Set the visibility to 'zero' from start so it looks like popping up from bottom.

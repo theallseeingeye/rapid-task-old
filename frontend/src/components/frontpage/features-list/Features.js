@@ -64,9 +64,11 @@ const Title2 = styled(Title1)`
 const Columns = styled.div`
 	display: flex;
 	width: 100%;
-	
+ 	max-width: 1200px;
+ 	/* To center */
+	margin: 0 auto;
 	/* The top and bottom padding for the text and the bottom for the clouds*/
-	margin: 1vh 0 20vh 0;
+	margin-bottom: 20vh;
 `;
 
 const RightColumn = styled.div`

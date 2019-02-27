@@ -21,13 +21,22 @@ const Button = styled.button`
   background: ${props => props.theme.logoblue};
   border: 2px solid white;
   border-radius: 5px;
-  text-align: left;
   font-family: ${props => props.theme.Robotofont};
   outline: none;
   color: white;
   font-size: 0.9em;
+  cursor: pointer;
+	/* To position contents of button */  
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  //border: solid yellow;
 `;
 
+
+const ButtonItem = styled.div`
+	align-self: center;
+`;
 
 const TextSection = styled.div`
   width: 100%;
@@ -46,7 +55,7 @@ const TextSection = styled.div`
 
 const ContentDiv = styled.div`
   background: #f7f9fc;
-  
+ 
 `;
 
 const ContentAnimate = keyframes`
@@ -78,7 +87,7 @@ class EmployeeFeatures extends Component {
     super(props);
 
     this.state = {
-      timeTracking: false,
+      timeTracking: true,
       employeeRecording: false,
       automaticScheduling: false,
       flexiblePermissions: false,
@@ -211,36 +220,175 @@ class EmployeeFeatures extends Component {
     };
 
 
+
     return (
       <Div>
-        {/*This id is the end trigger for parking lot layers*/}
+				<TextSection>
 
-          <TextSection>
-
-            <Button onClick={() => this.accordion('timeTracking')}>
-              Time Tracking
-            </Button>
-						{timeTracking}
-            <Button onClick={() => this.accordion('employeeRecording')}>
-              Employees Enter Data
-            </Button>
-            {employeeRecording}
-            <Button onClick={() => this.accordion('automaticScheduling')}>
-              Automatic Scheduling
-            </Button>
-            {automaticScheduling}
-            <Button onClick={() => this.accordion('flexiblePermissions')}>
-              Flexible Permissions
-            </Button>
-            {flexiblePermissions}
-            <Button onClick={() => this.accordion('employeePerformance')}>
-              Employee Performance
-            </Button>
-            {employeePerformance}
-          </TextSection>
-					<PainterSvg>
-          	<PainterThumbsUp/>
-					</PainterSvg>
+					<Button onClick={() => this.accordion('timeTracking')}>
+						<ButtonItem>
+							Time Tracking
+						</ButtonItem>
+						{this.state.timeTracking ?
+							<svg viewBox="0 0 100 100" height="50%" width="10%" xmlns="http://www.w3.org/2000/svg">
+									<path
+										stroke="white"
+										fill="none"
+										opacity="1"
+										strokeWidth="15"
+										strokeLinejoin="round"
+										strokeMiterlimit="8"
+										d="M 10,50
+											L 90,50"
+									/>
+							</svg> :
+							<svg viewBox="0 0 100 100" height="50%" width="10%" xmlns="http://www.w3.org/2000/svg">
+									<path
+										stroke="white"
+										fill="none"
+										opacity="1"
+										strokeWidth="15"
+										strokeLinejoin="round"
+										strokeMiterlimit="8"
+										d="M 90,25
+											L 50,75
+											L 10,25"
+									/>
+							</svg>}
+					</Button>
+					{timeTracking}
+					<Button onClick={() => this.accordion('employeeRecording')}>
+						<ButtonItem>
+							Employees Enter Data
+						</ButtonItem>
+						{this.state.employeeRecording ?
+							<svg viewBox="0 0 100 100" height="50%" width="10%" xmlns="http://www.w3.org/2000/svg">
+									<path
+										stroke="white"
+										fill="none"
+										opacity="1"
+										strokeWidth="15"
+										strokeLinejoin="round"
+										strokeMiterlimit="8"
+										d="M 10,50
+											L 90,50"
+									/>
+							</svg> :
+							<svg viewBox="0 0 100 100" height="50%" width="10%" xmlns="http://www.w3.org/2000/svg">
+									<path
+										stroke="white"
+										fill="none"
+										opacity="1"
+										strokeWidth="15"
+										strokeLinejoin="round"
+										strokeMiterlimit="8"
+										d="M 90,25
+											L 50,75
+											L 10,25"
+									/>
+							</svg>}
+					</Button>
+					{employeeRecording}
+					<Button onClick={() => this.accordion('automaticScheduling')}>
+						<ButtonItem>
+							Automatic Scheduling
+						</ButtonItem>
+						{this.state.automaticScheduling ?
+							<svg viewBox="0 0 100 100" height="50%" width="10%" xmlns="http://www.w3.org/2000/svg">
+									<path
+										stroke="white"
+										fill="none"
+										opacity="1"
+										strokeWidth="15"
+										strokeLinejoin="round"
+										strokeMiterlimit="8"
+										d="M 10,50
+											L 90,50"
+									/>
+							</svg> :
+							<svg viewBox="0 0 100 100" height="50%" width="10%" xmlns="http://www.w3.org/2000/svg">
+									<path
+										stroke="white"
+										fill="none"
+										opacity="1"
+										strokeWidth="15"
+										strokeLinejoin="round"
+										strokeMiterlimit="8"
+										d="M 90,25
+											L 50,75
+											L 10,25"
+									/>
+							</svg>}
+					</Button>
+					{automaticScheduling}
+					<Button onClick={() => this.accordion('flexiblePermissions')}>
+						<ButtonItem>
+							Flexible Permissions
+						</ButtonItem>
+						{this.state.flexiblePermissions ?
+							<svg viewBox="0 0 100 100" height="50%" width="10%" xmlns="http://www.w3.org/2000/svg">
+									<path
+										stroke="white"
+										fill="none"
+										opacity="1"
+										strokeWidth="15"
+										strokeLinejoin="round"
+										strokeMiterlimit="8"
+										d="M 10,50
+											L 90,50"
+									/>
+							</svg> :
+							<svg viewBox="0 0 100 100" height="50%" width="10%" xmlns="http://www.w3.org/2000/svg">
+									<path
+										stroke="white"
+										fill="none"
+										opacity="1"
+										strokeWidth="15"
+										strokeLinejoin="round"
+										strokeMiterlimit="8"
+										d="M 90,25
+											L 50,75
+											L 10,25"
+									/>
+							</svg>}
+					</Button>
+					{flexiblePermissions}
+					<Button onClick={() => this.accordion('employeePerformance')}>
+						<ButtonItem>
+							Employee Performance
+						</ButtonItem>
+						{this.state.employeePerformance ?
+							<svg viewBox="0 0 100 100" height="50%" width="10%" xmlns="http://www.w3.org/2000/svg">
+									<path
+										stroke="white"
+										fill="none"
+										opacity="1"
+										strokeWidth="15"
+										strokeLinejoin="round"
+										strokeMiterlimit="8"
+										d="M 10,50
+											L 90,50"
+									/>
+							</svg> :
+							<svg viewBox="0 0 100 100" height="50%" width="10%" xmlns="http://www.w3.org/2000/svg">
+									<path
+										stroke="white"
+										fill="none"
+										opacity="1"
+										strokeWidth="15"
+										strokeLinejoin="round"
+										strokeMiterlimit="8"
+										d="M 90,25
+											L 50,75
+											L 10,25"
+									/>
+							</svg>}
+					</Button>
+					{employeePerformance}
+				</TextSection>
+				<PainterSvg>
+					<PainterThumbsUp/>
+				</PainterSvg>
       </Div>
     );
   }

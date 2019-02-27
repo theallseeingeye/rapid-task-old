@@ -8,7 +8,7 @@ const FindOutMore = styled.div`
   text-align: right;
   line-height: 1.4em;
   font-size: 1.2em;
-  bottom: 10vh;
+  bottom: 0;
   height: 40vh;
   min-height: 300px;
   position: absolute;
@@ -17,7 +17,6 @@ const FindOutMore = styled.div`
    height: 450px;
   }
 `;
-
 
 const ButtonLinks = styled.a` // Need this to match the styled of the other buttons from "Links" 
   color: black;
@@ -47,7 +46,7 @@ const BackgroundContainer = styled.div`
   // To fade the background
   opacity: 1;
   // To place behind all divs
-  z-index: -1;
+  //z-index: -1;
   // To hide the sides that are stretching beyond the div
   overflow: hidden;
   @media (min-width: ${props => props.theme.tabletscreen}) {
@@ -61,15 +60,17 @@ const BackgroundContainer = styled.div`
   }
 `;
 
+const DateStyle = styled.div`
+	font-size: 0.8em;
+`;
+
 class Footer extends Component {
   constructor() {
     super();
 
-    const year = new Date(),
-      dateValue = year.getFullYear();
     this.state = {
-      dateYear: dateValue
-    };
+      dateYear: new Date().getFullYear()
+    }
   }
 
   handleClick = (e, location) => {
@@ -79,6 +80,7 @@ class Footer extends Component {
   };
 
   render() {
+  	const {dateYear} = this.state;
     return (
       <BackgroundContainer>
         <OfficeBeach/>
@@ -93,9 +95,9 @@ class Footer extends Component {
           <Links to="/investor-relations">Investor Relations</Links>
           <br />
           <br />
-          <div className='dateValue'>
-            © {this.state.dateYear} Rapid Task
-          </div>
+          <DateStyle>
+            © {dateYear} Rapid Task
+          </DateStyle>
         </FindOutMore>
        </BackgroundContainer>
     );

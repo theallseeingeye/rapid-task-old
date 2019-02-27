@@ -22,7 +22,7 @@ const SvgFloor = styled.svg`
 
 const FlexContainer = styled.div`
 	margin: 0 auto;
-	margin-top: 10em;
+	margin-top: 3em;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

@@ -5,7 +5,7 @@ const Div = styled.div`
   font-family: ${props => props.theme.Robotofont};
   display: flex;
   flex-direction: column;
-  margin-top: 10vh;
+  justify-content: center;
   //border: solid blue;
 `;
 
